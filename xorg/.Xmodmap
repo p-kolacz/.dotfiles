@@ -1,0 +1,4 @@
+clear lock
+keycode 66 = Hyper_L
+keycode 94 = Hyper_L
+

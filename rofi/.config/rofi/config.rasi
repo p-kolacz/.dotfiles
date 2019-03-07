@@ -1,5 +1,7 @@
+// -*- comment-start: "//"; -*-
+
 configuration {
-/*	modi: "window,run,ssh";*/
+	// modi: "window,run,ssh";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -10,13 +12,15 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+	show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
+	terminal: "kitty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	run-command: "{cmd}";*/
 /*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}";*/
+/*	run-shell-command: "{terminal} -e {cmd}"; */
+	// run-shell-command: "{terminal} -e '{cmd};env; read -n 1 -s'";
 /*	window-command: "xkill -id {window}";*/
 /*	window-match-fields: "all";*/
 /*	icon-theme: ;*/
@@ -52,7 +56,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "material";
+	theme: "onedark";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -140,3 +144,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+@import "/home/piotr/.local/share/rofi/themes/onedark.rasi"

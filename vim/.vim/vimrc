@@ -1,1 +1,55 @@
+" Main setup
+set nocompatible
+set encoding=utf8
+set langmenu=en_US
+let $LANG = 'en_US'
+set belloff=all
+set backspace=indent,eol,start
+
+" Identation
+set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+
+" Apperance
+" set lines=40 columns=140
+set nowrap
+syntax enable 
+set ruler
+set relativenumber 
+
+" Behavior
+set autoread
+set clipboard=unnamed
+
+" Searching
+set ignorecase
+set incsearch 
+set hlsearch
+set showmatch 
+
+" Bindings
+"let mapleader = " "
+"nmap <leader>w :w<CR>
+"nmap <leader>q :q<CR>
 noremap <space> :
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+map <C-V> "+gP
+
+" Plugins
+" call plug#begin('~/vimfiles/plugged')
+" Plug 'tpope/vim-surround'
+" Plug 'srcery-colors/srcery-vim'
+" Plug 'scrooloose/nerdtree'
+" call plug#end()
+
+" map <F8> :NERDTreeToggle<CR>
+
+
+
+" GUI
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set guifont=Mononoki:h14:cANSI
+" colorscheme srcery

@@ -73,7 +73,7 @@ cursor-scroll = ns-resize
 inherit=bar-base
 modules-left = xwindow
 modules-center = i3
-modules-right = filesystem pulseaudio memory cpu wlan eth battery temperature date
+modules-right = filesystem pulseaudio memory cpu wlan eth temperature battery date
 tray-position = left
 tray-padding = 2
 ;tray-background = #0063ff
@@ -89,7 +89,7 @@ modules-right = pulseaudio
 inherit = bar-base
 modules-left = xwindow
 modules-center = i3
-modules-right = filesystem memory cpu wlan eth battery temperature date
+modules-right = filesystem memory cpu wlan eth temperature battery date
 tray-position = left
 tray-padding = 2
 

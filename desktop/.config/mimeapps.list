@@ -1,0 +1,47 @@
+# -*- mode: ini; comment-start: "#"  -*-
+
+[Default Applications]
+application/x-ace;application/x-alz=org.gnome.FileRoller.desktop
+application/x-gnome-saved-search=dde-file-manager.desktop
+text/html=opera.desktop
+x-scheme-handler/http=opera.desktop
+x-scheme-handler/https=opera.desktop
+x-scheme-handler/about=opera.desktop
+x-scheme-handler/unknown=opera.desktop
+video/3gpp=mplayer.desktop;
+video/msvideo=mplayer.desktop;
+video/x-fli=mplayer.desktop;
+video/x-flv=mplayer.desktop;
+video/x-ms-asf=mplayer.desktop;
+video/x-ogm+ogg=mplayer.desktop;
+video/mp4=mplayer.desktop;
+video/x-matroska=mplayer.desktop;
+
+image/x-png=sxiv.desktop;
+image/x-xbitmap=sxiv.desktop;
+image/x-xpixmap=sxiv.desktop;
+image/x-pcx=sxiv.desktop;
+image/jpeg=sxiv.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+
+x-scheme-handler/thunderlink=thunderbird-tl.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-2G4SYZ.desktop
+message/rfc822=userapp-Thunderbird-2G4SYZ.desktop
+x-scheme-handler/news=userapp-Thunderbird-JQOAYZ.desktop
+x-scheme-handler/snews=userapp-Thunderbird-JQOAYZ.desktop
+x-scheme-handler/nntp=userapp-Thunderbird-JQOAYZ.desktop
+x-scheme-handler/feed=userapp-Thunderbird-HIZAYZ.desktop
+application/rss+xml=userapp-Thunderbird-HIZAYZ.desktop
+application/x-extension-rss=userapp-Thunderbird-HIZAYZ.desktop
+
+application/vnd.oasis.opendocument.spreadsheet=gnumeric.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-2G4SYZ.desktop;
+message/rfc822=userapp-Thunderbird-2G4SYZ.desktop;
+x-scheme-handler/news=userapp-Thunderbird-JQOAYZ.desktop;
+x-scheme-handler/snews=userapp-Thunderbird-JQOAYZ.desktop;
+x-scheme-handler/nntp=userapp-Thunderbird-JQOAYZ.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-HIZAYZ.desktop;
+application/rss+xml=userapp-Thunderbird-HIZAYZ.desktop;
+application/x-extension-rss=userapp-Thunderbird-HIZAYZ.desktop;

@@ -9,4 +9,5 @@ export DISPLAY=":0"
 
 /home/piotr/.dotfiles/xorg/scripts/monitor-setup.sh >> $LOG 2>&1
 
+i3-msg restart
 # nitrogen --restore >> $LOG 2>&1

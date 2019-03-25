@@ -30,7 +30,25 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
+"~/.dotfiles/xorg/scripts/long-press.sh press 8 ctrl+w"
+b:8
 
+"~/.dotfiles/xorg/scripts/long-press.sh release 8 XF86Back"
+b:8 + release
+
+"~/.dotfiles/xorg/scripts/long-press.sh press 9 ctrl+t"
+b:9
+
+"~/.dotfiles/xorg/scripts/long-press.sh release 9 XF86Forward"
+b:9 + release
+
+"playerctl play-pause"
+    XF86AudioPlay
+"playerctl previous"
+    XF86AudioPrev
+"playerctl next"
+    XF86AudioNext
+	
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +1000"
    XF86AudioRaiseVolume

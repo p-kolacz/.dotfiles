@@ -13,7 +13,7 @@ keycode 66 = Hyper_L
 keycode 94 = Hyper_L
 
 ! Apps (Menu) key
-keycode 135 = Hyper_L
+keycode 135 = Super_R
 
 clear mod3
 add mod3 = Hyper_L

@@ -8,6 +8,8 @@ x-scheme-handler/http=opera.desktop
 x-scheme-handler/https=opera.desktop
 x-scheme-handler/about=opera.desktop
 x-scheme-handler/unknown=opera.desktop
+
+# Video
 video/3gpp=mplayer.desktop;
 video/msvideo=mplayer.desktop;
 video/x-fli=mplayer.desktop;
@@ -16,7 +18,9 @@ video/x-ms-asf=mplayer.desktop;
 video/x-ogm+ogg=mplayer.desktop;
 video/mp4=mplayer.desktop;
 video/x-matroska=mplayer.desktop;
+video/x-ms-wmv=mplayer.desktop;
 
+# Images
 image/x-png=sxiv.desktop;
 image/x-xbitmap=sxiv.desktop;
 image/x-xpixmap=sxiv.desktop;

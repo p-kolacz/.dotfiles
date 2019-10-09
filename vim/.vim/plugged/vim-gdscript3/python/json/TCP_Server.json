@@ -1,0 +1,36 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"bool",
+      "name":"is_connection_available",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"int",
+      "name":"listen",
+      "args":[
+        {
+          "name":"port",
+          "type":"int"
+        },
+        {
+          "name":"bind_address",
+          "type":"String",
+          "default":"\"*\""
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"stop"
+    },
+    {
+      "returns":"StreamPeerTCP",
+      "name":"take_connection"
+    }
+  ],
+  "name":"TCP_Server",
+  "inherits":"Reference"
+}

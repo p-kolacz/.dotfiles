@@ -1,0 +1,23 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"get_object_id",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"void",
+      "name":"set_object_id",
+      "args":[
+        {
+          "name":"id",
+          "type":"int"
+        }
+      ]
+    }
+  ],
+  "name":"EncodedObjectAsID",
+  "inherits":"Reference"
+}

@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"segments",
+      "type":"PoolVector2Array"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ConcavePolygonShape2D",
+  "inherits":"Shape2D"
+}

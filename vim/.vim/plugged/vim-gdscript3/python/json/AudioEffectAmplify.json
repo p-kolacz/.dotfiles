@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"volume_db",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectAmplify",
+  "inherits":"AudioEffect"
+}

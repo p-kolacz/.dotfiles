@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"scroll_horizontal",
+      "type":"int"
+    },
+    {
+      "name":"scroll_horizontal_enabled",
+      "type":"bool"
+    },
+    {
+      "name":"scroll_vertical",
+      "type":"int"
+    },
+    {
+      "name":"scroll_vertical_enabled",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ScrollContainer",
+  "inherits":"Container"
+}

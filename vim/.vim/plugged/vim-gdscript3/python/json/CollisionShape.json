@@ -1,0 +1,31 @@
+{
+  "members":[
+    {
+      "name":"disabled",
+      "type":"bool"
+    },
+    {
+      "name":"shape",
+      "type":"Shape"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"make_convex_from_brothers"
+    },
+    {
+      "returns":"void",
+      "name":"resource_changed",
+      "args":[
+        {
+          "name":"resource",
+          "type":"Resource"
+        }
+      ]
+    }
+  ],
+  "name":"CollisionShape",
+  "inherits":"Spatial"
+}

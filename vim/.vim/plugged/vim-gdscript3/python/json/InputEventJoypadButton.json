@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"button_index",
+      "type":"int"
+    },
+    {
+      "name":"pressed",
+      "type":"bool"
+    },
+    {
+      "name":"pressure",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventJoypadButton",
+  "inherits":"InputEvent"
+}

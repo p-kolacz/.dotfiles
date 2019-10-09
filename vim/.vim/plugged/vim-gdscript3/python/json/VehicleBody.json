@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"brake",
+      "type":"float"
+    },
+    {
+      "name":"engine_force",
+      "type":"float"
+    },
+    {
+      "name":"steering",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"VehicleBody",
+  "inherits":"RigidBody"
+}

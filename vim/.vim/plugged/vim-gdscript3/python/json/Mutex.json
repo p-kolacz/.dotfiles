@@ -1,0 +1,20 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"lock"
+    },
+    {
+      "returns":"int",
+      "name":"try_lock"
+    },
+    {
+      "returns":"void",
+      "name":"unlock"
+    }
+  ],
+  "name":"Mutex",
+  "inherits":"Reference"
+}

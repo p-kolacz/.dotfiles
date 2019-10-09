@@ -1,0 +1,7 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[],
+  "name":"VBoxContainer",
+  "inherits":"BoxContainer"
+}

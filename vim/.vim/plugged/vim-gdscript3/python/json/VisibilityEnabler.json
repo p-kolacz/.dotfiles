@@ -1,0 +1,32 @@
+{
+  "members":[
+    {
+      "name":"freeze_bodies",
+      "type":"bool"
+    },
+    {
+      "name":"pause_animations",
+      "type":"bool"
+    }
+  ],
+  "constants":[
+    {
+      "name":"ENABLER_PAUSE_ANIMATIONS",
+      "value":"0",
+      "type":"Enabler"
+    },
+    {
+      "name":"ENABLER_FREEZE_BODIES",
+      "value":"1",
+      "type":"Enabler"
+    },
+    {
+      "name":"ENABLER_MAX",
+      "value":"2",
+      "type":"Enabler"
+    }
+  ],
+  "methods":[],
+  "name":"VisibilityEnabler",
+  "inherits":"VisibilityNotifier"
+}

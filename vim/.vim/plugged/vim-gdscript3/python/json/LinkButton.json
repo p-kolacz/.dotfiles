@@ -1,0 +1,32 @@
+{
+  "members":[
+    {
+      "name":"text",
+      "type":"String"
+    },
+    {
+      "name":"underline",
+      "type":"LinkButton.UnderlineMode"
+    }
+  ],
+  "constants":[
+    {
+      "name":"UNDERLINE_MODE_ALWAYS",
+      "value":"0",
+      "type":"UnderlineMode"
+    },
+    {
+      "name":"UNDERLINE_MODE_ON_HOVER",
+      "value":"1",
+      "type":"UnderlineMode"
+    },
+    {
+      "name":"UNDERLINE_MODE_NEVER",
+      "value":"2",
+      "type":"UnderlineMode"
+    }
+  ],
+  "methods":[],
+  "name":"LinkButton",
+  "inherits":"BaseButton"
+}

@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"error",
+      "type":"Error"
+    },
+    {
+      "name":"error_line",
+      "type":"int"
+    },
+    {
+      "name":"error_string",
+      "type":"String"
+    },
+    {
+      "name":"result",
+      "type":"Variant"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"JSONParseResult",
+  "inherits":"Reference"
+}

@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"position",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventGesture",
+  "inherits":"InputEventWithModifiers"
+}

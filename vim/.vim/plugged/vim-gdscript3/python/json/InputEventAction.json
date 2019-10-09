@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"action",
+      "type":"String"
+    },
+    {
+      "name":"pressed",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventAction",
+  "inherits":"InputEvent"
+}

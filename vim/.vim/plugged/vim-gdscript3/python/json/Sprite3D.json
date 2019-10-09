@@ -1,0 +1,32 @@
+{
+  "members":[
+    {
+      "name":"frame",
+      "type":"int"
+    },
+    {
+      "name":"hframes",
+      "type":"int"
+    },
+    {
+      "name":"region_enabled",
+      "type":"bool"
+    },
+    {
+      "name":"region_rect",
+      "type":"Rect2"
+    },
+    {
+      "name":"texture",
+      "type":"Texture"
+    },
+    {
+      "name":"vframes",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Sprite3D",
+  "inherits":"SpriteBase3D"
+}

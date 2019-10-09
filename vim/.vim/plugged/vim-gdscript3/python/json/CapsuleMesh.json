@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"mid_height",
+      "type":"float"
+    },
+    {
+      "name":"radial_segments",
+      "type":"int"
+    },
+    {
+      "name":"radius",
+      "type":"float"
+    },
+    {
+      "name":"rings",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CapsuleMesh",
+  "inherits":"PrimitiveMesh"
+}

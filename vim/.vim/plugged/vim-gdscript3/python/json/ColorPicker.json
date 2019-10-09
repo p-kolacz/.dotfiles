@@ -1,0 +1,31 @@
+{
+  "members":[
+    {
+      "name":"color",
+      "type":"Color"
+    },
+    {
+      "name":"edit_alpha",
+      "type":"bool"
+    },
+    {
+      "name":"raw_mode",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"add_preset",
+      "args":[
+        {
+          "name":"color",
+          "type":"Color"
+        }
+      ]
+    }
+  ],
+  "name":"ColorPicker",
+  "inherits":"BoxContainer"
+}

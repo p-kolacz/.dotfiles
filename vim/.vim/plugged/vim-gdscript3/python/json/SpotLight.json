@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"spot_angle",
+      "type":"float"
+    },
+    {
+      "name":"spot_angle_attenuation",
+      "type":"float"
+    },
+    {
+      "name":"spot_attenuation",
+      "type":"float"
+    },
+    {
+      "name":"spot_range",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"SpotLight",
+  "inherits":"Light"
+}

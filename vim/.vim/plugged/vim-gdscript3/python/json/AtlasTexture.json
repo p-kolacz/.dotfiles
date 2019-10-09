@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"atlas",
+      "type":"Texture"
+    },
+    {
+      "name":"filter_clip",
+      "type":"bool"
+    },
+    {
+      "name":"margin",
+      "type":"Rect2"
+    },
+    {
+      "name":"region",
+      "type":"Rect2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AtlasTexture",
+  "inherits":"Texture"
+}

@@ -1,0 +1,66 @@
+{
+  "members":[
+    {
+      "name":"popup_exclusive",
+      "type":"bool"
+    }
+  ],
+  "constants":[
+    {
+      "name":"NOTIFICATION_POST_POPUP",
+      "value":"80"
+    },
+    {
+      "name":"NOTIFICATION_POPUP_HIDE",
+      "value":"81"
+    }
+  ],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"popup",
+      "args":[
+        {
+          "name":"bounds",
+          "type":"Rect2",
+          "default":"Rect2( 0, 0, 0, 0 )"
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"popup_centered",
+      "args":[
+        {
+          "name":"size",
+          "type":"Vector2",
+          "default":"Vector2( 0, 0 )"
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"popup_centered_minsize",
+      "args":[
+        {
+          "name":"minsize",
+          "type":"Vector2",
+          "default":"Vector2( 0, 0 )"
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"popup_centered_ratio",
+      "args":[
+        {
+          "name":"ratio",
+          "type":"float",
+          "default":"0.75"
+        }
+      ]
+    }
+  ],
+  "name":"Popup",
+  "inherits":"Control"
+}

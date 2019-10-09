@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"enabled",
+      "type":"bool"
+    },
+    {
+      "name":"navpoly",
+      "type":"NavigationPolygon"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"NavigationPolygonInstance",
+  "inherits":"Node2D"
+}

@@ -1,0 +1,20 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"bool",
+      "name":"init_ref"
+    },
+    {
+      "returns":"bool",
+      "name":"reference"
+    },
+    {
+      "returns":"bool",
+      "name":"unreference"
+    }
+  ],
+  "name":"Reference",
+  "inherits":"Object"
+}

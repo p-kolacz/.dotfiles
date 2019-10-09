@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"input_buffer_max_size",
+      "type":"int"
+    },
+    {
+      "name":"output_buffer_max_size",
+      "type":"int"
+    },
+    {
+      "name":"stream_peer",
+      "type":"StreamPeer"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"PacketPeerStream",
+  "inherits":"PacketPeer"
+}

@@ -1,0 +1,30 @@
+{
+  "members":[
+    {
+      "name":"echo",
+      "type":"bool"
+    },
+    {
+      "name":"pressed",
+      "type":"bool"
+    },
+    {
+      "name":"scancode",
+      "type":"int"
+    },
+    {
+      "name":"unicode",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"get_scancode_with_modifiers",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"InputEventKey",
+  "inherits":"InputEventWithModifiers"
+}

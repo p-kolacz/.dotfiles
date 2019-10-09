@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"depth",
+      "type":"float"
+    },
+    {
+      "name":"feedback",
+      "type":"float"
+    },
+    {
+      "name":"range_max_hz",
+      "type":"float"
+    },
+    {
+      "name":"range_min_hz",
+      "type":"float"
+    },
+    {
+      "name":"rate_hz",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectPhaser",
+  "inherits":"AudioEffect"
+}

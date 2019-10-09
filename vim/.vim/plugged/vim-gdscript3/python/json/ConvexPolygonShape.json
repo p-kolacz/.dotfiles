@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"points",
+      "type":"PoolVector3Array"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ConvexPolygonShape",
+  "inherits":"Shape"
+}

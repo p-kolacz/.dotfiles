@@ -1,0 +1,36 @@
+{
+  "members":[
+    {
+      "name":"closed",
+      "type":"bool"
+    },
+    {
+      "name":"cull_mode",
+      "type":"OccluderPolygon2D.CullMode"
+    },
+    {
+      "name":"polygon",
+      "type":"PoolVector2Array"
+    }
+  ],
+  "constants":[
+    {
+      "name":"CULL_DISABLED",
+      "value":"0",
+      "type":"CullMode"
+    },
+    {
+      "name":"CULL_CLOCKWISE",
+      "value":"1",
+      "type":"CullMode"
+    },
+    {
+      "name":"CULL_COUNTER_CLOCKWISE",
+      "value":"2",
+      "type":"CullMode"
+    }
+  ],
+  "methods":[],
+  "name":"OccluderPolygon2D",
+  "inherits":"Resource"
+}

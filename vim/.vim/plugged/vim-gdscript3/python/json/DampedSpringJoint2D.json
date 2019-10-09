@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"damping",
+      "type":"float"
+    },
+    {
+      "name":"length",
+      "type":"float"
+    },
+    {
+      "name":"rest_length",
+      "type":"float"
+    },
+    {
+      "name":"stiffness",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"DampedSpringJoint2D",
+  "inherits":"Joint2D"
+}

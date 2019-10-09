@@ -1,0 +1,21 @@
+{
+  "members":[
+    {
+      "name":"resizable",
+      "type":"bool"
+    },
+    {
+      "name":"window_title",
+      "type":"String"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"TextureButton",
+      "name":"get_close_button"
+    }
+  ],
+  "name":"WindowDialog",
+  "inherits":"Popup"
+}

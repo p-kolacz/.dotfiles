@@ -5,6 +5,7 @@ set langmenu=en_US
 let $LANG = 'en_US'
 set belloff=all
 set backspace=indent,eol,start
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 
 " Identation
 set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
@@ -22,8 +23,11 @@ set clipboard=unnamed
 
 " Searching
 set ignorecase
+set smartcase
 set incsearch 
 set hlsearch
+
+" Show matching parens
 set showmatch 
 
 " Bindings
@@ -36,11 +40,12 @@ nmap <CR> o<Esc>
 map <C-V> "+gP
 
 " Plugins
-" call plug#begin('~/vimfiles/plugged')
-" Plug 'tpope/vim-surround'
-" Plug 'srcery-colors/srcery-vim'
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-surround'
+Plug 'calviken/vim-gdscript3'
+Plug 'srcery-colors/srcery-vim'
 " Plug 'scrooloose/nerdtree'
-" call plug#end()
+call plug#end()
 
 " map <F8> :NERDTreeToggle<CR>
 

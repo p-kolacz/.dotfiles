@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"panorama",
+      "type":"Texture"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"PanoramaSky",
+  "inherits":"Sky"
+}

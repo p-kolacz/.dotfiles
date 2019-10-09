@@ -1,11 +1,9 @@
-// -*- comment-start: "//"; -*-
-
 configuration {
-	// modi: "window,run,ssh";
+/*	modi: "window,run,ssh";*/
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
-/*	font: "mono 12";*/
+	font: "Sans Regular 12";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -14,20 +12,19 @@ configuration {
 /*	fixed-num-lines: true;*/
 	show-icons: true;
 /*	terminal: "rofi-sensible-terminal";*/
-	terminal: "kitty";
 /*	ssh-client: "ssh";*/
-/*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
-/*	run-command: "{cmd}";*/
-/*	run-list-command: "";*/
-/*	run-shell-command: "{terminal} -e {cmd}"; */
-	// run-shell-command: "{terminal} -e '{cmd};env; read -n 1 -s'";
-/*	window-command: "xkill -id {window}";*/
+/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+	run-command: "fish -c '{cmd}'";
+	run-list-command: "'fish -c functions'";
+/*	run-shell-command: "{terminal} -e {cmd}";*/
+/*	window-command: "wmctrl -i -R {window}";*/
 /*	window-match-fields: "all";*/
 /*	icon-theme: ;*/
 /*	drun-match-fields: "name,generic,exec,categories";*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
 /*	disable-history: false;*/
+/*	ignored-prefixes: "";*/
 /*	sort: false;*/
 /*	sorting-method: ;*/
 /*	case-sensitive: false;*/
@@ -53,10 +50,10 @@ configuration {
 /*	scrollbar-width: 8;*/
 /*	scroll-method: 0;*/
 /*	fake-background: "screenshot";*/
-/*	window-format: "{w}    {i}{c}   {t}";*/
+/*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "onedark";
+	theme: "sidetab-mod";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -64,6 +61,7 @@ configuration {
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
+/*	cache-dir: ;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 /*	display-window: ;*/
 /*	display-windowcd: ;*/
@@ -104,6 +102,7 @@ configuration {
 /*	kb-row-last: "End,KP_End";*/
 /*	kb-row-select: "Control+space";*/
 /*	kb-screenshot: "Alt+S";*/
+/*	kb-ellipsize: "Alt+period";*/
 /*	kb-toggle-case-sensitivity: "grave,dead_grave";*/
 /*	kb-toggle-sort: "Alt+grave";*/
 /*	kb-cancel: "Escape,Control+g,Control+bracketleft";*/
@@ -144,4 +143,3 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@import "/home/piotr/.local/share/rofi/themes/onedark.rasi"

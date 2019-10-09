@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"alt",
+      "type":"bool"
+    },
+    {
+      "name":"command",
+      "type":"bool"
+    },
+    {
+      "name":"control",
+      "type":"bool"
+    },
+    {
+      "name":"meta",
+      "type":"bool"
+    },
+    {
+      "name":"shift",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventWithModifiers",
+  "inherits":"InputEvent"
+}

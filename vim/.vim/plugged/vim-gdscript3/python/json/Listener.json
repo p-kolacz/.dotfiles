@@ -1,0 +1,26 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"clear_current"
+    },
+    {
+      "returns":"Transform",
+      "name":"get_listener_transform",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"bool",
+      "name":"is_current",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"void",
+      "name":"make_current"
+    }
+  ],
+  "name":"Listener",
+  "inherits":"Spatial"
+}

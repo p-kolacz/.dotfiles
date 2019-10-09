@@ -1,0 +1,36 @@
+{
+  "members":[
+    {
+      "name":"collapsed",
+      "type":"bool"
+    },
+    {
+      "name":"dragger_visibility",
+      "type":"SplitContainer.DraggerVisibility"
+    },
+    {
+      "name":"split_offset",
+      "type":"int"
+    }
+  ],
+  "constants":[
+    {
+      "name":"DRAGGER_VISIBLE",
+      "value":"0",
+      "type":"DraggerVisibility"
+    },
+    {
+      "name":"DRAGGER_HIDDEN",
+      "value":"1",
+      "type":"DraggerVisibility"
+    },
+    {
+      "name":"DRAGGER_HIDDEN_COLLAPSED",
+      "value":"2",
+      "type":"DraggerVisibility"
+    }
+  ],
+  "methods":[],
+  "name":"SplitContainer",
+  "inherits":"Container"
+}

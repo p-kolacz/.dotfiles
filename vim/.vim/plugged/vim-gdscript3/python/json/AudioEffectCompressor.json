@@ -1,0 +1,36 @@
+{
+  "members":[
+    {
+      "name":"attack_us",
+      "type":"float"
+    },
+    {
+      "name":"gain",
+      "type":"float"
+    },
+    {
+      "name":"mix",
+      "type":"float"
+    },
+    {
+      "name":"ratio",
+      "type":"float"
+    },
+    {
+      "name":"release_ms",
+      "type":"float"
+    },
+    {
+      "name":"sidechain",
+      "type":"String"
+    },
+    {
+      "name":"threshold",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectCompressor",
+  "inherits":"AudioEffect"
+}

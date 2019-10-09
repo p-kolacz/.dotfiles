@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"initial_offset",
+      "type":"float"
+    },
+    {
+      "name":"length",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"GrooveJoint2D",
+  "inherits":"Joint2D"
+}

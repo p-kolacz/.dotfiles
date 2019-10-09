@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"bone_name",
+      "type":"String"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"BoneAttachment",
+  "inherits":"Spatial"
+}

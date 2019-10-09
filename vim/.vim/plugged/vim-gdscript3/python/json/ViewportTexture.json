@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"viewport_path",
+      "type":"NodePath"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ViewportTexture",
+  "inherits":"Texture"
+}

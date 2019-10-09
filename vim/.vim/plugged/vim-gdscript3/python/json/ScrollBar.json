@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"custom_step",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ScrollBar",
+  "inherits":"Range"
+}

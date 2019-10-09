@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"curve",
+      "type":"Curve3D"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Path",
+  "inherits":"Spatial"
+}

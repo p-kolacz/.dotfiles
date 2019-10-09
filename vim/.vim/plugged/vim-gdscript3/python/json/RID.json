@@ -1,0 +1,13 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"get_id"
+    }
+  ],
+  "name":"RID",
+  "inherits":null,
+  "built_in":true
+}

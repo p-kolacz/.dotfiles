@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"bounce",
+      "type":"float"
+    },
+    {
+      "name":"constant_angular_velocity",
+      "type":"Vector3"
+    },
+    {
+      "name":"constant_linear_velocity",
+      "type":"Vector3"
+    },
+    {
+      "name":"friction",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"StaticBody",
+  "inherits":"PhysicsBody"
+}

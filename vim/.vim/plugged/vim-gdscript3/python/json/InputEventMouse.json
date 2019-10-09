@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"button_mask",
+      "type":"int"
+    },
+    {
+      "name":"global_position",
+      "type":"Vector2"
+    },
+    {
+      "name":"position",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventMouse",
+  "inherits":"InputEventWithModifiers"
+}

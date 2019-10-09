@@ -1,0 +1,31 @@
+{
+  "members":[
+    {
+      "name":"enabled",
+      "type":"bool"
+    },
+    {
+      "name":"speed",
+      "type":"float"
+    },
+    {
+      "name":"target",
+      "type":"NodePath"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"set_target",
+      "args":[
+        {
+          "name":"target",
+          "type":"Object"
+        }
+      ]
+    }
+  ],
+  "name":"InterpolatedCamera",
+  "inherits":"Camera"
+}

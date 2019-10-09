@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"sort_enabled",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"YSort",
+  "inherits":"Node2D"
+}

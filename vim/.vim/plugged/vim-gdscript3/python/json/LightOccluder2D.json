@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"light_mask",
+      "type":"int"
+    },
+    {
+      "name":"occluder",
+      "type":"OccluderPolygon2D"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"LightOccluder2D",
+  "inherits":"Node2D"
+}

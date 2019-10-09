@@ -1,0 +1,9 @@
+# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export ICEAUTHORITY="$HOME"/.cache/ICEauthority
+export GNUPGHOME="$HOME"/.local/share/gnupg
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
+xbindkeys -f $HOME/.dotfiles/xorg/conf/.xbindkeysrc

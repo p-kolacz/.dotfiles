@@ -1,0 +1,7 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[],
+  "name":"Physics2DDirectBodyStateSW",
+  "inherits":"Physics2DDirectBodyState"
+}

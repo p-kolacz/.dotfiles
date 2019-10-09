@@ -1,0 +1,34 @@
+{
+  "members":[
+    {
+      "name":"shortcut",
+      "type":"InputEvent"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"String",
+      "name":"get_as_text",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"bool",
+      "name":"is_shortcut",
+      "qualifiers":"const",
+      "args":[
+        {
+          "name":"event",
+          "type":"InputEvent"
+        }
+      ]
+    },
+    {
+      "returns":"bool",
+      "name":"is_valid",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"ShortCut",
+  "inherits":"Resource"
+}

@@ -1,0 +1,7 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectEQ10",
+  "inherits":"AudioEffectEQ"
+}

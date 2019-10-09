@@ -1,0 +1,33 @@
+{
+  "members":[
+    {
+      "name":"layers",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"AABB",
+      "name":"get_aabb",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"AABB",
+      "name":"get_transformed_aabb",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"void",
+      "name":"set_base",
+      "args":[
+        {
+          "name":"base",
+          "type":"RID"
+        }
+      ]
+    }
+  ],
+  "name":"VisualInstance",
+  "inherits":"Spatial"
+}

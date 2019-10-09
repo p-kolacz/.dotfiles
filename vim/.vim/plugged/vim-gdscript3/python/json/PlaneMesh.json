@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"size",
+      "type":"Vector2"
+    },
+    {
+      "name":"subdivide_depth",
+      "type":"int"
+    },
+    {
+      "name":"subdivide_width",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"PlaneMesh",
+  "inherits":"PrimitiveMesh"
+}

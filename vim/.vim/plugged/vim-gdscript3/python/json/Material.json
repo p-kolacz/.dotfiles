@@ -1,0 +1,25 @@
+{
+  "members":[
+    {
+      "name":"next_pass",
+      "type":"Material"
+    },
+    {
+      "name":"render_priority",
+      "type":"int"
+    }
+  ],
+  "constants":[
+    {
+      "name":"RENDER_PRIORITY_MAX",
+      "value":"127"
+    },
+    {
+      "name":"RENDER_PRIORITY_MIN",
+      "value":"-128"
+    }
+  ],
+  "methods":[],
+  "name":"Material",
+  "inherits":"Resource"
+}

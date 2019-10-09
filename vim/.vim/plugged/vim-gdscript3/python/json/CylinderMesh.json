@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"bottom_radius",
+      "type":"float"
+    },
+    {
+      "name":"height",
+      "type":"float"
+    },
+    {
+      "name":"radial_segments",
+      "type":"int"
+    },
+    {
+      "name":"rings",
+      "type":"int"
+    },
+    {
+      "name":"top_radius",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CylinderMesh",
+  "inherits":"PrimitiveMesh"
+}

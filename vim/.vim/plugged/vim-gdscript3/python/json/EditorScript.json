@@ -1,0 +1,31 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"_run",
+      "qualifiers":"virtual"
+    },
+    {
+      "returns":"void",
+      "name":"add_root_node",
+      "args":[
+        {
+          "name":"node",
+          "type":"Node"
+        }
+      ]
+    },
+    {
+      "returns":"EditorInterface",
+      "name":"get_editor_interface"
+    },
+    {
+      "returns":"Node",
+      "name":"get_scene"
+    }
+  ],
+  "name":"EditorScript",
+  "inherits":"Reference"
+}

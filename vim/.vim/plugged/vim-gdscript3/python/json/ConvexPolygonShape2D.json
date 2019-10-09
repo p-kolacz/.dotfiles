@@ -1,0 +1,23 @@
+{
+  "members":[
+    {
+      "name":"points",
+      "type":"PoolVector2Array"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"set_point_cloud",
+      "args":[
+        {
+          "name":"point_cloud",
+          "type":"PoolVector2Array"
+        }
+      ]
+    }
+  ],
+  "name":"ConvexPolygonShape2D",
+  "inherits":"Shape2D"
+}

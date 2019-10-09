@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"size",
+      "type":"Vector3"
+    },
+    {
+      "name":"subdivide_depth",
+      "type":"int"
+    },
+    {
+      "name":"subdivide_height",
+      "type":"int"
+    },
+    {
+      "name":"subdivide_width",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CubeMesh",
+  "inherits":"PrimitiveMesh"
+}

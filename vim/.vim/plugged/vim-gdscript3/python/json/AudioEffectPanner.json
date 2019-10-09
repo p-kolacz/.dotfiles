@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"pan",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectPanner",
+  "inherits":"AudioEffect"
+}

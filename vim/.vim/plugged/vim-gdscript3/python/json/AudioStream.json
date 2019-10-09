@@ -1,0 +1,13 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"float",
+      "name":"get_length",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"AudioStream",
+  "inherits":"Resource"
+}

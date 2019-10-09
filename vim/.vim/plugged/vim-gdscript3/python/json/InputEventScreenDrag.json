@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"index",
+      "type":"int"
+    },
+    {
+      "name":"position",
+      "type":"Vector2"
+    },
+    {
+      "name":"relative",
+      "type":"Vector2"
+    },
+    {
+      "name":"speed",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventScreenDrag",
+  "inherits":"InputEvent"
+}

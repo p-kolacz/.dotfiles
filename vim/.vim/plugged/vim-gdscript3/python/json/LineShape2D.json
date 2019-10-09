@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"d",
+      "type":"float"
+    },
+    {
+      "name":"normal",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"LineShape2D",
+  "inherits":"Shape2D"
+}

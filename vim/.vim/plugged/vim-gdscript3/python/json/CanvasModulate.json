@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"color",
+      "type":"Color"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CanvasModulate",
+  "inherits":"Node2D"
+}

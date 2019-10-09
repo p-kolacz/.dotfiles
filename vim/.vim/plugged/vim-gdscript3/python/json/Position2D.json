@@ -1,0 +1,7 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[],
+  "name":"Position2D",
+  "inherits":"Node2D"
+}

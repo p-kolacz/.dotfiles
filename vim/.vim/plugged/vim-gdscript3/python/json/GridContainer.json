@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"columns",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"GridContainer",
+  "inherits":"Container"
+}

@@ -1,6 +1,7 @@
 # -*- mode: ini; comment-start: "#"  -*-
 
 [Default Applications]
+inode/directory=doublecmd.desktop
 application/x-ace;application/x-alz=org.gnome.FileRoller.desktop
 application/x-gnome-saved-search=dde-file-manager.desktop
 text/html=opera.desktop
@@ -21,11 +22,12 @@ video/x-matroska=mplayer.desktop;
 video/x-ms-wmv=mplayer.desktop;
 
 # Images
-image/x-png=sxiv.desktop;
-image/x-xbitmap=sxiv.desktop;
-image/x-xpixmap=sxiv.desktop;
-image/x-pcx=sxiv.desktop;
-image/jpeg=sxiv.desktop;
+image/x-png=qimgv.desktop;
+image/x-xbitmap=qimgv.desktop;
+image/x-xpixmap=qimgv.desktop;
+image/x-pcx=qimgv.desktop;
+image/jpeg=qimgv.desktop;
+
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
 
 x-scheme-handler/thunderlink=thunderbird-tl.desktop

@@ -1,0 +1,16 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"post"
+    },
+    {
+      "returns":"int",
+      "name":"wait"
+    }
+  ],
+  "name":"Semaphore",
+  "inherits":"Reference"
+}

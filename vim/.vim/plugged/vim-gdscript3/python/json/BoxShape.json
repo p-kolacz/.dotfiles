@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"extents",
+      "type":"Vector3"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"BoxShape",
+  "inherits":"Shape"
+}

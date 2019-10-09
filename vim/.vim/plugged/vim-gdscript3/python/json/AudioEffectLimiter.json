@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"ceiling_db",
+      "type":"float"
+    },
+    {
+      "name":"soft_clip_db",
+      "type":"float"
+    },
+    {
+      "name":"soft_clip_ratio",
+      "type":"float"
+    },
+    {
+      "name":"threshold_db",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectLimiter",
+  "inherits":"AudioEffect"
+}

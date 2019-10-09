@@ -1,0 +1,23 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"PoolVector3Array",
+      "name":"get_faces",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"void",
+      "name":"set_faces",
+      "args":[
+        {
+          "name":"faces",
+          "type":"PoolVector3Array"
+        }
+      ]
+    }
+  ],
+  "name":"ConcavePolygonShape",
+  "inherits":"Shape"
+}

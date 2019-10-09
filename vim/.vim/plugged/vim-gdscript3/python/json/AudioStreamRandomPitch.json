@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"audio_stream",
+      "type":"AudioStream"
+    },
+    {
+      "name":"random_pitch",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioStreamRandomPitch",
+  "inherits":"AudioStream"
+}

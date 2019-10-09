@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"font_path",
+      "type":"String"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"DynamicFontData",
+  "inherits":"Resource"
+}

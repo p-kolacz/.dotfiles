@@ -1,0 +1,18 @@
+{
+  "members":[
+    {
+      "name":"aabb",
+      "type":"AABB"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"bool",
+      "name":"is_on_screen",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"VisibilityNotifier",
+  "inherits":"Spatial"
+}

@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"stretch",
+      "type":"bool"
+    },
+    {
+      "name":"stretch_shrink",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ViewportContainer",
+  "inherits":"Container"
+}

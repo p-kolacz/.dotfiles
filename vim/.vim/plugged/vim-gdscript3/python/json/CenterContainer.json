@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"use_top_left",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CenterContainer",
+  "inherits":"Container"
+}

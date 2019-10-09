@@ -1,0 +1,30 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Resource",
+      "name":"get_resource"
+    },
+    {
+      "returns":"int",
+      "name":"get_stage",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"int",
+      "name":"get_stage_count",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"int",
+      "name":"poll"
+    },
+    {
+      "returns":"int",
+      "name":"wait"
+    }
+  ],
+  "name":"ResourceInteractiveLoader",
+  "inherits":"Reference"
+}

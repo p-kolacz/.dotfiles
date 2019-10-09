@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"world_scale",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ARVROrigin",
+  "inherits":"Spatial"
+}

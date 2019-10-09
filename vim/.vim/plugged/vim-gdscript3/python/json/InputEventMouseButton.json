@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"button_index",
+      "type":"int"
+    },
+    {
+      "name":"doubleclick",
+      "type":"bool"
+    },
+    {
+      "name":"factor",
+      "type":"float"
+    },
+    {
+      "name":"pressed",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventMouseButton",
+  "inherits":"InputEventMouse"
+}

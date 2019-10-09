@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"multimesh",
+      "type":"MultiMesh"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"MultiMeshInstance",
+  "inherits":"GeometryInstance"
+}

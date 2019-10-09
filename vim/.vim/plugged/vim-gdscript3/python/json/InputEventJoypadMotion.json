@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"axis",
+      "type":"int"
+    },
+    {
+      "name":"axis_value",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventJoypadMotion",
+  "inherits":"InputEvent"
+}

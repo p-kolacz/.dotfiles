@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"time_left",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"SceneTreeTimer",
+  "inherits":"Reference"
+}

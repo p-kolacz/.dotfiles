@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"canvas",
+      "type":"RID"
+    },
+    {
+      "name":"direct_space_state",
+      "type":"Physics2DDirectSpaceState"
+    },
+    {
+      "name":"space",
+      "type":"RID"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"World2D",
+  "inherits":"Resource"
+}

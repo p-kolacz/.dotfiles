@@ -1,0 +1,18 @@
+{
+  "members":[
+    {
+      "name":"material",
+      "type":"Material"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Array",
+      "name":"get_mesh_arrays",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"PrimitiveMesh",
+  "inherits":"Mesh"
+}

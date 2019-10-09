@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"extents",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"RectangleShape2D",
+  "inherits":"Shape2D"
+}

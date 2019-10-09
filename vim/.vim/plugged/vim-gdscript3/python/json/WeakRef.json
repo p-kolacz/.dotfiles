@@ -1,0 +1,13 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Variant",
+      "name":"get_ref",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"WeakRef",
+  "inherits":"Reference"
+}

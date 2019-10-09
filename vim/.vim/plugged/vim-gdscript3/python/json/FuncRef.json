@@ -1,0 +1,33 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Variant",
+      "name":"call_func",
+      "qualifiers":"vararg"
+    },
+    {
+      "returns":"void",
+      "name":"set_function",
+      "args":[
+        {
+          "name":"name",
+          "type":"String"
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"set_instance",
+      "args":[
+        {
+          "name":"instance",
+          "type":"Object"
+        }
+      ]
+    }
+  ],
+  "name":"FuncRef",
+  "inherits":"Reference"
+}

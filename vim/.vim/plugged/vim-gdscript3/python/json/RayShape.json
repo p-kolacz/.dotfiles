@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"length",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"RayShape",
+  "inherits":"Shape"
+}

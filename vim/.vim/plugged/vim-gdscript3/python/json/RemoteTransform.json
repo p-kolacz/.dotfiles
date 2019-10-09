@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"remote_path",
+      "type":"NodePath"
+    },
+    {
+      "name":"update_position",
+      "type":"bool"
+    },
+    {
+      "name":"update_rotation",
+      "type":"bool"
+    },
+    {
+      "name":"update_scale",
+      "type":"bool"
+    },
+    {
+      "name":"use_global_coordinates",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"RemoteTransform",
+  "inherits":"Spatial"
+}

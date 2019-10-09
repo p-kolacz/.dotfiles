@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"a",
+      "type":"Vector2"
+    },
+    {
+      "name":"b",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"SegmentShape2D",
+  "inherits":"Shape2D"
+}

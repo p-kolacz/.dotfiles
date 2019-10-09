@@ -1,0 +1,19 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"post_import",
+      "qualifiers":"virtual",
+      "args":[
+        {
+          "name":"scene",
+          "type":"Object"
+        }
+      ]
+    }
+  ],
+  "name":"EditorScenePostImport",
+  "inherits":"Reference"
+}

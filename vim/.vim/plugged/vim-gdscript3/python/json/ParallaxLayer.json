@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"motion_mirroring",
+      "type":"Vector2"
+    },
+    {
+      "name":"motion_offset",
+      "type":"Vector2"
+    },
+    {
+      "name":"motion_scale",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ParallaxLayer",
+  "inherits":"Node2D"
+}

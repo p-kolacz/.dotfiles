@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"editable",
+      "type":"bool"
+    },
+    {
+      "name":"focus_mode",
+      "type":"Control.FocusMode"
+    },
+    {
+      "name":"tick_count",
+      "type":"int"
+    },
+    {
+      "name":"ticks_on_borders",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Slider",
+  "inherits":"Range"
+}

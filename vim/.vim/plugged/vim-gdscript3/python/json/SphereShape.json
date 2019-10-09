@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"radius",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"SphereShape",
+  "inherits":"Shape"
+}

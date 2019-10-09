@@ -1,0 +1,7 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[],
+  "name":"Position3D",
+  "inherits":"Spatial"
+}

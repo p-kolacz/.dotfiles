@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"softness",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"PinJoint2D",
+  "inherits":"Joint2D"
+}

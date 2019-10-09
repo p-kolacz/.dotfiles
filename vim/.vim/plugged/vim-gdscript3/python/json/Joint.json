@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"collision/exclude_nodes",
+      "type":"bool"
+    },
+    {
+      "name":"nodes/node_a",
+      "type":"NodePath"
+    },
+    {
+      "name":"nodes/node_b",
+      "type":"NodePath"
+    },
+    {
+      "name":"solver/priority",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Joint",
+  "inherits":"Spatial"
+}

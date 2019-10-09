@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"__data__",
+      "type":"PoolByteArray"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"pack",
+      "args":[
+        {
+          "name":"value",
+          "type":"Variant"
+        }
+      ]
+    },
+    {
+      "returns":"int",
+      "name":"size",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"PackedDataContainer",
+  "inherits":"Resource"
+}

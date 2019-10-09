@@ -1,0 +1,25 @@
+{
+  "members":[
+    {
+      "name":"editable",
+      "type":"bool"
+    },
+    {
+      "name":"prefix",
+      "type":"String"
+    },
+    {
+      "name":"suffix",
+      "type":"String"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"LineEdit",
+      "name":"get_line_edit"
+    }
+  ],
+  "name":"SpinBox",
+  "inherits":"Range"
+}

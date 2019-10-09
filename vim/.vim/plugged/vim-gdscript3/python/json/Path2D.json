@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"curve",
+      "type":"Curve2D"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Path2D",
+  "inherits":"Node2D"
+}

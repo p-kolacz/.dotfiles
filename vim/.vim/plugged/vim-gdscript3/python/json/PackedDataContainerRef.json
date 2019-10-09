@@ -1,0 +1,13 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"int",
+      "name":"size",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"PackedDataContainerRef",
+  "inherits":"Reference"
+}

@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"size",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"QuadMesh",
+  "inherits":"PrimitiveMesh"
+}

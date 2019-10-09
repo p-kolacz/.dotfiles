@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"load_path",
+      "type":"String"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"StreamTexture",
+  "inherits":"Texture"
+}

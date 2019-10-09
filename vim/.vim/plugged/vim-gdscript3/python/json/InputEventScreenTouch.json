@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"index",
+      "type":"int"
+    },
+    {
+      "name":"position",
+      "type":"Vector2"
+    },
+    {
+      "name":"pressed",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventScreenTouch",
+  "inherits":"InputEvent"
+}

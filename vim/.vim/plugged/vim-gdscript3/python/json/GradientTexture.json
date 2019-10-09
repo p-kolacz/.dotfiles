@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"gradient",
+      "type":"Gradient"
+    },
+    {
+      "name":"width",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"GradientTexture",
+  "inherits":"Texture"
+}

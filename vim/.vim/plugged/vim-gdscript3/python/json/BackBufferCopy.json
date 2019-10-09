@@ -1,0 +1,32 @@
+{
+  "members":[
+    {
+      "name":"copy_mode",
+      "type":"BackBufferCopy.CopyMode"
+    },
+    {
+      "name":"rect",
+      "type":"Rect2"
+    }
+  ],
+  "constants":[
+    {
+      "name":"COPY_MODE_DISABLED",
+      "value":"0",
+      "type":"CopyMode"
+    },
+    {
+      "name":"COPY_MODE_RECT",
+      "value":"1",
+      "type":"CopyMode"
+    },
+    {
+      "name":"COPY_MODE_VIEWPORT",
+      "value":"2",
+      "type":"CopyMode"
+    }
+  ],
+  "methods":[],
+  "name":"BackBufferCopy",
+  "inherits":"Node2D"
+}

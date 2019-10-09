@@ -1,0 +1,24 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Resource",
+      "name":"_convert",
+      "qualifiers":"virtual",
+      "args":[
+        {
+          "name":"resource",
+          "type":"Resource"
+        }
+      ]
+    },
+    {
+      "returns":"String",
+      "name":"_converts_to",
+      "qualifiers":"virtual"
+    }
+  ],
+  "name":"EditorResourceConversionPlugin",
+  "inherits":"Reference"
+}

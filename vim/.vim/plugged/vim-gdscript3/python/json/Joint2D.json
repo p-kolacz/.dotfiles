@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"bias",
+      "type":"float"
+    },
+    {
+      "name":"disable_collision",
+      "type":"bool"
+    },
+    {
+      "name":"node_a",
+      "type":"NodePath"
+    },
+    {
+      "name":"node_b",
+      "type":"NodePath"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"Joint2D",
+  "inherits":"Node2D"
+}

@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"percent_visible",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"ProgressBar",
+  "inherits":"Range"
+}

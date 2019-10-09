@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"pan_pullout",
+      "type":"float"
+    },
+    {
+      "name":"surround",
+      "type":"float"
+    },
+    {
+      "name":"time_pullout_ms",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectStereoEnhance",
+  "inherits":"AudioEffect"
+}

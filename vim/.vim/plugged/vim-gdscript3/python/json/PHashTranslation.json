@@ -1,0 +1,18 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"void",
+      "name":"generate",
+      "args":[
+        {
+          "name":"from",
+          "type":"Translation"
+        }
+      ]
+    }
+  ],
+  "name":"PHashTranslation",
+  "inherits":"Translation"
+}

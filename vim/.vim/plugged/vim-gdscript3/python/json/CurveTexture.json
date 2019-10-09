@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"curve",
+      "type":"Curve"
+    },
+    {
+      "name":"width",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CurveTexture",
+  "inherits":"Texture"
+}

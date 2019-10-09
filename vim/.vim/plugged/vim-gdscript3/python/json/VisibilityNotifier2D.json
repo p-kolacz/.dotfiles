@@ -1,0 +1,18 @@
+{
+  "members":[
+    {
+      "name":"rect",
+      "type":"Rect2"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"bool",
+      "name":"is_on_screen",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"VisibilityNotifier2D",
+  "inherits":"Node2D"
+}

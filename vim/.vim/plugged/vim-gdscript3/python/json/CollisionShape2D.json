@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"disabled",
+      "type":"bool"
+    },
+    {
+      "name":"one_way_collision",
+      "type":"bool"
+    },
+    {
+      "name":"shape",
+      "type":"Shape2D"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CollisionShape2D",
+  "inherits":"Node2D"
+}

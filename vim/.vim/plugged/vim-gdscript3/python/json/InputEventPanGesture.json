@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"delta",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventPanGesture",
+  "inherits":"InputEventGesture"
+}

@@ -1,0 +1,36 @@
+{
+  "members":[
+    {
+      "name":"params/bias",
+      "type":"float"
+    },
+    {
+      "name":"params/damping",
+      "type":"float"
+    },
+    {
+      "name":"params/impulse_clamp",
+      "type":"float"
+    }
+  ],
+  "constants":[
+    {
+      "name":"PARAM_BIAS",
+      "value":"0",
+      "type":"Param"
+    },
+    {
+      "name":"PARAM_DAMPING",
+      "value":"1",
+      "type":"Param"
+    },
+    {
+      "name":"PARAM_IMPULSE_CLAMP",
+      "value":"2",
+      "type":"Param"
+    }
+  ],
+  "methods":[],
+  "name":"PinJoint",
+  "inherits":"Joint"
+}

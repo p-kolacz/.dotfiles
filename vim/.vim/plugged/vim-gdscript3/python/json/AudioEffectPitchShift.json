@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"pitch_scale",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"AudioEffectPitchShift",
+  "inherits":"AudioEffect"
+}

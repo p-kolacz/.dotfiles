@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"relative",
+      "type":"Vector2"
+    },
+    {
+      "name":"speed",
+      "type":"Vector2"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventMouseMotion",
+  "inherits":"InputEventMouse"
+}

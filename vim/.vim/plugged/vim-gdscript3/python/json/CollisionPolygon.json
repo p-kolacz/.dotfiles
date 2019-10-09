@@ -1,0 +1,20 @@
+{
+  "members":[
+    {
+      "name":"depth",
+      "type":"float"
+    },
+    {
+      "name":"disabled",
+      "type":"bool"
+    },
+    {
+      "name":"polygon",
+      "type":"PoolVector2Array"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"CollisionPolygon",
+  "inherits":"Spatial"
+}

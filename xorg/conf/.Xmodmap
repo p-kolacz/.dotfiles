@@ -1,0 +1,22 @@
+! -*- comment-start: "!";  -*-
+
+! This file is auto loaded by lightdm
+! Current keymap: xmodmap -pke
+! Test: xmodmap
+! Reload: xmodmap ~/.Xmodmap
+
+! Capslock
+clear lock
+keycode 66 = Escape
+
+! GS63 Zdupy key
+keycode 94 = Hyper_L
+
+! Apps (Menu) key
+! keycode 135 = Super_R
+
+clear mod3
+add mod3 = Hyper_L
+
+clear mod4
+add mod4 = Super_L Super_R

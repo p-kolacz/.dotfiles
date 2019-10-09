@@ -1,0 +1,23 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"Variant",
+      "name":"eval",
+      "args":[
+        {
+          "name":"code",
+          "type":"String"
+        },
+        {
+          "name":"use_global_execution_context",
+          "type":"bool",
+          "default":"false"
+        }
+      ]
+    }
+  ],
+  "name":"JavaScript",
+  "inherits":"Object"
+}

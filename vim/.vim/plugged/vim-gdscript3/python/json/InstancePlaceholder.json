@@ -1,0 +1,35 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"String",
+      "name":"get_instance_path",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"Dictionary",
+      "name":"get_stored_values",
+      "args":[
+        {
+          "name":"with_order",
+          "type":"bool",
+          "default":"false"
+        }
+      ]
+    },
+    {
+      "returns":"void",
+      "name":"replace_by_instance",
+      "args":[
+        {
+          "name":"custom_scene",
+          "type":"PackedScene",
+          "default":"null"
+        }
+      ]
+    }
+  ],
+  "name":"InstancePlaceholder",
+  "inherits":"Node"
+}

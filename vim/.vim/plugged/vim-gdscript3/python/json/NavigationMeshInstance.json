@@ -1,0 +1,16 @@
+{
+  "members":[
+    {
+      "name":"enabled",
+      "type":"bool"
+    },
+    {
+      "name":"navmesh",
+      "type":"NavigationMesh"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"NavigationMeshInstance",
+  "inherits":"Spatial"
+}

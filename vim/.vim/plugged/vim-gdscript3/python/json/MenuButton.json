@@ -1,0 +1,23 @@
+{
+  "members":[],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"PopupMenu",
+      "name":"get_popup",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"void",
+      "name":"set_disable_shortcuts",
+      "args":[
+        {
+          "name":"disabled",
+          "type":"bool"
+        }
+      ]
+    }
+  ],
+  "name":"MenuButton",
+  "inherits":"Button"
+}

@@ -1,0 +1,28 @@
+{
+  "members":[
+    {
+      "name":"direct_space_state",
+      "type":"PhysicsDirectSpaceState"
+    },
+    {
+      "name":"environment",
+      "type":"Environment"
+    },
+    {
+      "name":"fallback_environment",
+      "type":"Environment"
+    },
+    {
+      "name":"scenario",
+      "type":"RID"
+    },
+    {
+      "name":"space",
+      "type":"RID"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"World",
+  "inherits":"Resource"
+}

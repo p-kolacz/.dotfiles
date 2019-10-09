@@ -1,0 +1,24 @@
+{
+  "members":[
+    {
+      "name":"color",
+      "type":"Color"
+    },
+    {
+      "name":"grow",
+      "type":"float"
+    },
+    {
+      "name":"thickness",
+      "type":"int"
+    },
+    {
+      "name":"vertical",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"StyleBoxLine",
+  "inherits":"StyleBox"
+}

@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"factor",
+      "type":"float"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"InputEventMagnifyGesture",
+  "inherits":"InputEventGesture"
+}

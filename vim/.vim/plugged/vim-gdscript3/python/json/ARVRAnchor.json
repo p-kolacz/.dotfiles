@@ -1,0 +1,33 @@
+{
+  "members":[
+    {
+      "name":"anchor_id",
+      "type":"int"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"String",
+      "name":"get_anchor_name",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"bool",
+      "name":"get_is_active",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"Plane",
+      "name":"get_plane",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"Vector3",
+      "name":"get_size",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"ARVRAnchor",
+  "inherits":"Spatial"
+}

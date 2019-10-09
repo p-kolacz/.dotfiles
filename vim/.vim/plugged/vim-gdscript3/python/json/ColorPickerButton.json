@@ -1,0 +1,27 @@
+{
+  "members":[
+    {
+      "name":"color",
+      "type":"Color"
+    },
+    {
+      "name":"edit_alpha",
+      "type":"bool"
+    }
+  ],
+  "constants":[],
+  "methods":[
+    {
+      "returns":"ColorPicker",
+      "name":"get_picker",
+      "qualifiers":"const"
+    },
+    {
+      "returns":"PopupPanel",
+      "name":"get_popup",
+      "qualifiers":"const"
+    }
+  ],
+  "name":"ColorPickerButton",
+  "inherits":"Button"
+}

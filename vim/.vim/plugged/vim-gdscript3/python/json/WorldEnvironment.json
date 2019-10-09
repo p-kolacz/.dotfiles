@@ -1,0 +1,12 @@
+{
+  "members":[
+    {
+      "name":"environment",
+      "type":"Environment"
+    }
+  ],
+  "constants":[],
+  "methods":[],
+  "name":"WorldEnvironment",
+  "inherits":"Node"
+}

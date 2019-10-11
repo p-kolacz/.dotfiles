@@ -1,7 +1,0 @@
-{
-  "members":[],
-  "constants":[],
-  "methods":[],
-  "name":"AudioEffectLowPassFilter",
-  "inherits":"AudioEffectFilter"
-}

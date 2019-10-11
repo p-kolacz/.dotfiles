@@ -1,7 +1,0 @@
-{
-  "members":[],
-  "constants":[],
-  "methods":[],
-  "name":"Physics2DServerSW",
-  "inherits":"Physics2DServer"
-}

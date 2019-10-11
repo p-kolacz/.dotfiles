@@ -1,0 +1,20 @@
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_short_path = yes
+set sidebar_folder_indent = yes
+set sidebar_indent_string = ".."
+set sidebar_sort_method = name
+set sidebar_format = "%B%* %S %n"
+
+# Bind
+bind index,pager B sidebar-toggle-visible
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+# Colors
+source colors/grvbox
+
+# Accounts
+source accounts/main

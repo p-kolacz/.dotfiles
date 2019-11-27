@@ -1,8 +1,8 @@
 " Main setup
 set nocompatible
 set encoding=utf8
-set langmenu=en_US
-let $LANG = 'en_US'
+" set langmenu=en_US
+let $LANG='en_US'
 set belloff=all
 set backspace=indent,eol,start
 set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
@@ -11,45 +11,68 @@ set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
 set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 " Apperance
-" set lines=40 columns=140
 set nowrap
-syntax enable 
 set ruler
-set relativenumber 
+set number relativenumber
+set wildmenu
+set showmatch " Show matching parens
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 " Behavior
 set autoread
-set clipboard=unnamed
+" set clipboard=unnamedplus
 
 " Searching
 set ignorecase
 set smartcase
-set incsearch 
+set incsearch
 set hlsearch
 
-" Show matching parens
-set showmatch 
 
 " Bindings
+nnoremap <F12> :e $MYVIMRC<CR>
+nnoremap <C-F12> :source $MYVIMRC<CR>
+noremap <space> :
+nmap <CR> o<Esc>
+nmap <S-CR> O<Esc>
+nmap  O<Esc>
+
+" map <C-V> "+gP
 "let mapleader = " "
 "nmap <leader>w :w<CR>
 "nmap <leader>q :q<CR>
-noremap <space> :
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-map <C-V> "+gP
+
+autocmd BufWritePost vimrc source $MYVIMRC
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-surround'
-Plug 'calviken/vim-gdscript3'
-Plug 'srcery-colors/srcery-vim'
-" Plug 'scrooloose/nerdtree'
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-commentary'
+	Plug 'wincent/terminus'
+	Plug 'kien/ctrlp.vim'
+	Plug 'scrooloose/nerdtree'
+	Plug 'clktmr/vim-gdscript3'
+	Plug 'ervandew/supertab'
+	Plug 'Shougo/echodoc.vim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'flrnprz/plastic.vim'
+	Plug 'mhartington/oceanic-next'
+	Plug 'rking/ag.vim'
+	Plug 'christoomey/vim-system-copy'
 call plug#end()
 
-" map <F8> :NERDTreeToggle<CR>
-
-
+" set background=dark
+syntax on
+set termguicolors
+set t_ut=""		"fix for scrolling background
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+let g:airline_powerline_fonts = 1
+let g:airline_theme='oceanicnext'
+map <F8> :NERDTreeToggle<CR>
+let g:ag_working_path_mode="r"
 
 " GUI
 set guioptions-=m  "remove menu bar
@@ -57,4 +80,4 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guifont=Mononoki:h14:cANSI
-" colorscheme srcery
+

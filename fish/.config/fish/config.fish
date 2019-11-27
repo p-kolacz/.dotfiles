@@ -46,8 +46,9 @@ set -x LESS_TERMCAP_so (printf "\033[01;44;33m")
 set -x LESS_TERMCAP_ue (printf "\033[0m")  
 set -x LESS_TERMCAP_us (printf "\033[01;32m") 
 
+# set -gx TERMINAL "kitty"
 # remove after reboot
-set -gx QT_QPA_PLATFORMTHEME "qt5ct"
+# set -gx QT_QPA_PLATFORMTHEME "qt5ct"
 
 
 fish_ssh_agent
@@ -77,6 +78,9 @@ if status is-interactive
 
 	neofetch
 	kitty + complete setup fish | source
+
+	# Aliases
+	alias ls="lsd"
 
 	#  /\ |_ |_  _ _ 
 	# /--\|_)|_)| _) 

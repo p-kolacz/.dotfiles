@@ -20,6 +20,7 @@ video/x-ogm+ogg=mplayer.desktop;
 video/mp4=mplayer.desktop;
 video/x-matroska=mplayer.desktop;
 video/x-ms-wmv=mplayer.desktop;
+video/quicktime=mplayer.desktop;
 
 # Images
 image/x-png=qimgv.desktop;
@@ -27,6 +28,12 @@ image/x-xbitmap=qimgv.desktop;
 image/x-xpixmap=qimgv.desktop;
 image/x-pcx=qimgv.desktop;
 image/jpeg=qimgv.desktop;
+image/png=qimgv.desktop;
+
+text/plain=code-oss.desktop
+
+# text/x-shellscript=kitty.desktop
+# application/x-shellscript=kitty.desktop
 
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
 
@@ -39,8 +46,6 @@ x-scheme-handler/nntp=userapp-Thunderbird-JQOAYZ.desktop
 x-scheme-handler/feed=userapp-Thunderbird-HIZAYZ.desktop
 application/rss+xml=userapp-Thunderbird-HIZAYZ.desktop
 application/x-extension-rss=userapp-Thunderbird-HIZAYZ.desktop
-
-application/vnd.oasis.opendocument.spreadsheet=gnumeric.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-2G4SYZ.desktop;

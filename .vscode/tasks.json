@@ -11,7 +11,7 @@
         {
             "label": "xbindkeys",
             "type": "shell",
-            "command": "xbindkeys --reload-rc"
+            "command": "killall xbindkeys; xbindkeys -f ~/.dotfiles/xorg/conf/.xbindkeysrc"
         },
     ]
 }

@@ -60,9 +60,11 @@ if not status is-login
 	# |  | (_)||||_)|_ 
 	#            |     
 
-	function fish_prompt
-		powerline-shell --shell bare $status
-	end
+	# function fish_prompt
+	# 	powerline-shell --shell bare $status
+	# end
+
+	# starship init fish | source
 end
 
 if status is-interactive
@@ -70,17 +72,28 @@ if status is-interactive
 	# Greeting
 
 	function fish_greeting
-		fortune -as -n 100
+		# fortune -as -n 100
+		fortune -a archlinux computers chucknorris
 	end
                         
 	#  /\    |_ _  _|_ _  _|_ 
 	# /--\|_||_(_)_)|_(_|| |_
 
-	neofetch
-	kitty + complete setup fish | source
+	# neofetch
+	pfetch
+	# fish_vi_key_bindings
+	fish_default_key_bindings
+
+	cd ~
 
 	# Aliases
-	alias ls="lsd"
+	alias ls="env LC_COLLATE=C ls --color=auto --group-directories-first"
+	alias la="ls -lA"
+	alias vim="vim --servername VIM"
+
+	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
+	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
+	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
 
 	#  /\ |_ |_  _ _ 
 	# /--\|_)|_)| _) 
@@ -108,4 +121,5 @@ if status is-interactive
 	# processes
 	abbr -a kk killall
 	abbr -a psa "ps -e | grep -i"
+
 end

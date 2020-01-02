@@ -12,9 +12,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " Searching
-set incsearch
-set ignorecase
-set smartcase
+set incsearch ignorecase smartcase
 
 " Visual
 " set scrolloff=4
@@ -36,10 +34,11 @@ nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 nnoremap <f9> :bmarks<cr>
-nnoremap <f11> :cmp<cr>
+nnoremap <f11> :cmpfiles<cr>
+nnoremap <f12> :cmpdirs<cr>
 
-nnoremap s :shell<cr>
-nnoremap S :sort<cr>
+nnoremap S :shell<cr>
+nnoremap s :sort<cr>
 nnoremap w :view<cr>
 nnoremap ,w :set wrap!<cr>
 nnoremap o :sync<cr>
@@ -50,9 +49,9 @@ vnoremap w :view<cr>
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -sel clip %i<cr>
 " yank current file path into the clipboard
-nnoremap yf :!echo -n %c:p | xclip -sel clip %i<cr>
+nnoremap yf :!echo -n %f:p | xclip -sel clip %i<cr>
 " yank current filename without path into the clipboard
-nnoremap yn :!echo -n %c | xclip -sel clip %i<cr>
+nnoremap yn :!echo -n %f | xclip -sel clip %i<cr>
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -sel clip %i<cr>
 
@@ -102,8 +101,10 @@ filetype *.ftp
        \ {Mount with curlftpfs}
        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
 
+" Code
+fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.gd,Gemfile,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml pygmentize -O style=monokai -f console256 -g
+
 " *
-fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 filetype * xdg-open > /dev/null 2>&1
 
 " Commands --------------------------------------------------------------------- 
@@ -119,3 +120,7 @@ command! cmp : if expand('%%c') == expand('%%f')
 	\ |     echo expand('Comparing files: %%"f ...')
 	\ |     cmpinternal %f
 	\ | endif
+
+command! cmpfiles meld %f %F &
+command! cmpdirs meld %d %D &
+

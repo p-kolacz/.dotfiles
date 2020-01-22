@@ -11,7 +11,7 @@ else  # nVidia GPU
 	internal=eDP-1-1
 	central=DP-1-3
 	right=HDMI-1-2
-	xrandr --setprovideroutputsource modesetting NVIDIA-0
+	# xrandr --setprovideroutputsource modesetting NVIDIA-0
 	echo "nVidia GPU detected"
 fi
 
@@ -25,9 +25,5 @@ else    # docked mode
 		--output $right    --auto --pos 0x150 \
 		--output $central  --auto --pos 1680x0 --primary \
 		--output $internal --auto --pos 3840x272
-		# --output $internal --auto --pos 0x272 \
-		# --output $central  --auto --pos 1920x0 --primary \
-		# --output $right    --auto --pos 3840x150
-	light -S 50
 	echo "internal central right"
 fi

@@ -33,8 +33,8 @@
 # "xdotool keyup j && xdotool key --clearmodifiers Down"
     # Mod4 + j
 
-"rofi -show drun"
-	Mod4 + space
+# "rofi -show drun"
+# 	Mod4 + space
 
 "kitty"
     Mod4 + Return
@@ -42,8 +42,8 @@
 "vnote"
 	Mod4 + v
 
-"keepassxc"
-	Mod4 + k
+# "keepassxc"
+# 	Mod4 + k
 
 "xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'"
 	b:6

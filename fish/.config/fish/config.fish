@@ -1,82 +1,45 @@
-#  _____ _     _     
-# |  ___(_)___| |__  
-# | |_  | / __| '_ \ 
+#  _____ _     _
+# |  ___(_)___| |__
+# | |_  | / __| '_ \
 # |  _| | \__ \ | | |
-# |_|   |_|___/_| |_|                   
-#       _        _     _    __ _ _        
+# |_|   |_|___/_| |_|
+#       _        _     _    __ _ _
 #  _ __| |__  __| |___| |_ / _(_) |___ ___
 # | '_ \ / /_/ _` / _ \  _|  _| | / -_|_-/
 # | .__/_\_(_)__,_\___/\__|_| |_|_\___/__/
-# |_|                                     
-
-# Path
-set -gx PATH "$HOME/.local/bin" $PATH
-set -gx PATH "$HOME/.local/lib/node_modules/bin" $PATH
-
-# Misc
-set -gx EDITOR "$HOME/.emacs.d/bin/editor.sh"
-set -gx npm_config_prefix "$HOME/.local/lib/node_modules"
-
-# XDG
-set -gx XDG_CONFIG_HOME "$HOME/.config"
-set -gx XDG_CACHE_HOME "$HOME/.cache"
-set -gx XDG_DATA_HOME "$HOME/.local/share"
-
-# Stop littering home dir
-set -gx ANDROID_SDK_HOME "$XDG_CONFIG_HOME/android"
-# set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-# set -gx ICEAUTHORITY "$XDG_CACHE_HOME/ICEauthority"
-set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
-set -gx LESSHISTFILE "-"
-set -gx MPLAYER_HOME "$XDG_CONFIG_HOME/mplayer"
-set -gx MYSQL_HISTFILE "$XDG_DATA_HOME/mysql_history"
-set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/config"
-set -gx NPM_CONFIG_CACHE "$XDG_CACHE_HOME/npm"
-set -gx NPM_CONFIG_TMP "$XDG_RUNTIME_DIR/npm"
-set -gx NUGET_PACKAGES "$XDG_CACHE_HOME/NuGetPackages"
-set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
-# set -gx XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
-
-set -x LESS_TERMCAP_mb (printf "\033[01;31m")  
-set -x LESS_TERMCAP_md (printf "\033[01;31m")  
-set -x LESS_TERMCAP_me (printf "\033[0m")  
-set -x LESS_TERMCAP_se (printf "\033[0m")  
-set -x LESS_TERMCAP_so (printf "\033[01;44;33m")  
-set -x LESS_TERMCAP_ue (printf "\033[0m")  
-set -x LESS_TERMCAP_us (printf "\033[01;32m") 
-
-# set -gx TERMINAL "kitty"
-# remove after reboot
-# set -gx QT_QPA_PLATFORMTHEME "qt5ct"
+# |_|
 
 
 fish_ssh_agent
 
-if not status is-login
+# Path
+set -gx PATH "$HOME/.dotfiles/bin" "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
 
-	#  __              
-	# |__)_ _  _  _ |_ 
-	# |  | (_)||||_)|_ 
-	#            |     
+alias nvidia-settings "nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
-	# function fish_prompt
-	# 	powerline-shell --shell bare $status
-	# end
-
-	# starship init fish | source
-end
+# if not status is-login
+# end
 
 if status is-interactive
 
-	# Greeting
+	# Misc
+	# set -gx EDITOR "$HOME/.emacs.d/bin/editor.sh"
 
+	set -x LESS_TERMCAP_mb (printf "\033[01;31m")
+	set -x LESS_TERMCAP_md (printf "\033[01;31m")
+	set -x LESS_TERMCAP_me (printf "\033[0m")
+	set -x LESS_TERMCAP_se (printf "\033[0m")
+	set -x LESS_TERMCAP_so (printf "\033[01;44;33m")
+	set -x LESS_TERMCAP_ue (printf "\033[0m")
+	set -x LESS_TERMCAP_us (printf "\033[01;32m")
+
+	# Greeting
 	function fish_greeting
 		# fortune -as -n 100
 		fortune -a archlinux computers chucknorris
 	end
-                        
-	#  /\    |_ _  _|_ _  _|_ 
+
+	#  /\    |_ _  _|_ _  _|_
 	# /--\|_||_(_)_)|_(_|| |_
 
 	# neofetch
@@ -94,32 +57,34 @@ if status is-interactive
 	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
 	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
 	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
+	alias etile "vim ~/.dotfiles/qtile/.config/qtile/config.py"
 
-	#  /\ |_ |_  _ _ 
-	# /--\|_)|_)| _) 
+	#  /\ |_ |_  _ _
+	# /--\|_)|_)| _)
 
 	# Packages
-	abbr -a p sudo pacman -S
-	abbr -a pf pacman -Ss
-	abbr -a prem sudo pacman -Rns
-	abbr -a pq pacman -Qs
-	abbr -a pi pacman -Qi
-	abbr -a po pacman -Rns (pacman -Qtdq)
-	abbr -a y yay
-	abbr -a yf yay -Ss
-	abbr -a yrem yay -Rns
-	abbr -a yq yay -Qs
+	abbr -a -g pacs sudo pacman -S
+	abbr -a -g prem sudo pacman -Rns
+	abbr -a -g pacq pacman -Qs
+	abbr -a -g paci pacman -Qi
+	abbr -a -g pacl pacman -Ql
+	abbr -a -g paco pacman -Qo
+	abbr -a -g premo pacman -Rns (pacman -Qtdq)
+	abbr -a -g y yay
+	abbr -a -g yf yay -Ss
+	abbr -a -g yrem yay -Rns
+	abbr -a -g yq yay -Qs
 
 	# systemctl
-	abbr -a sys sudo systemctl status
-	abbr -a syse sudo systemctl enable
-	abbr -a sysd sudo systemctl disable
-	abbr -a syst sudo systemctl start
-	abbr -a sysp sudo systemctl stop
-	abbr -a sysr sudo systemctl restart
-	
+	abbr -a -g sys sudo systemctl status
+	abbr -a -g syse sudo systemctl enable
+	abbr -a -g sysd sudo systemctl disable
+	abbr -a -g syst sudo systemctl start
+	abbr -a -g sysp sudo systemctl stop
+	abbr -a -g sysr sudo systemctl restart
+
 	# processes
-	abbr -a kk killall
-	abbr -a psa "ps -e | grep -i"
+	abbr -a -g kk killall
+	abbr -a -g psa "ps -e | grep -i"
 
 end

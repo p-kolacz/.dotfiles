@@ -55,6 +55,8 @@ nnoremap yn :!echo -n %f | xclip -sel clip %i<cr>
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -sel clip %i<cr>
 
+" qnoremap w :set wrap!<cr>
+
 " File types -------------------------------------------------------------------
 
 " Images
@@ -112,6 +114,7 @@ command! diff vim -d %f %F
 command! zip zip -r %D/%f.zip %f
 command! backup zip -r %D/%f_(date +%%F).zip %f
 command! unzip unzip %f -d %D
+command! tar tar cvf %D/%f_(date +%%F).tar %f
 command! cmpinternal compare-cmd %a %S
 command! cmp : if expand('%%c') == expand('%%f')
 	\ |     echo expand('Comparing %%"c and %%"C:t ...')

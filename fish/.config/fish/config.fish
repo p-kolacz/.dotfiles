@@ -52,15 +52,24 @@ if status is-interactive
 	# Aliases
 	alias ls="env LC_COLLATE=C ls --color=auto --group-directories-first"
 	alias la="ls -lA"
+
 	alias vim="vim --servername VIM"
 
 	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
 	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
 	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
-	alias etile "vim ~/.dotfiles/qtile/.config/qtile/config.py"
+	alias etile "vim ~/.config/qtile/config.py"
+	alias eauto "vim ~/.config/qtile/autostart.sh"
+	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)
+
+	function remove_all_abbr
+		for a in (abbr | awk '{print $5}');
+			abbr -e $a
+		end
+	end
 
 	# Packages
 	abbr -a -g pacs sudo pacman -S

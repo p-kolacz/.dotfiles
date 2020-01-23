@@ -1,3 +1,4 @@
+# http://docs.qtile.org/en/latest/index.html
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget
@@ -42,7 +43,7 @@ keys = [
     Key([mod, "shift"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     # Key([mod], "c", lazy.spawncmd()),
-    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key([mod, "control"], "f", lazy.window.toggle_floating()),
 
     Key([mod], "b", lazy.to_screen(1)),
     Key([mod], "equal", lazy.to_screen(0)),
@@ -72,7 +73,7 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(margin=16, border_width=1, border_focus="#aa0000"),
+    layout.MonadTall(margin=16, border_width=1, single_border_width=0, border_focus="#333333"),
     layout.Max(),
     # layout.Stack(num_stacks=2)
 ]

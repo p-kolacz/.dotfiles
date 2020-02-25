@@ -1,10 +1,13 @@
+" vim: filetype=vim :
 " Setup
 set syscalls
 set trash
+" set runexec
 set history=100
 " set nofollowlinks
 set vimhelp
 set wildmenu
+set wildstyle=popup
 if !has('win')
     set slowfs=curlftpfs
 endif
@@ -16,7 +19,7 @@ set incsearch ignorecase smartcase
 
 " Visual
 " set scrolloff=4
-set wrap!
+set wrap
 set sort=iname
 set timefmt="%d-%m-%Y %H:%M"
 set statusline="  Hint: %z%= %E / %a %17A %10u:%-7g %14d  "
@@ -45,6 +48,11 @@ nnoremap o :sync<cr>
 nnoremap b :history<cr>
 " vnoremap w :view<cr>gv
 vnoremap w :view<cr>
+nnoremap cc cw<c-u>
+" Toggle wrap setting on ,w key
+nnoremap ,w :set wrap!<cr>
+" Open console in current directory
+nnoremap ,t :!kitty &<cr>
 
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -sel clip %i<cr>

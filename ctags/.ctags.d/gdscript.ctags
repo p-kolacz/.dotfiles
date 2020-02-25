@@ -3,9 +3,9 @@
 
 --regex-gdscript=/^[ \t]*const[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/c,constant/i
 --regex-gdscript=/^[ \t]*export[ \t]*(\([ \t]*[a-zA-Z0-9_, \"\*\.]*\)|[ \t])+var[ \t]+([a-zA-Z0-9_]+)[ \t]*/\2/e,export/i
---regex-gdscript=/^[ \t]*onready[ \t]+var[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/o,onready-variable/i
+--regex-gdscript=/^[ \t]*onready[ \t]+var[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/o,onreadyvariable/i
 --regex-gdscript=/^[ \t]*signal[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/s,signal/i
 --regex-gdscript=/^[ \t]*func[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/f,function/i
---regex-gdscript=/^[ \t]*static\sfunc[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/S,static function/
+--regex-gdscript=/^[ \t]*static\sfunc[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/S,staticfunction/
 --regex-gdscript=/^[ \t]*var[ \t]+([a-zA-Z0-9_]+)[ \t]=[ \t]*preload*/\1/p,preload/i
---regex-gdscript=/^[ \t]*class_name[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/C,class name/
+--regex-gdscript=/^[ \t]*class_name[ \t]+([a-zA-Z0-9_]+)[ \t]*/\1/C,classname/

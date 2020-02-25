@@ -27,6 +27,9 @@ alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings
 export CALIBRE_USE_SYSTEM_THEME=1
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
+# xdg-open fix
+export DE=gnome
+
 # KB
 xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
 xbindkeys -f $HOME/.dotfiles/xorg/conf/.xbindkeysrc

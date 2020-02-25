@@ -1,2 +1,2 @@
 #!/bin/sh
-pacman -Qeq | fzf --preview 'pacman -Qi {1}'
+pacman -Qetq | fzf --preview 'pacman -Qi {1}'

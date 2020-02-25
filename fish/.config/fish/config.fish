@@ -61,6 +61,7 @@ if status is-interactive
 	alias etile "vim ~/.config/qtile/config.py"
 	alias eauto "vim ~/.config/qtile/autostart.sh"
 	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
+	alias eala "vim ~/.config/alacritty/alacritty.yml"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)
@@ -93,7 +94,7 @@ if status is-interactive
 	abbr -a -g sysr sudo systemctl restart
 
 	# processes
-	abbr -a -g kk killall
+	abbr -a -g ka killall
 	abbr -a -g psa "ps -e | grep -i"
 
 end

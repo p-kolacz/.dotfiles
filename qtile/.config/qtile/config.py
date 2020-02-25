@@ -10,7 +10,8 @@ import subprocess
 mod = "mod4"
 
 class Commands(object):
-    dmenu = "dmenu_run -i -b -h 32 -p '>>>' -fn 'Netron-14'"
+    # dmenu = "dmenu_run -i -b -h 32 -p '>>>' -fn 'Netron-14'"
+    dmenu = "dmenu_run -i -b -h 32 -p '>>>' -fn 'Hemi Head-14'"
 
 keys = [
     # Switch between windows in current stack pane
@@ -52,14 +53,15 @@ keys = [
 
 # groups = [Group(i) for i in "asdfuiop"]
 groups = [
-    Group("FLY"),
+    Group("FST"),
     Group("DEV"),
-    Group("GOD", layout="max"),
     Group("WWW", layout="max"),
+    Group("GOD", layout="max"),
     Group("IMG", layout="max"),
     Group("SND"),
     Group("ALT"),
     Group("OTH"),
+    Group("UTL"),
 ]
 
 for i in groups:
@@ -79,7 +81,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Netron',
+    font='Hemi Head Bold Italic',
     fontsize=14,
     padding=5,
     active="#dddddd",
@@ -103,6 +105,7 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.CurrentScreen(),
                 group_box(),
                 # widget.Spacer(length=32),
                 widget.Sep(padding=16),
@@ -112,13 +115,14 @@ screens = [
                 widget.Notify(),
                 widget.ThermalSensor(tag_sensor="Package id 0"),
                 widget.Systray(),
-                widget.Clock(format='%H:%M %a %d-%m-%Y'),
+                widget.Clock(format='%a, %d %b, %H:%M'),
             ], 32,
         ),
     ),
     Screen(
         bottom=bar.Bar(
             [
+                widget.CurrentScreen(),
                 group_box(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -128,6 +132,7 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.CurrentScreen(),
                 group_box(),
                 widget.Prompt(),
                 widget.WindowName(),

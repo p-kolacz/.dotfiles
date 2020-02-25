@@ -36,7 +36,7 @@
 # "rofi -show drun"
 # 	Mod4 + space
 
-"kitty"
+"alacritty"
     Mod4 + Return
 
 "vnote"

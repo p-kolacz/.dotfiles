@@ -1,9 +1,9 @@
 # -*- mode: ini; comment-start: "#"  -*-
 
 [Default Applications]
-inode/directory=doublecmd.desktop
-application/x-ace;application/x-alz=org.gnome.FileRoller.desktop
-application/x-gnome-saved-search=dde-file-manager.desktop
+# inode/directory=doublecmd.desktop
+# application/x-ace;application/x-alz=org.gnome.FileRoller.desktop
+# application/x-gnome-saved-search=dde-file-manager.desktop
 text/html=opera.desktop
 x-scheme-handler/http=opera.desktop
 x-scheme-handler/https=opera.desktop
@@ -23,14 +23,14 @@ video/x-ms-wmv=mplayer.desktop;
 video/quicktime=mplayer.desktop;
 
 # Images
-image/x-png=qimgv.desktop;
-image/x-xbitmap=qimgv.desktop;
-image/x-xpixmap=qimgv.desktop;
-image/x-pcx=qimgv.desktop;
-image/jpeg=qimgv.desktop;
-image/png=qimgv.desktop;
+image/x-png=xnviewmp.desktop;
+image/x-xbitmap=xnviewmp.desktop;
+image/x-xpixmap=xnviewmp.desktop;
+image/x-pcx=xnviewmp.desktop;
+image/jpeg=xnviewmp.desktop;
+image/png=xnviewmp.desktop;
 
-text/plain=code-oss.desktop
+text/plain=vim.desktop
 
 # text/x-shellscript=kitty.desktop
 # application/x-shellscript=kitty.desktop

@@ -10,6 +10,10 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: xterm-256color
 
+dpi:
+    x: 96.0
+    y: 96.0
+
 window:
   # Window dimensions (changes require restart)
   #
@@ -99,6 +103,9 @@ window:
 
 # Font configuration
 font:
+  # Point size
+  size: 12.0
+
   # Normal (roman) font face
   normal:
     # Font family
@@ -107,7 +114,9 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Envy Code R
+    # family: DejaVuSansMono Nerd Font
+    family: Victor Mono Medium
+    # family: Ubuntu Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -145,8 +154,6 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
-  # Point size
-  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -290,11 +297,11 @@ font:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.5
 
-#selection:
+selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true

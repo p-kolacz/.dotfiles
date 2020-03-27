@@ -11,7 +11,7 @@ else  # nVidia GPU
 	internal=eDP-1-1
 	central=DP-1-3
 	right=HDMI-1-2
-	# xrandr --setprovideroutputsource modesetting NVIDIA-0
+	xrandr --setprovideroutputsource modesetting NVIDIA-0
 	echo "nVidia GPU detected"
 fi
 

@@ -19,17 +19,15 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-# export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+# export XAUTHORITY="$XDG_DATA_HOME/xorg/Xauthority"
 export WINEPREFIX="$HOME"/.local/share/wine
-alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
 # Look
 export CALIBRE_USE_SYSTEM_THEME=1
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_STYLE_OVERRIDE="Adapta-Nokto"
+# export QT_QPA_PLATFORMTHEME="qt5ct"
+export WINIT_HIDPI_FACTOR=1.2
 
 # xdg-open fix
 export DE=gnome
 
-# KB
-xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
-xbindkeys -f $HOME/.dotfiles/xorg/conf/.xbindkeysrc

@@ -1,5 +1,5 @@
 # http://docs.qtile.org/en/latest/index.html
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Match, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget
 from typing import List  # noqa: F401
@@ -10,8 +10,7 @@ import subprocess
 mod = "mod4"
 
 class Commands(object):
-    # dmenu = "dmenu_run -i -b -h 32 -p '>>>' -fn 'Netron-14'"
-    dmenu = "dmenu_run -i -b -h 32 -p '>>>' -fn 'Hemi Head-14'"
+    dmenu = "dmenu_run -i -b -h 32 -p '>' -fn 'Ubuntu-14'"
 
 keys = [
     # Switch between windows in current stack pane
@@ -34,7 +33,7 @@ keys = [
     # multiple stack panes
     # Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
 
-    Key([mod], "Return", lazy.spawn("kitty")),
+    Key([mod], "Return", lazy.spawn("alacritty")),
     Key([mod], "space", lazy.spawn(Commands.dmenu)),
 
     # Toggle between different layouts as defined below
@@ -42,7 +41,7 @@ keys = [
 
     Key([mod], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
-    Key([mod, "control"], "q", lazy.shutdown()),
+    Key([mod, "shift"], "q", lazy.shutdown()),
     # Key([mod], "c", lazy.spawncmd()),
     Key([mod, "control"], "f", lazy.window.toggle_floating()),
 
@@ -51,17 +50,16 @@ keys = [
     Key([mod], "n", lazy.to_screen(2)),
 ]
 
-# groups = [Group(i) for i in "asdfuiop"]
 groups = [
     Group("FST"),
     Group("DEV"),
-    Group("WWW", layout="max"),
+    Group("WWW", layout="max", spawn=["opera"]),
     Group("GOD", layout="max"),
     Group("IMG", layout="max"),
     Group("SND"),
     Group("ALT"),
-    Group("OTH"),
-    Group("UTL"),
+    Group("COM", layout="max", spawn=["thunderbird, slack"]),
+    Group("UTL", spawn=["keepassxc"]),
 ]
 
 for i in groups:
@@ -81,8 +79,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Hemi Head Bold Italic',
-    fontsize=14,
+    font='Ubuntu',
+    fontsize=16,
     padding=5,
     active="#dddddd",
     foreground="#dddddd",
@@ -112,8 +110,9 @@ screens = [
                 widget.Prompt(),
                 widget.WindowName(),
                 # widget.TextBox("default config", name="default"),
-                widget.Notify(),
+                # widget.Notify(),
                 widget.ThermalSensor(tag_sensor="Package id 0"),
+                widget.Battery(charge_char="↑", discharge_char="↓", format='{percent:2.0%} {char}'),
                 widget.Systray(),
                 widget.Clock(format='%a, %d %b, %H:%M'),
             ], 32,
@@ -174,6 +173,7 @@ floating_layout = layout.Floating(float_rules=[
 
     # {'wmclass': 'keepassxc'},
     {'wmclass': 'nitrogen'},
+    {'wmclass': 'qalculate-gtk'},
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

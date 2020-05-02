@@ -25,5 +25,6 @@ else    # docked mode
 		--output $right    --auto --pos 0x150 \
 		--output $central  --auto --pos 1680x0 --primary \
 		--output $internal --auto --pos 3840x272
+	xrandr --dpi 96
 	echo "internal central right"
 fi

@@ -6,6 +6,7 @@
 
 alias inst="sudo pacman -S"
 alias rem="sudo pacman -Rns"
+alias orphans="pacman -Qdt"
 alias paci="pacman -Qi"
 alias pacl="pacman -Ql"
 alias paco="pacman -Qo"

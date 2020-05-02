@@ -1,2 +1,4 @@
+ao=alsa
 lirc=no
+softvol=yes
 

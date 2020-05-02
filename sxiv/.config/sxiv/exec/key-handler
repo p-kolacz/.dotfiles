@@ -1,0 +1,20 @@
+#!/bin/sh
+while read file
+do
+	case "$1" in
+		"C-d")
+			trash-put "$file" ;;
+		"C-r")
+			convert -rotate 90 "$file" "$file" ;;
+		"C-R")
+			convert -rotate -90 "$file" "$file" ;;
+		"C-c")
+			echo -n "$file" | xclip -selection clipboard &&
+			notify-send "$file copied to clipboard" & ;;
+		"C-w")
+			nitrogen --save --set-zoom-fill "$file" ;;
+		"g")
+			gimp "$file" & ;;
+	esac
+done
+

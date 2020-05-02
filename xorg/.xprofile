@@ -10,7 +10,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
-export LESSHISTFILE="-"
 export MPLAYER_HOME="$XDG_CONFIG_HOME/mplayer"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 export npm_config_prefix="$HOME/.local/lib/node_modules"
@@ -24,9 +23,12 @@ export WINEPREFIX="$HOME"/.local/share/wine
 
 # Look
 export CALIBRE_USE_SYSTEM_THEME=1
-export QT_STYLE_OVERRIDE="Adapta-Nokto"
+# export QT_STYLE_OVERRIDE="Adapta-Nokto"
 # export QT_QPA_PLATFORMTHEME="qt5ct"
-export WINIT_HIDPI_FACTOR=1.2
+
+# Alacritty (Rust) DPI setting
+# export WINIT_HIDPI_FACTOR=1.2
+export WINIT_HIDPI_FACTOR=1.0
 
 # xdg-open fix
 export DE=gnome

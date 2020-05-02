@@ -90,6 +90,24 @@
 "light -U 5"
    XF86MonBrightnessDown   
    
+# "xdOTOOL KEy F21"
+#    b:21
+
+# "xdotool key F22"
+#    b:22
+
+# "xdotool key F23"
+#    b:23
+
+# "xdotool key F24"
+#    b:24
+
+# "xdotool key F32"
+#    b:32
+
+# "xdotool key F33"
+#    b:33
+
 # Examples of commands:
 
 # "xbindkeys_show" 

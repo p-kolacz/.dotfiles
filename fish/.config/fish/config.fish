@@ -8,8 +8,7 @@
 fish_ssh_agent
 
 # Path
-# set -gx PATH "$HOME/.dotfiles/bin" "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
-set -x PATH "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
+set -x PATH "$HOME/.dotfiles/bin" "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
 
 alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
@@ -17,13 +16,8 @@ set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 set -x TERMINAL alacritty
 set -x EDITOR vim
 set -x BROWSER opera
+set -x LESSHISTFILE "-"
 
-# Start X at login
-if status is-login
-	if test -z "$DISPLAY" -a $XDG_VTNR = 1
-		startx
-	end
-end
 
 if status is-interactive
 
@@ -84,3 +78,11 @@ if status is-interactive
 	abbr -a -g psa "ps -e | grep -i"
 
 end
+
+# Start X at login
+if status is-login
+	if test -z "$DISPLAY" -a $XDG_VTNR = 1
+		startx
+	end
+end
+

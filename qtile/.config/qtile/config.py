@@ -10,7 +10,8 @@ import subprocess
 mod = "mod4"
 
 class Commands(object):
-    dmenu = "dmenu_run -i -b -h 32 -p '>' -fn 'Ubuntu-14'"
+    dmenu = "dmenu_run -i -b -h 32 -p '>' -fn 'Ubuntu-12'"
+    dmenu_power = "bash -c \"~/.dotfiles/dmenu/power.sh\""
 
 keys = [
     # Switch between windows in current stack pane
@@ -33,8 +34,9 @@ keys = [
     # multiple stack panes
     # Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
 
-    Key([mod], "Return", lazy.spawn("alacritty")),
+    # Key([mod], "Return", lazy.spawn("alacritty")),
     Key([mod], "space", lazy.spawn(Commands.dmenu)),
+    Key([mod], "Delete", lazy.spawn(Commands.dmenu_power)),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -58,7 +60,7 @@ groups = [
     Group("IMG", layout="max"),
     Group("SND"),
     Group("ALT"),
-    Group("COM", layout="max", spawn=["thunderbird, slack"]),
+    Group("COM", layout="max", spawn=["thunderbird", "slack"]),
     Group("UTL", spawn=["keepassxc"]),
 ]
 
@@ -75,12 +77,13 @@ for i in groups:
 layouts = [
     layout.MonadTall(margin=16, border_width=1, single_border_width=0, border_focus="#333333"),
     layout.Max(),
+    layout.MonadWide(margin=16, border_width=1, single_border_width=0, border_focus="#333333"),
     # layout.Stack(num_stacks=2)
 ]
 
 widget_defaults = dict(
     font='Ubuntu',
-    fontsize=16,
+    fontsize=15,
     padding=5,
     active="#dddddd",
     foreground="#dddddd",
@@ -154,7 +157,7 @@ dgroups_app_rules = []  # type: List
 main = None
 follow_mouse_focus = True
 bring_front_click = False
-cursor_warp = True
+cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'confirm'},
     {'wmclass': 'dialog'},
@@ -174,6 +177,7 @@ floating_layout = layout.Floating(float_rules=[
     # {'wmclass': 'keepassxc'},
     {'wmclass': 'nitrogen'},
     {'wmclass': 'qalculate-gtk'},
+    {'wname': 'Message Filters'},
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

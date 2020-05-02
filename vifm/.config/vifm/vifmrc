@@ -40,7 +40,7 @@ set nofollowlinks
 
 " Natural sort of (version) numbers within text.
 
-set sortnumbers
+" set sortnumbers
 set sort=+iname
 
 " Maximum number of changes that can be undone.
@@ -201,8 +201,8 @@ filextype *.djvu
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        \ {Play using ffplay}
        \ ffplay -nodisp -autoexit %c,
-       \ {Play using MPlayer}
-       \ mplayer %f,
+       \ {Play using MPlayer fullscreen -fs}
+       \ mplayer -fs %f,
 fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
@@ -210,10 +210,10 @@ fileviewer *.flac soxi
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
          \*.as[fx]
-        \ {View using ffplay}
-        \ ffplay -fs -autoexit %f,
-        \ {View using Dragon}
-        \ dragon %f:p,
+        " \ {View using ffplay}
+        " \ ffplay -fs -autoexit %f,
+        " \ {View using Dragon}
+        " \ dragon %f:p,
         \ {View using mplayer}
         \ mplayer %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
@@ -240,8 +240,8 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in qview}
-        \ qview %f,
+        \ {View in rifle_sxiv}
+        \ rifle_sxiv.sh %c &,
         \ {View in sxiv}
         \ sxiv %f %d,
         \ {View in gpicview}

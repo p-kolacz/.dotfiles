@@ -105,3 +105,7 @@ Opera
 - mkdir /opt/google/chrome
 - sudo ln -s /usr/lib/chromium/WidevineCdm/ /opt/google/chrome/
 
+Done
+================================================================================
+![done](img/monkey.gif)
+

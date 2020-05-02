@@ -68,16 +68,17 @@ Keyboard
 Rate
 	xset r rate 250 35
 
-Reload xmodmap
-	xmodmap ~/.Xmodmap
+Reload xmodmap `xmodmap ~/.Xmodmap`
 
 Reload xbindkeys
-	xbindkeys --poll-rc
+  xbindkeys --poll-rc
 
 Audio
 ================================================================================
 
-Restart PulseAudio server
+![](img/cats-keyboard.gif)
+
+> Restart PulseAudio server
 	pulseaudio -k && pulseaudio -D
 
 XGD MIME
@@ -97,4 +98,6 @@ Add `.desktop` files to:
 	~/.local/share/mime/applications
 Reload:
 	update-mime-database .local/share/mime/
+
+![](img/working-cat.gif)
 

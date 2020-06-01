@@ -105,6 +105,25 @@ Opera
 - mkdir /opt/google/chrome
 - sudo ln -s /usr/lib/chromium/WidevineCdm/ /opt/google/chrome/
 
+Printer
+================================================================================
+
+```sh
+sudo systemctl enable org.cups.cupsd.service
+sudo systemctl start org.cups.cupsd.service
+```
+
+Unity3D
+================================================================================
+
+C#
+--
+https://github.com/OmniSharp/omnisharp-roslyn/releases
+
+Unity dependicies
+-----------------
+7zip cpio
+
 Done
 ================================================================================
 ![done](img/monkey.gif)

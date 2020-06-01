@@ -17,6 +17,8 @@ keys = [
     # Switch between windows in current stack pane
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "k", lazy.layout.up()),
+    Key([mod], "h", lazy.layout.shrink()),
+    Key([mod], "l", lazy.layout.grow()),
 
     # Move windows up or down in current stack
     Key([mod, "control"], "j", lazy.layout.shuffle_down()),
@@ -55,7 +57,7 @@ keys = [
 groups = [
     Group("FST"),
     Group("DEV"),
-    Group("WWW", layout="max", spawn=["opera"]),
+    Group("WWW", layout="max", spawn=["brave"]),
     Group("GOD", layout="max"),
     Group("IMG", layout="max"),
     Group("SND"),

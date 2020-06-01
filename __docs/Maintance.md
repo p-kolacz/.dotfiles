@@ -21,6 +21,21 @@ Manage
 ### Clear cache
 	yay -Sc
 
+Disks
+================================================================================
+
+Checkdisk
+---------
+
+`fsck /dev/sda1`
+
+
+SMART
+-----
+
+- Test: `smartctl -t short /dev/sda`
+- Wyniki testu: `smartctl -l selftest /dev/sdb`
+
 Filesystem
 ================================================================================
 
@@ -56,11 +71,20 @@ find . -type f -print0 | xargs -0 chmod 0644
 Network
 ================================================================================
 
+![](img/IPMan.vs.TheMask.jpg)
+
 Connect WiFi
 	sudo wpa_supplicant -B -i wlp62s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp62s0.conf
 
 Clear DNS cache
 	sudo systemctl restart ???
+
+Xorg
+================================================================================
+
+Reload Xresources
+-----------------
+	xrdb ~/.Xresources
 
 Keyboard
 ================================================================================

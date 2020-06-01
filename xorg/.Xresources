@@ -14,5 +14,12 @@ XTerm.vt100.font: xft:Victor Mono:size=12
 
 Sxiv.foreground: #eeeeee
 Sxiv.background: #333333
-Sxiv.font: Victor Mono:size=12
+Sxiv.font: monospace-14
+
+! dmenu
+dmenu.font: monospace-14
+! dmenu.background:
+! dmenu.foreground:
+! dmenu.selbackground:
+! dmenu.selforeground:
 

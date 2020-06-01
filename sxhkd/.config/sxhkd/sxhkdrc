@@ -1,0 +1,19 @@
+super + Return
+	kitty
+
+XF86Audio{Play,Prev,Next}
+	playerctl {play-pause,previous,next}
+
+XF86Audio{Raise,Lower}Volume
+	fish -c {vol-inc,vol-dec}
+
+XF86AudioMute
+	fish -c mute-toggle
+
+# Increase backlight
+XF86MonBrightnessUp
+	light -A 5
+
+# Decrease backlight
+XF86MonBrightnessDown   
+	light -U 5

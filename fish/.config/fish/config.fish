@@ -7,31 +7,36 @@
 
 fish_ssh_agent
 
-# Path
-set -x PATH "$HOME/.dotfiles/bin" "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
+if status is-login
+	# Path
+	set -x PATH "$HOME/.dotfiles/bin" "$HOME/.local/bin" "$HOME/.local/lib/node_modules/bin" $PATH
+end
 
 alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
 set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
-set -x TERMINAL alacritty
+# set -x TERMINAL alacritty
 set -x EDITOR vim
-set -x BROWSER opera
+set -x BROWSER brave
 set -x LESSHISTFILE "-"
 
 
 if status is-interactive
 
-	# Greeting
-	# function fish_greeting
-		# fortune -as -n 100
-		# fortune -a archlinux computers chucknorris
-	# end
+	function hybrid_bindings --description "Vi-style bindings that inherit emacs-style bindings in all modes"
+		for mode in default insert visual
+			fish_default_key_bindings -M $mode
+		end
+		fish_vi_key_bindings --no-erase
+	end
+	set -g fish_key_bindings hybrid_bindings
 
 	# Aliases
 	alias vim="vim --servername VIM"
 	alias fonts="fc-list | sort | fzf"
-	alias ls="env LC_COLLATE=C ls --color=auto --group-directories-first"
-	alias la="ls -lA"
+	# alias ls="env LC_COLLATE=C ls --color=auto --group-directories-first"
+	alias ls="ls --color=auto"
+	alias la="ls -lA --group-directories-first"
 
 	# alias vim="vim --servername VIM"
 
@@ -51,19 +56,6 @@ if status is-interactive
 			abbr -e $a
 		end
 	end
-
-	# Packages
-	# abbr -a -g pacs sudo pacman -S
-	# abbr -a -g prem sudo pacman -Rns
-	# abbr -a -g pacq pacman -Qs
-	# abbr -a -g paci pacman -Qi
-	# abbr -a -g pacl pacman -Ql
-	# abbr -a -g paco pacman -Qo
-	# abbr -a -g premo pacman -Rns (pacman -Qtdq)
-	# abbr -a -g y yay
-	# abbr -a -g yf yay -Ss
-	# abbr -a -g yrem yay -Rns
-	# abbr -a -g yq yay -Qs
 
 	# systemctl
 	abbr -a -g sys sudo systemctl status

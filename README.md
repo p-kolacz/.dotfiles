@@ -8,3 +8,4 @@
 
 [Window managers](__docs/WindowManagers.md)
 
+[User Guide](__docs/UserGuide.md)

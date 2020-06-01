@@ -1,4 +1,6 @@
+# vo=vdpau,
+# vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 ao=alsa
 lirc=no
 softvol=yes
-
+# autosync=30                # sync up video/audio by adjusting the algorithm

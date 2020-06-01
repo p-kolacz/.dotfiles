@@ -2,7 +2,8 @@
 
 # KB
 xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
-xbindkeys -f $HOME/.dotfiles/xorg/conf/.xbindkeysrc
+# xbindkeys -f $HOME/.dotfiles/xorg/conf/.xbindkeysrc
+sxhkd &
 xset r rate 250 40
 
 # Apps

@@ -1,4 +1,5 @@
 " vim: filetype=vifm :
+set shell=/bin/sh
 " Sample configuration file for vifm (last updated: 2 June, 2019)
 
 " ------------------------------------------------------------------------------
@@ -138,8 +139,6 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 
-command! tar tar cvf %D/%f_$(date +%%F).tar %f
-
 command! cmpinternal compare-cmd %a %S
 command! cmp : if expand('%%c') == expand('%%f')
 	\ |     echo expand('Comparing %%"c and %%"C:t ...')
@@ -151,6 +150,9 @@ command! cmp : if expand('%%c') == expand('%%f')
 
 command! cmpfiles meld %f %F &
 command! cmpdirs meld %d %D &
+command! tar tar cvf %D/%f_$(date +%%F).tar %f
+command! backup zip -r %D/%f_$(date +%%F).zip %f
+
 " ------------------------------------------------------------------------------
 
 " The file type is for the default programs to be used with
@@ -225,8 +227,8 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 filextype *.html,*.htm
         \ {Open with dwb}
         \ dwb %f %i &,
-        \ {Open with opera}
-        \ opera %f &,
+        \ {Open with brave}
+        \ brave %f &,
         \ {Open with uzbl}
         \ uzbl-browser %f %i &,
 filetype *.html,*.htm links, lynx
@@ -239,7 +241,7 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Images
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.webp
         \ {View in rifle_sxiv}
         \ rifle_sxiv.sh %c &,
         \ {View in sxiv}
@@ -348,7 +350,7 @@ filetype *.tudu tudu -f %c
 filextype *.pro qtcreator %f &
 
 " Code
-fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.gd,Gemfile,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml
+fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.gd,Gemfile,*.h,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml
 	\ highlight -O xterm256 -s moria --force %c
 
 " Directories
@@ -469,7 +471,9 @@ nnoremap ,w :set wrap!<cr>
 " Example of standard two-panel file managers mappings
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
+nnoremap <s-f4> :touch 
 nnoremap <f5> :copy<cr>
+nnoremap <c-f5> :copy!<cr>
 nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
@@ -477,6 +481,7 @@ nnoremap <f11> :cmpfiles<cr>
 nnoremap <f12> :cmpdirs<cr>
 
 nnoremap b :bmarks<cr>
+nnoremap <bs> :history<cr>
 
 " ------------------------------------------------------------------------------
 

@@ -11,13 +11,22 @@ alias paci="pacman -Qi"
 alias pacl="pacman -Ql"
 alias paco="pacman -Qo"
 
-function apps
-	set app (pacman -Qeq | fzf --layout=reverse-list --preview 'pacman -Qi {}' --bind 'f1:execute(pacman -Ql {} | fzf)') &&
+function pacinfo
+	pacman -Qi $argv[1] | colorize 'Wymagany.*' red | colorize 'Zale.*' blue | colorize 'Grup.*' green
+end
+
+function pacs
+	set app (pacman -Qeq | fzf --layout=reverse-list --preview "pacinfo {}" --bind 'f1:execute(pacman -Ql {} | fzf)') &&
 		sudo pacman -Rns "$app"
 end
 
-function aapps
-	set app (pacman -Qq | fzf --layout=reverse-list --preview 'pacman -Qi {}' --bind 'f1:execute(pacman -Ql {} | fzf)') &&
+function pacsall
+	set app (pacman -Qq | fzf --layout=reverse-list --preview 'pacinfo {}' --bind 'f1:execute(pacman -Ql {} | fzf)') &&
 		sudo pacman -Rns "$app"
+end
+
+function pacavail
+	set app (pacman -Slq | fzf --layout=reverse-list --preview 'pacman -Si {}') &&
+		sudo pacman -S "$app"
 end
 

@@ -1,4 +1,9 @@
 #!/bin/sh
+
+wallpaper() {
+	nitrogen --save --set-zoom-fill --head=$1 "$2"
+}
+
 while read file
 do
 	case "$1" in
@@ -11,8 +16,12 @@ do
 		"C-c")
 			echo -n "$file" | xclip -selection clipboard &&
 			notify-send "$file copied to clipboard" & ;;
-		"C-w")
-			nitrogen --save --set-zoom-fill "$file" ;;
+		"C-1")
+			wallpaper 0 "$file" ;;
+		"C-2")
+			wallpaper 1 "$file" ;;
+		"C-3")
+			wallpaper 2 "$file" ;;
 		"g")
 			gimp "$file" & ;;
 	esac

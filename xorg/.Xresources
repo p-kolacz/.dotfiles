@@ -10,16 +10,16 @@ Xft.lcdfilter: lcddefault
 
 XTerm.vt100.foreground: #e5e5e5
 XTerm.vt100.background: #222222
-XTerm.vt100.font: xft:Victor Mono:size=12
+XTerm.vt100.font: xft:monospace:size=12
 
-Sxiv.foreground: #eeeeee
-Sxiv.background: #333333
+Sxiv.foreground: #ebdbb2
+Sxiv.background: #282828
 Sxiv.font: monospace-14
 
 ! dmenu
 dmenu.font: monospace-14
-! dmenu.background:
-! dmenu.foreground:
-! dmenu.selbackground:
-! dmenu.selforeground:
+dmenu.background: #282828
+dmenu.foreground: #ebdbb2
+dmenu.selbackground: #458588
+dmenu.selforeground: #ebdbb2
 

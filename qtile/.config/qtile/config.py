@@ -37,8 +37,8 @@ keys = [
     # Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
 
     # Key([mod], "Return", lazy.spawn("alacritty")),
-    Key([mod], "space", lazy.spawn(Commands.dmenu)),
-    Key([mod], "Delete", lazy.spawn(Commands.dmenu_power)),
+    # Key([mod], "space", lazy.spawn(Commands.dmenu)),
+    # Key([mod], "Delete", lazy.spawn(Commands.dmenu_power)),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -188,8 +188,8 @@ focus_on_window_activation = "smart"
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-@hook.subscribe.startup_once
-def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.call([home])
+# @hook.subscribe.startup_once
+# def autostart():
+#     home = os.path.expanduser('~/.config/qtile/autostart.sh')
+#     subprocess.call([home])
 

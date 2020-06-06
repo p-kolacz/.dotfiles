@@ -4,24 +4,24 @@
 # | .__/\__,_\__|_|_|_\__,_|_||_(_)_| |_/__/_||_|
 # |_|
 
-alias inst="sudo pacman -S"
-alias rem="sudo pacman -Rns"
-alias orphans="pacman -Qdt"
-alias paci="pacman -Qi"
-alias pacl="pacman -Ql"
-alias paco="pacman -Qo"
+abbr -ag inst "sudo pacman -S"
+abbr -ag rem "sudo pacman -Rns"
+abbr -ag orphans "pacman -Qdt"
+abbr -ag paci "pacman -Qi"
+abbr -ag pacl "pacman -Ql"
+abbr -ag paco "pacman -Qo"
 
 function pacinfo
 	pacman -Qi $argv[1] | colorize 'Wymagany.*' red | colorize 'Zale.*' blue | colorize 'Grup.*' green
 end
 
-function pacs
-	set app (pacman -Qeq | fzf --layout=reverse-list --preview "pacinfo {}" --bind 'f1:execute(pacman -Ql {} | fzf)') &&
+function pac
+	set app (pacman -Qeq | fzf --layout=reverse-list --preview "pacinfo {}" --bind 'f3:execute(pacman -Ql {} | fzf),f8:execute(sudo pacman -Rns {} < /dev/tty > /dev/tty 2>&1)') &&
 		sudo pacman -Rns "$app"
 end
 
-function pacsall
-	set app (pacman -Qq | fzf --layout=reverse-list --preview 'pacinfo {}' --bind 'f1:execute(pacman -Ql {} | fzf)') &&
+function pacall
+	set app (pacman -Qq | fzf --layout=reverse-list --preview 'pacinfo {}' --bind 'f3:execute(pacman -Ql {} | fzf)') &&
 		sudo pacman -Rns "$app"
 end
 

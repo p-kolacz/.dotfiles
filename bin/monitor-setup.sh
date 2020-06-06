@@ -22,9 +22,9 @@ if xrandr | grep "$central disconnected" > /dev/null; then    # mobile mode
 	echo "internal monitor only"
 else    # docked mode
 	xrandr \
-		--output $right    --auto --pos 0x150 \
-		--output $central  --auto --pos 1680x0 --primary \
-		--output $internal --auto --pos 3840x272
+		--output "$right"    --auto --pos 0x150 \
+		--output "$central"  --auto --pos 1680x0 --primary \
+		--output "$internal" --auto --pos 3840x272
 	xrandr --dpi 96
 	echo "internal central right"
 fi

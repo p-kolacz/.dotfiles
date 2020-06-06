@@ -31,15 +31,17 @@ if status is-interactive
 	end
 	set -g fish_key_bindings hybrid_bindings
 
+	term_theme
+
 	# Aliases
 	alias vim="vim --servername VIM"
 	alias fonts="fc-list | sort | fzf"
-	# alias ls="env LC_COLLATE=C ls --color=auto --group-directories-first"
 	alias ls="ls --color=auto"
 	alias la="ls -lA --group-directories-first"
 
 	# alias vim="vim --servername VIM"
 
+	alias econf "cd ~/.dotfiles;vim"
 	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
 	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
 	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
@@ -69,6 +71,8 @@ if status is-interactive
 	abbr -a -g ka killall
 	abbr -a -g psa "ps -e | grep -i"
 
+	# misc.
+	# abbr -ag f "| fzf" # wont work
 end
 
 # Start X at login

@@ -1,5 +1,7 @@
 " vim: filetype=vifm :
-set shell=/bin/sh
+
+set shell=/bin/bash
+
 " Sample configuration file for vifm (last updated: 2 June, 2019)
 
 " ------------------------------------------------------------------------------
@@ -243,7 +245,7 @@ fileviewer *.[1-8] man ./%c | col -b
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.webp
         \ {View in rifle_sxiv}
-        \ rifle_sxiv.sh %c &,
+        \ rifle_sxiv.sh %c & 2> /dev/null,
         \ {View in sxiv}
         \ sxiv %f %d,
         \ {View in gpicview}
@@ -351,7 +353,7 @@ filextype *.pro qtcreator %f &
 
 " Code
 fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.gd,Gemfile,*.h,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml
-	\ highlight -O xterm256 -s moria --force %c
+	\ highlight -O xterm256 -s base16/gruvbox-dark-medium --force %c
 
 " Directories
 filextype */

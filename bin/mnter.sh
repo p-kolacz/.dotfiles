@@ -5,7 +5,7 @@ notify_title=MonteR
 delimiter="|"
 and_icon=
 usb_icon=
-mmc_icon=
+mmc_icon=兩
 
 and_drives() {
 	simple-mtpfs -l 2> /dev/null | sed -r "s/(.): (.*)/\2 \1/" | sed "s/ /-/g"

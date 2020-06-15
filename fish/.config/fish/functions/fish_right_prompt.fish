@@ -4,7 +4,7 @@ function _print_pipestatus --description "Print pipestatus for prompt"
     if string match -qvr '^(0|141)$' $argv
         echo (set_color --bold red)(string join "|" (__fish_pipestatus_with_signal $argv))
 	else
-		echo (set_color green)""
+		echo (set_color black)""
     end
 end
 
@@ -15,7 +15,8 @@ function fish_right_prompt
 	set -l fg black
 	set -l bg white
 	set -l open (set_color $bg)""(set_color -b $bg; set_color $fg)
-	set -l close (set_color normal;set_color $bg)" "
+	# set -l close (set_color normal;set_color $bg)" "
+	set -l close ""
 	set -l pi_status (_print_pipestatus $last_ps)
 
 	printf "$open $pi_status $close"

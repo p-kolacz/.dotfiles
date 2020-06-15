@@ -375,8 +375,6 @@ Removed code.
 Removed echo and die statements, lolz.
 Removed test case since code didn't pass QA
 Removed tests since i can't make them green
-Removing unecessary stuff
-Removing unit tests
 Replace all whitespaces with tabs.
 Reset error count between rows. herpderp
 Restored deleted entities just to be sure

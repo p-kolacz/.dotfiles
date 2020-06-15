@@ -24,8 +24,9 @@ XF86AudioMute
 
 # Increase backlight
 XF86MonBrightnessUp
-	light -A 5
+	backlight.sh +5
 
 # Decrease backlight
 XF86MonBrightnessDown   
-	light -U 5
+	backlight.sh -5
+

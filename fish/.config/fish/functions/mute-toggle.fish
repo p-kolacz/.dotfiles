@@ -6,7 +6,7 @@ function mute-toggle
 	else
 		set icon "audio-volume-high"
 	end
-	notify-send.sh "Volume muted:" $mute -t 2000 --replace-file=/tmp/notification-mute --hint string:image-path:$icon
+	notify-send "Volume muted:" $mute -t 2000 --hint string:image-path:$icon
 end
 
 	

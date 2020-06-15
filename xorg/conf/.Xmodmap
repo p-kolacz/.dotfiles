@@ -6,7 +6,7 @@
 ! Reload: xmodmap ~/.Xmodmap
 
 ! Capslock
-clear lock
+clear Lock
 keycode 66 = Escape
 
 ! GS63 Zdupy key

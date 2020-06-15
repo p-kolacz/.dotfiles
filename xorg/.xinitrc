@@ -1,6 +1,7 @@
 #!/bin/sh
 
 userresources=$HOME/.dotfiles/xorg/.Xresources
+# usermodmap=$HOME/.dotfiles/xorg/conf/.Xmodmap
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
@@ -34,14 +35,15 @@ source $HOME/.dotfiles/xorg/.xprofile
 $HOME/.dotfiles/bin/monitor-setup.sh > $HOME/.local/share/xorg/xrandr.log
 
 # KB
-xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
+# xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
+setxkbmap -option caps:escape
 sxhkd &
 xset r rate 250 40
 
 # Apps
 nitrogen --restore &
 seafile-applet &
-syncthing &
+syncthing -logfile="$HOME/.local/log/syncthing.log" &
 compton -b &
 
 # exec qtile > $HOME/.local/share/xorg/qtile.log

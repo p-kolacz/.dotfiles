@@ -1,0 +1,16 @@
+#!/bin/bash
+
+file=/tmp/timer
+
+[ $# -ne 1 ] && echo Usage: ${0##*/} seconds && exit 1
+[ -e $file ] && echo Timer already running && exit 2
+
+timeout=$1
+now=$(date +%s)
+echo $((now+timeout)) > $file
+
+sleep $timeout
+
+rm $file
+notify-send "精 Timer" "Time is up!"
+

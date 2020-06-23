@@ -19,7 +19,6 @@ format() {
 
 colorize() {
 	[ $# -eq 2 ] &&
-		# sed "s/$1/"$(format $2)'&'$(format reset)'/' || 
 		sed "s/$1/$(format $2)&$(format reset)/" || 
 		echo "Usage: COMMAND | colorize REGEX COLOR"
 }

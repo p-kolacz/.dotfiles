@@ -24,7 +24,7 @@ export WINEPREFIX="$HOME"/.local/share/wine
 # Look
 export CALIBRE_USE_SYSTEM_THEME=1
 # export QT_STYLE_OVERRIDE="Adapta-Nokto"
-# export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Alacritty (Rust) DPI setting
 # export WINIT_HIDPI_FACTOR=1.2

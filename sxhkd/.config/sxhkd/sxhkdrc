@@ -8,7 +8,7 @@ super + space
 	dmenu_run -i -b -h 32 -p ' '
 
 super + Delete
-	~/.dotfiles/dmenu/power.sh
+	power.sh
 
 super + {F1,F2,F3,F10}
 	{icons.sh,emoji.sh,entities.sh,mnter.sh}

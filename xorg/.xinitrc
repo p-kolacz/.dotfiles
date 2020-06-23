@@ -38,14 +38,15 @@ $HOME/.dotfiles/bin/monitor-setup.sh > $HOME/.local/share/xorg/xrandr.log
 # xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
 setxkbmap -option caps:escape
 sxhkd &
-xset r rate 250 40
+kbrate.sh
 
 # Apps
-nitrogen --restore &
+# nitrogen --restore &
+feh --no-fehbg --bg-fill "$HOME/.cache/wallpaper" &
 seafile-applet &
-syncthing -logfile="$HOME/.local/log/syncthing.log" &
-compton -b &
+syncthing -no-restart -logfile="$HOME/.local/log/syncthing.log" &
+compton -b
 
 # exec qtile > $HOME/.local/share/xorg/qtile.log
-exec spectrwm > $HOME/.local/share/xorg/spectrwm.log
+exec spectrwm > $HOME/.local/share/xorg/spectrwm.log 2>&1 
 

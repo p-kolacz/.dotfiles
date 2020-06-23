@@ -1,3 +1,72 @@
 #!/bin/bash
 
+source colorize.sh
+export -f format
+export -f colorize
+
+SHELL=/bin/bash
+
+echo query > /tmp/pms_mode
+
+_header() {
+	echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	echo "F6 files │ F8 remove"
+
+	[[ $1 == ett ]] && format bold 
+	echo -n "F1 explicit not required"
+	format reset && echo -n " │ "
+
+	[[ $1 == e ]] && format bold 
+	echo -n "F2 explicit"
+	format reset && echo -n " │ "
+
+	[[ -z $1 ]] && format bold 
+	echo -n "F3 all"
+	format reset && echo -n " │ "
+
+	[[ $1 == dt ]] && format bold 
+	echo -n "F4 orphans"
+	format reset && echo -n " │ "
+
+	[[ $1 == avail ]] && format bold 
+	echo -n "F5 available"
+	format reset
+	echo
+
+	echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+}
+
+_info() {
+	local mode=$(cat /tmp/pms_mode)
+	([[ $mode == query ]] && pacman -Qi $1 || pacman -Si $1) | colorize 'Wymagany.*' red | colorize 'Zale.*' green | colorize 'Grup.*' blue
+}
+
+_installed() {
+	echo query > /tmp/pms_mode
+	_header $1
+	pacman -Qq$1
+}
+
+_avail() {
+	echo sync > /tmp/pms_mode
+	_header avail
+	pacman -Slq
+}
+
+export -f _header
+export -f _info
+export -f _installed
+export -f _avail
+
+_installed ett | fzf \
+	--header-lines 4 \
+	--layout=reverse-list \
+	--preview "_info {}" \
+	--bind "F1:reload(_installed ett)" \
+	--bind "F2:reload(_installed e)" \
+	--bind "F3:reload(_installed)" \
+	--bind "F4:reload(_installed dt)" \
+	--bind "F5:reload(_avail)" \
+	--bind "F6:execute(pacman -Ql {} | fzf)" \
+	--bind "F8:execute(sudo pacman -Rns {} < /dev/tty > /dev/tty 2>&1)" \
 

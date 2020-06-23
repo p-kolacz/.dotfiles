@@ -353,7 +353,7 @@ filetype *.tudu tudu -f %c
 filextype *.pro qtcreator %f &
 
 " Code
-fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.gd,Gemfile,*.h,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml
+fileviewer .htaccess,*.c,*.cl,*.cljs,*.conf,*.cpp,*.cs,*.css,*.fish,*.gd,Gemfile,*.h,*.hs,*.html,*.ini,*.java,*.js,*.lua,*.php,*.py,*.rb,*rc,*.ru,*.sh,*.sql,*.xml,*.yaml,*.yml
 	\ highlight -O xterm256 -s base16/gruvbox-dark-medium --force %c
 
 " Directories

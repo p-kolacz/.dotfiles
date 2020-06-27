@@ -1,5 +1,8 @@
 #!/bin/sh
 
+WM=bspwm
+# WM=spectrwm
+
 userresources=$HOME/.dotfiles/xorg/.Xresources
 # usermodmap=$HOME/.dotfiles/xorg/conf/.Xmodmap
 usermodmap=$HOME/.Xmodmap
@@ -35,18 +38,21 @@ source $HOME/.dotfiles/xorg/.xprofile
 $HOME/.dotfiles/bin/monitor-setup.sh > $HOME/.local/share/xorg/xrandr.log
 
 # KB
-# xmodmap $HOME/.dotfiles/xorg/conf/.Xmodmap
 setxkbmap -option caps:escape
-sxhkd &
 kbrate.sh
+export SXHKD_SHELL=/bin/bash
+{ [ $WM == bspwm ] && 
+	sxhkd -c ~/.config/sxhkd/sxhkdrc ~/.config/bspwm/sxhkdrc ||
+	sxhkd; } &
 
 # Apps
-# nitrogen --restore &
-feh --no-fehbg --bg-fill "$HOME/.cache/wallpaper" &
+restore-wallpaper.sh
 seafile-applet &
 syncthing -no-restart -logfile="$HOME/.local/log/syncthing.log" &
 compton -b
 
+exec $WM > $HOME/.local/log/$WM.log 2>&1
 # exec qtile > $HOME/.local/share/xorg/qtile.log
-exec spectrwm > $HOME/.local/share/xorg/spectrwm.log 2>&1 
+# exec spectrwm > $HOME/.local/share/xorg/spectrwm.log 2>&1 
+# exec bspwm > $HOME/.local/share/xorg/bspwm.log 2>&1 
 

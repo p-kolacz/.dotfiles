@@ -1,5 +1,6 @@
 #! /bin/sh
 
+
 #------------------------------------------------------------------------------#
 								  # Monitors #
 #------------------------------------------------------------------------------#
@@ -7,14 +8,14 @@
 # bspc monitor -d I II III IV V VI VII VIII IX X
 # bspc monitor -d        
 xrandr_output=$(xrandr --current)
-monitors_count=$(echo $xrandr_output | grep "\sconnected" | wc -l)
+monitors_count=$(echo "$xrandr_output" | grep "\sconnected" | wc -l)
 if [ $monitors_count -eq 1 ]; then
-	main=$(echo $xrandr_output | grep "^eDP" | cut -d" " -f1)
+	main=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
 else
-	main=$(echo $xrandr_output | grep "^DP" | cut -d" " -f1)
-	right=$(echo $xrandr_output | grep "^eDP" | cut -d" " -f1)
+	main=$(echo "$xrandr_output" | grep "^DP.*\sconnected" | cut -d" " -f1)
+	right=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
 	bspc monitor $right --rename right
-	left=$(echo $xrandr_output | grep "^HDMI" | cut -d" " -f1)
+	left=$(echo "$xrandr_output" | grep "^HDMI.*\sconnected" | cut -d" " -f1)
 	bspc monitor $left --rename left
 fi
 bspc monitor $main --rename main
@@ -45,8 +46,17 @@ bspc config pointer_follows_focus true
 								   # Rules #
 #------------------------------------------------------------------------------#
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Meld state=floating
 bspc rule -a mpv state=floating
 bspc rule -a Screenkey manage=off
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Chromium desktop='^2'
+
+
+#------------------------------------------------------------------------------#
+								   # Panel #
+#------------------------------------------------------------------------------#
+
+pgrep -x lemonbar.sh > /dev/null || lemonbar.sh &
+

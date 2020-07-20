@@ -4,10 +4,12 @@
 super + shift + q
 	bspc quit
 
-super + y
+super + shift + y
 	bspc wm -r; \
 	notify-send "BSPWM" "WM restarted"
 
+super + y
+	killall lemonbar.sh; lemonbar.sh
 
 								  # Monitors #
 #------------------------------------------------------------------------------#

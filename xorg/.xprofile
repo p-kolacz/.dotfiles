@@ -17,6 +17,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR/npm"
 export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 # export XAUTHORITY="$XDG_DATA_HOME/xorg/Xauthority"
 export WINEPREFIX="$HOME"/.local/share/wine

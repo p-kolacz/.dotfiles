@@ -31,3 +31,9 @@ timer-blk() {
 		echo "祥 "$((start-now))s
 	fi
 }
+
+titrak-blk() {
+	local file="$HOME/.cache/titrak"
+	[[ -s $HOME/.cache/titrak ]] && echo "羽 "$(basename $(cat "$file"))
+}
+

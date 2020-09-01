@@ -9,7 +9,7 @@ super + shift + y
 	notify-send "BSPWM" "WM restarted"
 
 super + y
-	killall lemonbar.sh; lemonbar.sh
+	~/.dotfiles/polybar/restart.sh
 
 								  # Monitors #
 #------------------------------------------------------------------------------#
@@ -70,7 +70,7 @@ super + {_,shift + }{h,j,k,l}
 	# bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }n
+super + {n,p}
 	bspc node -f {next,prev}.local
 
 # focus the last node

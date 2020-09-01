@@ -1,0 +1,74 @@
+; vim: set filetype=dosini :
+; https://github.com/polybar/polybar/wiki/Configuration
+; https://github.com/TiagoDanin/Awesome-Polybar
+
+[bar/main]
+monitor = ${env:MONITOR:}
+locale = pl_PL.UTF8
+height = 32
+foreground = ${colors.fg}
+background = ${colors.bg}
+line-size = 2
+font-0 = ui:size=12
+font-1 = emoji:scale=10
+; border-size = 8
+border-bottom-size = 1
+border-color = ${colors.red}
+padding = 4
+; radius = 12
+
+separator = 
+
+modules-left = bspwm
+modules-center = titrak timer
+modules-right = pulseaudio temperature bluetooth eth wifi gpu backlight battery date 
+
+include-file = ~/.config/polybar/modules/backlight.ini 
+include-file = ~/.config/polybar/modules/bspwm.ini 
+include-file = ~/.config/polybar/modules/battery.ini 
+include-file = ~/.config/polybar/modules/network.ini 
+include-file = ~/.config/polybar/modules/pulseaudio.ini 
+include-file = ~/.config/polybar/modules/temperature.ini 
+
+[colors]
+fg = ${xrdb:foreground:#eeeeee}
+bg = ${xrdb:background:#111111}
+red = ${xrdb:color1:#aa0000}
+green = ${xrdb:color2:#00aa00}
+blue = ${xrdb:color4:#0000aa}
+yellow = ${xrdb:color3:#eeee00}
+brblack = ${xrdb:color8:#777777}
+
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth.sh
+tail = true
+click-left = ~/.config/polybar/scripts/bluetooth.sh --toggle &
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = "%a, %d %b, %H:%M"
+date-alt = %s
+
+[module/gpu]
+type = custom/script
+interval = 100000
+exec = ~/.config/polybar/scripts/gpu.sh
+
+[module/timer]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/timer.sh
+format-foreground = ${colors.bg}
+format-background = ${colors.yellow}
+format-padding = 2
+
+[module/titrak]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/titrak.sh
+format-foreground = ${colors.bg}
+format-background = ${colors.yellow}
+format-padding = 2

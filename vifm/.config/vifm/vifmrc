@@ -1,5 +1,7 @@
 " vim: filetype=vifm :
 
+source icons.vifm
+
 set shell=/bin/bash
 
 " Sample configuration file for vifm (last updated: 2 June, 2019)
@@ -485,6 +487,7 @@ nnoremap <f12> :cmpdirs<cr>
 
 nnoremap b :bmarks<cr>
 nnoremap <bs> :history<cr>
+nnoremap * ggjvG<cr>
 
 " ------------------------------------------------------------------------------
 

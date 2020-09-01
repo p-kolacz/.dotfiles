@@ -1,5 +1,10 @@
 # https://github.com/baskerville/sxhkd
 # Reload: pkill -USR1 -x sxhkd
+# Press F5 to reload
+
+#---------------------------------------------------------------------------------------#
+								  # Keyboard #
+#---------------------------------------------------------------------------------------#
 
 super + Return
 	kitty
@@ -22,11 +27,27 @@ XF86Audio{Raise,Lower}Volume
 XF86AudioMute
 	fish -c mute-toggle
 
-# Increase backlight
 XF86MonBrightnessUp
 	backlight.sh +5
 
-# Decrease backlight
 XF86MonBrightnessDown   
 	backlight.sh -5
+
+XF86TouchpadToggle
+	touchpad-toggle.sh
+
+
+#---------------------------------------------------------------------------------------#
+								   # Mouse #
+#---------------------------------------------------------------------------------------#
+
+button6
+	xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'
+
+button7
+	xte 'keydown Control_L' 'key Tab' 'keyup Control_L'
+
+button10
+	xte 'keydown Control_L' 'key W' 'keyup Control_L'
+
 

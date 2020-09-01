@@ -1,5 +1,6 @@
 #! /bin/sh
 
+xsetroot -cursor_name left_ptr
 
 #------------------------------------------------------------------------------#
 								  # Monitors #
@@ -11,18 +12,32 @@ xrandr_output=$(xrandr --current)
 monitors_count=$(echo "$xrandr_output" | grep "\sconnected" | wc -l)
 if [ $monitors_count -eq 1 ]; then
 	main=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
+	bspc monitor $main --rename main
+	bspc monitor -d F W E R T A S D G C V
 else
 	main=$(echo "$xrandr_output" | grep "^DP.*\sconnected" | cut -d" " -f1)
-	right=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
-	bspc monitor $right --rename right
+	bspc monitor $main --rename main
+	bspc monitor main -d F W R A S D G C V
+
 	left=$(echo "$xrandr_output" | grep "^HDMI.*\sconnected" | cut -d" " -f1)
 	bspc monitor $left --rename left
-fi
-bspc monitor $main --rename main
+	bspc monitor left -d E
 
-bspc monitor -d F W E R A S D G C V
+	right=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
+	bspc monitor $right --rename right
+	bspc monitor right -d T
+
+fi
+
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
+
+#------------------------------------------------------------------------------#
+								  # Desktops #
+#------------------------------------------------------------------------------#
+
+bspc desktop W -l monocle
+bspc desktop G -l monocle
 
 #------------------------------------------------------------------------------#
 								 # Distances #
@@ -46,8 +61,10 @@ bspc config pointer_follows_focus true
 								   # Rules #
 #------------------------------------------------------------------------------#
 
+bspc rule -r "*"
 bspc rule -a Meld state=floating
 bspc rule -a mpv state=floating
+bspc rule -a KeePassXC state=floating
 bspc rule -a Screenkey manage=off
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Kupfer.py focus=on
@@ -58,5 +75,6 @@ bspc rule -a Screenkey manage=off
 								   # Panel #
 #------------------------------------------------------------------------------#
 
-pgrep -x lemonbar.sh > /dev/null || lemonbar.sh &
+# pgrep -x lemonbar.sh > /dev/null || lemonbar.sh &
+~/.dotfiles/polybar/start.sh &
 

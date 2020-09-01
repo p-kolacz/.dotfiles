@@ -33,7 +33,7 @@ Network
 
 Time sync
 ---------
-```
+```sh
 sudo systemctl enable systemd-timesyncd.service
 sudo systemctl start systemd-timesyncd.service
 ```
@@ -91,6 +91,47 @@ Vifm
 - sxiv
 - trash-cli
 - zathura-pdf-poppler
+
+Power
+================================================================================
+
+Hibernate
+---------
+
+[](https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation)
+
+`fallocate` dind't work on ext4 use `dd` instead
+
+```sh
+sudo dd if=/dev/zero of=/swapfile bs=1G count=8 status=progress
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
+In `/etc/fstab`:
+```
+/swapfile none swap defaults 0 0
+```
+
+Use
+```sh
+filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
+```
+to find _swap_offset_.
+
+In `/boot/loader/entries/arch.conf` add kernel options
+- `resume=UUID=xxx...` UUID of swap partition or device containing swap file
+- `resume_offset=swap_offset` for swap file only
+
+In `/etc/mkinitcpio.conf` in `HOOKS` add `resume` after `udev`, for example:
+```
+HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
+```
+
+Regenerate initramfs with `sudo mkinitcpio -P`
+
+Maybe decrease _swappiness_?
 
 GUI
 ================================================================================

@@ -1,16 +1,17 @@
 #!/bin/bash
 
-SEP="   "
+[ $# -ne 2 ] && echo "Usage: lemonbar.sh monitor fifo_file" && exit 1
+
+monitor=$1
+PANEL_FIFO=$2
+
+# SEP="   "
+SEP=" "
 
 FG=$(xrdb-color fg)
 BG=$(xrdb-color bg)
 RED=$(xrdb-color red)
 BLUE=$(xrdb-color blue)
-
-
-PANEL_FIFO=/tmp/panel-fifo
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
 
 source $(dirname $0)/../lib/blocks.sh
 
@@ -18,6 +19,8 @@ while true; do
 	echo D$(date-blk)
 	timer=$(timer-blk)
 	[[ -n $timer ]] && echo T$timer$SEP || echo T
+	titrak=$(titrak-blk)
+	[[ -n $titrak ]] && echo K$titrak$SEP || echo K
 	sleep 1
 done > $PANEL_FIFO &
 
@@ -35,7 +38,6 @@ gpu=$(gpu-blk)
 
 # $(dirname $0)/barinput.sh |
 
-bspc subscribe report > $PANEL_FIFO &
 
 cat "$PANEL_FIFO" | while read -r line; do
 	case $line in
@@ -47,6 +49,8 @@ cat "$PANEL_FIFO" | while read -r line; do
 			bat=${line#?} ;;
 		T*)
 			timer=${line#?} ;;
+		K*)
+			titrak=${line#?} ;;
 		W*)
 			desktops=
 			IFS=":"
@@ -69,7 +73,8 @@ cat "$PANEL_FIFO" | while read -r line; do
 				esac
 			done
 	esac
-	echo "%{F$FG} $desktops%{r}$timer$bat$SEP$cpu$SEP$gpu$SEP$date "
-done  | lemonbar -F $FG -U $BLUE -u 5 -f "ui:size=12" -g x32
-# done  | lemonbar -B $BG -F $FG -U $BLUE -u 5 -f "ui:size=12" -g x32
+	# echo "%{S$monitor}%{F$FG} $desktops%{r}$titrak $timer $bat$SEP$cpu$SEP$gpu$SEP$date "
+	echo "%{S$monitor}%{B$77000000} $desktops%{r}$titrak $timer $bat$SEP$cpu$SEP$gpu$SEP$date "
+# done  | lemonbar -F $FG -U $BLUE -u 5 -f "ui:size=12" -g x32
+done  | lemonbar -B $BG -F $FG -U $BLUE -u 5 -f "ui:size=12" -g x32
 

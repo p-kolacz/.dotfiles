@@ -43,6 +43,7 @@ if status is-interactive
 	alias eauto "vim ~/.config/qtile/autostart.sh"
 	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
 	alias eala "vim ~/.config/alacritty/alacritty.yml"
+	alias inq "cd ~/Work/Inquisitorium/Inquisitorium && vim"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)

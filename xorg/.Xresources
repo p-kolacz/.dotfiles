@@ -17,7 +17,7 @@ Sxiv.background: #282828
 Sxiv.font: monospace-14
 
 ! dmenu
-dmenu.font: monospace-14
+dmenu.font: monospace-13
 dmenu.background: #282828
 dmenu.foreground: #ebdbb2
 dmenu.selbackground: #458588

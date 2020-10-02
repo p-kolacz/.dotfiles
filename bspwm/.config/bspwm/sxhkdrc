@@ -21,8 +21,8 @@ super + {1,2,3}
 								  # Desktops #
 #------------------------------------------------------------------------------#
 
-super + {w,e,r,a,s,d,f,g,c,v}
-	desktop={W,E,R,A,S,D,F,G,C,V}; \
+super + {w,e,r,t,a,s,d,f,g,c,v}
+	desktop={W,E,R,T,A,S,D,F,G,C,V}; \
 	bspc desktop $desktop -m focused; \
 	bspc desktop $desktop -f
 
@@ -46,8 +46,8 @@ super + bracket{left,right}
 super + {_,shift + }x
 	bspc node -{c,k}
 
-super + shift + {w,e,r,a,s,d,f,g,c,v}
-	bspc node -d {W,E,R,A,S,D,F,G,C,V}
+super + shift + {w,e,r,t,a,s,d,f,g,c,v}
+	bspc node -d {W,E,R,T,A,S,D,F,G,C,V}
 
 # swap the current node and the biggest node
 # super + g

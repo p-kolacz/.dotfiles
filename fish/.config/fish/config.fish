@@ -27,11 +27,19 @@ if status is-interactive
 	fish_hybrid_key_bindings
 	term_theme
 
+	# https://github.com/raylee/tldr-sh-client
+	set -x TLDR_HEADER 'magenta bold underline'
+	set -x TLDR_QUOTE 'italic'
+	set -x TLDR_DESCRIPTION 'green'
+	set -x TLDR_CODE 'red'
+	set -x TLDR_PARAM 'blue'
+
 	# Aliases
 	alias vim="vim --servername VIM"
 	alias fonts="fc-list | sort | fzf"
 	alias ls="ls --color=auto"
 	alias la="ls -lA --group-directories-first"
+	alias envs="env | fzf"
 
 	# alias vim="vim --servername VIM"
 

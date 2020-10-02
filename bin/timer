@@ -36,5 +36,5 @@ sleep $timeout &
 wait $!
 
 rm $FILE
-notify-send "祥 Timer" "Time is up!"
-
+notify-send -i ~/.dotfiles/share/icons/timer.png "Timer" "Time is up!"
+notify-sound.sh

@@ -1,0 +1,98 @@
+#    __    _____
+#   |  |  |   __|
+#  |  |__|   __|
+# |_____|__|
+#
+# https://godoc.org/github.com/gokcehan/lf
+
+# TODO:
+# archivemount zip unzip imgs rifle back cmpare tar
+
+set previewer preview.sh
+
+# Appearance
+set color256
+set info size
+set icons true
+set timefmt ''
+set tabstop 4
+set sortby name
+
+# Behaviour
+set findlen 0
+set incsearch true
+set scrolloff 3
+
+# Mappings
+map a push :mkdir<space>
+map d
+map dd cut
+map tt trash
+map DD delete
+map x !$f
+map R bulk-rename
+map y
+map yy copy
+map yf yank-basename
+map yd yank-dirname
+map yp yank-path
+map . set hidden!
+map <enter> shell
+# map <C-o> 
+map ,
+map ,b backup
+
+# Commands
+set ifs "\n"
+cmd trash $trash-put $fx
+cmd open $run.sh
+
+cmd mkdir ${{
+    mkdir -p "$@"
+    lf -remote "send $id load"$'\n'"send $id select \"$@\""
+}}
+
+# cmd backup %zip -r %D/%f_$(date +%%F).zip %f
+
+cmd bulk-rename ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
+
+cmd share $curl -F"file=@$fx" https://0x0.st | xclip -selection c
+
+cmd yank-basename ${{
+    echo "$fx" |
+      xargs -r -d '\n' basename -a -- |
+      xclip -i -selection clipboard
+}}
+
+cmd yank-dirname ${{
+    dirname -- "$f" | tr -d '\n' | xclip -i -selection clipboard
+}}
+
+cmd yank-path ${{
+    echo "$fx" | xclip -i -selection clipboard
+}}
+
+# cmd on-cd ${{
+	# kitty +kitten icat --silent --clear
+# }}
+
+
+
+# vim: filetype=vim commentstring=#%s

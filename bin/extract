@@ -62,3 +62,8 @@ for file; do
         *) echo "'$file' cannot be extracted via this script"; exitcode=1 ;;
     esac
 
+    cd "$OLDPWD"
+done
+
+exit $exitcode
+

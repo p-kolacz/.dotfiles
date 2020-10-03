@@ -37,6 +37,7 @@ case "$FILE_EXTENSION" in
 		identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
 		# && exit 0;;
 		env -u COLORTERM viu -t -s -w $PV_WIDTH "$FILE_PATH"
+		# viu -t -s -w $PV_WIDTH "$FILE_PATH"
 		# env -u COLORTERM catimg -w $PV_WIDTH "$FILE_PATH" \
 
 		# exit 7 for ranger

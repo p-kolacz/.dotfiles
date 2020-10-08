@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# cat "$1" && exit 0
-
 # Script arguments
 FILE_PATH="$1"         # Full path of the highlighted file
 PV_WIDTH="$2"          # Width of the preview pane (number of fitting characters)
-PV_HEIGHT="$3"          # Width of the preview pane (number of fitting characters)
+PV_HEIGHT="$3"         # Height of the preview pane (number of fitting characters)
 
 # lf mode
 [[ -z $PV_HEIGHT ]] && PV_HEIGHT=$PV_WIDTH && PV_WIDTH=80
@@ -104,5 +102,6 @@ esac
 
 file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \
 	&& file --dereference --brief "$FILE_PATH" | sed "s/, /\n/g" \
-	|| cat "$FILE_PATH"
+	|| syn_highlight_a "$FILE_PATH"
+	# || cat "$FILE_PATH"
 

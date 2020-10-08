@@ -18,7 +18,7 @@ set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 set -x TERMINAL kitty
 set -x EDITOR vim
 set -x BROWSER brave
-set -x LESSHISTFILE "-"
+# set -x LESSHISTFILE "-"
 set -x THEME gruvbox-dark
 # source $HOME/.dotfiles/themes/gruvbox.sh
 

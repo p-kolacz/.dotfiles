@@ -1,15 +1,17 @@
 #!/bin/bash
 
 id=$1
-action=$2
+tab=$2
+action=$3
+user=$(whoami)
 
-HISTF=/tmp/dirstory.$id			# history list
-INDXF=/tmp/dirstory.$id.index	# 1-based index of current dir in history
-LOCKF=/tmp/dirstory.$id.lock	# lock when navigating
+HISTF=/tmp/lf.$user.$id.$tab.dirstory			# history list
+INDXF=/tmp/lf.$user.$id.$tab.dirstory.index		# 1-based index of current dir in history
+LOCKF=/tmp/lf.$user.$id.$tab.dirstory.lock		# lock when navigating
 
 
 echo_nth_line() {
-	echo $(tail -n+$1 $HISTF | head -1)
+	tail -n+$1 $HISTF | head -1
 }
 
 case $action in
@@ -46,8 +48,11 @@ case $action in
 			touch $LOCKF
 			echo_nth_line $new_idx 
 		fi ;;
+	lock)
+		touch $LOCKF
+		;;
 	*)
-		echo "Usage: dirstory.sh id push|back|forward"
+		echo "Usage: dirstory.sh id push|back|forward|lock"
 		exit 10 ;;
 esac
 

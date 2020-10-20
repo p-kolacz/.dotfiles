@@ -1,0 +1,17 @@
+configuration {
+	modi: "run,drun";
+	matching: "fuzzy";
+	sorting-method: "fzf";
+
+	theme: "themes/gruvbox-dark.rasi";
+	font: "monospace 14";
+	/* show-icons: true; */
+	/* icon-theme: "Adwaita"; */
+
+	kb-accept-entry: "Return";
+	kb-remove-to-eol: "";
+	kb-row-down: "ctrl-j";
+	kb-row-up: "ctrl-k";
+}
+
+/* vim:ft=css

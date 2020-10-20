@@ -7,10 +7,11 @@
 #---------------------------------------------------------------------------------------#
 
 super + Return
-	kitty
+	$TERMINAL
 
 super + space
-	dmenu_run -i -b -h 32 -p ' '
+	rofi -show run
+	# dmenu_run -i -b -h 32 -p ' '
 
 super + Delete
 	power.sh

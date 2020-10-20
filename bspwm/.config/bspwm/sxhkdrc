@@ -23,8 +23,9 @@ super + {1,2,3}
 
 super + {w,e,r,t,a,s,d,f,g,c,v}
 	desktop={W,E,R,T,A,S,D,F,G,C,V}; \
-	bspc desktop $desktop -m focused; \
-	bspc desktop $desktop -f
+	bspc desktop $desktop --to-monitor focused; \
+	bspc desktop $desktop.!focused --focus || \
+	bspc desktop last --focus
 
 # focus last desktop
 super + b
@@ -38,6 +39,8 @@ super + m
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
+super + {plus,minus}
+	bspc config window_gap $(($(bspc config window_gap) {+,-} 4))
 
 								   # Nodes #
 #------------------------------------------------------------------------------#
@@ -49,10 +52,6 @@ super + {_,shift + }x
 super + shift + {w,e,r,t,a,s,d,f,g,c,v}
 	bspc node -d {W,E,R,T,A,S,D,F,G,C,V}
 
-# swap the current node and the biggest node
-# super + g
-	# bspc node -s biggest
-
 # set the window state
 super + {i,shift + i,o,u}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
@@ -61,21 +60,20 @@ super + {i,shift + i,o,u}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-# focus the node in the given direction
+# focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-# super + {p,b,comma,period}
-	# bspc node -f @{parent,brother,first,second}
-
 # focus the next/previous node in the current desktop
 super + {n,p}
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.leaf
 
-# focus the last node
+super + {comma,period}
+	bspc node @parent -R {-90,90}
+
+# scratchpad
 super + grave
-	bspc node -f last
+	~/.dotfiles/bspwm/scratchpad.sh
 
 #
 # preselect

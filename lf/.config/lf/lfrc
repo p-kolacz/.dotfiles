@@ -29,10 +29,6 @@ set scrolloff 3
 ###########
 # Mappings
 map u :unselect;clear
-map i
-map id %du -sh $f
-map ii $$PAGER $f
-map it %df -h --output=avail .
 map x !$f
 map <c-o> history-back
 map <c-n> history-forward
@@ -52,6 +48,13 @@ map yp yank-path
 map Pa link_abs
 map Pr link_rel
 
+# Info
+map i
+map id %du -sh $f
+map ii $$PAGER $f
+map it %df -h --output=avail .
+map if file-info
+
 # Dirs
 map ,dn push :mkdir<space>
 map ,dc push :mkdir-cd<space>
@@ -59,7 +62,7 @@ map ,ds push :mkdir-selection<space>
 
 # Files
 map ,fn push %touch<space>
-map ,fe push %$EDITOR<space>
+map ,fe push $$EDITOR<space>
 map ,fx chmodx
 
 # Rename

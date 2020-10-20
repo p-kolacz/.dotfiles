@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# recursive thumbnail fullscreen
+sxiv -rtf ~/Cloud/Images/Wallpapers &

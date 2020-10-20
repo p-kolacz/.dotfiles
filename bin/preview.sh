@@ -74,8 +74,11 @@ case "$FILE_EXTENSION" in
 		syn_highlight_a "$FILE_PATH" && exit 0;;
 
 	csv)
-		limit_a "$FILE_PATH" | column -s , -t && exit 0;;
-		# limit_a "$FILE_PATH"  && exit 0;;
+		echo -n "Lines: "
+		wc -l < "$FILE_PATH"
+		# limit_a "$FILE_PATH" | column -s , -t && exit 0;;
+		limit_a "$FILE_PATH" | xsv table && exit 0;;
+		# limit_a "$FILE_PATH" && exit 0;;
 
 	json)
 		# jq --color-output . "$FILE_PATH" && exit 0

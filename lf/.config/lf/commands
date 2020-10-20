@@ -20,9 +20,15 @@ cmd on-cd %{{
 }}
 # on-cd - this break things
 
+### Dirs&Files #################################################################
+
+cmd file-info %{{
+	stat -c "%A | %G/%U | %y" "$f"
+}}
+
 ### Dirs #######################################################################
 
-cmd mkdir ${{
+cmd mkdir %{{
     mkdir -p "$@"
     lf -remote "send $id select \"$@\""
 }}
@@ -95,17 +101,15 @@ cmd link_rel %{{
 
 ### Copy names #################################################################
 
-cmd yank-basename %{{
-    echo "$fx" |
-      xargs -r -d '\n' basename -a -- |
-      xclip -i -selection clipboard
+cmd yank-basename &{{
+    echo "$fx" | xargs -r -d '\n' basename -a -- | xclip -i -selection clipboard
 }}
 
-cmd yank-dirname %{{
+cmd yank-dirname &{{
     dirname -- "$f" | tr -d '\n' | xclip -i -selection clipboard
 }}
 
-cmd yank-path %{{
+cmd yank-path &{{
     echo "$fx" | xclip -i -selection clipboard
 }}
 
@@ -123,7 +127,8 @@ cmd backup %{{
 }}
 
 cmd extract %{{
-	extract -f $(basename "${f%.*}") $f
+	# extract -f $(basename "${f%.*}") $f
+	extract . $fx
 }}
 
 cmd tar %{{

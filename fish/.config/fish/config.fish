@@ -52,6 +52,7 @@ if status is-interactive
 	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
 	alias eala "vim ~/.config/alacritty/alacritty.yml"
 	alias inq "cd ~/Work/Inquisitorium/Inquisitorium && vim"
+	alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)

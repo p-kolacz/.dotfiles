@@ -47,8 +47,9 @@ case $FILE_EXTENSION in
 		sha512sum -c -- "$FILE_PATH" ;;
 	lego)
 		;;
+	*)
+		file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \
+			|| $EDITOR "$FILE_PATH" ;;
 esac
 
-file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \
-	|| $EDITOR "$FILE_PATH"
 

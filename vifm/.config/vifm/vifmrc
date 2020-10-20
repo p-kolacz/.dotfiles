@@ -4,7 +4,7 @@ set shell=/bin/bash
 
 source icons.vifm
 
-set millerview
+" set millerview
 set milleroptions=lsize:1,csize:3,rsize:3,rpreview:all
 set dotdirs=
 

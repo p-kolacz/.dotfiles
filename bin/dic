@@ -11,7 +11,7 @@ fi
 preview() {
 	local word=$1
 	local mode=$2
-	wn $word -$mode | grep -v "^Sense" | fmt -w $FZF_PREVIEW_COLUMNS
+	wn $word -$mode | grep -v "^Sense" | fmt -s -w $FZF_PREVIEW_COLUMNS
 }
 
 export SHELL=/bin/bash

@@ -10,7 +10,7 @@ super + Return
 	$TERMINAL
 
 super + space
-	rofi -show run
+	run-rofi -show run
 	# dmenu_run -i -b -h 32 -p ' '
 
 super + Delete
@@ -37,6 +37,8 @@ XF86MonBrightnessDown
 XF86TouchpadToggle
 	touchpad-toggle.sh
 
+plusminus
+	bluetoothctl power on
 
 #---------------------------------------------------------------------------------------#
 								   # Mouse #

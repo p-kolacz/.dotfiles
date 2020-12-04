@@ -9,11 +9,11 @@ height = 32
 foreground = ${colors.fg}
 background = ${colors.bg}
 line-size = 2
-font-0 = ui:size=12
+font-0 = uiicons:size=12
 font-1 = emoji:scale=10
 ; border-size = 8
 border-bottom-size = 1
-border-color = ${colors.red}
+border-color = ${colors.blue}
 padding = 4
 ; radius = 12
 

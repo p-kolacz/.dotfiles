@@ -1,0 +1,4 @@
+#!/bin/bash
+
+~/Tools/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt
+

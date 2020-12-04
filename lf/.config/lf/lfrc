@@ -34,7 +34,7 @@ map <c-o> history-back
 map <c-n> history-forward
 map <c-z> $ kill -STOP $PPID
 map . set hidden!
-map <enter> shell
+# map <enter> shell
 
 # Copy&paste
 map d

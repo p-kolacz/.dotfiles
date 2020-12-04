@@ -9,3 +9,8 @@ function gpush
 	git add . && git commit -m "$msg" && git push 
 end
 
+function gcd
+	set -l msg (date +%F_%T)
+	git add . && git commit -m "$msg"
+end
+

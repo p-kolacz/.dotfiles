@@ -16,11 +16,11 @@ alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings
 
 set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
 set -x TERMINAL kitty
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x BROWSER brave
 # set -x LESSHISTFILE "-"
-set -x THEME gruvbox-dark
-# source $HOME/.dotfiles/themes/gruvbox.sh
+# set -x THEME gruvbox-dark
+set -x THEME nord
 
 if status is-interactive
 
@@ -43,7 +43,7 @@ if status is-interactive
 
 	# alias vim="vim --servername VIM"
 
-	alias econf "cd ~/.dotfiles;vim"
+	alias econf "cd ~/.dotfiles;$EDITOR"
 	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
 	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
 	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
@@ -52,7 +52,7 @@ if status is-interactive
 	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
 	alias eala "vim ~/.config/alacritty/alacritty.yml"
 	alias inq "cd ~/Work/Inquisitorium/Inquisitorium && vim"
-	alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
+	# alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)

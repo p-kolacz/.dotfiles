@@ -122,20 +122,20 @@ cmd trash-empty ${{
 
 ### Archives ###################################################################
 
-cmd backup %{{
+cmd backup ${{
 	zip -r "${f}_$(date +%F_%T).zip" "$(basename "$f")"
 }}
 
-cmd extract %{{
+cmd extract ${{
 	# extract -f $(basename "${f%.*}") $f
 	extract . $fx
 }}
 
-cmd tar %{{
+cmd tar ${{
 	tar cvf "$f.tar" "$(basename "$f")"
 }}
 
-cmd zip %{{
+cmd zip ${{
 	zip -r "$f.zip" "$(basename "$f")"
 }}
 

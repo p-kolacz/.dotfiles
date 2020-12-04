@@ -21,7 +21,15 @@ limit_a() {
 }
 
 syn_highlight_a() {
-	highlight -O xterm256 -s base16/gruvbox-dark-medium --force "$1"
+	case $THEME in
+		grubox-dark)
+			hl_theme=base16/gruvbox-dark-medium ;;
+		nord)
+			hl_theme=nord ;;
+		*)
+			hl_theme=base16/gruvbox-dark-medium ;;
+	esac
+	highlight -O xterm256 -s $hl_theme --force "$1"
 }
 
 

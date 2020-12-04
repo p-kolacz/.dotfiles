@@ -23,8 +23,10 @@ case $FILE_EXTENSION in
 		mpv -- "$FILE_PATH" & ;;
 	flac|m4a|mp3|ogg|wav|wma)
 		mpv -- "$FILE_PATH" & ;;
-	doc|docx|odp|ods|odt|ppt|pptx|xls|xlsx)
-		libreoffice & ;;
+	ods)
+		gnumeric "$FILE_PATH" & ;;
+	doc|docx|odp|odt|ppt|pptx|xls|xlsx)
+		libreoffice "$FILE_PATH" & ;;
 	jar|zip)
 		# fuse-zip
 		;;

@@ -374,7 +374,7 @@ filextype */
         \ {View in thunar}
         \ Thunar %f &,
 
-set previewprg='preview.sh %c %pw %ph %px'
+set previewprg='preview.sh %c %pw %ph %px &'
 " set previewprg='preview.sh %c %px %px %px %px %px %px'
 " set previewprg='preview.sh %c 1 1 1 1 1 1'
 " fileviewer * preview.sh %c %pw %ph %px %py

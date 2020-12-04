@@ -11,6 +11,10 @@ abbr -ag paci "pacman -Qi"
 abbr -ag pacl "pacman -Ql"
 abbr -ag paco "pacman -Qo"
 
+function remove-orphans
+	pacman -Qtdq | sudo pacman -Rns -
+end
+
 # function pacinfo
 # 	pacman -Qi $argv[1] | colorize 'Wymagany.*' red | colorize 'Zale.*' blue | colorize 'Grup.*' green
 # end

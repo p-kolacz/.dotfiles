@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/Cloud/Exocortex/Notes
+$EDITOR -c VimwikiIndex
+git add . && git commit -m "$(date +%F_%T)"
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import argparse,subprocess,re
+
+def _parse(data, color):
+	match = re.findall(fr"^\*\.?{color}:\s(.+)", data, re.MULTILINE)
+	if match:
+		return match[0]
+
+def kitty():
+	x = subprocess.run(["xrdb", "-query"], text=True, stdout=subprocess.PIPE).stdout
+	ret = []
+
+	fg = _parse(x, "foreground")
+	if fg:
+		ret.append(f"foreground {fg}")
+	bg = _parse(x, "background")
+	if bg:
+		ret.append(f"background {bg}")
+	cursor = _parse(x, "cursorColor")
+	if cursor:
+		ret.append(f"cursor {cursor}")
+	else:
+		ret.append(f"cursor {fg}")
+
+	for i in range(16):
+		col = _parse(x, f"color{i}")
+		if col:
+			ret.append(f"color{i} {col}")
+
+	if bg:
+		ret.append(f"selection_foreground {bg}")
+	if fg:
+		ret.append(f"selection_background {fg}")
+	return str.join("\n", ret)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("format", choices=["kitty"])
+args = parser.parse_args()
+
+theme = globals()[args.format]()
+print(theme)
+

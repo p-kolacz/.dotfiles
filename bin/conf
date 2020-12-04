@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/.dotfiles
+file=$(find . -not -wholename "./.git*" -type f | fzf --preview "highlight -O truecolor -s $THEME --force {}")
+[[ -f $file ]] && $EDITOR "$file"
+

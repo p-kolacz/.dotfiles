@@ -1,1 +1,11 @@
-../../../../.vim/coc-settings.json
+{
+	"suggest.noselect": true,
+	"languageserver": {
+		"godot": {
+			"host": "127.0.0.1",
+			"filetypes": ["gdscript"],
+			"port": 6008
+		}
+	},
+	"python.jediEnabled": true
+}

@@ -2,3 +2,5 @@
 
 # recursive thumbnail fullscreen
 sxiv -rtf ~/Cloud/Images/Wallpapers &
+
+case

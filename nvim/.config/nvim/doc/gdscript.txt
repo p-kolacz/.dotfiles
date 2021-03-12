@@ -1,0 +1,82 @@
+*-gdscript*
+
+https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html
+https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_format_string.html
+https://docs.godotengine.org/en/stable/tutorials/gui/bbcode_in_richtextlabel.html
+
+Tweens~
+tween-curves.png
+
+Ready order~
+Children -> Parent
+
+Init & ready order~
+
+var node = partial.instance()
+node.init()
+
+init -> _ready
+
+_ready overload
+najpierw jest automatycznie wywoływane bazowe _ready, a potem clasy potomnej
+
+Signal convention~
+
+My rule of thumb is: call down, signal up.
+In other words, if it's a child node, use a method call. This is OK because parent nodes are in control of their children.
+If you are tempted to call a method on another node that is not a child, use a signal instead. Put the burden of connecting it on the receiver.
+That keeps scenes self-contained and independent of their surroundings.
+
+
+What is false~
+    - null
+    - ""
+    - 0
+
+
+String padding~
+print("%010d" % 12345)
+# output: "0000012345"
+
+
+Popup, focus child on show~
+
+func _notification(what):
+	if what == NOTIFICATION_POST_POPUP:
+		$LineEdit.grab_focus()
+
+Save & Load~
+func _ready():
+	load_all()
+	connect("tree_exited", self, "save_all")
+
+or
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		var obj	
+		get_tree().call_group_flags(SceneTree.GROUP_CALL_REALTIME, "save", "save", o)
+
+Script dir~
+get_script().resource_path.get_base_dir()
+
+Get locales~
+onready var locales = ProjectSettings.get_setting("locale/locale_filter")[1]
+
+Set locale~
+TranslationServer.set_locale("en")
+
+Quit~
+get_tree().quit()
+
+
+==============================================================================
+ERRORS
+
+Condition ' r_error.error != Variant::CallError::CALL_OK ' is true. returned: __null
+
+Remove arguments from _init() in Node type scripts.
+
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:

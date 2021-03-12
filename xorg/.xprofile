@@ -6,6 +6,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 # Stop littering home dir
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 # export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"

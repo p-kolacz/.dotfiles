@@ -15,7 +15,7 @@ case $FILE_EXTENSION in
 	cbr|cbz|djvu|pdf)
 		zathura -- "$FILE_PATH" & ;;
 	bmp|gif|jpg|jpeg|png|tiff|webp)
-		rifle_sxiv.sh -- "$FILE_PATH" & ;;
+		rifle_sxiv.sh -- "$FILE_PATH" > /dev/null & ;;
 		# sxiv -- "$FILE_PATH" ;;
 	otf|ttf)
 		gnome-font-viewer -- "$FILE_PATH" & ;;

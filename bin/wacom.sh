@@ -12,4 +12,4 @@ xsetwacom set $stylus_id Button 2 "key +f11"
 xsetwacom set $stylus_id Button 3 "key +f12"
 
 # TODO: uniezależnić od karty graficzniej i podłączonego monitora
-xsetwacom set $stylus_id MapToOutput HEAD-0
+xsetwacom set $stylus_id MapToOutput DP-3

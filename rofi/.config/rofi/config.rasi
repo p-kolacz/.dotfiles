@@ -10,8 +10,8 @@ configuration {
 
 	kb-accept-entry: "Return";
 	kb-remove-to-eol: "";
-	kb-row-down: "ctrl-j";
-	kb-row-up: "ctrl-k";
+	kb-row-down: "ctrl-j,Down";
+	kb-row-up: "ctrl-k,Up";
 }
 
 /* vim:ft=css

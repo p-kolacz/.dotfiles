@@ -1,0 +1,88 @@
+snippet =
+print($1)
+endsnippet
+
+snippet ==
+################################################################################
+endsnippet
+
+snippet --
+# ---------------------------------------------------------------------------- #
+endsnippet
+
+snippet expand_home
+os.path.expanduser($0)
+endsnippet
+
+snippet args
+parser = argparse.ArgumentParser()
+parser.set_defaults(func=run_action)
+subparsers = parser.add_subparsers()
+
+sp_preview = subparsers.add_parser("preview")
+sp_preview.add_argument("line")
+sp_preview.set_defaults(func=preview_action)
+
+subparsers.add_parser("setup").set_defaults(func=setup_action)
+
+args = parser.parse_args()
+args.func(args)
+
+endsnippet
+
+snippet call_func_by_string
+globals()["$1"]()
+endsnippet
+
+snippet file_size
+os.path.getsize(${1:path})
+endsnippet
+
+snippet input_edit "input prompt prefilled with text" b
+def input_edit(prompt, text):
+	import readline
+	def hook():
+		readline.insert_text(text)
+		readline.redisplay()
+	readline.set_pre_input_hook(hook)
+	result = input(prompt)
+	readline.set_pre_input_hook()
+	return result
+endsnippet
+
+snippet number2bigletter "Converts number to corresponding big letter 1->A, etc." i
+chr(ord("@") + ${1:number})
+endsnippet
+
+snippet number2smallletter "Converts number to corresponding small letter 1->a, etc." i
+chr(ord("`") + ${1:number})
+endsnippet
+
+snippet overwrite_line "" i
+print($1, end="\r")
+endsnippet
+
+snippet run_pipe "Run process with input"
+subprocess.run(${1:process}, text=True, input=${2:input})
+endsnippet
+
+snippet run_result "Run process and capture output"
+result = subprocess.run(${1:process}, stdout=subprocess.PIPE)
+result.stdout
+endsnippet
+
+snippet script_filename "Script name from argparse"
+parser.prog
+endsnippet
+
+snippet script_full_path
+os.path.abspath(parser.prog)
+endsnippet
+
+snippet script_full_dir
+os.path.dirname(os.path.abspath(parser.prog))
+endsnippet
+
+snippet wait_any_key
+input("Press any key...")
+endsnippet

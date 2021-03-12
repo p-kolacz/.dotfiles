@@ -1,0 +1,76 @@
+snippet - "line" b
+#------------------------------------------------------------------------------#
+$0
+endsnippet
+
+snippet -- "two lines" b
+#------------------------------------------------------------------------------#
+$0
+#------------------------------------------------------------------------------#
+
+endsnippet
+
+snippet cn "class_name" b
+class_name $0
+endsnippet
+
+snippet ov "onready var" b
+onready var $0
+endsnippet
+
+snippet of "onready var find_node" b
+onready var $1		= find_node("$2")$0
+endsnippet
+
+snippet sf "static function" b
+static func $0
+endsnippet
+
+snippet init "constructor" b
+func _init($1):
+	$0
+endsnippet
+
+snippet ready "ready" b
+func _ready():
+	$0
+endsnippet
+
+snippet input "input" b
+func _input(event):
+	$0
+endsnippet
+
+snippet process "process" b
+func _process(delta):
+	$0
+endsnippet
+
+snippet proc "proc" b
+func _process(delta):
+	$0
+endsnippet
+
+snippet pp "physics process" b
+func _physics_process(delta):
+	$0
+endsnippet
+
+snippet = "print"
+print($0)
+endsnippet
+
+snippet sc "connect signal" b
+Signals.connect("$1", self, "$2")$0
+endsnippet
+
+snippet se "emit signal" b
+Signals.emit_signal($1)$0
+endsnippet
+
+snippet rc "remove children"
+for child in $1get_children():
+	child.queue_free()
+$0
+endsnippet
+

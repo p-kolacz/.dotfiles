@@ -36,11 +36,13 @@ syn_highlight_a() {
 # glow for md
 case "$FILE_EXTENSION" in
 	bmp|gif|jpg|jpeg|png|tiff|webp)
+		# identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
+		# catimg -t -w $PV_WIDTH "$FILE_PATH"
+		# shellpic "$FILE_PATH"
 		# kitty +kitten icat --silent --transfer-mode file --place=${PV_WIDTH}x${PV_HEIGHT}@50x2 "$FILE_PATH" &
 		# echo ${PV_WIDTH}x${PV_HEIGHT}
 		# kitty +kitten icat --silent --clear
 		# https://imagemagick.org/script/escape.php
-		identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
 		# && exit 0;;
 		# env -u COLORTERM viu -t -s -w $PV_WIDTH "$FILE_PATH"
 		# viu -t -s -w $PV_WIDTH "$FILE_PATH"
@@ -53,7 +55,8 @@ case "$FILE_EXTENSION" in
 
 	mp3)
 		mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;
-
+	flac)
+		soxi "$FILE_PATH" && exit 0;;
 	pdf)
 		# pdftotext -l 10 -nopgbrk -q -- "$FILE_PATH" - | fmt -w "$PV_WIDTH" && exit 0;;
 		pdftotext -l 10 -nopgbrk -q -- "$FILE_PATH" - && exit 0;;
@@ -68,6 +71,8 @@ case "$FILE_EXTENSION" in
 
 	doc)
 		catdoc "$FILE_PATH" && exit 0;;
+	docx)
+		docx2txt.pl "$FILE_PATH" - && exit 0;;
 	# xlsx)
 		## Uses: https://github.com/dilshod/xlsx2csv
 		# xlsx2csv -- "$FILE_PATH" && exit 0;;
@@ -100,15 +105,20 @@ case "$FILE_EXTENSION" in
 		;;
 
 	apk|bz|bz2|cab|deb|gz|jar|rpm|tar|tgz|xz|zip)
-		bsdtar --list --file "$FILE_PATH" | limit && exit 0;;
+		# bsdtar --list --file "$FILE_PATH" | limit && exit 0;;
+		bsdtar --list --file "$FILE_PATH" && exit 0;;
 
 	rar)
 		## Avoid password prompt by providing empty password
-		unrar lt -p- -- "${FILE_PATH}" | limit && exit 0;;
+		# unrar lt -p- -- "${FILE_PATH}" | limit && exit 0;;
+		unrar lt -p- -- "${FILE_PATH}" && exit 0;;
 
 	7z)
 		## Avoid password prompt by providing empty password
-		7z l -p -- "${FILE_PATH}" | limit && exit 0;;
+		# 7z l -p -- "${FILE_PATH}" | limit && exit 0;;
+		7z l -p -- "${FILE_PATH}" && exit 0;;
+	torrent)
+		dumptorrent -v %c && exit 0 ;;
 esac
 
 file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \

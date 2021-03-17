@@ -2,6 +2,13 @@ snippet assoc_array
 declare -A ${1:var}=([${2:key}]=${3:value})
 endsnippet
 
+snippet case
+case "${0}" in
+	"") ;;
+	*)
+esac
+endsnippet
+
 snippet color
 "\e[$1m"
 endsnippet

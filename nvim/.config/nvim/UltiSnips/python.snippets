@@ -50,6 +50,10 @@ def input_edit(prompt, text):
 	return result
 endsnippet
 
+snippet list_files
+Path(${1:folder}).glob("${2:glob}")
+endsnippet
+
 snippet number2bigletter "Converts number to corresponding big letter 1->A, etc." i
 chr(ord("@") + ${1:number})
 endsnippet

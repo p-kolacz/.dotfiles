@@ -1,6 +1,25 @@
 #!/bin/bash
 
-# recursive thumbnail fullscreen
-sxiv -rtf ~/Cloud/Images/Wallpapers &
+FILE="$HOME/.cache/wallpaper"
 
-case
+browse() {
+	# recursive thumbnail fullscreen
+	sxiv -rtf ~/Cloud/Images/Wallpapers &
+}
+
+setwp() {
+	[[ -f $1 ]] || { echo "Invalid file: $1"; exit ; }
+	cp "$1" "$FILE"
+	feh --no-fehbg --bg-fill "$FILE"
+}
+
+restorewp() {
+	feh --no-fehbg --bg-fill "$FILE" &
+}
+
+case "$1" in
+	"set") setwp "$2" ;;
+	"restore") restorewp ;;
+	*) browse
+esac
+

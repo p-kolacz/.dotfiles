@@ -13,7 +13,6 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 
-echo stdpath('data') . '/plugged'
 "Layers of Vim
 	runtime layers/vimonly.vim
 	" call plug#begin('~/.vim/plugged')
@@ -140,7 +139,7 @@ call which_key#register('<Space>', "g:which_key_map")
 	" Ctrl-space
 	" inoremap <C-@> _
 	nnoremap Y y$
-	nnoremap <F12> :e ~/.vim/vimrc<CR>
+	nnoremap <F12> :e $MYVIMRC<CR>
 	nnoremap <C-F12> :source $MYVIMRC<CR>
 	" nnoremap <CR> o<Esc>
 	vnoremap <C-c> "*y :let @+=@*<CR>

@@ -4,6 +4,8 @@
 
 [bar/main]
 monitor = ${env:MONITOR:}
+; fullscreen fix
+wm-restack = bspwm 
 locale = pl_PL.UTF8
 height = 32
 foreground = ${colors.fg}

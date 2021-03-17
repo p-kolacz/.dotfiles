@@ -1,13 +1,5 @@
 #!/bin/sh
 
-wallpaper_file="$HOME/.cache/wallpaper"
-
-wallpaper() {
-	# nitrogen --save --set-zoom-fill --head=$1 "$2"
-	cp $file $wallpaper_file
-	feh --no-fehbg --bg-fill $wallpaper_file
-}
-
 while read file
 do
 	case "$1" in
@@ -27,7 +19,7 @@ do
 		# "C-3")
 		# 	wallpaper 2 "$file" ;;
 		w)
-			wallpaper "$file" ;;
+			wallpaper set "$file" ;;
 		g)
 			gimp "$file" & ;;
 	esac

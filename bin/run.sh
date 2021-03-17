@@ -9,24 +9,25 @@ FILE_EXTENSION="${FILE_EXTENSION,,}"
 
 case $FILE_EXTENSION in
 	html)
-		$BROWSER "$FILE_PATH" & ;;
+		$BROWSER "$FILE_PATH" ;;
 	epub|mobi)
-		ebook-viewer -- "$FILE_PATH" & ;;
+		ebook-viewer -- "$FILE_PATH" ;;
 	cbr|cbz|djvu|pdf)
-		zathura -- "$FILE_PATH" & ;;
+		zathura -- "$FILE_PATH" ;;
 	bmp|gif|jpg|jpeg|png|tiff|webp)
-		rifle_sxiv.sh -- "$FILE_PATH" > /dev/null & ;;
+		rifle_sxiv.sh -- "$FILE_PATH" > /dev/null ;;
 		# sxiv -- "$FILE_PATH" ;;
 	otf|ttf)
-		gnome-font-viewer -- "$FILE_PATH" & ;;
+		gnome-font-viewer -- "$FILE_PATH" ;;
 	3gp|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|qt|vob|webm|wmv)
-		mpv -- "$FILE_PATH" & ;;
+		mpv -- "$FILE_PATH" ;;
 	flac|m4a|mp3|ogg|wav|wma)
-		mpv -- "$FILE_PATH" & ;;
+		ffplay -nodisp -autoexit "$FILE_PATH" ;;
+		# mpv -- "$FILE_PATH" & ;;
 	ods)
-		gnumeric "$FILE_PATH" & ;;
+		gnumeric "$FILE_PATH" ;;
 	doc|docx|odp|odt|ppt|pptx|xls|xlsx)
-		libreoffice "$FILE_PATH" & ;;
+		libreoffice "$FILE_PATH" ;;
 	jar|zip)
 		# fuse-zip
 		;;

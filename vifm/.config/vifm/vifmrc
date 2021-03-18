@@ -311,5 +311,5 @@ filextype */
         \ Thunar %f &,
 
 " Open all other files with:
-filetype * run.sh &
+filextype * run.sh &
 

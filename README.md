@@ -76,5 +76,5 @@ sudo systemctl start cups.service
 ```
 
 ## Done
-![done](_docs/img/monkey.gif)
+![done](__docs/img/monkey.gif)
 

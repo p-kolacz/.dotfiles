@@ -47,10 +47,6 @@ if status is-interactive
 	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
 	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
 	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
-	alias etile "vim ~/.config/qtile/config.py"
-	alias eauto "vim ~/.config/qtile/autostart.sh"
-	alias ecom "vim ~/.dotfiles/compton/.config/compton.conf"
-	alias eala "vim ~/.config/alacritty/alacritty.yml"
 	alias inq "cd ~/Work/Inquisitorium/Inquisitorium && vim"
 	# alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
 
@@ -72,7 +68,7 @@ if status is-interactive
 	abbr -a -g sysr sudo systemctl restart
 
 	# processes
-	abbr -a -g ka killall
+	abbr -a -g ka killall --wait
 	abbr -a -g psa "ps -e | grep -i"
 
 	# misc.

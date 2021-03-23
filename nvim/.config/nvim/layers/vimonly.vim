@@ -7,9 +7,8 @@ if !has('nvim')
 	set belloff=all
 	set autoread
 	set backspace=indent,eol,start
+	set incsearch
 	set viminfo+='1000,n$XDG_DATA_HOME/viminfo
 	set wildmenu
-	if &term == "alacritty"
-		set ttymouse=sgr	" Fixes mouse in alacritty, removed in nvim
-	endif
+	Plug 'wincent/terminus'
 endif

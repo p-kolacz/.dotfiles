@@ -9,3 +9,4 @@ Plug 'blankname/vim-fish'
 
 " Enable folding of block structures in fish.
 autocmd vimrc FileType fish setlocal foldmethod=expr
+

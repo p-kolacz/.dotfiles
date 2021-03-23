@@ -103,7 +103,8 @@ mark h ~/
 " ------------------------------------------------------------------------------
 
 nnoremap b :bmarks<cr>
-nnoremap o :sync<cr>
+nnoremap o :sync %c<cr>
+nnoremap O :sync<cr>
 nnoremap s :shell<cr>
 nnoremap S :sort<cr>
 nnoremap w :view<cr>

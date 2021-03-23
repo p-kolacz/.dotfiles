@@ -11,7 +11,7 @@ Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = [{'path': '~/Cloud/Exocortex/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
 
 let g:vimwiki_global_ext = 0
-let g:vimwiki_markdown_link_ext = 1
+" let g:vimwiki_markdown_link_ext = 1
 " let g:vimwiki_url_maxsave = 0
 let g:vimwiki_map_prefix = '<leader>i'
 let g:vimwiki_auto_chdir = 1

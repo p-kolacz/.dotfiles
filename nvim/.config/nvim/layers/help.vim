@@ -6,6 +6,8 @@
 
  if has('win32') || has ('win64')
 	 let $VIMHOME = $VIM."/vimfiles"
+ elseif has('nvim')
+	 let $VIMHOME = stdpath('config')
  else
 	 let $VIMHOME = $HOME."/.vim"
  endif

@@ -51,27 +51,28 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap <a-h> <C-w><
-nnoremap <a-j> <C-w>+
-nnoremap <a-k> <C-w>-
+" nnoremap <a-j> <C-w>+
+" nnoremap <a-k> <C-w>-
 nnoremap <a-l> <C-w>>
 
 nnoremap <leader><leader> :
 nnoremap <leader>w :w<CR>
 call DescIgnore('w')
 
-" ---------------------------------- Options --------------------------------- "
-call Desc('o.s', '+Spell')
-nnoremap <leader>oss :setlocal spell!<CR>
-call Desc('o.s.s', 'spell check')
-nnoremap <leader>osc :setlocal complete+=kspell<CR>
-call Desc('o.s.c', 'spell complete')
-nnoremap <leader>osn :setlocal complete-=kspell<CR>
-call Desc('o.s.n', 'spell no complete')
-nnoremap <leader>ose :setlocal spelllang=en_us<CR>
-call Desc('o.s.e', 'lang en_us')
-nnoremap <leader>osp :setlocal spelllang=pl<CR>
-call Desc('o.s.p', 'lang pl')
+" ----------------------------------- Spell ---------------------------------- "
+call Desc('s', '+Spell')
+nnoremap <leader>ss :setlocal spell!<CR>
+call Desc('s.s', 'spell check')
+nnoremap <leader>sc :setlocal complete+=kspell<CR>
+call Desc('s.c', 'spell complete')
+nnoremap <leader>sn :setlocal complete-=kspell<CR>
+call Desc('s.n', 'spell no complete')
+nnoremap <leader>se :setlocal spelllang=en_us<CR>
+call Desc('s.e', 'lang en_us')
+nnoremap <leader>sp :setlocal spelllang=pl<CR>
+call Desc('s.p', 'lang pl')
 
+" ---------------------------------- Options --------------------------------- "
 nnoremap <leader>ol :setlocal list!<CR>
 call Desc('o.l', 'list')
 nnoremap <leader>on :set relativenumber! number!<CR>

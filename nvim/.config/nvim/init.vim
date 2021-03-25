@@ -4,6 +4,7 @@ call plug#begin(stdpath('data') . '/plugged')
 runtime layers/commands.vim
 runtime layers/options.vim
 runtime layers/$TERM.vim
+" runtime layers/lua-helpers.vim
 
 " -------------------------------- Key mappings ------------------------------ "
 runtime layers/which-key.vim
@@ -19,7 +20,8 @@ Plug 'machakann/vim-highlightedyank'
 
 " --------------------------------- Navigation ------------------------------- "
 set mouse=a
-runtime layers/fzf.vim
+" runtime layers/fzf.vim
+runtime layers/telescope.vim
 runtime layers/netrw.vim
 runtime layers/open-browser.vim
 runtime layers/vifm.vim

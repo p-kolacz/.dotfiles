@@ -7,6 +7,9 @@ augroup vimrc
 	autocmd FocusLost * :wa
 	" c - autowrap comments, r - insert comments at <cr>, o - comment after o/O
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=o
+	" autocmd BufRead stdpath('config').'/init.lua'
+	" autocmd BufRead $MYVIMRC setlocal includeexpr=stdpath('config').'/lua/layers/'.v:fname
+	autocmd BufRead */.config/nvim/init.lua setlocal includeexpr=stdpath('config').'/lua/layers/'.v:fname
 augroup END
 
 command! OpenImg execute 'silent !sxiv '.expand('%:p:h').'/'.expand('<cfile>').' &'

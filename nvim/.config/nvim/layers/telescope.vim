@@ -11,8 +11,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " :lua require('layers/telescope')
-" :luafile lua/layers/telescope.lua
+" :luafile layers/telescope-setup.lua
 
+" let g:require_lua_files
 " File pickers
 nnoremap <C-space>		:Telescope find_files<cr>
 nnoremap <leader>gf		:Telescope git_files<cr>

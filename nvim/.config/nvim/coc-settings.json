@@ -7,5 +7,7 @@
 			"port": 6008
 		}
 	},
-	"python.jediEnabled": true
+	"python.jediEnabled": true,
+	"Lua.diagnostics.globals": ["vim"],
+	"Lua.telemetry.enable": false
 }

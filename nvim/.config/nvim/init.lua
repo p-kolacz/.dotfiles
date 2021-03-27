@@ -16,8 +16,8 @@ layers.define {
 	--------------------------------- Appearance  ------------------------------
 	"layers/appearance.vim",
 	"layers/themes/nightfly.vim",
-	-- "layers/airline.vim",
-	{ "layers/galaxyline.vim", "galaxyline-setup" },
+	"layers/airline.vim",
+	-- { "layers/galaxyline.vim", "galaxyline-setup" },
 	{ "gitsigns-plugin", "gitsigns-setup" },
 
 	--------------------------------- Navigation -------------------------------
@@ -64,9 +64,9 @@ layers.define {
 Vimplug.plug_begin()
 layers.source(1)
 Vimplug.plug_end()
-vim.cmd("execute 'colorscheme '.g:colorscheme")
 layers.source(2)
 
+vim.cmd("execute 'colorscheme '.g:colorscheme")
 
 -- Load project specific configuration
 if vim.fn["filereadable"]("project.vim") > 0 then

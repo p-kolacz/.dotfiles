@@ -2,14 +2,14 @@ local M = {}
 
 local function map(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
-	opts.noremap = opts.noremap or true	
+	opts.noremap = opts.noremap or true
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 end
 
 local function map_buf(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
-	opts.noremap = opts.noremap or true	
-	vim.api.nvim_buf_set_keymap(mode, lhs, rhs, opts)
+	opts.noremap = opts.noremap or true
+	vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
 end
 
 function M.n(lhs, rhs, desc, opts) map("n", lhs, rhs, desc, opts) end

@@ -8,8 +8,11 @@ require('telescope').setup{
 				["<c-k>"] = actions.move_selection_previous
 			},
 		},
+		winblend = 20,
 	}
 }
 
+-- Telescope Ultisnips
+-- https://github.com/fhill2/telescope-ultisnips.nvim
 require('telescope').load_extension('ultisnips')
 

@@ -14,7 +14,12 @@ set textwidth=80
 " let &t_Cs = "\e[4:3m"
 " let &t_Ce = "\e[4:0m"
 
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
-augroup END
+" Highlight yank
+autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}
+
+
+" Quick scope
+Plug 'unblevable/quick-scope' 
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+

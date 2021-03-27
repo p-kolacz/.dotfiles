@@ -39,6 +39,7 @@ function! DescIgnore(key)
 	call Desc(a:key, 'which_key_ignore')
 endfunction
 
+call Desc('c', '+Code')
 call Desc('o', '+Options')
 call Desc('p', '+Project')
 call Desc('t', '+Tools')

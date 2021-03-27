@@ -5,4 +5,3 @@ if &term == "xterm-kitty"
 	" set t_RV=
 endif
 
-

@@ -4,7 +4,7 @@ configuration {
 	sorting-method: "fzf";
 
 	theme: "themes/gruvbox-dark.rasi";
-	font: "monospace 14";
+	font: "monospace 18";
 	/* show-icons: true; */
 	/* icon-theme: "Adwaita"; */
 

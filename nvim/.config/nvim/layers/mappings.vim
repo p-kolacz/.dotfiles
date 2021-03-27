@@ -42,7 +42,7 @@ call Desc('e', '+Edit')
 nnoremap <leader>es :%s/
 call Desc('e.r', 'substitute')
 
-nnoremap <F12> :e $MYVIMRC<CR>
+nnoremap <F12> :cd $VIMHOME<cr>:e init.lua<CR>
 
 " ---------------------------------- Windows --------------------------------- "
 nnoremap <C-h> <C-w>h

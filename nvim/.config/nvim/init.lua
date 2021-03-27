@@ -1,75 +1,75 @@
-package.loaded.layers = nil
+-- package.loaded.layers = nil
 local layers = require("layers")
+Vimplug = require("vimplug")
 
-layers.define({
+layers.define {
 
-	------------------------------ Global settings ----------------------------- "
+	------------------------------ Global settings -----------------------------
 	"layers/commands.vim",
 	"layers/options.vim",
-	-- "layers/$TERM.vim",
-	"layers/lua.vim",
 
-	-------------------------------- Key mappings ------------------------------ "
-	"layers/which-key.vim",
+	-------------------------------- Key mappings ------------------------------
+	{ "layers/which-key.vim", "layers/which-key-setup.vim" },
 	"layers/mappings.vim",
 	"layers/plug.vim",
 
-	--------------------------------- Appearance  ------------------------------ "
+	--------------------------------- Appearance  ------------------------------
 	"layers/appearance.vim",
 	"layers/themes/nightfly.vim",
-	"layers/airline.vim",
+	-- "layers/airline.vim",
+	{ "layers/galaxyline.vim", "galaxyline-setup" },
+	{ "gitsigns-plugin", "gitsigns-setup" },
 
-	--------------------------------- Navigation ------------------------------- "
-	-- set mouse=a
-	{ "layers/telescope.vim",
-		"telescope-setup" },
+	--------------------------------- Navigation -------------------------------
+	{ "layers/telescope.vim", "telescope-setup" },
 	"layers/open-browser.vim",
 
-	---------------------------------- General --------------------------------- "
-	-- Plug 'tpope/vim-surround'
-	-- Plug 'tpope/vim-repeat'
-	-- Plug 'michaeljsmith/vim-indent-object'
-	"layers/coc.vim",
+	---------------------------------- General ---------------------------------
+	"layers/editing.vim",
 	"layers/commentary.vim",
+	-- "layers/coc.vim",
+	{ "layers/lsp.vim", "lsp" },
+	{ "compe-plugin", "compe-setup" },
 	"layers/filesystem.vim"	,
 	"layers/ultisnips.vim",
 
-	--------------------------------- Languages -------------------------------- "
+	--------------------------------- Languages --------------------------------
+	{ nil, "bash" },
 	"layers/csv.vim",
 	"layers/fish.vim",
-	"layers/gdscript.vim",
-	-- " ftplugin/json.vim
+	{ "layers/gdscript.vim", "gdscript" },
+	-- { nil, "gdscript" },
+	{ "layers/lua.vim", "lua-setup" },
+	-- ftplugin/json.vim
 	"layers/markdown.vim",
-	"layers/python.vim",
+	-- layers/python.vim",
+	{ nil, "php" },
+	{ nil, "python" },
+	{ nil, "sql-setup" },
 	"layers/sxhkd.vim",
 	"layers/webdev.vim",
 	-- " ftplugin/vim.vim
 
-	----------------------------------- Tools ---------------------------------- "
-	"layers/cheatsh.vim",
+	----------------------------------- Tools ----------------------------------
+	-- "layers/cheatsh.vim",
 	"layers/fugitive.vim",
 	"layers/figlet.vim",
 	"layers/rest.vim",
 	"layers/help.vim",
 	"layers/vimwiki.vim",
 	"layers/unicode.vim",
+}
 
-})
 
-
-layers.plug_begin()
+Vimplug.plug_begin()
 layers.source(1)
-layers.plug_end()
+Vimplug.plug_end()
+vim.cmd("execute 'colorscheme '.g:colorscheme")
 layers.source(2)
 
-vim.cmd("execute 'colorscheme '.g:colorscheme")
---[[
-call which_key#register('<Space>', "g:which_key_map")
-" lua print(vim.fn.stdpath('config'))
-" luafile vim.fn.stdpath('config')..'layers/telescope-setup.lua'
 
-" Load project specific configuration
-if filereadable('.project.vim')
-	source .project.vim
-endif
-]]
+-- Load project specific configuration
+if vim.fn["filereadable"]("project.vim") > 0 then
+	vim.cmd("source project.vim")
+end
+

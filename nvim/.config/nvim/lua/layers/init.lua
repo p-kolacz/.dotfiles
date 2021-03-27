@@ -27,18 +27,10 @@ function M.source(indx)
 	end
 end
 
-function M.init()
-	vim.bo.suffixesadd = ".lua"
-	vim.bo.includeexpr = "stdpath('config').'/lua/layers/'.v:fname"
-end
-
-function M.plug_begin()
-	vim.fn["plug#begin"](vim.fn.stdpath("data").."/plugged")
-end
-
-function M.plug_end()
-	vim.fn["plug#end"]()
-end
+-- function M.init()
+-- 	vim.bo.suffixesadd = ".lua"
+-- 	vim.bo.includeexpr = "stdpath('config').'/lua/layers/'.v:fname"
+-- end
 
 return M
 

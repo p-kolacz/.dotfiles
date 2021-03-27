@@ -1,8 +1,8 @@
 Plug 'SirVer/ultisnips'
 
-nnoremap <leader>ts :UltiSnipsEdit<CR>
-call Desc('t.s', 'snippets')
+nnoremap <leader>cS :UltiSnipsEdit<CR>
+call Desc('c.S', 'edit snippets')
 
-" let g:UltiSnipsExpandTrigger='<tab>'
+" let g:UltiSnipsExpandTrigger='<c-tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'

@@ -9,11 +9,10 @@
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
 
-" :lua require('layers/telescope')
-" :luafile layers/telescope-setup.lua
+" https://github.com/nvim-telescope/telescope.nvim#pickers
 
-" let g:require_lua_files
 " File pickers
 nnoremap <C-space>		:Telescope find_files<cr>
 nnoremap <leader>gf		:Telescope git_files<cr>
@@ -38,7 +37,6 @@ nnoremap <leader>vh		:Telescope highlights<cr>
 nnoremap <leader>fl		:Telescope current_buffer_fuzzy_find theme=get_dropdown<cr>
 
 " LSP Pickers
-" https://github.com/nvim-telescope/telescope.nvim#pickers
 
 " Git Pickers
 nnoremap <leader>gcc	:Telescope git_commits<cr>
@@ -48,4 +46,13 @@ nnoremap <leader>gs		:Telescope git_status<cr>
 
 " Treesitter
 nnoremap <leader>tt		:Telescope treesitter<cr>
+
+" Symbols
+nnoremap <leader>cie	:lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<cr>
+nnoremap <leader>cik	:lua require'telescope.builtin'.symbols{ sources = {'kaomoji'} }<cr>
+nnoremap <leader>cim	:lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
+nnoremap <leader>cil	:lua require'telescope.builtin'.symbols{ sources = {'latex'} }<cr>
+
+" Ultisnips
+nnoremap <leader>cs		:Telescope ultisnips ultisnips theme=get_dropdown<cr>
 

@@ -8,7 +8,7 @@ inoremap jk <Esc>
 nnoremap H ^
 nnoremap L $
 nnoremap Y y$
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
 
 " ---------------------------------- Editing --------------------------------- "
 " Clipboard
@@ -42,7 +42,8 @@ call Desc('e', '+Edit')
 nnoremap <leader>es :%s/
 call Desc('e.r', 'substitute')
 
-nnoremap <F12> :cd $VIMHOME<cr>:e init.lua<CR>
+" nnoremap <F12> :cd $VIMHOME<cr>:e init.lua<CR>
+nnoremap <F12> :e $VIMHOME/init.lua<CR>
 
 " ---------------------------------- Windows --------------------------------- "
 nnoremap <C-h> <C-w>h

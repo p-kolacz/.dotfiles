@@ -16,7 +16,8 @@ layers.define {
 	--------------------------------- Appearance  ------------------------------
 	"layers/appearance.vim",
 	"layers/themes/nightfly.vim",
-	"layers/airline.vim",
+	{ nil, "statusline" },
+	-- "layers/airline.vim",
 	-- { "layers/galaxyline.vim", "galaxyline-setup" },
 	{ "gitsigns-plugin", "gitsigns-setup" },
 

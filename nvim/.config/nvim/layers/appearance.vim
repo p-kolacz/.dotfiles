@@ -1,5 +1,3 @@
-Plug 'ryanoasis/vim-devicons'
-
 set cursorline
 set listchars=space:•,tab:\ ->,eol:↲,nbsp:+,trail:•,extends:⟩,precedes:⟨
 set nowrap
@@ -17,6 +15,9 @@ set textwidth=80
 " Highlight yank
 autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}
 
+" Icons
+" Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Quick scope
 Plug 'unblevable/quick-scope' 

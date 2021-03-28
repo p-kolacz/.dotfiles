@@ -62,10 +62,10 @@ local function filetype(bufnr)
 		local glyph,_ = devicons.get_icon(filename, ext)
 		if glyph then
 			-- ft = ft..string.format("%%#%s#%saaaaa%s", hi, icon, RESET_COLOR)
-			icon = string.format(" %s ", glyph)
+			icon = string.format("%s ", glyph)
 		end
 	end
-	return icon .. ft
+	return " " .. icon .. ft
 end
 
 local function lsp(bufnr)
@@ -97,6 +97,9 @@ local function scrollbar()
 	-- local default_chars = {' ', '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█'}
 	local index = 1
 
+	if total_lines == 1 then
+		return "    "
+	end
 	index = ((current_line - 1) / (total_lines - 1)) * (#Icons.scrollbar - 1) + 1
 	index = math.floor(index + 0.5)
 	-- if  current_line == 1 then
@@ -112,6 +115,7 @@ local function scrollbar()
 	-- end
 	-- return index
 	return Icons.scrollbar[index]
+	-- return total_lines .. " " .. current_line
 end
 
 local function debug(bufnr)

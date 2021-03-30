@@ -6,15 +6,27 @@
  "                               |_|
 " https://github.com/nvim-telescope/telescope.nvim
 
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-symbols.nvim'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-symbols.nvim'
+
+" packadd! popup.nvim
+" packadd! plenary.nvim
+" packadd! telescope.nvim
+" packadd! telescope-symbols.nvim
+
+lua Plug.add('nvim-lua/popup.nvim')
+lua Plug.add('nvim-lua/plenary.nvim')
+lua Plug.add('nvim-telescope/telescope.nvim')
+lua Plug.add('nvim-telescope/telescope-symbols.nvim')
+
+
 
 " https://github.com/nvim-telescope/telescope.nvim#pickers
 
 " File pickers
-nnoremap <C-space>		:Telescope find_files<cr>
+nnoremap <C-space>		:Telescope find_files find_command=rg,--hidden,--no-ignore,-i,--files<cr>
 nnoremap <leader>gf		:Telescope git_files<cr>
 nnoremap <leader>fc		:Telescope grep_string<cr>
 nnoremap <leader>ff		:Telescope live_grep<cr>

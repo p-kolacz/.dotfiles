@@ -1,3 +1,7 @@
+-- Enable embeded lua syntax highlighting
+vim.g.vimsyn_embed= 'l'
+
+-- LS
 require'lspconfig'.sumneko_lua.setup {
 	cmd = {
 		LSP_DATA_HOME .. "lua-language-server/bin/Linux/lua-language-server",

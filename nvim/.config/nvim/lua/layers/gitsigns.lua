@@ -1,3 +1,7 @@
+-- https://github.com/lewis6991/gitsigns.nvim
+
+Plug.add 'lewis6991/gitsigns.nvim'
+
 -- vim.wo.signcolumn = "yes:2"
 require('gitsigns').setup {
 	keymaps = {

@@ -15,12 +15,8 @@ set textwidth=80
 " Highlight yank
 autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}
 
-" Icons
-" Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
-
 " Quick scope
-Plug 'unblevable/quick-scope' 
+lua Plug.add 'unblevable/quick-scope' 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 

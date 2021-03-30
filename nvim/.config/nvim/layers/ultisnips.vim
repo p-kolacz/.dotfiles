@@ -1,4 +1,4 @@
-Plug 'SirVer/ultisnips'
+lua Plug.add 'SirVer/ultisnips'
 
 nnoremap <leader>cS :UltiSnipsEdit<CR>
 call Desc('c.S', 'edit snippets')

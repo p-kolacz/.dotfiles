@@ -6,7 +6,7 @@
 "
 " https://github.com/vimwiki/vimwiki
 
-Plug 'vimwiki/vimwiki'
+lua Plug.add 'vimwiki/vimwiki'
 
 let g:vimwiki_list = [{'path': '~/Cloud/Exocortex/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
 

@@ -4,7 +4,7 @@
 " |___|_|_|_|_|_|_\___|\__|
 " https://github.com/mattn/emmet-vim
 
-Plug 'mattn/emmet-vim'
+lua Plug.add 'mattn/emmet-vim'
 
 " Enable in different mode
 " If you don't want to enable emmet in all modes, you can use set these options in vimrc:
@@ -20,7 +20,7 @@ Plug 'mattn/emmet-vim'
 	let g:user_emmet_leader_key=','
 
 " Better PHP syntax?
-Plug 'StanAngeloff/php.vim'
+" Plug 'StanAngeloff/php.vim'
 
 " Fix for HTML in PHP indent
 " Plug 'captbaritone/better-indent-support-for-php-with-html' 

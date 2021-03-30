@@ -1,4 +1,4 @@
-Plug 'tpope/vim-fugitive'
+lua Plug.add 'tpope/vim-fugitive'
 
 call Desc('g', '+Git')
 

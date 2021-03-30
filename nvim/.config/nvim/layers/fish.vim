@@ -1,4 +1,4 @@
-Plug 'blankname/vim-fish'
+lua Plug.add 'blankname/vim-fish'
 " Plug 'Stautob/vim-fish'
 
 " Set up :make to use fish for syntax checking.

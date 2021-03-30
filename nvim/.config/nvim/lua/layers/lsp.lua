@@ -1,13 +1,15 @@
+Plug.add 'neovim/nvim-lspconfig'
+
 LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
 LSP_NODE_HOME = LSP_DATA_HOME .. 'node_modules/.bin/'
 
 require('layers/lsp-icons')
+local map = require('map')
 
 LSP_ON_ATTACH = function(client, bufnr)
 	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	-- Mappings.
-	local map = require('map')
 	map.nb('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
 	map.nb('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
 	map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')

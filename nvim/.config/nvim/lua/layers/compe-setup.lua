@@ -1,3 +1,5 @@
+Plug.add 'hrsh7th/nvim-compe'
+
 vim.o.completeopt = "menuone,noselect"
 vim.o.pumheight = 10
 

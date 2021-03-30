@@ -1,6 +1,6 @@
 " https://github.com/liuchengxu/vim-which-key
 
-Plug 'liuchengxu/vim-which-key'
+lua Plug.add 'liuchengxu/vim-which-key'
 
 nnoremap <silent> <space>       :<c-u>WhichKey '<space>'<CR>
 nnoremap <silent> , :<c-u>WhichKey ','<CR>
@@ -45,3 +45,4 @@ call Desc('p', '+Project')
 call Desc('t', '+Tools')
 call Desc('v', '+Vim')
 
+call which_key#register('<Space>', "g:which_key_map")

@@ -1,4 +1,5 @@
-Plug 'tpope/vim-eunuch'		" Filesystem operations
+lua Plug.add 'tpope/vim-eunuch'
+" Filesystem operations
 
 nnoremap <leader>fx :Chmod+x
 call Desc('f.x', 'make executable')

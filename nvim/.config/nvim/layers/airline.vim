@@ -6,8 +6,8 @@
 " https://github.com/vim-airline/vim-airline
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+lua Plug.add 'vim-airline/vim-airline'
+lua Plug.add 'vim-airline/vim-airline-themes'
 
 let g:airline_section_z = '%l/%L:%2v'
 

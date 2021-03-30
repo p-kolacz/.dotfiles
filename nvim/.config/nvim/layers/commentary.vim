@@ -1,6 +1,6 @@
 " https://github.com/tpope/vim-commentary
 
-Plug 'tpope/vim-commentary'
+lua Plug.add 'tpope/vim-commentary'
 
 " C-_ means C-/
 " C-? means backspace but <BS> also works

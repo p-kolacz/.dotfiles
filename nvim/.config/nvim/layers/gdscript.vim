@@ -1,7 +1,7 @@
 " Plug 'clktmr/vim-gdscript3'
 
 " https://github.com/habamax/vim-godot
-Plug 'habamax/vim-godot'
+lua Plug.add 'habamax/vim-godot'
 
 " autocmd vimrc FileType gdscript3 nnoremap <buffer> <F5> :!echo "--------------------------------------------------------------------------------";godot<CR>
 autocmd vimrc FileType gdscript nnoremap <buffer> <F5> :GodotRun<CR>

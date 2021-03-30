@@ -94,36 +94,16 @@ end
 local function scrollbar()
 	local current_line = vim.fn.line('.')
 	local total_lines = vim.fn.line('$')
-	-- local default_chars = {' ', '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█'}
-	local index = 1
-
 	if total_lines == 1 then
 		return "    "
 	end
-	index = ((current_line - 1) / (total_lines - 1)) * (#Icons.scrollbar - 1) + 1
+	local index = ((current_line - 1) / (total_lines - 1)) * (#Icons.scrollbar - 1) + 1
 	index = math.floor(index + 0.5)
-	-- if  current_line == 1 then
-	-- 	index = 1
-	-- elseif current_line == total_lines then
-	-- 	index = #chars
-	-- else
-	-- 	local line_no_fraction = vim.fn.floor(current_line) / vim.fn.floor(total_lines)
-	-- 	index = vim.fn.float2nr(line_no_fraction * #chars)
-	-- 	if index == 0 then
-	-- 		index = 1
-	-- 	end
-	-- end
-	-- return index
 	return Icons.scrollbar[index]
-	-- return total_lines .. " " .. current_line
 end
 
 local function debug(bufnr)
-	-- return vim.g.actual_curbuf or "x"
-	-- return vim.g.actual_curbuf or "x"
-	-- return vim.g.actual_curwin or ""
 	-- return " " ..vim.g.statusline_winid .. "/"..vim.fn.win_getid() 
-	-- return vim.bo.filetype or "none"
 	return ""
 end
 

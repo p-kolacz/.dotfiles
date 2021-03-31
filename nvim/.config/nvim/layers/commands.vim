@@ -1,5 +1,5 @@
 " Required for formatoptions autocmd to work
-filetype plugin indent on
+" filetype plugin indent on
 
 augroup vimrc
 	autocmd!

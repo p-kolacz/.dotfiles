@@ -1,4 +1,5 @@
 Plug = require 'sme-plug'
+Map = require 'sme-map'
 require 'layers'.source {
 
 ------------------------------ Global settings -----------------------------
@@ -19,21 +20,26 @@ require 'layers'.source {
 "layers/telescope.vim",
 "telescope-setup",
 "layers/open-browser.vim",
--- { plug = 'kyazdani42/nvim-tree.lua', },
+"nvim-tree",
 
 ---------------------------------- General ---------------------------------
+"colorizer",
 "layers/commentary.vim",
 "layers/editing.vim",
 "lsp",
-"compe-setup",
+"compe",
+"lspsaga",
 "layers/filesystem.vim",
+"gitsigns",
 "layers/ultisnips.vim",
 
 --------------------------------- Languages --------------------------------
 "bash-ft",
 "layers/csv.vim",
+"css",
 "layers/fish.vim",
-"layers/gdscript.vim", "gdscript" ,
+"layers/gdscript.vim",
+"gdscript" ,
 "lua-ft",
 -- ftplugin/json.vim
 "layers/markdown.vim",
@@ -46,8 +52,8 @@ require 'layers'.source {
 
 ----------------------------------- Tools ----------------------------------
 -- "cheatsh.vim",
+"codi",
 "layers/fugitive.vim",
-"gitsigns",
 "layers/figlet.vim",
 "layers/rest.vim",
 "layers/help.vim",

@@ -13,8 +13,11 @@ function M.add(repo)
 	local dir = PLUGIN_HOME..name
 	if vim.fn.isdirectory(dir) == 0 then
 		vim.cmd(string.format('!git clone --depth 1 %s%s.git %s', GIHUB_URL, repo, dir))
+		vim.cmd('packadd! '..name)
+		vim.cmd('helptags ALL')
+	else
+		vim.cmd('packadd! '..name)
 	end
-	vim.cmd('packadd! '..name)
 end
 
 function M.update()

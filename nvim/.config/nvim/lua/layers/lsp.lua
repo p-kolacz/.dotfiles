@@ -1,36 +1,37 @@
 Plug.add 'neovim/nvim-lspconfig'
 
+Map.n('<leader>ci', ':LspInfo<cr>')
+
 LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
 LSP_NODE_HOME = LSP_DATA_HOME .. 'node_modules/.bin/'
 
 require('layers/lsp-icons')
-local map = require('map')
 
 LSP_ON_ATTACH = function(client, bufnr)
 	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	-- Mappings.
-	map.nb('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
-	map.nb('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
-	map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
-	map.nb('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-	map.nb('<leader>hs', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-	-- map.nb('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
-	-- map.nb('<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
-	-- map.nb('<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-	map.nb('<space>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-	map.nb('<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-	map.nb('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-	map.nb('<space>cd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-	map.nb('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-	map.nb(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-	map.nb('<space>cl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+	Map.nb('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
+	Map.nb('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
+	-- Map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
+	Map.nb('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+	Map.nb('<leader>hs', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+	-- Map.nb('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
+	-- Map.nb('<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
+	-- Map.nb('<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+	Map.nb('<space>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+	Map.nb('<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+	Map.nb('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+	Map.nb('<space>cd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+	Map.nb('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+	Map.nb(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+	Map.nb('<space>cl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
 
 	-- Set some keybinds conditional on server capabilities
 	if client.resolved_capabilities.document_formatting then
-		map.nb("<space>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+		Map.nb("<space>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 	elseif client.resolved_capabilities.document_range_formatting then
-		map.nb("<space>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
+		Map.nb("<space>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
 	end
 
 	-- Set autocommands conditional on server_capabilities

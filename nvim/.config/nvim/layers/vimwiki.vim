@@ -13,8 +13,8 @@ let g:vimwiki_list = [{'path': '~/Cloud/Exocortex/Notes/', 'syntax': 'markdown',
 let g:vimwiki_global_ext = 0
 " let g:vimwiki_markdown_link_ext = 1
 " let g:vimwiki_url_maxsave = 0
-let g:vimwiki_map_prefix = '<leader>i'
-call Desc('i', '+Vimwiki')
+let g:vimwiki_map_prefix = '<leader>n'
+call Desc('n', '+Vimwiki')
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_auto_header = 1
 

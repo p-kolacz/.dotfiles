@@ -46,7 +46,7 @@ nnoremap <leader>su		:Telescope spell_suggest theme=get_dropdown<cr>
 nnoremap <leader>vk		:Telescope keymaps<cr>
 nnoremap <leader>vf		:Telescope filetypes theme=get_dropdown<cr>
 nnoremap <leader>vh		:Telescope highlights<cr>
-nnoremap <leader>fl		:Telescope current_buffer_fuzzy_find theme=get_dropdown<cr>
+nnoremap <leader>/		:Telescope current_buffer_fuzzy_find theme=get_dropdown<cr>
 
 " LSP Pickers
 
@@ -60,10 +60,10 @@ nnoremap <leader>gs		:Telescope git_status<cr>
 nnoremap <leader>tt		:Telescope treesitter<cr>
 
 " Symbols
-nnoremap <leader>cie	:lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<cr>
-nnoremap <leader>cik	:lua require'telescope.builtin'.symbols{ sources = {'kaomoji'} }<cr>
-nnoremap <leader>cim	:lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
-nnoremap <leader>cil	:lua require'telescope.builtin'.symbols{ sources = {'latex'} }<cr>
+nnoremap <leader>ie	:lua require'telescope.builtin'.symbols{ sources = {'emoji'} }<cr>
+nnoremap <leader>ik	:lua require'telescope.builtin'.symbols{ sources = {'kaomoji'} }<cr>
+nnoremap <leader>im	:lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
+nnoremap <leader>il	:lua require'telescope.builtin'.symbols{ sources = {'latex'} }<cr>
 
 " Ultisnips
 nnoremap <leader>cs		:Telescope ultisnips ultisnips theme=get_dropdown<cr>

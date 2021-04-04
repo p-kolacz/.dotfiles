@@ -5,12 +5,12 @@ lua Plug.add 'liuchengxu/vim-which-key'
 nnoremap <silent> <space>       :<c-u>WhichKey '<space>'<CR>
 nnoremap <silent> , :<c-u>WhichKey ','<CR>
 
-set timeoutlen=500
+set timeoutlen=250
 
 let g:which_key_map = {}
 
 function! Desc(key, desc)
-	let path = split(a:key, '\.')
+	let path = split(a:key, '\zs')		" split by chars
 	let length = len(path)
 	let i = 0
 	let ref = g:which_key_map
@@ -39,10 +39,15 @@ function! DescIgnore(key)
 	call Desc(a:key, 'which_key_ignore')
 endfunction
 
-call Desc('c', '+Code')
-call Desc('o', '+Options')
-call Desc('p', '+Project')
-call Desc('t', '+Tools')
-call Desc('v', '+Vim')
+command! -nargs=+ Desc call Desc(<f-args>)
+
+command! -nargs=1 DescIgnore call DescIgnore(<f-args>)
+
+Desc c +Code
+Desc i +Insert
+Desc o +Options
+Desc t +Tools
+Desc v +Vim
 
 call which_key#register('<Space>', "g:which_key_map")
+

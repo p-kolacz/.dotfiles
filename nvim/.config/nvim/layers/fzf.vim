@@ -26,32 +26,32 @@ else
 endif
 
 nnoremap <leader>fh :History<CR>
-call Desc('f.h', 'history')
+call Desc('fh', 'history')
 nnoremap <leader>fl :BLines<CR>
-call Desc('f.l', 'lines')
+call Desc('fl', 'lines')
 nnoremap <leader>ff :Rg<cr>
-call Desc('f.f', 'find in files')
+call Desc('ff', 'find in files')
 nnoremap <leader>fc :Rgc<cr>
-call Desc('f.c', 'find in files cword')
+call Desc('fc', 'find in files cword')
 nnoremap <leader>fs :Snippets<CR>
-call Desc('f.s', 'snippets')
+call Desc('fs', 'snippets')
 
 nnoremap <leader>hh :Helptags<CR>
-call Desc('h.h', 'helptags')
+call Desc('hh', 'helptags')
 
 nnoremap <leader>gc :Commits<CR>
-call Desc('g.g', 'commits')
+call Desc('gg', 'commits')
 
 nnoremap <leader>vc :Commands<CR>
-call Desc('v.c', 'commands')
+call Desc('vc', 'commands')
 nnoremap <leader>vf :Filetypes<CR>
-call Desc('v.f', 'filetypes')
+call Desc('vf', 'filetypes')
 nnoremap <leader>vh :History:<CR>
-call Desc('v.h', 'commands history')
+call Desc('vh', 'commands history')
 nnoremap <leader>vs :History/<CR>
-call Desc('v.s', 'search history')
+call Desc('vs', 'search history')
 nnoremap <leader>vm :Maps<CR>
-call Desc('v.m', 'nmaps')
+call Desc('vm', 'nmaps')
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(

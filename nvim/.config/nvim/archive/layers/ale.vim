@@ -7,6 +7,6 @@ let g:ale_sign_warning = '⚠'
 
 call Desc('e', '+Errors')
 nmap <leader>ep <Plug>(ale_previous_wrap)
-call Desc('e.p', 'previous error')
+call Desc('ep', 'previous error')
 nmap <leader>en <Plug>(ale_next_wrap)
-call Desc('e.n', 'next error')
+call Desc('en', 'next error')

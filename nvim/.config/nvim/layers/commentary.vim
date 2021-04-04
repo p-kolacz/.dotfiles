@@ -8,5 +8,5 @@ nnoremap <C-_> :Commentary<cr><down>
 nnoremap <BS> :Commentary<cr>
 vnoremap <BS> :Commentary<cr>
 nmap <leader>cc yypkgccj
-call Desc('c.c', 'duplicomment')
+call Desc('cc', 'duplicomment')
 

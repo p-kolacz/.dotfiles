@@ -69,7 +69,7 @@ local function inactive(bufnr)
 		p.readonly(bufnr, Icons.readonly),
 		p.modified(bufnr, Icons.modified),
 		"%f ",			-- filename
-		Icons.separator,
+		-- Icons.separator,
 		p.filetype(bufnr, Fticons, Icons.separator),
 		-- p.debug(bufnr),
 		"%=",			-- separator

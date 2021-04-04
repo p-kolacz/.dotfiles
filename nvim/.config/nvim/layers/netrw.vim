@@ -11,4 +11,4 @@ let g:netrw_winsize = 20		" width in %
 " let g:netrw_altv = 1			" show on the right side
 
 " nnoremap <leader>fb :Lex<cr>
-" call Desc('f.b', 'Browse')
+" call Desc('fb', 'Browse')

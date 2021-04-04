@@ -1,7 +1,7 @@
 lua Plug.add 'SirVer/ultisnips'
 
 nnoremap <leader>cS :UltiSnipsEdit<CR>
-call Desc('c.S', 'edit snippets')
+call Desc('cS', 'edit snippets')
 
 " let g:UltiSnipsExpandTrigger='<c-tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'

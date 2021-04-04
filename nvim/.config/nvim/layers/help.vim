@@ -13,10 +13,10 @@ autocmd vimrc FileType help nnoremap <buffer> gi :silent exec '!sxiv $VIMHOME/do
 
 call Desc('h', '+Help')
 nnoremap <leader>hh :help<space>
-call Desc('h.h', 'help')
+call Desc('hh', 'help')
 nnoremap <leader>hg :helpgrep<space>
-call Desc('h.g', 'help grep')
+call Desc('hg', 'help grep')
 nnoremap <F1> :call Help()<cr>
 nnoremap <leader>hf :call Help()<cr>
-call Desc('h.f', 'filetype notes')
+call Desc('hf', 'filetype notes')
 

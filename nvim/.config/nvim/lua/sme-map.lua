@@ -1,9 +1,52 @@
+package.loaded['sme-map'] = nil
 local M = {}
+
+M.which_key_map = {}
+
+-- function M.desc(key, val)
+-- 	local path = key:gmatch('<leader>(.+)')()
+-- 	-- local ref = M.which_key_map
+-- 	local ref = vim.g.which_key_map
+-- 	for i=1, #path do
+-- 		local k = path:sub(i,i)
+-- 		if i == #path then
+-- 			if val:sub(1,1) == '+' then
+-- 				if ref[k] then
+-- 					ref[k].name = val
+-- 				else
+-- 					ref[k] = { name = val }
+-- 				end
+-- 			else
+-- 				ref[k] = val
+-- 			end
+-- 		else
+-- 			if not ref[k] then
+-- 				ref[k] = {}
+-- 			end
+-- 			ref = ref[k]
+-- 		end
+-- 	end
+-- end
+
+function M.desc(key, val)
+	local k = key:gmatch('<leader>(.+)')()
+	if k then
+		vim.fn.Desc(k, val)
+	end
+end
+
+function M.which_register()
+	vim.g.which_key_map = Map.which_key_map
+	vim.fn['which_key#register']('<Space>', 'g:which_key_map')
+end
 
 local function map(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
 	opts.noremap = opts.noremap or true
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+	if desc then
+		M.desc(lhs, desc)
+	end
 end
 
 local function map_buf(mode, lhs, rhs, desc, opts)

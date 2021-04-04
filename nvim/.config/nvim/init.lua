@@ -9,6 +9,8 @@ require 'layers'.source {
 -------------------------------- Key mappings ------------------------------
 "layers/which-key.vim",
 "layers/mappings.vim",
+"layers/map-edit.vim",
+"map-project",
 
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
@@ -17,8 +19,7 @@ require 'layers'.source {
 "statusline",
 
 --------------------------------- Navigation -------------------------------
-"layers/telescope.vim",
-"telescope-setup",
+"telescope",
 "layers/open-browser.vim",
 "nvim-tree",
 
@@ -30,7 +31,7 @@ require 'layers'.source {
 "compe",
 "lspsaga",
 "layers/filesystem.vim",
-"gitsigns",
+-- "gitsigns",
 "layers/ultisnips.vim",
 
 --------------------------------- Languages --------------------------------
@@ -67,4 +68,3 @@ if vim.fn["filereadable"]("project.vim") > 0 then
 	vim.cmd("source project.vim")
 end
 
--- vim.cmd('colorscheme nightfly')

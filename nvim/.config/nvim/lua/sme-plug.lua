@@ -22,9 +22,10 @@ end
 
 function M.update()
 	vim.cmd(string.format('!ls -d %s* | xargs -P10 -I{} git -C {} pull', PLUGIN_HOME))
+	vim.cmd('helptags ALL')
 end
 
-vim.cmd('command! UpdatePlugins lua require"sme-plug".update()')
+vim.cmd('command! PlugUpdate lua require"sme-plug".update()')
 
 return M
 

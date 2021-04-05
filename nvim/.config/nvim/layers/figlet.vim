@@ -6,9 +6,9 @@ nnoremap <leader>tf2 :.!figlet -f twopoint \| sed 's/ *$//g'<CR>
 nnoremap <leader>tf3 :.!figlet -f threepoint \| sed 's/ *$//g'<CR>
 
 call Desc('tf', '+Figlet')
-call Desc('tff', 'Default')
-call Desc('tfr', 'Rectangles')
-call Desc('tfs', 'Small')
-call Desc('tfc', 'Cybermedium')
+call Desc('tff', 'default')
+call Desc('tfr', 'rectangles')
+call Desc('tfs', 'small')
+call Desc('tfc', 'cybermedium')
 call Desc('tf2', '2-point')
 call Desc('tf3', '3-point')

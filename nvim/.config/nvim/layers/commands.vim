@@ -6,7 +6,7 @@ augroup vimrc
 	" autocmd BufWritePost init.vim source $MYVIMRC
 	autocmd FocusLost * :wa
 	" c - autowrap comments, r - insert comments at <cr>, o - comment after o/O
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=o
+	" autocmd FileType * setlocal formatoptions-=c formatoptions-=o
 	autocmd BufRead */.config/nvim/init.lua setlocal includeexpr=stdpath('config').'/lua/layers/'.v:fname
 augroup END
 

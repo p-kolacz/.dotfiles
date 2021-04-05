@@ -15,8 +15,10 @@ require 'layers'.source {
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
 "layers/themes/nightfly.vim",
+"colorizer",
 "icons",
 "statusline",
+"marksigns",
 
 --------------------------------- Navigation -------------------------------
 "telescope",
@@ -24,15 +26,15 @@ require 'layers'.source {
 "nvim-tree",
 
 ---------------------------------- General ---------------------------------
-"colorizer",
 "layers/commentary.vim",
 "layers/editing.vim",
+"gitsigns",		-- must be after plenary
 "lsp",
 "compe",
-"lspsaga",
+-- "lspsaga",
 "layers/filesystem.vim",
--- "gitsigns",
 "layers/ultisnips.vim",
+"treesitter",
 
 --------------------------------- Languages --------------------------------
 "bash-ft",
@@ -42,14 +44,15 @@ require 'layers'.source {
 "layers/gdscript.vim",
 "gdscript" ,
 "lua-ft",
--- ftplugin/json.vim
+-- after/ftplugin/json.vim --
 "layers/markdown.vim",
 "php",
 "python",
 "sql",
 "layers/sxhkd.vim",
 "layers/webdev.vim",
--- " ftplugin/vim.vim
+"vim",
+-- after/ftplugin/vim.vim --
 
 ----------------------------------- Tools ----------------------------------
 -- "cheatsh.vim",
@@ -58,7 +61,7 @@ require 'layers'.source {
 "layers/figlet.vim",
 "layers/rest.vim",
 "layers/help.vim",
-"layers/vimwiki.vim",
+-- "layers/vimwiki.vim",
 "layers/unicode.vim",
 
 }

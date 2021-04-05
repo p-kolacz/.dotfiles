@@ -30,9 +30,8 @@ M.which_key_map = {}
 
 function M.desc(key, val)
 	local k = key:gmatch('<leader>(.+)')()
-	if k then
-		vim.fn.Desc(k, val)
-	end
+	k = k or key
+	vim.fn.Desc(k, val)
 end
 
 function M.which_register()

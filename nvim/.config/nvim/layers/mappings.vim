@@ -36,9 +36,8 @@ call Desc('f', '+File')
 nnoremap <leader>fe :e<space>
 call Desc('fe', 'edit')
 
-
-" nnoremap <F12> :cd $VIMHOME<cr>:e init.lua<CR>
 nnoremap <F12> :e $VIMHOME/init.lua<CR>
+nnoremap <F11> :execute 'e'.stdpath('config').'/after/ftplugin/'.&filetype.'.vim'<cr>
 
 " ---------------------------------- Windows --------------------------------- "
 nnoremap <C-h> <C-w>h

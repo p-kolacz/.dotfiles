@@ -24,6 +24,7 @@ Map.n('<leader>fb', ':Telescope file_browser theme=get_dropdown<cr>', 'browse fi
 Map.n('<leader>vb', ':Telescope buffers<cr>', 'buffers')
 Map.n('<leader>fh', ':Telescope oldfiles<cr>', 'history')
 Map.n('<leader>vc', ':Telescope commands theme=get_dropdown<cr>', 'commands')
+Map.n('<C-p>',		':Telescope commands theme=get_dropdown<cr>')
 Map.n('<leader>vx', ':Telescope command_history theme=get_dropdown<cr>', 'cmd history')
 Map.n('<leader>ht', ':Telescope help_tags<cr>', 'help tags')
 Map.n('<leader>vq', ':Telescope quickfix<cr>', 'quickfix list')
@@ -39,6 +40,7 @@ Map.n('<leader>/', ':Telescope current_buffer_fuzzy_find theme=get_dropdown<cr>'
 --LSP Pickers
 
 --Git Pickers
+Map.desc('gc', '+Commits')
 Map.n('<leader>gcc', ':Telescope git_commits<cr>', 'commits')
 Map.n('<leader>gcb', ':Telescope git_bcommits<cr>', 'buffer commits')
 Map.n('<leader>gb', ':Telescope git_branches<cr>', 'branches')

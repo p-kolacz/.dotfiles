@@ -21,5 +21,5 @@ Map.n('<C-b>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR
 Map.n('gs', ':Lspsaga signature_help<CR>')
 
 -- rename
-Map.n('cr', ':Lspsaga rename<CR>', 'rename')
+Map.n('<leader>cr', ':Lspsaga rename<CR>', 'rename')
 

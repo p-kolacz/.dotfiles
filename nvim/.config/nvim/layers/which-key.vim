@@ -2,11 +2,13 @@
 
 lua Plug.add 'liuchengxu/vim-which-key'
 
-nnoremap <silent> <space>       :<c-u>WhichKey '<space>'<CR>
+nnoremap <silent> <space> :<c-u>WhichKey '<space>'<CR>
 nnoremap <silent> , :<c-u>WhichKey ','<CR>
 
 set timeoutlen=250
-
+" let g:which_key_vertical = 1					" doesn't work well
+" let g:which_key_disable_default_offset = 0	" doesn't work?
+let g:which_key_sort_horizontal = 1
 let g:which_key_map = {}
 
 function! Desc(key, desc)

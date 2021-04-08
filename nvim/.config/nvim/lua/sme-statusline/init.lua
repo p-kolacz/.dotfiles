@@ -49,6 +49,7 @@ local function active(bufnr)
 		p.spell(bufnr, Icons.separator),
 		-- p.lsp(bufnr, Icons.separator),
 		p.lsp_icon(bufnr, Icons.server, Icons.separator),
+		p.lsp_diagnostic(bufnr),
 		"%=",			-- separator
 		col,
 		" %4l/%L",	-- line/Lines

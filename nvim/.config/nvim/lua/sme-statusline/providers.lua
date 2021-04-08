@@ -1,3 +1,4 @@
+package.loaded['sme-statusline/providers'] = nil
 local M = {}
 
 function M.color(mode, colors)
@@ -65,6 +66,22 @@ function M.spell(bufnr, separator)
 	local s = vim.fn.getbufvar(bufnr, "&spell")
 	local lang = string.upper(vim.fn.getbufvar(bufnr, "&spelllang"))
 	return s == 0 and "" or string.format("%s %s", separator, lang)
+end
+
+function M.lsp_diagnostic(bufnr)
+	-- if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
+	local types = {'Error', 'Warning', 'Information', 'Hint'}
+	local counts = {0,0,0,0}
+	local active_clients = vim.lsp.get_active_clients()
+
+	if active_clients then
+		for _, client in ipairs(active_clients) do
+			for k,v in pairs(types) do
+				counts[k] = counts[k] + vim.lsp.diagnostic.get_count(bufnr, v, client.id)
+			end
+		end
+	end
+	return '('..table.concat(counts, ',')..')'
 end
 
 -- extension for scoll bar

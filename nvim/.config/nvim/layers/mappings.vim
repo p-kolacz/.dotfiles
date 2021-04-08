@@ -15,19 +15,6 @@ nnoremap Y y$
 vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-v> "+P
 
-" Move line
-nnoremap <a-j> :m .+1<cr>==
-nnoremap <a-k> :m .-2<cr>==
-" Move selection
-vnoremap <a-j> :m '>+1<cr>gv=gv
-vnoremap <a-k> :m '<-2<cr>gv=gv
-
-" Snake case
-" nnoremap <leader>dw df_
-" call Desc('dw', 'delete till _')
-" nnoremap <leader>cw ct_
-" call Desc('cw', 'change till _')
-
 " ---------------------------------- Buffers --------------------------------- "
 nnoremap <leader>q :q<CR>
 call DescIgnore('q')
@@ -36,8 +23,8 @@ call Desc('f', '+File')
 nnoremap <leader>fe :e<space>
 call Desc('fe', 'edit')
 
-nnoremap <F12> :execute 'e'.stdpath('config').'/init.lua'<CR>
-nnoremap <F11> :execute 'e'.stdpath('config').'/after/ftplugin/'.&filetype.'.vim'<cr>
+nnoremap <F12> :execute 'e' stdpath('config').'/init.lua'<CR>
+nnoremap <F11> :execute 'e' stdpath('config').'/after/ftplugin/'.&filetype.'.vim'<cr>
 
 " ---------------------------------- Windows --------------------------------- "
 nnoremap <C-h> <C-w>h

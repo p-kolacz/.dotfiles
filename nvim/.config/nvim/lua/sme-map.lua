@@ -52,6 +52,9 @@ local function map_buf(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
 	opts.noremap = opts.noremap or true
 	vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
+	if desc then
+		M.desc(lhs, desc)
+	end
 end
 
 function M.n(lhs, rhs, desc, opts) map("n", lhs, rhs, desc, opts) end

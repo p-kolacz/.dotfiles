@@ -27,6 +27,9 @@ require'lspconfig'.sumneko_lua.setup {
 					[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
 				},
 			},
+			completion = {
+				keywordSnippet = 'Disable'
+			},
 		},
 	},
 	on_attach = LSP_ON_ATTACH,

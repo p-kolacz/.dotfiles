@@ -16,7 +16,7 @@ require('gitsigns').setup {
 		-- ['n <leader>hu'] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
 		-- ['n <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
 		-- ['n <leader>hR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-		['n <leader>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+		-- ['n <leader>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
 		-- ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
 
 		-- Text objects
@@ -24,4 +24,6 @@ require('gitsigns').setup {
 		-- ['x ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>'
 	},
 }
+
+Map.nb('<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>', 'preview chunk')
 

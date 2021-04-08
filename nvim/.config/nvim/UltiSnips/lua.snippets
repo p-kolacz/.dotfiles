@@ -1,6 +1,30 @@
+snippet edit_command "edit from variable"
+execute 'edit' func().'.txt'
+endsnippet
+
 snippet pr
 print($1)
 $0
+endsnippet
+
+snippet file_relative_path
+@%
+endsnippet
+
+snippet full_path
+expand('%:p')
+endsnippet
+
+snippet file_base
+expand('%:t:r')
+endsnippet
+
+snippet file_extension
+expand('%:e')
+endsnippet
+
+snippet file_root_path
+expand('%:p:h')
 endsnippet
 
 snippet round

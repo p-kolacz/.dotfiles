@@ -56,6 +56,7 @@ require 'layers'.source {
 
 ----------------------------------- Tools ----------------------------------
 -- "cheatsh.vim",
+"cheatsheet",
 "codi",
 "layers/fugitive.vim",
 "layers/figlet.vim",

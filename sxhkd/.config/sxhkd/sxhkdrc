@@ -23,19 +23,19 @@ XF86Audio{Play,Prev,Next}
 	playerctl {play-pause,previous,next}
 
 XF86Audio{Raise,Lower}Volume
-	fish -c {vol-inc,vol-dec}
+	volume {inc,dec}
 
 XF86AudioMute
-	fish -c mute-toggle
+	volume toggle
 
 XF86MonBrightnessUp
-	backlight.sh +5
+	backlight +5
 
 XF86MonBrightnessDown   
-	backlight.sh -5
+	backlight -5
 
 XF86TouchpadToggle
-	touchpad-toggle.sh
+	touchpad-toggle
 
 plusminus
 	bluetoothctl power on

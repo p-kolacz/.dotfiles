@@ -8,6 +8,8 @@ set signcolumn=yes
 set termguicolors
 set textwidth=80
 
+" set fillchars+=vert:│ 
+
 " Enable underline & undercurl
 " let &t_Cs = "\e[4:3m"
 " let &t_Ce = "\e[4:0m"

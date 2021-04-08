@@ -40,7 +40,7 @@ export SXHKD_SHELL=/bin/bash
 restore-wallpaper.sh
 seafile-applet &
 syncthing -no-restart -logfile="$HOME/.local/log/syncthing.log" &
-compton -b
+picom -b
 
 exec $WM > $HOME/.local/log/$WM.log 2>&1
 # exec qtile > $HOME/.local/share/xorg/qtile.log

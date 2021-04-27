@@ -69,7 +69,7 @@ function M.spell(bufnr, separator)
 end
 
 function M.lsp_diagnostic(bufnr)
-	-- if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
+	if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
 	local types = {'Error', 'Warning', 'Information', 'Hint'}
 	local counts = {0,0,0,0}
 	local active_clients = vim.lsp.get_active_clients()

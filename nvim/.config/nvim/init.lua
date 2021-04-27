@@ -1,5 +1,6 @@
 Plug = require 'sme-plug'
 Map = require 'sme-map'
+Help = require 'sme-help'
 require 'layers'.source {
 
 ------------------------------ Global settings -----------------------------

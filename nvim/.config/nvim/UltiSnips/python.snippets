@@ -36,11 +36,47 @@ snippet call_func_by_string
 globals()["$1"]()
 endsnippet
 
+snippet capture_signal "Capture system signal like SIGINT"
+import signal
+import sys
+
+def signal_handler(sig, frame):
+	print('You pressed Ctrl+C!')
+	sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+endsnippet
+
+snippet file2list
+f.readlines()
+endsnippet
+
+snippet file_basename "File basename?"
+from pathlib import Path
+Path($1).stem
+endsnippet
+
+snippet file_ext
+from pathlib import Path
+Path($1).suffix
+endsnippet
+
 snippet file_size
 os.path.getsize(${1:path})
 endsnippet
 
-snippet input_edit "input prompt prefilled with text" b
+snippet for_kv "Iterate keys and values of list"
+for k,v in enumerate(listvar):
+	$0
+endsnippet
+
+snippet hash "Hashing functions"
+import hashlib
+hashlib.md5(b"string to hash").hexdigest()
+hashlib.sha1(s.encode()).hexdigest()
+endsnippet
+
+snippet input_edit "Input prompt prefilled with text" b
 def input_edit(prompt, text):
 	import readline
 	def hook():
@@ -52,7 +88,7 @@ def input_edit(prompt, text):
 	return result
 endsnippet
 
-snippet iterate_indexes "iterate over list indexes"
+snippet iterate_indexes "Iterate over list indexes"
 for i in range(len(${1:list})):
 	$0
 endsnippet
@@ -66,11 +102,28 @@ chr(ord("@") + ${1:number})
 endsnippet
 
 snippet number2smallletter "Converts number to corresponding small letter 1->a, etc." i
-chr(ord("`") + ${1:number})
+chr(ord("\`") + ${1:number})
+endsnippet
+
+snippet openURL "Open URL in browser"
+browser = os.environ.get("BROWSER")
+subprocess.run([browser, url])
 endsnippet
 
 snippet overwrite_line "" i
 print($1, end="\r")
+endsnippet
+
+snippet regex_matched_part "Use regex matched part"
+\1
+endsnippet
+
+snippet remove_by_index "Remove item from list by index"
+list.pop(index)
+endsnippet
+
+snippet request_content "gzip and deflate automatically decoded"
+Response.content
 endsnippet
 
 snippet run_pipe "Run process with input"

@@ -2,7 +2,8 @@ function _print_pipestatus --description "Print pipestatus for prompt"
     # only output status codes if some process in the pipe failed
     # SIGPIPE (141 = 128 + 13) is usually not a failure, see #6375.
     if string match -qvr '^(0|141)$' $argv
-        echo (set_color --bold red)(string join "|" (__fish_pipestatus_with_signal $argv))
+        # echo (set_color --bold red)(string join "|" (__fish_pipestatus_with_signal $argv))
+        echo (set_color --bold red) $argv
 	else
 		echo (set_color black)""
     end

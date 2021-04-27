@@ -1,7 +1,8 @@
 #!/bin/sh
 
 WM=bspwm
-# WM=spectrwm
+
+wallpaper restore
 
 userresources=$HOME/.dotfiles/xorg/.Xresources
 sysresources=/etc/X11/xinit/.Xresources
@@ -37,7 +38,6 @@ export SXHKD_SHELL=/bin/bash
 	sxhkd; } &
 
 # Apps
-restore-wallpaper.sh
 seafile-applet &
 syncthing -no-restart -logfile="$HOME/.local/log/syncthing.log" &
 picom -b

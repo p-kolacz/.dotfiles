@@ -5,10 +5,10 @@
  "           |_|
 
 function! Help()
-	execute 'edit' $VIMHOME.'/doc/'.&filetype.'.txt'
+	execute 'edit' stdpath('config').'/doc/'.&filetype.'.txt'
 endfunction
 
-execute 'autocmd vimrc BufWritePost $VIMHOME/doc/*.txt helptags $VIMHOME/doc'
+" execute 'autocmd vimrc BufWritePost $VIMHOME/doc/*.txt helptags $VIMHOME/doc'
 autocmd vimrc FileType help nnoremap <buffer> gi :silent exec '!sxiv $VIMHOME/doc/img/'.expand('%:t:r').'/<cfile> &'<CR>
 
 call Desc('h', '+Help')
@@ -19,4 +19,10 @@ call Desc('hg', 'help grep')
 nnoremap <F1> :call Help()<cr>
 nnoremap <leader>hf :call Help()<cr>
 call Desc('hf', 'filetype notes')
+
+" Desc hm filetype\ manual
+" Desc ha filetype\ API
+
+" command! -nargs=1 HelpMapMan nnoremap <buffer> <leader>hm :silent exe "!$BROWSER ".<q-args><cr>
+" command! -nargs=1 HelpMapAPI nnoremap <buffer> <leader>ha :silent exe "!$BROWSER ".<q-args><cr>
 

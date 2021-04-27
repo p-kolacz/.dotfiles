@@ -126,7 +126,7 @@ nnoremap <c-k> :tabprev<cr>
 
 nnoremap ,a ggvG<cr>
 nnoremap ,b :backup<cr>
-nnoremap ,c :cmpfiles<cr>
+nnoremap ,c :cmp<cr>
 nnoremap ,C :write | edit $MYVIFMRC | restart full<cr>
 nnoremap ,d :dragon<cr>
 nnoremap ,e :extract<cr>

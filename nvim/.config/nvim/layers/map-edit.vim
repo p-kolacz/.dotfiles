@@ -16,3 +16,6 @@ call Desc('es', 'substitute')
 " change cword and press . to repeat change on next, n to goto next
 nnoremap <silent> <leader>ed :let @/='\<'.expand('<cword>').'\>'<cr>cgn
 xnoremap <silent> <leader>ed "sy:let @/=@s<cr>cgn
+
+Desc ed change&repeat
+

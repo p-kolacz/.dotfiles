@@ -19,6 +19,6 @@ require'compe'.setup {
 
 
 local opts = { expr = true }
-Map.i('<cr>', "compe#confirm('<cr>')", nil, opts)
+-- Map.i('<cr>', "compe#confirm('<cr>')", nil, opts)
 Map.i('<C-e>', "compe#close('<C-e>')", nil, opts)
 

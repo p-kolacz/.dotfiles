@@ -36,7 +36,7 @@ syn_highlight_a() {
 # glow for md
 case "$FILE_EXTENSION" in
 	bmp|gif|jpg|jpeg|png|tiff|webp)
-		# identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
+		identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
 		# catimg -t -w $PV_WIDTH "$FILE_PATH"
 		# shellpic "$FILE_PATH"
 		# kitty +kitten icat --silent --transfer-mode file --place=${PV_WIDTH}x${PV_HEIGHT}@50x2 "$FILE_PATH" &

@@ -3,7 +3,7 @@ configuration {
 	matching: "fuzzy";
 	sorting-method: "fzf";
 
-	theme: "themes/gruvbox-dark.rasi";
+	theme: "auto.rasi";
 	font: "monospace 18";
 	/* show-icons: true; */
 	/* icon-theme: "Adwaita"; */
@@ -14,4 +14,4 @@ configuration {
 	kb-row-up: "ctrl-k,Up";
 }
 
-/* vim:ft=css
+/* vim:ft=css */

@@ -33,13 +33,20 @@ include-file = ~/.config/polybar/modules/pulseaudio.ini
 include-file = ~/.config/polybar/modules/temperature.ini 
 
 [colors]
-fg = ${xrdb:foreground:#eeeeee}
-bg = ${xrdb:background:#111111}
-red = ${xrdb:color1:#aa0000}
-green = ${xrdb:color2:#00aa00}
-blue = ${xrdb:color4:#0000aa}
-yellow = ${xrdb:color3:#eeee00}
-brblack = ${xrdb:color8:#777777}
+fg = ${env:THEME_FG:#eeeeee}
+bg = ${env:THEME_BG:#111111}
+red = ${env:THEME_RED:#aa0000}
+green = ${env:THEME_GREEN:#00aa00}
+blue = ${env:THEME_BLUE:#0000aa}
+yellow = ${env:THEME_YELLOW:#eeee00}
+brblack = ${env:THEME_BLACK2:#777777}
+; fg = ${xrdb:foreground:#eeeeee}
+; bg = ${xrdb:background:#111111}
+; red = ${xrdb:color1:#aa0000}
+; green = ${xrdb:color2:#00aa00}
+; blue = ${xrdb:color4:#0000aa}
+; yellow = ${xrdb:color3:#eeee00}
+; brblack = ${xrdb:color8:#777777}
 
 
 [module/bluetooth]

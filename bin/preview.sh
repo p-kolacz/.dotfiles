@@ -27,7 +27,7 @@ syn_highlight_a() {
 		nord)
 			hl_theme=nord ;;
 		*)
-			hl_theme=base16/gruvbox-dark-medium ;;
+			hl_theme=base16/nord ;;
 	esac
 	highlight -O xterm256 -s $hl_theme --force "$1"
 }

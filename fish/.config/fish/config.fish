@@ -5,6 +5,8 @@
 # |_|   |_|___/_| |_|
 
 
+# sh ~/test.sh
+
 fish_ssh_agent
 
 if status is-login
@@ -15,12 +17,12 @@ end
 alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
 set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
-set -x TERMINAL kitty
+set -x TERMINAL run-kitty
 set -x EDITOR nvim
 set -x BROWSER brave
 # set -x LESSHISTFILE "-"
 # set -x THEME gruvbox-dark
-set -x THEME nord
+# set -x THEME tokyonight-storm
 
 if status is-interactive
 

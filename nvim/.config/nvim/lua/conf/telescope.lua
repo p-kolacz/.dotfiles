@@ -4,7 +4,7 @@
  --  | |  __/ |  __/\__ \ (_| (_) | |_) |  __/_| | | \ V /| | | | | | |
  --  |_|\___|_|\___||___/\___\___/| .__/ \___(_)_| |_|\_/ |_|_| |_| |_|
  --                               |_|
---https://github.com/nvim-telescope/telescope.nvim
+-- https://github.com/nvim-telescope/telescope.nvim
 
 Plug.add('nvim-lua/popup.nvim')
 Plug.add('nvim-lua/plenary.nvim')

@@ -1,1 +1,5 @@
-rofi -theme ~/.config/rofi/themes/$THEME.rasi $@
+#!/bin/bash
+
+# rofi -theme ~/.config/rofi/themes/$THEME.rasi $@
+rofi -theme ~/.config/rofi/themes/nord.rasi $@
+

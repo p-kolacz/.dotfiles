@@ -80,8 +80,12 @@ snippet sc "connect signal" b
 Signals.connect("$1", self, "$2")$0
 endsnippet
 
-snippet script_dir "current script dir"
+snippet script_dir "current script dir" i
 get_script().resource_path.get_base_dir()
+endsnippet
+
+snippet script_filename "current script name" i
+get_script().resource_path.get_file().get_basename()
 endsnippet
 
 snippet se "emit signal" b

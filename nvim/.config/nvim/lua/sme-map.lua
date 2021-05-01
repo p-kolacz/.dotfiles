@@ -1,4 +1,4 @@
-package.loaded['sme-map'] = nil
+-- package.loaded['sme-map'] = nil
 local M = {}
 
 M.which_key_map = {}

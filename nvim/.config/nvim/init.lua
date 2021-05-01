@@ -1,7 +1,7 @@
 Plug = require 'sme-plug'
 Map = require 'sme-map'
 Help = require 'sme-help'
-require 'layers'.source {
+require 'config'.source {
 
 ------------------------------ Global settings -----------------------------
 "layers/commands.vim",
@@ -11,54 +11,56 @@ require 'layers'.source {
 "layers/which-key.vim",
 "layers/mappings.vim",
 "layers/map-edit.vim",
-"map-project",
+"maps/map-project",
 
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
-"layers/themes/nightfly.vim",
-"colorizer",
-"icons",
-"statusline",
-"marksigns",
+-- "layers/themes/nightfly.vim",
+-- "layers/themes/oceanic-next.vim",
+"themes/tokyonight",
+"conf/colorizer",
+"conf/icons",
+"conf/statusline",
+"conf/marksigns",
 
 --------------------------------- Navigation -------------------------------
-"telescope",
+"conf/telescope",
 "layers/open-browser.vim",
-"nvim-tree",
+"conf/nvim-tree",
 
 ---------------------------------- General ---------------------------------
 "layers/commentary.vim",
 "layers/editing.vim",
-"gitsigns",		-- must be after plenary
-"lsp",
-"compe",
+"conf/gitsigns",		-- must be after plenary
+"conf/lsp",
+"conf/compe",
 -- "lspsaga",
 "layers/filesystem.vim",
 "layers/ultisnips.vim",
-"treesitter",
+"conf/treesitter",
 
 --------------------------------- Languages --------------------------------
-"bash-ft",
+"lang/bash",
+"lang/css",
 "layers/csv.vim",
-"css",
 "layers/fish.vim",
 "layers/gdscript.vim",
-"gdscript" ,
-"lua-ft",
+"lang/gdscript" ,
+"lang/lua",
 -- after/ftplugin/json.vim --
 "layers/markdown.vim",
-"php",
-"python",
-"sql",
+"lang/php",
+"lang/python",
+"lang/sql",
 "layers/sxhkd.vim",
 "layers/webdev.vim",
-"vim",
+"lang/vim",
 -- after/ftplugin/vim.vim --
 
 ----------------------------------- Tools ----------------------------------
 -- "cheatsh.vim",
-"cheatsheet",
-"codi",
+"conf/cheatsheet",
+"conf/codi",
 "layers/fugitive.vim",
 "layers/figlet.vim",
 "layers/rest.vim",

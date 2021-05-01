@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ~/.dotfiles/themes/tokyonight-storm.sh
+
 WM=bspwm
 
 wallpaper restore

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ~/.dotfiles/themes/tokyonight-storm.sh
+# source ~/.dotfiles/themes/tokyonight-storm.sh
 
 WM=bspwm
 

@@ -17,7 +17,7 @@ end
 alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 
 set -x XAUTHORITY "$XDG_RUNTIME_DIR/Xauthority"
-set -x TERMINAL run-kitty
+set -x TERMINAL kitty
 set -x EDITOR nvim
 set -x BROWSER brave
 # set -x LESSHISTFILE "-"

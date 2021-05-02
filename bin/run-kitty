@@ -1,4 +1,5 @@
 #!/bin/bash
 
-kitty --config <(envsubst < ~/.dotfiles/kitty/.config/kitty/kitty.conf)
+# kitty --config <(envsubst < ~/.dotfiles/kitty/.config/kitty/kitty.conf)
+kitty
 

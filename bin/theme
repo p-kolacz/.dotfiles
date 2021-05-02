@@ -1,0 +1,29 @@
+#!/bin/bash
+
+CONFIG="$HOME/.config"
+THEMES="$HOME/.dotfiles/themes"
+
+browse() {
+	local file=$(ls $THEMES/*sh | fzf)
+	apply "$file"
+}
+
+apply() {
+	[[ -f $1 ]] || { echo "Invalid file: $1"; exit 1; }
+
+	source "$1"
+
+	# Dunst
+	envsubst < "$CONFIG/dunst/dunstrc.template" > "$CONFIG/dunst/dunstrc"
+	killall dunst
+
+	# Kitty
+	envsubst < "$CONFIG/kitty/colors/auto.template.conf" > "$CONFIG/kitty/colors/auto.conf"
+
+	# Polybar
+	envsubst < "$CONFIG/polybar/autocolors.template.ini" > "$CONFIG/polybar/autocolors.ini"
+	~/.dotfiles/polybar/restart.sh
+}
+
+[[ -z $1 ]] && browse || apply "$1"
+

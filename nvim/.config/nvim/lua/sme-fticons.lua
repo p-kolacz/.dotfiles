@@ -7,7 +7,7 @@ return {
 	clojure = "",
 	crontab = "",
 	css = "",
-	csv = "",
+	-- csv = "",
 	diff = "",
 	dosini = "",
 	fish = "",

@@ -5,8 +5,6 @@ Map.n('<leader>ci', ':LspInfo<cr>', 'LSP info')
 LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
 LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
 
-require('conf/lsp-icons')
-
 LSP_ON_ATTACH = function(client, bufnr)
 	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 

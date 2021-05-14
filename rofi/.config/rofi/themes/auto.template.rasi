@@ -1,24 +1,24 @@
 * {
-    background-color: #011627;
+    background-color: $THEME_BG;
     border: 0px;
     margin: 0px;
     padding: 0px;
     spacing: 0px;
-    text-color: #acb4c2;
+    text-color: $THEME_FG;
 }
 #window {
     location: center;
     width: 33%;
 }
 #inputbar {
-    /* text-color: #7c8f8f; */
+    /* text-color: $THEME_BLACK2; */
     padding: 6px;
     margin: 0px 0px 2px;
     children: [ entry ];
 }
 #entry {
-    background-color: #1d3b53;
-    /* text-color:  */
+    background-color: $THEME_BLACK;
+    /* text-color: $THEME */
     padding: 5px;
 }
 #message {
@@ -43,7 +43,7 @@
     /* text-color: @nord11; */
 }
 #element.normal.active {
-    /* text-color: #a1aab8; */
+    /* text-color: $THEME_WHITE; */
 }
 #element.alternate.normal {
     /* text-color: @nord4; */
@@ -55,8 +55,8 @@
     /* text-color: @nord10; */
 }
 #element.selected.normal {
-    background-color: #82aaff;
-    text-color: #011627;
+    background-color: $THEME_BLUE;
+    text-color: $THEME_BG;
 }
 #element.selected.urgent {
     /* background-color: @nord11; */

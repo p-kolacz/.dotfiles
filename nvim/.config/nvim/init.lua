@@ -15,9 +15,9 @@ require 'config'.source {
 
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
--- "layers/themes/nightfly.vim",
+"layers/themes/nightfly.vim",
 -- "layers/themes/oceanic-next.vim",
-"themes/tokyonight",
+-- "themes/tokyonight",
 "conf/colorizer",
 "conf/icons",
 "conf/statusline",
@@ -33,18 +33,18 @@ require 'config'.source {
 "layers/editing.vim",
 "conf/gitsigns",		-- must be after plenary
 "conf/lsp",
+"conf/lsp-icons",
 "conf/compe",
 -- "lspsaga",
 "layers/filesystem.vim",
 "layers/ultisnips.vim",
-"conf/treesitter",
+-- "conf/treesitter",
 
 --------------------------------- Languages --------------------------------
 "lang/bash",
 "lang/css",
 "layers/csv.vim",
 "layers/fish.vim",
-"layers/gdscript.vim",
 "lang/gdscript" ,
 "lang/lua",
 -- after/ftplugin/json.vim --

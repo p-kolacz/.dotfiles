@@ -23,6 +23,9 @@ apply() {
 	# Polybar
 	envsubst < "$CONFIG/polybar/autocolors.template.ini" > "$CONFIG/polybar/autocolors.ini"
 	~/.dotfiles/polybar/restart.sh
+
+	# Rofi
+	envsubst < "$CONFIG/rofi/themes/auto.template.rasi" > "$CONFIG/rofi/themes/auto.rasi"
 }
 
 [[ -z $1 ]] && browse || apply "$1"

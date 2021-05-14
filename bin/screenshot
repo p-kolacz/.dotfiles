@@ -23,7 +23,8 @@ notify() {
 		notify-send -u low -i "$1" "Screenshot taken" "$1"
 }
 
-sel=$(printf "%s\n" "${types[@]}" | dmenu -i -h 32 -p "  " -l 10)
+# sel=$(printf "%s\n" "${types[@]}" | dmenu -i -h 32 -p "  " -l 10)
+sel=$(printf "%s\n" "${types[@]}" | rofi -dmenu)
 
 case $sel in
 	${types[0]})
@@ -32,25 +33,28 @@ case $sel in
 		notify
 		;;
 	${types[1]})
+		sleep 0.1
 		maim -u -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 		notify
 		;;
 	${types[2]})
+		sleep 0.1
 		maim -u | xclip -selection clipboard -t image/png
 		notify
 		;;
-
 	${types[3]})
 		file=$(filename)
 		maim -s $file &&
 		notify $file
 		;;
 	${types[4]})
+		sleep 0.1
 		file=$(filename)
 		maim -u -B -i $(xdotool getactivewindow) $file &&
 		notify $file
 		;;
 	${types[5]})
+		sleep 0.1
 		file=$(filename)
 		maim -u $file &&
 		notify $file

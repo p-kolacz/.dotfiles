@@ -2,5 +2,6 @@
 
 # rofi -theme ~/.config/rofi/themes/$THEME.rasi $@
 # rofi -theme ~/.config/rofi/themes/nord.rasi $@
-rofi -theme <(envsubst < ~/.dotfiles/rofi/.config/rofi/themes/auto.rasi) $@
+# rofi -theme <(envsubst < ~/.dotfiles/rofi/.config/rofi/themes/auto.rasi) $@
+rofi $@
 

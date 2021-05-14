@@ -8,7 +8,8 @@ inoremap jk <Esc>
 nnoremap H ^
 nnoremap L $
 nnoremap Y y$
-" nnoremap <CR> o<Esc>
+nnoremap [q :cprevious<cr>
+nnoremap ]q :cnext<cr>
 
 " ---------------------------------- Editing --------------------------------- "
 " Clipboard

@@ -46,10 +46,11 @@ if status is-interactive
 	# alias vim="vim --servername VIM"
 
 	alias econf "cd ~/.dotfiles;$EDITOR"
-	alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
-	alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
-	alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
-	alias inq "cd ~/Work/Inquisitorium/Inquisitorium && vim"
+	# alias efish "vim ~/.dotfiles/fish/.config/fish/config.fish"
+	# alias ekitty "vim ~/.dotfiles/kitty/.config/kitty/kitty.conf"
+	# alias evifm "vim ~/.dotfiles/vifm/.config/vifm/vifmrc"
+	alias jur "cd ~/Work/Jurist/Jurist && $EDITOR"
+	alias evim "cd ~/.config/nvim && $EDITOR init.lua"
 	# alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
 
 	#  /\ |_ |_  _ _

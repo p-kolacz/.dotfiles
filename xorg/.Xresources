@@ -12,8 +12,8 @@ XTerm.vt100.foreground: #e5e5e5
 XTerm.vt100.background: #222222
 XTerm.vt100.font: xft:monospace:size=12
 
-! Sxiv.foreground: #ebdbb2
-! Sxiv.background: #282828
+Sxiv.foreground: #e7e7e7
+Sxiv.background: #282828
 Sxiv.font: monospace-14
 
 ! dmenu

@@ -66,7 +66,7 @@ require('telescope').setup{
 				["<c-k>"] = actions.move_selection_previous
 			},
 		},
-		winblend = 20,
+		winblend = 15,
 	}
 }
 

@@ -26,8 +26,8 @@ local Colors = {
 
 local Icons = {
 	readonly = " ",
-	modified = " ",
-	separator = "",
+	modified = "* ",
+	separator = "|",
 	server = "",
 	scrollbar = {'█   ', ' █  ', '  █ ', '   █' },
 }

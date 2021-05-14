@@ -2,7 +2,7 @@
 
 Plug.add 'kyazdani42/nvim-tree.lua'
 Map.n('<F8>', ':NvimTreeToggle<cr>')
-Map.n('<leader>ft', ':NvimTreeFindFile<cr>', 'show in tree')
+Map.n('<leader>fl', ':NvimTreeFindFile<cr>', 'locate in tree')
 
 vim.g.nvim_tree_auto_close = 1
 -- vim.g.nvim_tree_follow = 1

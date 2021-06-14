@@ -109,6 +109,7 @@ nnoremap s :shell<cr>
 nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
+nnoremap * ggvG<cr>gg
 
 " Mappings for faster renaming
 nnoremap a cW

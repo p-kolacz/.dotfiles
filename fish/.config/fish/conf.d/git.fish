@@ -5,7 +5,7 @@ if status is-interactive
 end
 
 function gpush
-	set -l msg (cat "$HOME/.dotfiles/git/messages" | shuf -n 1) 
+	set -l msg (cat "$HOME/.dotfiles/share/git-messages" | shuf -n 1) 
 	git add . && git commit -m "$msg" && git push 
 end
 

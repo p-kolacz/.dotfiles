@@ -4,8 +4,6 @@
 
 WM=bspwm
 
-wallpaper restore
-
 userresources=$HOME/.dotfiles/xorg/.Xresources
 sysresources=/etc/X11/xinit/.Xresources
 
@@ -43,6 +41,7 @@ export SXHKD_SHELL=/bin/bash
 seafile-applet &
 syncthing -no-restart -logfile="$HOME/.local/log/syncthing.log" &
 picom -b
+wallpaper restore
 
 exec $WM > $HOME/.local/log/$WM.log 2>&1
 # exec qtile > $HOME/.local/share/xorg/qtile.log

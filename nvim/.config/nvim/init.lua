@@ -34,11 +34,12 @@ require 'config'.source {
 "conf/gitsigns",		-- must be after plenary
 "conf/lsp",
 "conf/lsp-icons",
-"conf/compe",
+-- "conf/compe",
 -- "lspsaga",
 "layers/filesystem.vim",
 "layers/ultisnips.vim",
 -- "conf/treesitter",
+"layers/coc.vim",
 
 --------------------------------- Languages --------------------------------
 "lang/bash",

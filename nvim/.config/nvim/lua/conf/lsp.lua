@@ -11,7 +11,7 @@ LSP_ON_ATTACH = function(client, bufnr)
 	-- Mappings.
 	Map.nb('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
 	Map.nb('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
-	-- Map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
+	Map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
 	Map.nb('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 	Map.nb('<leader>ch', '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'signature')
 	-- Map.nb('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')

@@ -42,6 +42,7 @@ if status is-interactive
 	alias ls="ls --color=auto"
 	alias la="ls -lA --group-directories-first"
 	alias envs="env | fzf"
+	alias lg=lazygit
 
 	# alias vim="vim --servername VIM"
 

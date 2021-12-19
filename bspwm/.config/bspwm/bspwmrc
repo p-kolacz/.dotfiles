@@ -71,9 +71,12 @@ bspc rule -a mpv state=floating
 bspc rule -a Screenkey manage=off
 # bspc rule -a frontal state=floating rectangle=1200x800+360+200
 bspc rule -a frontal state=floating rectangle=1200x800+260+220
-bspc rule -a scratchpad state=floating sticky=on rectangle=1200x800+260+220
+bspc rule -a scratchpad state=floating sticky=on rectangle=1200x800+220+260
 bspc rule -a Zathura state=tiled
 bspc rule -a Qalculate-gtk state=floating
+bspc rule -a scummvm state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Hdajackretask state=floating
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Kupfer.py focus=on

@@ -37,21 +37,9 @@ syn_highlight_a() {
 case "$FILE_EXTENSION" in
 	bmp|gif|jpg|jpeg|png|tiff|webp)
 		identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
-		# catimg -t -w $PV_WIDTH "$FILE_PATH"
-		# shellpic "$FILE_PATH"
-		# kitty +kitten icat --silent --transfer-mode file --place=${PV_WIDTH}x${PV_HEIGHT}@50x2 "$FILE_PATH" &
-		# echo ${PV_WIDTH}x${PV_HEIGHT}
-		# kitty +kitten icat --silent --clear
-		# https://imagemagick.org/script/escape.php
-		# && exit 0;;
-		# env -u COLORTERM viu -t -s -w $PV_WIDTH "$FILE_PATH"
-		# viu -t -s -w $PV_WIDTH "$FILE_PATH"
-		# env -u COLORTERM catimg -w $PV_WIDTH "$FILE_PATH" \
 
 		# exit 7 for ranger
-		exit 7
-		# exit 0
-		;;
+		exit 7 ;;
 
 	mp3)
 		mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;

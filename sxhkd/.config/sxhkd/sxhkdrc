@@ -16,6 +16,9 @@ super + space
 super + Delete
 	power.sh
 
+super + Escape
+	slock
+
 super + {F1,F2,F3,F10}
 	{icons.sh,emoji.sh,entities.sh,mnter.sh}
 

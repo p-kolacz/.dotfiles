@@ -1,76 +1,39 @@
 * {
-    background-color: #011627;
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-    spacing: 0px;
-    text-color: #acb4c2;
+	background-color: transparent;
 }
-#window {
-    location: center;
-    width: 33%;
+
+window {
+	background-color: #24283b;
+	width: 33%;
 }
-#inputbar {
-    /* text-color: #7c8f8f; */
+
+inputbar {
+    padding: 8px;
+	children: [entry];
+}
+entry {
+    background-color: #7aa2f7;
     padding: 6px;
-    margin: 0px 0px 2px;
-    children: [ entry ];
 }
-#entry {
-    background-color: #1d3b53;
-    /* text-color:  */
-    padding: 5px;
-}
-#message {
-    border: 0px 0px 1px;
-    /* border-color: @nord3; */
-    padding: 0px 0px 6px 7px;
-}
-#listview {
-    lines: 10;
-    padding: 2px 0px 0px;
+
+listview {
     scrollbar: true;
+	lines: 10;
 }
-#element {
-    padding: 0px 0px 0px 7px;
-    margin: 0px 0px 5px 0px;
-    /* text-color: @nord4; */
+scrollbar {
+	handle-color: #7aa2f7;
 }
-#element.normal.normal {
-    /* text-color: @nord4; */
+
+element {
+	padding: 4px 8px;
 }
-#element.normal.urgent {
-    /* text-color: @nord11; */
+element-text {
+	text-color: #c0caf5;
 }
-#element.normal.active {
-    /* text-color: #a1aab8; */
+
+element selected {
+	background-color: #7aa2f7;
 }
-#element.alternate.normal {
-    /* text-color: @nord4; */
-}
-#element.alternate.urgent {
-    /* text-color: @nord11; */
-}
-#element.alternate.active {
-    /* text-color: @nord10; */
-}
-#element.selected.normal {
-    background-color: #82aaff;
-    text-color: #011627;
-}
-#element.selected.urgent {
-    /* background-color: @nord11; */
-    /* text-color: @nord4; */
-}
-#element.selected.active {
-    /* background-color: @nord10; */
-    /* text-color: @nord4; */
-}
-#scrollbar {
-    /* handle-color: @nord3; */
-    handle-width: 0.50em;
-}
-#button.selected {
-    /* background-color: @nord8; */
-    /* text-color: @nord4; */
+element-text selected {
+	text-color: #24283b;
 }

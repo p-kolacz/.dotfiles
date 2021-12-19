@@ -141,6 +141,7 @@ nnoremap ,w :set wrap!<cr>
 nnoremap ,z :zip<cr>
 " :set viewcolumns=-{name}..,6{},17{mtime}
 
+nnoremap <f2> cW
 nnoremap <f3> :!less %f<cr>
 nnoremap <s-f4> :touch<space>
 nnoremap <f4> :edit<cr>
@@ -165,10 +166,13 @@ nnoremap <c-[> :wincmd v<cr>:set nomillerview<cr>
 " Interaction with system clipboard
 if executable('xclip')
     " Yank current directory path into the clipboard
-    nnoremap yd :!echo %d | xclip -selection clipboard %i<cr>
-    " Yank current file path into the clipboard
-    nnoremap yf :!echo %c | xclip -selection clipboard %i<cr>
-    nnoremap yF :!echo %c:p | xclip -selection clipboard %i<cr>
+	nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
+	" Yank current file name into the clipboard
+	nnoremap yf :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+	" Yank current file path into the clipboard
+	nnoremap yF :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+	" yank root of current file's name into the clipboard
+	nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 elseif executable('xsel')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | xsel --input --primary %i &&
@@ -229,10 +233,10 @@ command! cmp : if expand('%%c') == expand('%%f')
 
 " set previewprg='preview.sh %c %pw %ph %px'
 
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.webp
-		\ kitty icat --silent --place=%pwx%ph@%pxx%py %c
-		\ %pc
-		\ kitty icat --silent --clear
+" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.webp
+		" \ kitty icat --silent --place=%pwx%ph@%pxx%py %c
+		" \ %pc
+		" \ kitty icat --silent --clear
 
 fileviewer * preview.sh %c %pw %ph %px
 

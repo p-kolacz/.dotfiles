@@ -66,3 +66,8 @@ call Desc('ow', 'wrap')
 
 " ----------------------------------- Tools ---------------------------------- "
 nnoremap gi :OpenImg<CR>
+
+call Desc('g', '+Git')
+nnoremap <leader>gg :silent !$TERMINAL lazygit &<cr>
+call Desc('gg', 'status')
+

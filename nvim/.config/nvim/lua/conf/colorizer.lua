@@ -37,4 +37,5 @@ vim.g.Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla'
 --  }
 
 -- " Sample value, to keep default behaviour don't define this variable
--- let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
+vim.g.Hexokinase_ftEnabled = {'css', 'html', 'javascript'}
+

@@ -5,12 +5,12 @@
 dir="$HOME/Downloads"
 
 types=(
-	"Selection -> clipboard"
 	"Window -> clipboard"
 	"Screen -> clipboard"
-	"Selection -> file"
+	"Selection -> clipboard"
 	"Window -> file"
 	"Screen -> file"
+	"Selection -> file"
 )
 
 filename() {
@@ -28,35 +28,35 @@ sel=$(printf "%s\n" "${types[@]}" | rofi -dmenu)
 
 case $sel in
 	${types[0]})
+		sleep 0.2
+		maim -u -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+		notify
+		;;
+	${types[1]})
+		sleep 0.2
+		maim -u | xclip -selection clipboard -t image/png
+		notify
+		;;
+	${types[2]})
 		maim -s | xclip -selection clipboard -t image/png
 		# scrot -s /tmp/screenshot -e "xclip -selection clipboard -t image/png -i /tmp/screenshot" &&
 		notify
 		;;
-	${types[1]})
-		sleep 0.1
-		maim -u -B -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-		notify
-		;;
-	${types[2]})
-		sleep 0.1
-		maim -u | xclip -selection clipboard -t image/png
-		notify
-		;;
 	${types[3]})
-		file=$(filename)
-		maim -s $file &&
-		notify $file
-		;;
-	${types[4]})
-		sleep 0.1
+		sleep 0.2
 		file=$(filename)
 		maim -u -B -i $(xdotool getactivewindow) $file &&
 		notify $file
 		;;
-	${types[5]})
-		sleep 0.1
+	${types[4]})
+		sleep 0.2
 		file=$(filename)
 		maim -u $file &&
+		notify $file
+		;;
+	${types[5]})
+		file=$(filename)
+		maim -s $file &&
 		notify $file
 		;;
 esac

@@ -4,6 +4,7 @@
 # | .__/\__,_\__|_|_|_\__,_|_||_(_)_| |_/__/_||_|
 # |_|
 
+alias pacup="sudo pacman -Syu"
 abbr -ag inst "sudo pacman -S"
 abbr -ag rem "sudo pacman -Rns"
 abbr -ag orphans "pacman -Qdt"

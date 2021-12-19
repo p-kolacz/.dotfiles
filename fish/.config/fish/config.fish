@@ -43,6 +43,8 @@ if status is-interactive
 	alias la="ls -lA --group-directories-first"
 	alias envs="env | fzf"
 	alias lg=lazygit
+	alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
+	alias parts="lsblk --output NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL"
 
 	# alias vim="vim --servername VIM"
 
@@ -53,6 +55,7 @@ if status is-interactive
 	alias jur "cd ~/Work/Jurist/Jurist && $EDITOR"
 	alias evim "cd ~/.config/nvim && $EDITOR init.lua"
 	# alias todo "vim ~/Cloud/Exocortex/Life/TODO/todo.txt"
+	alias recom "killall --wait picom && picom -b"
 
 	#  /\ |_ |_  _ _
 	# /--\|_)|_)| _)

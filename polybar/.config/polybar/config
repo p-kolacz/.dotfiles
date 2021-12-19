@@ -29,7 +29,8 @@ include-file = ~/.config/polybar/autocolors.ini
 include-file = ~/.config/polybar/modules/backlight.ini 
 include-file = ~/.config/polybar/modules/bspwm.ini 
 include-file = ~/.config/polybar/modules/battery.ini 
-include-file = ~/.config/polybar/modules/network.ini 
+include-file = ~/.config/polybar/modules/network1.ini 
+; include-file = ~/.config/polybar/modules/network2.ini 
 include-file = ~/.config/polybar/modules/pulseaudio.ini 
 include-file = ~/.config/polybar/modules/temperature.ini 
 

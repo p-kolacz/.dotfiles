@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="$HOME/Cloud/Exocortex/Waga.md"
+FILE="$HOME/Cloud/Exocortex/Notes/Waga.md"
 
 if [[ $# -eq 0 ]]; then
 	vim "$FILE"

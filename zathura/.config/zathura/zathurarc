@@ -1,5 +1,10 @@
 set sandbox none
 set selection-clipboard clipboard
 
+set font "monospace normal 14"
 set recolor-lightcolor "#282828"
 set recolor-darkcolor "#ebdbb2"
+
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen

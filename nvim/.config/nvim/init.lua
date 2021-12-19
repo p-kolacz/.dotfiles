@@ -1,7 +1,7 @@
-Plug = require 'sme-plug'
-Map = require 'sme-map'
-Help = require 'sme-help'
-require 'config'.source {
+Plug	= require "sme-plug"
+Map		= require "sme-map"
+Help	= require "sme-help"
+require "config".source {
 
 ------------------------------ Global settings -----------------------------
 "layers/commands.vim",
@@ -15,12 +15,17 @@ require 'config'.source {
 
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
-"layers/themes/nightfly.vim",
+-- "layers/themes/nord.vim",
+-- "layers/themes/nightfly.vim",
+-- "layers/themes/sonokai.vim",
+-- "layers/themes/halcyon.vim",
 -- "layers/themes/oceanic-next.vim",
--- "themes/tokyonight",
+-- "themes/cosmic-latte",
+"themes/tokyonight",
 "conf/colorizer",
 "conf/icons",
 "conf/statusline",
+-- "conf/feline",
 "conf/marksigns",
 
 --------------------------------- Navigation -------------------------------
@@ -34,12 +39,12 @@ require 'config'.source {
 "conf/gitsigns",		-- must be after plenary
 "conf/lsp",
 "conf/lsp-icons",
--- "conf/compe",
+"conf/compe",
 -- "lspsaga",
 "layers/filesystem.vim",
 "layers/ultisnips.vim",
 -- "conf/treesitter",
-"layers/coc.vim",
+-- "layers/coc.vim",
 
 --------------------------------- Languages --------------------------------
 "lang/bash",
@@ -61,8 +66,8 @@ require 'config'.source {
 ----------------------------------- Tools ----------------------------------
 -- "cheatsh.vim",
 "conf/cheatsheet",
-"conf/codi",
-"layers/fugitive.vim",
+-- "conf/codi",
+-- "layers/fugitive.vim",
 "layers/figlet.vim",
 "layers/rest.vim",
 "layers/help.vim",

@@ -1,0 +1,8 @@
+git:
+  disableForcePushing: true
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse

@@ -3,8 +3,7 @@ configuration {
 	matching: "fuzzy";
 	sorting-method: "fzf";
 
-	theme: "auto.rasi";
-	font: "monospace 18";
+	font: "monospace 16";
 	/* show-icons: true; */
 	/* icon-theme: "Adwaita"; */
 
@@ -13,5 +12,6 @@ configuration {
 	kb-row-down: "ctrl-j,Down";
 	kb-row-up: "ctrl-k,Up";
 }
+@theme "auto"
 
-/* vim:ft=css */
+/* vim:ft=css

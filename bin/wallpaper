@@ -4,7 +4,7 @@ FILE="$HOME/.cache/wallpaper"
 
 browse() {
 	# recursive thumbnail fullscreen
-	sxiv -rtf ~/Cloud/Images/Wallpapers &
+	$IMGVIEWER -rtf ~/Cloud/Images/Wallpapers &
 }
 
 setwp() {

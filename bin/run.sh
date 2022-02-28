@@ -15,9 +15,7 @@ case $FILE_EXTENSION in
 	cbr|cbz|djvu|pdf)
 		zathura -- "$FILE_PATH" ;;
 	bmp|gif|jpg|jpeg|png|tiff|webp)
-		# rifle_sxiv.sh -- "$FILE_PATH" > /dev/null ;;
-		# sxiv -- "$FILE_PATH" ;;
-		qimgv "$FILE_PATH" ;;
+		nsxiv-rifle "$FILE_PATH" > /dev/null ;;
 	otf|ttf)
 		gnome-font-viewer -- "$FILE_PATH" ;;
 	3gp|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|qt|vob|webm|wmv)

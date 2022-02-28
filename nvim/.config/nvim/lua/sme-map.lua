@@ -41,7 +41,7 @@ end
 
 local function map(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
-	opts.noremap = opts.noremap or true
+	-- opts.noremap = opts.noremap or true
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 	if desc then
 		M.desc(lhs, desc)
@@ -50,12 +50,15 @@ end
 
 local function map_buf(mode, lhs, rhs, desc, opts)
 	opts = opts or {}
-	opts.noremap = opts.noremap or true
+	-- opts.noremap = opts.noremap or true
 	vim.api.nvim_buf_set_keymap(0, mode, lhs, rhs, opts)
 	if desc then
 		M.desc(lhs, desc)
 	end
 end
+
+function nnoremap(lhs, rhs, desc, opts) map("n", lhs, rhs, desc, { noremap = true }) end
+function nnoremap_buffer(lhs, rhs, desc, opts) map_buf("n", lhs, rhs, desc, { noremap = true }) end
 
 function M.n(lhs, rhs, desc, opts) map("n", lhs, rhs, desc, opts) end
 function M.i(lhs, rhs, desc, opts) map("i", lhs, rhs, desc, opts) end

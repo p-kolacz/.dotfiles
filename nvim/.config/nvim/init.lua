@@ -1,3 +1,5 @@
+-- https://github.com/nanotee/nvim-lua-guide
+
 Plug	= require "sme-plug"
 Map		= require "sme-map"
 Help	= require "sme-help"
@@ -15,13 +17,13 @@ require "config".source {
 
 --------------------------------- Appearance  ------------------------------
 "layers/appearance.vim",
--- "layers/themes/nord.vim",
+"layers/themes/nord.vim",
 -- "layers/themes/nightfly.vim",
 -- "layers/themes/sonokai.vim",
 -- "layers/themes/halcyon.vim",
 -- "layers/themes/oceanic-next.vim",
 -- "themes/cosmic-latte",
-"themes/tokyonight",
+-- "themes/tokyonight",
 "conf/colorizer",
 "conf/icons",
 "conf/statusline",
@@ -39,16 +41,16 @@ require "config".source {
 "conf/gitsigns",		-- must be after plenary
 "conf/lsp",
 "conf/lsp-icons",
-"conf/compe",
+"conf/completion",
+-- "conf/compe",
 -- "lspsaga",
 "layers/filesystem.vim",
 "layers/ultisnips.vim",
--- "conf/treesitter",
+"conf/treesitter",
 -- "layers/coc.vim",
 
 --------------------------------- Languages --------------------------------
 "lang/bash",
-"lang/css",
 "layers/csv.vim",
 "layers/fish.vim",
 "lang/gdscript" ,
@@ -60,7 +62,10 @@ require "config".source {
 "lang/sql",
 "layers/sxhkd.vim",
 "layers/webdev.vim",
+"lang/webdev",
 "lang/vim",
+"lang/org-mode",
+"lang/recutils",
 -- after/ftplugin/vim.vim --
 
 ----------------------------------- Tools ----------------------------------

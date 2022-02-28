@@ -1,3 +1,15 @@
+snippet domready
+window.addEventListener('DOMContentLoaded', () => {
+	$0
+});
+
+endsnippet
+
+snippet $
+function $(selector) { return document.querySelectorAll(selector) }
+
+endsnippet
+
 snippet applyArrayToConstructor
 var s = new (Function.prototype.bind.apply(Something, [null, a, b, c]))
 endsnippet
@@ -8,13 +20,13 @@ $("#cookie-notice .cookie-notice-button").click(function() {
 	$("#cookie-notice").fadeOut()
 })
 function setCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+	var expires = "";
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime() + (days*24*60*60*1000));
+		expires = "; expires=" + date.toUTCString();
+	}
+	document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
 endsnippet
 

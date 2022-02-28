@@ -70,4 +70,7 @@ nnoremap gi :OpenImg<CR>
 call Desc('g', '+Git')
 nnoremap <leader>gg :silent !$TERMINAL lazygit &<cr>
 call Desc('gg', 'status')
+" nnoremap <leader>gpd :!git add . && git commit -m "$(date +%F)" && git push<cr>
+call Desc('gp', '+Push')
+call Desc('gpd', 'current date')
 

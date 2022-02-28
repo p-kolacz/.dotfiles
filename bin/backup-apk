@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# https://gist.github.com/AnatomicJC/e773dd55ae60ab0b2d6dd2351eb977c1
-
-# -f see file, -3 third party apps only
-app=$(adb shell pm list packages -f -3 | fzf)
-file=$(echo "$app" | sed "s/^package://" | sed "s/base.apk=/base.apk /").apk
-[[ -n $app ]] && adb pull $file
-

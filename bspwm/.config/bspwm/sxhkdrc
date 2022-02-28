@@ -35,6 +35,7 @@ super + b
 
 super + Tab
 	bspc desktop -f last
+	# bspc node -f next.local.leaf
 
 # alternate between the tiled and monocle layout
 super + m

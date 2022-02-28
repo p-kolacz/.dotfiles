@@ -1,105 +1,32 @@
 # System
-crda
 ntfs-3g
 simple-mtpfs
-tlp
 
 # GUI
-bspwm
-dunst
 nerd-fonts-victor-mono
-networkmanager
 noto-fonts-emoji
 nvidia-dkms
-picom
-polybar
 qt5ct
-rofi
-sxhkd
 ttf-ubuntu-font-family
-xautomation
-xclip
-xdotool
-xorg-xev
-xorg-xinit
-xorg-xinput
-xorg-xsetroot
-xorg-server
-
-# Audio
-alsa-utils
-pavucontrol
-playerctl
-pulseaudio
-pulseaudio-equalizer-ladspa
-
-# Bluetooth
-blueman
-bluez-utils
-pulseaudio-bluetooth
-
-# Peripherals
-brother-dcpt500w
-system-config-printer
-xf86-input-wacom
-
-# Terminal
-archivemount
-c-lolcat
-catdoc
-cowsay
-curlftpfs
-dragon-drag-and-drop
-figlet-fonts
-fortune-mod-vimtips
-fuse-zip
-fzf
-neovim
-highlight
-htop
-kitty
-man-db
-mediainfo
-mp3info
-odt2txt
-python-jedi
-python-pip
-ripgrep
-rsync
-smartmontools
-sshfs
-terminus-font
-unrar
-unzip
-whois
-vifm
-wordnet-cli
-xsv-bin
-zip
 
 # Apps
 aseprite
-bind
 brave-bin
 calibre
 cmus
 feh
-filezilla
 gimp
 gimp-plugin-bimp
 gnome-font-viewer
 gnumeric
 keepassxc
-maim
 meld
 mpv
-npm
 pepper-flash
 pocket-casts-linux-bin
 qalculate-gtk
 seafile-client
 slack-desktop
-spotify
 sqlitebrowser
 syncthing
 thunderbird

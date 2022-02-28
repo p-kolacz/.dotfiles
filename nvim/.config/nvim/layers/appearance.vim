@@ -6,9 +6,10 @@ set scrolloff=5		" top and bottom margin in rows
 set showmatch
 set signcolumn=yes
 set termguicolors
-set textwidth=80
+" set textwidth=80
 
 " set fillchars+=vert:│ 
+set fillchars=fold:─
 
 " Enable underline & undercurl
 " let &t_Cs = "\e[4:3m"
@@ -18,7 +19,16 @@ set textwidth=80
 autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}
 
 " Quick scope
-lua Plug.add 'unblevable/quick-scope' 
+" lua Plug.add 'unblevable/quick-scope' 
 " Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" Folding
+" set foldtext=MyFoldText()
+function MyFoldText()
+	let line = getline(v:foldstart)
+	let sub = substitute(v:folddashes, '\-', '\t', 'g')
+	" return v:folddashes . sub
+	return '' . sub . line
+endfunction
 

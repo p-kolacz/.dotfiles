@@ -14,7 +14,8 @@ Plug.add('nvim-telescope/telescope-symbols.nvim')
 --https://github.com/nvim-telescope/telescope.nvim#pickers
 
 --File pickers
-Map.n('<C-space>', ':Telescope find_files find_command=rg,--hidden,--no-ignore,-i,--files<cr>')
+-- Map.n('<C-space>', ':Telescope find_files find_command=rg,--hidden,--no-ignore,-i,--files<cr>')
+Map.n('<C-space>', ':Telescope find_files<cr>')
 Map.n('<leader>gf', ':Telescope git_files<cr>', 'find files')
 Map.n('<leader>fc', ':Telescope grep_string<cr>', 'find cword')
 Map.n('<leader>ff', ':Telescope live_grep<cr>', 'find in files')

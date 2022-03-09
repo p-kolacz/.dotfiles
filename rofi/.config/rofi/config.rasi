@@ -9,8 +9,8 @@ configuration {
 
 	kb-accept-entry: "Return";
 	kb-remove-to-eol: "";
-	kb-row-down: "ctrl-j,Down";
-	kb-row-up: "ctrl-k,Up";
+	kb-row-down: "ctrl-j,ctrl-n,Down";
+	kb-row-up: "ctrl-k,ctrl-p,Up";
 }
 @theme "auto"
 

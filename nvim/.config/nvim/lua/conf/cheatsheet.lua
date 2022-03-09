@@ -1,5 +1,5 @@
 require'sme-cheatsh'.setup()
 
-Map.n('<leader>hk', ':CheatshCword<cr>', 'cheat.sh cword')
-Map.n('<leader>hc', ':Cheatsh ', 'cheat.sh query')
+nnoremap('<leader>hc', ':CheatshCword<cr>', 'cheat.sh cword')
+nnoremap('<leader>hq', ':Cheatsh ', 'cheat.sh query')
 

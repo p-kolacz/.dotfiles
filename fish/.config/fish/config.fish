@@ -22,6 +22,7 @@ set -x EDITOR nvim
 set -x BROWSER brave
 set -x IMGVIEWER nsxiv
 set -x IMGRIFLE nsxiv-rifle
+set -x VMENU rofi -dmenu
 
 # set -x LESSHISTFILE "-"
 # set -x THEME gruvbox-dark

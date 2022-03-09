@@ -1,4 +1,2 @@
--- https://github.com/zaid/vim-rec
-
-Plug.add "zaid/vim-rec"
+Plugin "https://github.com/zaid/vim-rec"
 

@@ -1,6 +1,12 @@
-Plug.add 'neovim/nvim-lspconfig'
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+Plugin "https://github.com/neovim/nvim-lspconfig"
 
-Map.n('<leader>ci', ':LspInfo<cr>', 'LSP info')
+mapgroup("<leader>cd", "+Diagnostic")
+nnoremap('<leader>cdf', '<cmd>lua vim.diagnostic.open_float()<CR>')
+nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+nnoremap('<leader>cdl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "diag set loclist")
+nnoremap('<leader>ci', ':LspInfo<cr>', 'LSP info')
 
 LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
 LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
@@ -9,27 +15,23 @@ LSP_ON_ATTACH = function(client, bufnr)
 	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	-- Mappings.
-	Map.nb('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
-	Map.nb('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
-	Map.nb('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
-	Map.nb('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-	Map.nb('<leader>ch', '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'signature')
-	-- Map.nb('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
-	-- Map.nb('<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
-	-- Map.nb('<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
-	Map.nb('<leader>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition')
-	Map.nb('<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename')
-	Map.nb('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-	Map.nb('<leader>cd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'diagnostics')
-	Map.nb('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-	Map.nb(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-	Map.nb('<leader>cl', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', 'diag loclist')
+	nnoremap_buffer('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
+	nnoremap_buffer('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>')
+	nnoremap_buffer('K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
+	nnoremap_buffer('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+	nnoremap_buffer('<leader>ch', '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'signature')
+	-- nnoremap_buffer('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
+	-- nnoremap_buffer('<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
+	-- nnoremap_buffer('<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+	nnoremap_buffer('<leader>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition')
+	nnoremap_buffer('<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename')
+	nnoremap_buffer('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 
 	-- Set some keybinds conditional on server capabilities
 	if client.resolved_capabilities.document_formatting then
-		Map.nb("<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", 'formatting')
+		nnoremap_buffer("<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", 'formatting')
 	elseif client.resolved_capabilities.document_range_formatting then
-		Map.nb("<leader>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", 'formatting')
+		nnoremap_buffer("<leader>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", 'formatting')
 	end
 
 	-- Set autocommands conditional on server_capabilities

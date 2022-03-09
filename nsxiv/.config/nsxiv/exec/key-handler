@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Example for $XDG_CONFIG_HOME/nsxiv/exec/key-handler
 # Called by nsxiv(1) after the external prefix key (C-x by default) is pressed.
 # The next key combo is passed as its first argument. Passed via stdin are the
 # images to act upon: all marked images, if in thumbnail mode and at least one
@@ -29,13 +28,16 @@ rotate() {
 }
 
 case "$1" in
-"C-x")      xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
-"C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
-"C-e")      while read file; do urxvt -bg "#444" -fg "#eee" -sl 0 -title "$file" -e sh -c "exiv2 pr -q -pa '$file' | less" & done ;;
-"C-g")      tr '\n' '\0' | xargs -0 gimp & ;;
-"C-r")      while read file; do rawtherapee "$file" & done ;;
-"C-comma")  rotate 270 ;;
-"C-period") rotate  90 ;;
-"C-slash")  rotate 180 ;;
+	"x")        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
+	"c")        while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
+	"i")        while read file; do $TERMINAL -e sh -c "exiv2 pr -q -pa '$file' | less" & done ;;
+	"g")        tr '\n' '\0' | xargs -0 gimp & ;;
+	"r")        while read file; do rawtherapee "$file" & done ;;
+	"C-comma")  rotate 270 ;;
+	"C-period") rotate  90 ;;
+	"C-slash")  rotate 180 ;;
+	"w")        while read file; do wallpaper set "$file"; done ;;
+	"C-d")      while read file; do mv "$file" "$HOME/.local/share/Trash"; done ;;
+	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 esac
 

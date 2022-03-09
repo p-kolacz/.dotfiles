@@ -1,8 +1,5 @@
--- https://github.com/lewis6991/gitsigns.nvim
+Plugin 'https://github.com/lewis6991/gitsigns.nvim'
 
-Plug.add 'lewis6991/gitsigns.nvim'
-
--- vim.wo.signcolumn = "yes:2"
 require('gitsigns').setup {
 	keymaps = {
 		-- Default keymap options
@@ -25,5 +22,5 @@ require('gitsigns').setup {
 	},
 }
 
-Map.nb('<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>', 'preview chunk')
+nnoremap('<leader>gp', '<cmd>lua require"gitsigns".preview_hunk()<CR>', 'preview chunk')
 

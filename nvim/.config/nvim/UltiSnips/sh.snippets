@@ -21,6 +21,10 @@ snippet delete_line_in_file
 sed -i "/${1:regex}/c\\" ${2:filename}
 endsnippet
 
+snippet file_name
+${${1:filename}%.*}
+endsnippet
+
 snippet file_ext
 ${${1:filename}##*.}
 endsnippet

@@ -1,3 +1,9 @@
+snippet starts_with
+function string.starts(string,start)
+	return string.sub(string,1,string.len(start))==start
+end
+endsnippet
+
 snippet edit_command "edit from variable"
 execute 'edit' func().'.txt'
 endsnippet

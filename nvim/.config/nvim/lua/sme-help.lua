@@ -2,7 +2,7 @@ local M = {}
 
 local function map(key, url, desc)
 	local action = string.format(':silent exe "!$BROWSER %s"<cr>', url)
-	Map.nb(key, action, desc)
+	nnoremap_buffer(key, action, desc)
 end
 
 function M.map_manual(url)

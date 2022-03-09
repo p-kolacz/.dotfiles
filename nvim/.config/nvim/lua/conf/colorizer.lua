@@ -1,7 +1,6 @@
--- https://github.com/RRethy/vim-hexokinase
 -- Run after install 'make hexokinase'
 
-Plug.add 'rrethy/vim-hexokinase'
+Plugin "https://github.com/RRethy/vim-hexokinase"
 
 -- vim.g.Hexokinase_highlighters = { 'virtual' }
 vim.g.Hexokinase_highlighters = { 'backgroundfull' }

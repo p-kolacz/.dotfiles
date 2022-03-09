@@ -1,61 +1,38 @@
--- https://github.com/nanotee/nvim-lua-guide
-
-Plug	= require "sme-plug"
-Map		= require "sme-map"
+require "lua_helpers"
+require "sme-plug"
+require "sme-map"
 Help	= require "sme-help"
 require "config".source {
 
------------------------------- Global settings -----------------------------
-"layers/commands.vim",
-"layers/options.vim",
+-- General settings --------------------
+	"layers/commands.vim",
+	"conf/options",
+	"conf/which-key",
+	"conf/mappings",
 
--------------------------------- Key mappings ------------------------------
-"layers/which-key.vim",
-"layers/mappings.vim",
-"layers/map-edit.vim",
-"maps/map-project",
+-- Appearance  -------------------------
+	"conf/appearance",
+	"conf/colorizer",
 
---------------------------------- Appearance  ------------------------------
-"layers/appearance.vim",
-"layers/themes/nord.vim",
--- "layers/themes/nightfly.vim",
--- "layers/themes/sonokai.vim",
--- "layers/themes/halcyon.vim",
--- "layers/themes/oceanic-next.vim",
--- "themes/cosmic-latte",
--- "themes/tokyonight",
-"conf/colorizer",
-"conf/icons",
-"conf/statusline",
--- "conf/feline",
-"conf/marksigns",
-
---------------------------------- Navigation -------------------------------
-"conf/telescope",
-"layers/open-browser.vim",
-"conf/nvim-tree",
-
----------------------------------- General ---------------------------------
-"layers/commentary.vim",
-"layers/editing.vim",
-"conf/gitsigns",		-- must be after plenary
+-- General -----------------------------
+"conf/file",
+"conf/edit",
 "conf/lsp",
 "conf/lsp-icons",
 "conf/completion",
--- "conf/compe",
--- "lspsaga",
-"layers/filesystem.vim",
-"layers/ultisnips.vim",
+"conf/ultisnips",
 "conf/treesitter",
--- "layers/coc.vim",
 
---------------------------------- Languages --------------------------------
+-- Navigation --------------------------
+"conf/telescope",
+"conf/nvim-tree",
+"conf/gitsigns",		-- must be after plenary
+
+-- Languages ---------------------------
 "lang/bash",
 "layers/csv.vim",
-"layers/fish.vim",
 "lang/gdscript" ,
 "lang/lua",
--- after/ftplugin/json.vim --
 "layers/markdown.vim",
 "lang/php",
 "lang/python",
@@ -66,23 +43,17 @@ require "config".source {
 "lang/vim",
 "lang/org-mode",
 "lang/recutils",
--- after/ftplugin/vim.vim --
 
------------------------------------ Tools ----------------------------------
--- "cheatsh.vim",
+-- Tools ------------------------------
 "conf/cheatsheet",
--- "conf/codi",
--- "layers/fugitive.vim",
-"layers/figlet.vim",
+"conf/figlet",
 "layers/rest.vim",
 "layers/help.vim",
--- "layers/vimwiki.vim",
-"layers/unicode.vim",
-
+-- "conf/help",
 }
 
 -- Load project specific configuration
-if vim.fn["filereadable"]("project.vim") > 0 then
+if vim.fn.filereadable("project.vim") > 0 then
 	vim.cmd("source project.vim")
 end
 

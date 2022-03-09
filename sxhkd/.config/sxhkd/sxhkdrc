@@ -37,8 +37,8 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown   
 	backlight -5
 
-XF86TouchpadToggle
-	touchpad toggle
+# XF86TouchpadToggle
+# 	touchpad toggle
 
 plusminus
 	bluetoothctl power on

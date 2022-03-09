@@ -1,4 +1,4 @@
-package.loaded['sme-statusline/providers'] = nil
+-- package.loaded['sme-statusline/providers'] = nil
 local M = {}
 
 function M.color(mode, colors)
@@ -70,14 +70,21 @@ end
 
 function M.lsp_diagnostic(bufnr)
 	if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
-	local types = {'Error', 'Warning', 'Information', 'Hint'}
+	-- local types = {'Error', 'Warning', 'Information', 'Hint'}
+	local types = {
+		vim.diagnostic.severity.ERROR,
+		vim.diagnostic.severity.WARN,
+		vim.diagnostic.severity.INFO,
+		vim.diagnostic.severity.HINT,
+	}
 	local counts = {0,0,0,0}
 	local active_clients = vim.lsp.get_active_clients()
 
 	if active_clients then
 		for _, client in ipairs(active_clients) do
 			for k,v in pairs(types) do
-				counts[k] = counts[k] + vim.lsp.diagnostic.get_count(bufnr, v, client.id)
+				-- counts[k] = counts[k] + #vim.lsp.diagnostic.get(bufnr, v, client.id)
+				counts[k] = counts[k] + #vim.diagnostic.get(bufnr, {severity = v})
 			end
 		end
 	end
@@ -97,7 +104,7 @@ function M.scrollbar(icons)
 end
 
 function M.debug(bufnr)
-	-- return " " ..vim.g.statusline_winid .. "/"..vim.fn.win_getid() 
+	-- return " " ..vim.g.statusline_winid .. "/"..vim.fn.win_getid()
 	return bufnr
 end
 

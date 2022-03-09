@@ -1,4 +1,4 @@
-lua Plug.add 'kovetskiy/sxhkd-vim'
+lua Plugin 'kovetskiy/sxhkd-vim'
 
 autocmd vimrc FileType sxhkd nnoremap <buffer> <F5> :!pkill -USR1 -x sxhkd<CR>
 

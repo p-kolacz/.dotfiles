@@ -9,7 +9,7 @@
 -- Syntax ---------------------------------------------------------------------
 
 	-- https://github.com/habamax/vim-godot
-	Plug.add 'habamax/vim-godot'
+	Plugin 'habamax/vim-godot'
 	-- let g:godot_ext_hl=v:true
 
 -- LSPConfig -------------------------------------------------------------------

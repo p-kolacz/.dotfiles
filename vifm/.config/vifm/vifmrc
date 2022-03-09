@@ -44,7 +44,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme nord
+" colorscheme nord
 
 " Icons
 source ~/.config/vifm/favicons.vifm

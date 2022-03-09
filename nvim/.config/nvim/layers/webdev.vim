@@ -4,7 +4,7 @@
 " |___|_|_|_|_|_|_\___|\__|
 " https://github.com/mattn/emmet-vim
 
-lua Plug.add 'mattn/emmet-vim'
+lua Plugin 'mattn/emmet-vim'
 
 " Enable in different mode
 " If you don't want to enable emmet in all modes, you can use set these options in vimrc:

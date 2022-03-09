@@ -7,9 +7,6 @@
 
 let g:markdown_fenced_languages =  ['gdscript', 'html', 'css', 'php', 'sh', 'vim']
 
-" autocmd vimrc Filetype markdown nnoremap <buffer> <leader>hh yyp<c-v>$r=
-" autocmd vimrc Filetype markdown nnoremap <buffer> <localleader>hh o<esc>80i=<esc>o<esc>
-" autocmd vimrc Filetype markdown nnoremap <buffer> <localleader>h2 yyp<c-v>$r-
-
 " Run code in fences
 " https://github.com/dbridges/vim-markdown-runner
+

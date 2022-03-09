@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LAYOUTS="$HOME/.screenlayout/"
+
+label=$(find $LAYOUTS*sh | xargs -n 1 basename | sed "s/.sh$//" | $VMENU)
+
+file="$LAYOUTS$label.sh"
+
+[[ -f $file ]] && { "$file"; kbrate.sh; wallpaper restore; bspc wm -r; $HOME/.dotfiles/polybar/restart.sh; }
+

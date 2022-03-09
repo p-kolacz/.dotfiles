@@ -1,4 +1,2 @@
--- Check out https://github.com/nvim-orgmode/orgmode
-
-Plug.add "axvr/org.vim"
+Plugin "https://github.com/nvim-orgmode/orgmode"
 

@@ -23,6 +23,6 @@ require'nvim-tree'.setup {
 	},
 }
 
-Map.n('<F8>', ':NvimTreeToggle<cr>')
-Map.n('<leader>fl', ':NvimTreeFindFile<cr>', 'locate in tree')
+nnoremap('<F8>', ':NvimTreeToggle<cr>')
+nnoremap('<leader>fl', ':NvimTreeFindFile<cr>', 'locate in tree')
 

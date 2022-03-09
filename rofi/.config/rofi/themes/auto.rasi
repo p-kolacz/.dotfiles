@@ -3,7 +3,7 @@
 }
 
 window {
-	background-color: #24283b;
+	background-color: #2e3440;
 	width: 33%;
 }
 
@@ -12,7 +12,7 @@ inputbar {
 	children: [entry];
 }
 entry {
-    background-color: #7aa2f7;
+    background-color: #81a1c1;
     padding: 6px;
 }
 
@@ -21,19 +21,19 @@ listview {
 	lines: 10;
 }
 scrollbar {
-	handle-color: #7aa2f7;
+	handle-color: #81a1c1;
 }
 
 element {
 	padding: 4px 8px;
 }
 element-text {
-	text-color: #c0caf5;
+	text-color: #e5e9f0;
 }
 
 element selected {
-	background-color: #7aa2f7;
+	background-color: #81a1c1;
 }
 element-text selected {
-	text-color: #24283b;
+	text-color: #2e3440;
 }

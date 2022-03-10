@@ -26,7 +26,6 @@ Plugin "sainnhe/sonokai"
 let.sonokai_style = 'atlantis'
 let.sonokai_enable_italic = 1
 
-
 ------------------------------------ Halcyon ----------------------------------
 Plugin "kwsp/halcyon-neovim"
 
@@ -39,13 +38,12 @@ let.oceanic_next_terminal_italic = 1
 Plugin "haystackandroid/cosmic_latte"
 
 ----------------------------------- Tokyonight --------------------------------
-Plugin 'folke/tokyonight.nvim'
-vim.g.tokyonight_style = 'storm'		-- available: night, storm
--- vim.g.tokyonight_enable_italic = 1
+Plugin "https://github.com/folke/tokyonight.nvim"
+vim.g.tokyonight_style = 'storm'		-- available: night, storm, day
 
--- One Dark --
+----------------------------------- One Dark ----------------------------------
 Plugin "https://github.com/joshdick/onedark.vim"
 
--- Gruvbox --
+----------------------------------- Gruvbox -----------------------------------
 Plugin "https://github.com/ellisonleao/gruvbox.nvim"
 

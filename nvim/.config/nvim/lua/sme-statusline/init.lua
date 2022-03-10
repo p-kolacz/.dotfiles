@@ -85,7 +85,7 @@ end
 
 function M.statusline()
 	local bufnr = vim.fn.winbufnr(vim.g.statusline_winid)
-	if vim.fn.bufname(bufnr) == "NvimTree" then
+	if vim.fn.bufname(bufnr) == "NvimTree_1" then
 		return nvim_tree()
 	elseif vim.g.statusline_winid == vim.fn.win_getid() then
 		return active(bufnr)

@@ -19,5 +19,5 @@ require'sme-marksigns'.setup()
 require'sme-statusline'.setup()
 
 require "conf/themes"
-colorscheme "onedark"
+colorscheme "tokyonight"
 

@@ -6,10 +6,11 @@
  --                               |_|
 
 Plugin {
-	'https://github.com/nvim-lua/popup.nvim',
-	'https://github.com/nvim-lua/plenary.nvim',
-	'https://github.com/nvim-telescope/telescope.nvim',
-	'https://github.com/nvim-telescope/telescope-symbols.nvim',
+	"https://github.com/nvim-lua/popup.nvim",
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/nvim-telescope/telescope-symbols.nvim",
+	"https://github.com/fhill2/telescope-ultisnips.nvim",
 }
 
 --https://github.com/nvim-telescope/telescope.nvim#pickers

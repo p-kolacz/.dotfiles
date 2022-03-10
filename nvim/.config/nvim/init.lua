@@ -1,7 +1,8 @@
 require "lua_helpers"
 require "sme-plug"
 require "sme-map"
-Help	= require "sme-help"
+Help = require "sme-help"
+
 require "config".source {
 
 -- General settings --------------------

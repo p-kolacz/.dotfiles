@@ -1,0 +1,3 @@
+
+Plugin 'kovetskiy/sxhkd-vim'
+

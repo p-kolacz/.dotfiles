@@ -72,6 +72,9 @@ set tabscope=pane tabprefix=" " tabsuffix=" "
 " Miller columns
 set milleroptions=lsize:1,csize:3,rsize:3,rpreview:all
 
+" Display only last directory in tab line instead of full path
+set shortmess+=L
+
 " ------------------------------------------------------------------------------
 "									 Search
 " ------------------------------------------------------------------------------

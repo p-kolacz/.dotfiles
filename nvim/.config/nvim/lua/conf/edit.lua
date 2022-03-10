@@ -9,5 +9,5 @@ Plugin {
 nnoremap("<C-_>", ":Commentary<cr><down>")
 nnoremap("<BS>",  ":Commentary<cr>")
 vnoremap("<BS>",  ":Commentary<cr>")
-nnoremap("<leader>cc", "yypkgccj", 'duplicomment') -- was nmap
+nmap("<leader>cc", "yypkgccj", 'duplicomment')
 

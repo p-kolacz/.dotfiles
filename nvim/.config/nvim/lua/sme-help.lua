@@ -1,16 +1,25 @@
 local M = {}
 
-local function map(key, url, desc)
-	local action = string.format(':silent exe "!$BROWSER %s"<cr>', url)
-	nnoremap_buffer(key, action, desc)
+M.Type = {
+	MANUAL     = { "hm", "manual" },
+	TUTORIAL   = { "ht", "tutorial" },
+	API        = { "ha", "API" },
+	FUNCTIONS  = { "hf", "functions" },
+	CHEATSHEET = { "hc", "cheat sheet" },
+	STYLEGUIDE = { "hs", "style guide" },
+	CUSTOM1    = { "h1", "1" },
+	CUSTOM2    = { "h2", "2" },
+	CUSTOM3    = { "h3", "3" },
+}
+
+function M.map(help_type, uri, desc)
+	desc = desc or help_type[2]
+	local action = string.format(":silent !xdg-open %s<cr>", uri)
+	nnoremap_buffer("<leader>"..help_type[1], action, desc)
 end
 
-function M.map_manual(url)
-	map('<leader>hm', url, vim.bo.filetype..' manual')
-end
-
-function M.map_api(url)
-	map('<leader>ha', url, vim.bo.filetype..' API')
+function M.edit_ft_notes()
+	vim.cmd(string.format("edit %s/doc/%s.md", vim.fn.stdpath("config"), vim.bo.filetype))
 end
 
 return M

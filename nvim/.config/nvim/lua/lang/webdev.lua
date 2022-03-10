@@ -4,19 +4,17 @@
 --   \ V  V /  __/ |_) | |_| |  __/\ V /
 --    \_/\_/ \___|_.__/|____/ \___| \_/
 
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- Czy Emmet potrzebny przy LSP?
 
 local lspconfig = require "lspconfig"
 lspconfig.html.setup {
 	cmd = { LSP_NODE_BIN .. 'vscode-html-language-server', '--stdio' },
-	capabilities = capabilities,
+	capabilities = LSP_CAPABILITIES,
 }
 
 lspconfig.cssls.setup {
 	cmd = { LSP_NODE_BIN .. 'vscode-css-language-server', '--stdio' },
-	capabilities = capabilities,
+	capabilities = LSP_CAPABILITIES,
 }
 
 lspconfig.tsserver.setup {

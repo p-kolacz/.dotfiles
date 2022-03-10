@@ -6,4 +6,7 @@ function colorscheme(name)
 	vim.cmd("colorscheme "..name)
 end
 
-function v(x) print(vim.inspect(x)) end
+function v(x)
+	print(vim.inspect(x))
+end
+

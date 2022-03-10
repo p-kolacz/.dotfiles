@@ -17,7 +17,7 @@ end
 
 function Plugin(repos, git_opts)
 	if type(repos) == "table" then
-		for _,r in pairs(repos) do
+		for _,r in ipairs(repos) do
 			plugin(r)
 		end
 	else

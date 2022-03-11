@@ -10,7 +10,6 @@ Plugin {
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/nvim-telescope/telescope.nvim",
 	"https://github.com/nvim-telescope/telescope-symbols.nvim",
-	"https://github.com/fhill2/telescope-ultisnips.nvim",
 }
 
 --https://github.com/nvim-telescope/telescope.nvim#pickers
@@ -28,7 +27,7 @@ nnoremap('<leader>fh', ':Telescope oldfiles<cr>', 'history')
 nnoremap('<leader>vc', ':Telescope commands<cr>', 'commands')
 nnoremap('<C-p>',      ':Telescope commands theme=get_dropdown<cr>')
 nnoremap('<leader>vx', ':Telescope command_history theme=get_dropdown<cr>', 'cmd history')
-nnoremap('<leader>ht', ':Telescope help_tags<cr>', 'help tags')
+nnoremap('<leader>hh', ':Telescope help_tags<cr>', 'help tags')
 nnoremap('<leader>vq', ':Telescope quickfix<cr>', 'quickfix list')
 nnoremap('<leader>vl', ':Telescope loclist<cr>', 'loc list')
 nnoremap('<leader>vo', ':Telescope vim_options theme=get_dropdown<cr>', 'options')
@@ -79,12 +78,13 @@ require('telescope').setup{
 	},
 }
 
--- Telescope Ultisnips
--- https://github.com/fhill2/telescope-ultisnips.nvim
-require('telescope').load_extension('ultisnips')
-nnoremap('<leader>cs', ':Telescope ultisnips ultisnips theme=get_dropdown<cr>', 'snippets')
+--  Ultisnips
+Plugin "https://github.com/fhill2/telescope-ultisnips.nvim"
+require("telescope").load_extension("ultisnips")
+nnoremap('<leader>cs', ":Telescope ultisnips ultisnips theme=get_dropdown<cr>", "snippets")
 
--- https://github.com/nvim-telescope/telescope-project.nvim
--- require'telescope'.load_extension('project')
--- nnoremap("<leader>po", ":lua require'telescope'.extensions.project.project{}<cr>")
+-- Project management
+Plugin "https://github.com/nvim-telescope/telescope-project.nvim"
+require"telescope".load_extension("project")
+nnoremap("<leader>po", ":lua require'telescope'.extensions.project.project{}<cr>", "open")
 

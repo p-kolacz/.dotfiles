@@ -39,7 +39,7 @@ Plugin "haystackandroid/cosmic_latte"
 
 ----------------------------------- Tokyonight --------------------------------
 Plugin "https://github.com/folke/tokyonight.nvim"
-vim.g.tokyonight_style = 'storm'		-- available: night, storm, day
+let.tokyonight_style = 'storm'		-- available: night, storm, day
 
 ----------------------------------- One Dark ----------------------------------
 Plugin "https://github.com/joshdick/onedark.vim"

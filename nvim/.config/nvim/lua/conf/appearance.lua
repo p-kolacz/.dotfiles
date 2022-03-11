@@ -15,8 +15,8 @@ vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higrou
 
 Plugin 'kyazdani42/nvim-web-devicons'
 require'nvim-web-devicons'.setup()
-require'sme-marksigns'.setup()
-require'sme-statusline'.setup()
+require'lib/marketeer'.setup()
+require'lib/sme-statusline'.setup()
 
 require "conf/themes"
 colorscheme "tokyonight"

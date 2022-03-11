@@ -1,5 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-# youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 $1
-youtube-dl --extract-audio --audio-format mp3 --add-metadata $1
-# youtube-dl -f bestaudio --extract-audio --add-metadata $1
+youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail $1
+

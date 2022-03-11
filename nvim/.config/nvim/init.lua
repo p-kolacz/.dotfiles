@@ -1,12 +1,11 @@
-require "lua_helpers"
-require "sme-plug"
-require "sme-map"
-Help = require "sme-help"
+require "lib/lua_helpers"
+require "lib/sme-plug"
+require "lib/sme-map"
+Help = require "lib/sme-help"
 
-require "config".source {
+require "lib/config" {
 
 -- General settings --------------------
-	"layers/commands.vim",
 	"conf/options",
 	"conf/which-key",
 	"conf/mappings",

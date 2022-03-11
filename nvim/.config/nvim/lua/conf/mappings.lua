@@ -53,9 +53,7 @@ nnoremap("<leader>gPd", ':!git add . && git commit -m "$(date +%F)" && git push<
 
 ----------------------------------- Help -----------------------------------
 mapgroup("<leader>h", "+Help")
-nnoremap("<leader>hh", ":help<space>" , 'help')
-nnoremap("<leader>hg", ":helpgrep<space>", 'help grep')
--- nnoremap("<leader>hf", function() end, 'filetype notes')
+nnoremap("<leader>hn", Help.edit_ft_notes, 'filetype notes')
 
 ---------------------------------- Insert ----------------------------------
 mapgroup("<leader>i", "+Insert")
@@ -73,6 +71,7 @@ vim.cmd('command! -nargs=1 ProjSubstitute :cfdo %s/<args>/gc | update')
 mapgroup('<leader>p', '+Project')
 nnoremap('<leader>pg', ':ProjGrep<space>', 'grep')
 nnoremap('<leader>ps', ':ProjSubstitute<space>', 'substitute')
+nnoremap('<leader>pt', ':vimgrep /TODO:/j ** | copen<cr>', 'TODOs')
 
 ----------------------------------- Spell ----------------------------------
 mapgroup("<leader>s", "+Spell")

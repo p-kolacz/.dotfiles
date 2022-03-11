@@ -1,7 +1,7 @@
-package.loaded["sme-statusline"] = nil
+-- package.loaded["sme-statusline"] = nil
 local M = {}
 
-local p = require'sme-statusline/providers'
+local p = require'lib/sme-statusline/providers'
 local Fticons = require'sme-fticons'
 
 local Labels = {
@@ -95,7 +95,7 @@ function M.statusline()
 end
 
 function M.setup()
-	vim.o.statusline = [[%!luaeval('require"sme-statusline".statusline()')]]
+	vim.o.statusline = [[%!luaeval('require"lib/sme-statusline".statusline()')]]
 end
 
 return M

@@ -64,8 +64,8 @@ function M.setup(user_config)
 	end
 	define_sign(config.global_name, config.global_mark)
 	define_sign(config.local_name, config.local_mark)
-	vim.cmd('augroup sme_marksigns | autocmd! | augroup END')
-	vim.cmd('autocmd sme_marksigns BufWinEnter * lua require"sme-marksigns".refresh()')
+	vim.cmd('augroup marketeer | autocmd! | augroup END')
+	vim.cmd('autocmd marketeer BufWinEnter * lua require"lib/marketeer".refresh()')
 end
 
 function M.refresh()

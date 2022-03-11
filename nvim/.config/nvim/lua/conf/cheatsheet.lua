@@ -1,5 +1,5 @@
-require'sme-cheatsh'.setup()
+require'lib/sme-cheatsh'.setup()
 
-nnoremap('<leader>hc', ':CheatshCword<cr>', 'cheat.sh cword')
-nnoremap('<leader>hq', ':Cheatsh ', 'cheat.sh query')
+nnoremap('<leader>hCc', ':CheatshCword<cr>', 'cheat.sh cword')
+nnoremap('<leader>hCq', ':Cheatsh ', 'cheat.sh query')
 

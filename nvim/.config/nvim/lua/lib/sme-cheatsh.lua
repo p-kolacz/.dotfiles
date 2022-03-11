@@ -1,21 +1,19 @@
-package.loaded['sme-cheatsh'] = nil
-
 local M = {}
 
-local Curl = 'curl https://cheat.sh/'
+local CURL = 'curl https://cheat.sh/'
 
 function M.cword()
 	local ft = vim.bo.filetype
 	local cw = vim.fn.expand('<cword>')
 	vim.cmd('split')
-	vim.cmd(string.format('terminal %s%s/%s', Curl, ft, cw))
+	vim.cmd(string.format('terminal %s%s/%s', CURL, ft, cw))
 end
 
 function M.query(keywords)
 	keywords = string.gsub(keywords, '%s', '+')
 	local ft = vim.bo.filetype
 	vim.cmd('split')
-	vim.cmd(string.format('terminal %s%s/%s', Curl, ft, keywords))
+	vim.cmd(string.format('terminal %s%s/%s', CURL, ft, keywords))
 end
 
 function M.setup()

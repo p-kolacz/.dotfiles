@@ -3,6 +3,11 @@
  --  | | | ' \/ -_) '  \/ -_|_-<
  --  |_| |_||_\___|_|_|_\___/__/
 
+----------------------------------- Tokyonight --------------------------------
+Plugin "https://github.com/folke/tokyonight.nvim"
+let.tokyonight_style = 'storm'		-- available: night, storm, day
+-- let.tokyonight_transparent = 1
+
 ------------------------------------- Nord -------------------------------------
 
 Plugin 'https://github.com/arcticicestudio/nord-vim'
@@ -36,10 +41,6 @@ let.oceanic_next_terminal_italic = 1
 
 ---------------------------------- Cosmic Latte -------------------------------
 Plugin "haystackandroid/cosmic_latte"
-
------------------------------------ Tokyonight --------------------------------
-Plugin "https://github.com/folke/tokyonight.nvim"
-let.tokyonight_style = 'storm'		-- available: night, storm, day
 
 ----------------------------------- One Dark ----------------------------------
 Plugin "https://github.com/joshdick/onedark.vim"

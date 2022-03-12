@@ -9,9 +9,9 @@ Plugin {
 	'https://github.com/hrsh7th/cmp-emoji',
 }
 
--- vim.o.completeopt = "menu,menuone,noselect"
-vim.o.completeopt = "menu,menuone"
-vim.o.pumheight = 10
+set.completeopt = "menu,menuone,noselect"
+-- set.completeopt = "menu,menuone"
+set.pumheight = 10
 
 local cmp = require'cmp'
 local mapping = {

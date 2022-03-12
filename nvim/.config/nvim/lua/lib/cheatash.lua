@@ -17,8 +17,8 @@ function M.query(keywords)
 end
 
 function M.setup()
-	vim.cmd('command! -nargs=0 CheatshCword lua require"sme-cheatsh".cword()')
-	vim.cmd('command! -nargs=+ Cheatsh lua require"sme-cheatsh".query(<q-args>)')
+	vim.cmd('command! -nargs=0 CheatshCword lua require"lib/cheatash".cword()')
+	vim.cmd('command! -nargs=+ Cheatsh lua require"lib/cheatash".query(<q-args>)')
 end
 
 return M

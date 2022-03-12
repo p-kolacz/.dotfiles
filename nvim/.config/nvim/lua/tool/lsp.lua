@@ -1,17 +1,19 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 Plugin "https://github.com/neovim/nvim-lspconfig"
 
+LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
+LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
+
 mapgroup("<leader>cd", "+Diagnostic")
 nnoremap('<leader>cdf', '<cmd>lua vim.diagnostic.open_float()<CR>')
 nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 nnoremap('<leader>cdl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "diag set loclist")
-nnoremap('<leader>ci', ':LspInfo<cr>', 'LSP info')
+mapgroup("<leader>cl", "+LSP")
+nnoremap('<leader>cli', ':LspInfo<cr>', 'LSP info')
+nnoremap("<leader>clt", ":split | lcd "..LSP_DATA_HOME.." | terminal", "terminal to LSP data")
 
-LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
-LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
-
-LSP_ON_ATTACH = function(client, bufnr)
+LSP_ON_ATTACH = function(client, _)
 	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 
 	-- Mappings.

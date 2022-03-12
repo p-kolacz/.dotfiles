@@ -44,12 +44,17 @@ vnoremap("<leader>er", ":'<,'>!tac<CR>", "reverse lines")
 
 ----------------------------------- File -----------------------------------
 mapgroup("<leader>f", "+File")
+nnoremap("<leader>fx", ":!chmod +x %<cr>", "chmod +x")
 
 ------------------------------------ Git -----------------------------------
 mapgroup("<leader>g", "+Git")
 nnoremap("<leader>gg", ":silent !$TERMINAL lazygit &<cr>", "LazyGit")
-mapgroup("<leader>gP", '+Push')
-nnoremap("<leader>gPd", ':!git add . && git commit -m "$(date +%F)" && git push<cr>', "with current date")
+mapgroup("<leader>gc", "+Commit")
+nnoremap("<leader>gcc", ':!git add . && git commit -m ', "commit")
+nnoremap("<leader>gcd", ':!git add . && git commit -m "$(date +%F)"<cr>', "with current date")
+mapgroup("<leader>gp", '+Push')
+nnoremap("<leader>gpp", ':!git push<cr>', "push")
+nnoremap("<leader>gpd", ':!git add . && git commit -m "$(date +%F)" && git push<cr>', "with current date")
 
 ----------------------------------- Help -----------------------------------
 mapgroup("<leader>h", "+Help")

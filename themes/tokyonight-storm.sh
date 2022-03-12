@@ -1,5 +1,5 @@
 export THEME_FG=#c0caf5
-export THEME_BG=#24283b
+export THEME_BG=#24283c
 export THEME_BLACK=#414868
 export THEME_RED=#f7768e
 export THEME_GREEN=#9ece6a

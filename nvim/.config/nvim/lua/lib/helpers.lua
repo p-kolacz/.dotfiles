@@ -10,3 +10,9 @@ function v(x)
 	print(vim.inspect(x))
 end
 
+function Require(t)
+	for _,v in pairs(t) do
+		require(v)
+	end
+end
+

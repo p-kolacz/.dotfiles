@@ -1,3 +1,4 @@
+-- TODO: add table as lhs
 local function set(mode, lhs, rhs, desc, opts)
 	if desc and WK then
 		opts.silent = false
@@ -11,8 +12,8 @@ local function set(mode, lhs, rhs, desc, opts)
 		else
 			vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 		end
-	else
-		print("invalid rhs for: "..lhs)
+	-- else
+		-- print("invalid rhs for: "..lhs)
 	end
 end
 
@@ -22,7 +23,7 @@ function mapgroup(key, desc)
 	end
 end
 
-function map(lhs, rhs, desc)              set("", lhs, rhs, desc, { noremap = false })              end
+function map(lhs, rhs, desc)              set("",  lhs, rhs, desc, { noremap = false })             end
 function nmap(lhs, rhs, desc)             set("n", lhs, rhs, desc, { noremap = false })             end
 function inoremap(lhs, rhs, desc)         set("i", lhs, rhs, desc, { noremap = true  })             end
 function inoremap_buffer(lhs, rhs, desc)  set("i", lhs, rhs, desc, { noremap = true, buffer = 0  }) end

@@ -1,9 +1,8 @@
 Plugin "https://github.com/kyazdani42/nvim-tree.lua"
 
-vim.g.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
+let.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 require'nvim-tree'.setup {
 	auto_close	= true,
-	-- hijack_cursor = false,
 	diagnostics = {
 		enable = true,
 		icons = {

@@ -37,16 +37,16 @@ nnoremap('<leader>vk', ':Telescope keymaps<cr>', 'keymaps')
 nnoremap('<leader>vf', ':Telescope filetypes theme=get_dropdown<cr>', 'filetypes')
 nnoremap('<leader>vh', ':Telescope highlights<cr>', 'highlights')
 nnoremap('<leader>vs', ':Telescope colorscheme theme=dropdown<cr>', 'colorschemes')
-nnoremap('<leader>/',  ':Telescope current_buffer_fuzzy_find theme=get_dropdown<cr>', 'search')
+nnoremap('<leader>/',  ':Telescope current_buffer_fuzzy_find theme=ivy<cr>', 'search')
 
 --LSP Pickers
 
 --Git Pickers
-mapgroup('<leader>gc',  '+Commits')
-nnoremap('<leader>gcc', ':Telescope git_commits<cr>', 'commits')
-nnoremap('<leader>gcb', ':Telescope git_bcommits<cr>', 'buffer commits')
-nnoremap('<leader>gb',  ':Telescope git_branches<cr>', 'branches')
-nnoremap('<leader>gs',  ':Telescope git_status<cr>', 'status')
+mapgroup('<leader>gs',  '+Show')
+nnoremap('<leader>gsc', ':Telescope git_commits<cr>', 'commits')
+nnoremap('<leader>gsd', ':Telescope git_bcommits<cr>', 'buffer commits')
+nnoremap('<leader>gsb',  ':Telescope git_branches<cr>', 'branches')
+nnoremap('<leader>gss',  ':Telescope git_status<cr>', 'status')
 
 --Treesitter
 nnoremap('<leader>tt', ':Telescope treesitter<cr>', 'treesitter')

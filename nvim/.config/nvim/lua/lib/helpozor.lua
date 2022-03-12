@@ -13,9 +13,8 @@ M.Type = {
 }
 
 function M.map(help_type, uri, desc)
-	desc = desc or help_type[2]
-	local action = string.format(":silent !xdg-open %s<cr>", uri)
-	nnoremap_buffer("<leader>"..help_type[1], action, desc)
+	local action = string.format(":silent !xdg-open '%s'<cr>", uri:gsub("#", "\\#"))
+	nnoremap_buffer("<leader>"..help_type[1], action, desc or help_type[2])
 end
 
 function M.edit_ft_notes()

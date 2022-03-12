@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd ~/Tools/qmk_firmware
-vim keyboards/redox_w/keymaps/max/keymap.c
+$EDITOR keyboards/redox_w/keymaps/max/keymap.c
 

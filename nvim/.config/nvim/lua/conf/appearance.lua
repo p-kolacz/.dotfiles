@@ -13,10 +13,18 @@ set.termguicolors  = true
 
 vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]]) -- Highlight yank
 
-Plugin 'kyazdani42/nvim-web-devicons'
-require'nvim-web-devicons'.setup()
-require'lib/marketeer'.setup()
-require'lib/sme-statusline'.setup()
+Plugin "kyazdani42/nvim-web-devicons"
+require "nvim-web-devicons".setup()
+Plugin "https://github.com/lukas-reineke/indent-blankline.nvim"
+require "lib/marketeer".setup()
+require "lib/sme-statusline".setup()
+
+-- Sign column icons
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for name, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. name
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 require "conf/themes"
 colorscheme "tokyonight"

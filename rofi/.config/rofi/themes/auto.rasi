@@ -3,7 +3,7 @@
 }
 
 window {
-	background-color: #24283b;
+	background-color: #24283c;
 	width: 33%;
 }
 
@@ -35,5 +35,5 @@ element selected {
 	background-color: #7aa2f7;
 }
 element-text selected {
-	text-color: #24283b;
+	text-color: #24283c;
 }

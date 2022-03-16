@@ -5,11 +5,15 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require'lspconfig'.sumneko_lua.setup {
-	cmd = {
-		LSP_DATA_HOME .. "lua-language-server/bin/lua-language-server",
+	flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+    },
+	-- cmd = {
+		-- LSP_DATA_HOME .. "lua-language-server/bin/lua-language-server",
 		-- "-E",
 		-- LSP_DATA_HOME .. "lua-language-server/main.lua",
-	},
+	-- },
 	settings = {
 		Lua = {
 			runtime = {

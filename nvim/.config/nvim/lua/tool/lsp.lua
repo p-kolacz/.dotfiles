@@ -12,9 +12,10 @@ nnoremap('<leader>cdl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "diag set lo
 mapgroup("<leader>cl", "+LSP")
 nnoremap('<leader>cli', ':LspInfo<cr>', 'LSP info')
 nnoremap("<leader>clt", ":split | lcd "..LSP_DATA_HOME.." | terminal", "terminal to LSP data")
+nnoremap("<leader>cll", ":lua vim.cmd('e'..vim.lsp.get_log_path())<cr>", "LSP logs")
 
-LSP_ON_ATTACH = function(client, _)
-	vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
+LSP_ON_ATTACH = function(client, bufnr)
+	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 	-- Mappings.
 	nnoremap_buffer('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>')
@@ -28,26 +29,5 @@ LSP_ON_ATTACH = function(client, _)
 	nnoremap_buffer('<leader>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition')
 	nnoremap_buffer('<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename')
 	nnoremap_buffer('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-
-	-- Set some keybinds conditional on server capabilities
-	if client.resolved_capabilities.document_formatting then
-		nnoremap_buffer("<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", 'formatting')
-	elseif client.resolved_capabilities.document_range_formatting then
-		nnoremap_buffer("<leader>cf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", 'formatting')
-	end
-
-	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
-		vim.api.nvim_exec([[
-			hi LspReferenceRead cterm=bold ctermbg=red gui=underline
-			hi LspReferenceText cterm=bold ctermbg=red gui=underline
-			hi LspReferenceWrite cterm=bold ctermbg=red gui=underline
-			augroup lsp_document_highlight
-				autocmd! * <buffer>
-				autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-				autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-				augroup END
-		]], false)
-	end
 end
 

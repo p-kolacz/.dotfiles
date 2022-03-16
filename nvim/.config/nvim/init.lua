@@ -5,7 +5,7 @@ Help = require "lib/helpozor"
 
 Require {
 
--- General settings --------------------
+-- Configuration -----------------------
 	"conf/options",
 	"conf/which-key",
 	"conf/mappings",

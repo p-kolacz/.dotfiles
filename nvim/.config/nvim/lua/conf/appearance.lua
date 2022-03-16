@@ -17,11 +17,18 @@ Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()
 Plugin "https://github.com/lukas-reineke/indent-blankline.nvim"
 require "lib/marketeer".setup()
-require "lib/sme-statusline".setup()
+require "lib/sme-statusline".setup { {
+		"mode",
+		"separator", "modified", "short_path", "filetype", "lsp_icon", "separator",
+		"column", "scrollbar",
+	}, {
+		"separator", "readonly", "modified", "short_path", "filetype", "separator"
+	}
+}
 
 -- Sign column icons
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for name, icon in pairs(signs) do
+DIAG_ICONS = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for name, icon in pairs(DIAG_ICONS) do
 	local hl = "DiagnosticSign" .. name
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end

@@ -1,6 +1,5 @@
 # https://github.com/baskerville/sxhkd
 # Reload: pkill -USR1 -x sxhkd
-# Press F5 to reload
 
 #---------------------------------------------------------------------------------------#
 								  # Keyboard #
@@ -11,12 +10,14 @@ super + Return
 
 super + space
 	run-rofi -show run
-	# dmenu_run -i -b -h 32 -p ' '
 
 super + Delete
 	power.sh
 
 super + Escape
+	slock
+
+Pause
 	slock
 
 super + {F1,F2,F3,F10}

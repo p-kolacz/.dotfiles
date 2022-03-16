@@ -11,7 +11,7 @@ Plugin {
 
 set.completeopt = "menu,menuone,noselect"
 -- set.completeopt = "menu,menuone"
-set.pumheight = 10
+-- set.pumheight = 10
 
 local cmp = require'cmp'
 local mapping = {
@@ -38,35 +38,48 @@ local sources2 = {
 
 local kind_icons = { Text = "", Method = "", Function = "", Constructor = "", Field = "ﰠ", Variable = "", Class = "ﴯ", Interface = "", Module = "", Property = "ﰠ", Unit = "塞", Value = "", Enum = "", Keyword = "", Snippet = "", Color = "", File = "", Reference = "", Folder = "", EnumMember = "", Constant = "", Struct = "פּ", Event = "", Operator = "", TypeParameter = "" }
 
+local fields = {
+	cmp.ItemField.Kind,
+	cmp.ItemField.Abbr,
+	cmp.ItemField.Menu
+}
+
+local function format(entry, vim_item)
+	-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+	vim_item.kind = kind_icons[vim_item.kind]    -- This concatonates the icons with the name of the item kind
+	vim_item.menu = ({
+		buffer = "﬘",
+		nvim_lsp = "",
+		ultisnips = "",
+		emoji = "",
+		calc = "",
+		latex_symbols = "[LaTeX]",
+		luasnip = "[LuaSnip]",
+		nvim_lua = "[Lua]",
+	})[entry.source.name]
+	return vim_item
+end
+
 cmp.setup {
 	experimental = {
 		ghost_text = true,
 	},
-	view = {
-		entries = 'native'
-	},
+	-- view = {
+	-- 	entries = 'native'
+	-- },
 	sources = cmp.config.sources(sources1, sources2),
+	-- sources = cmp.config.sources({
+      -- { name = 'nvim_lsp' },
+      -- -- { name = 'vsnip' }, -- For vsnip users.
+      -- -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- -- { name = 'snippy' }, -- For snippy users.
+    -- }, {
+      -- { name = 'buffer' },
+    -- }),
 	formatting = {
-		fields = {
-			cmp.ItemField.Kind,
-			cmp.ItemField.Abbr,
-			cmp.ItemField.Menu
-		},
-		format = function(entry, vim_item)
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.kind = kind_icons[vim_item.kind]    -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
-				buffer = "﬘",
-				nvim_lsp = "",
-				ultisnips = "",
-				emoji = "",
-				calc = "",
-				latex_symbols = "[LaTeX]",
-				luasnip = "[LuaSnip]",
-				nvim_lua = "[Lua]",
-			})[entry.source.name]
-			return vim_item
-		end
+		fields = fields,
+		format = format,
 	},
 	completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║" },
 	documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║", },

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+function usage() {
+	echo "Usage: [orph|up|sync|lastup]"
+}
+
+case $1 in
+	orph) pacman -Qdt ;;
+	remorph) pacman -Rs $(pacman -Qqdt) ;;
+	up) pacman -Syu ;;
+	sync) pacman -Sy ;;
+	lastup) grep "starting full system upgrade" /var/log/pacman.log | tail;;
+	*) usage
+esac
+

@@ -1,38 +1,34 @@
-package.loaded['lib/sme-statusline/providers'] = nil
 local M = {}
+
+local function colorize(str, hi)
+	return string.format("%%#%s#%s%%#StatusLine#", hi, str)
+end
+
+-- local function bubble(str, prefix)
+-- 	return string.format(
+-- 		"%%#%sFG#%%#%sBG#%s %%#%sFG#%%#SlickLineNone#",
+-- 		prefix, prefix, str, prefix)
+-- end
 
 function M.separator(_, _)
 	return "%="
 end
 
--- function M.color(mode, colors)
--- 	local c = colors[mode] or colors._
--- 	return string.format("%%#%s#", c)
--- end
-local function colorize(str, hi)
-	return string.format("%%#%s#%s", hi, str)
-end
-
 function M.mode(_, icons, colors)
 	local mode = vim.api.nvim_get_mode().mode
-	local label = icons[mode] or mode
-	label = "  "..label.."  "
-	local color = colors.mode[mode] or colors.mode.n
-	return string.format("%s%s%s%s",
-		colorize("", color[1]), colorize(label, color[2]), colorize("", color[1]), colorize("", "NormalText"))
+	local label = "  "..(icons[mode] or mode).."  "
+	local color = colors[mode] or colors.n
+	return colorize(label, color)
+	-- return string.format("%s%s%s%s",
+		-- colorize("", color[1]), colorize(label, color[2]), colorize("", color[1]), colorize("", "None"))
 end
 
 function M.readonly(bufnr, icon)
-	return vim.api.nvim_buf_get_option(bufnr, 'readonly') and icon or ""
-	-- local ft = vim.api.nvim_buf_get_option(bufnr,'filetype')
-	-- return vim.fn.getbufvar(bufnr, '&readonly') == 0 and "" or icon
-	-- return tostring(vim.api.nvim_buf_get_var(0, "modified"))
+	return vim.api.nvim_buf_get_option(bufnr, 'readonly') and icon or false
 end
 
-function M.modified(bufnr, icon)
-	-- print(vim.api.nvim_buf_get_option(bufnr,'modified'))
-	return vim.api.nvim_buf_get_option(bufnr, 'modified') and icon or ""
-	-- return vim.fn.getbufvar(bufnr, '&modified') == 0 and "" or icon
+function M.modified(bufnr, icon, color)
+	return vim.api.nvim_buf_get_option(bufnr, 'modified') and colorize(icon, color) or false
 end
 
 function M.short_path()
@@ -44,13 +40,13 @@ function M.filename()
 end
 
 function M.filetype(bufnr, icons)
-	-- local ft = vim.fn.getbufvar(bufnr,'&filetype')
 	local ft = vim.api.nvim_buf_get_option(bufnr, 'filetype')
 	local icon, color = icons.get_icon(ft)
 	if icon then
-		icon = "%#"..color.."#"..icon.."%#NormalText#"
+		icon = colorize(icon, color)
 	end
-	return icon or ft
+	-- return bubble(icon or ft, "SlickLineGreen")
+	return ""..(icon or ft)..""
 end
 
 local function lsp_name(bufnr)
@@ -72,11 +68,11 @@ end
 
 function M.lsp_name(bufnr)
 	local name = lsp_name(bufnr)
-	return name or ""
+	return name or false
 	-- if name then
 		-- return separator .. " " .. name
 	-- end
-	-- return ""
+	-- return false
 end
 
 function M.lsp_icon(bufnr, icon)
@@ -84,17 +80,17 @@ function M.lsp_icon(bufnr, icon)
 	if name then
 		return icon
 	end
-	return ""
+	return false
 end
 
 function M.spell(bufnr)
-	-- local s = vim.fn.getbufvar(bufnr, "&spell")
-	local s = vim.api.nvim_buf_get_option(bufnr, "spell")
+	local s = vim.fn.getbufvar(bufnr, "&spell")
+	-- local s = vim.api.nvim_buf_get_option(bufnr, "spell")
 	local lang = string.upper(vim.api.nvim_buf_get_option(bufnr, "spelllang"))
-	return s == 0 and "" or lang
+	return s ~= 0 and "["..lang.."]" or false
 end
 
-function M.lsp_diagnostic(bufnr)
+function M.diagnostics(bufnr, icons, colors)
 	if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
 	-- local types = {'Error', 'Warning', 'Information', 'Hint'}
 	local types = {
@@ -103,23 +99,35 @@ function M.lsp_diagnostic(bufnr)
 		vim.diagnostic.severity.INFO,
 		vim.diagnostic.severity.HINT,
 	}
-	local counts = {0,0,0,0}
-	local active_clients = vim.lsp.get_active_clients()
+	-- local counts = {0,0,0,0}
+	-- local active_clients = vim.lsp.get_active_clients()
 
-	if active_clients then
-		for _, client in ipairs(active_clients) do
-			for k,v in pairs(types) do
-				-- counts[k] = counts[k] + #vim.lsp.diagnostic.get(bufnr, v, client.id)
-				counts[k] = counts[k] + #vim.diagnostic.get(bufnr, {severity = v})
-			end
+	-- if active_clients then
+	local ret = {}
+	for _, severity in pairs(types) do
+		-- counts[k] = counts[k] + #vim.diagnostic.get(bufnr, {severity = v})
+		local count = #vim.diagnostic.get(bufnr, {severity = severity})
+		if count > 0 then
+			table.insert(ret, colorize(icons[severity].." "..count, colors[severity]))
 		end
 	end
-	return '('..table.concat(counts, ',')..')'
+	-- end
+	-- return '('..table.concat(counts, ',')..')'
+	return table.concat(ret, " ")
 end
 
-function M.column()
-	return "%2c"
+function M.column(_, icon)
+	return "%#DiagnosticVirtualTextHint#  "..icon.."%02c"
 end
+
+function M.percent()
+	return "%p "
+end
+
+function M.line_count(_, icon)
+	return icon.."%L"
+end
+
 -- extension for scoll bar
 function M.scrollbar(_, icons)
 	local current_line = vim.fn.line('.')

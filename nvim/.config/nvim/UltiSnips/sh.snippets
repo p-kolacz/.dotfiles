@@ -73,6 +73,14 @@ snippet overwrite_line
 echo -en "$1\r"
 endsnippet
 
+snippet pipe_echo "pipe text to command instead of `echo text | command`"
+${1:command} <<< ${2:text}
+endsnippet
+
+snippet pipe_file "pipe file to cmd instead of `cat file | command`"
+${1:command} < ${2:file}
+endsnippet
+
 snippet read_first_line
 read line < ${1:filename}
 endsnippet

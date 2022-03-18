@@ -11,7 +11,7 @@ Plugin {
 
 set.completeopt = "menu,menuone,noselect"
 -- set.completeopt = "menu,menuone"
--- set.pumheight = 10
+set.pumheight = 10
 
 local cmp = require'cmp'
 local mapping = {

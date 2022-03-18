@@ -23,8 +23,7 @@ notify() {
 		notify-send -u low -i "$1" "Screenshot taken" "$1"
 }
 
-# sel=$(printf "%s\n" "${types[@]}" | dmenu -i -h 32 -p "  " -l 10)
-sel=$(printf "%s\n" "${types[@]}" | rofi -dmenu)
+sel=$(printf "%s\n" "${types[@]}" | $VMENU)
 
 case $sel in
 	${types[0]})
@@ -39,7 +38,6 @@ case $sel in
 		;;
 	${types[2]})
 		maim -s | xclip -selection clipboard -t image/png
-		# scrot -s /tmp/screenshot -e "xclip -selection clipboard -t image/png -i /tmp/screenshot" &&
 		notify
 		;;
 	${types[3]})

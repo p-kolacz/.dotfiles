@@ -24,6 +24,7 @@ Require {
 	"tool/colorizer",
 	"tool/figlet",
 	"tool/rest",
+	-- "tool/lightspeed",
 
 -- Languages ---------------------------
 	"lang/bash",

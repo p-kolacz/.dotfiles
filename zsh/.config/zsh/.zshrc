@@ -1,15 +1,34 @@
-source plugins/abbr.zsh
-source plugins/less.zsh
-source plugins/ssh-agent.zsh
-source plugins/tldr.zsh
-source aliases.zsh
+# combine emacs & vim modes
+bindkey -e
+bindkey '\e' vi-cmd-mode
 
-autoload -Uz compinit run-help
-compinit
+source $ZDOTDIR/plugins/abbr.zsh
+source $ZDOTDIR/plugins/ssh-agent.zsh
+source $ZDOTDIR/plugins/tldr.zsh
+source $ZDOTDIR/functions.zsh
+source $ZDOTDIR/aliases.zsh
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/completion.zsh
+
+autoload -Uz compinit
+compinit -d "$XDG_CACHE_HOME/zcompdump"
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+unalias run-help
+autoload run-help
+alias help=run-help
+
 HISTFILE="$XDG_STATE_HOME/zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd
-bindkey -v
+
+(( $+commands[moar] )) && export PAGER="moar --no-linenumbers"
+# || source $ZDOTDIR/plugins/less.zsh
+
+nerdfetch
+eval "$(starship init zsh)"
 

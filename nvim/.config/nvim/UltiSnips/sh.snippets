@@ -17,6 +17,14 @@ snippet coloreset
 "\e[0m"
 endsnippet
 
+snippet default "parameter default value"
+${$1:-$2}
+endsnippet
+
+snippet default_assign "parameter default value assign"
+${$1:=$2}
+endsnippet
+
 snippet delete_line_in_file
 sed -i "/${1:regex}/c\\" ${2:filename}
 endsnippet

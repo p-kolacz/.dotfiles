@@ -1,0 +1,19 @@
+#!/bin/sh
+
+REGEX=" connected (primary )?[0-9]+" 
+
+case $1 in
+	count)
+		xrandr --current | egrep "$REGEX" | wc -l ;;
+		# xrandr --current --listmonitors | head -n 1 | cut -d" " -f2	;;
+	list)
+		xrandr --current | egrep "$REGEX" | cut -d" " -f1 ;;
+		# xrandr --current --listmonitors | tail -n +2 | cut -d" " -f6 ;;
+	primary)
+		xrandr --current | egrep "primary" | cut -d" " -f1 ;;
+	secondary)
+		xrandr --current | egrep " connected [0-9]+" | cut -d" " -f1 ;;
+	*)
+		echo "Usage: monitor [count|list|primary|secondary]"
+esac
+

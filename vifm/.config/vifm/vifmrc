@@ -123,6 +123,10 @@ nnoremap cw cW<c-u>
 nnoremap cW cw<c-u>
 nnoremap I cw<c-a>
 
+" Windows
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 " Tabs
 nnoremap <c-t> :tabnew<cr>
 nnoremap <c-j> :tabnext<cr>
@@ -144,6 +148,7 @@ nnoremap ,w :set wrap!<cr>
 nnoremap ,z :zip<cr>
 " :set viewcolumns=-{name}..,6{},17{mtime}
 
+" Fs
 nnoremap <f2> cW
 nnoremap <f3> :!less %f<cr>
 nnoremap <s-f4> :touch<space>
@@ -158,9 +163,9 @@ nnoremap <f8> :delete<cr>
 nnoremap <f11> :cmpfiles<cr>
 nnoremap <f12> :cmpdirs<cr>
 
+" Views
 nnoremap <a-s> :set viewcolumns=""<cr>
 nnoremap <a-f> :set viewcolumns=-{name}..,6{size},17{mtime}<cr>
-
 
 nnoremap <c-]> :wincmd o<cr>:set millerview<cr>
 nnoremap <c-[> :wincmd v<cr>:set nomillerview<cr>

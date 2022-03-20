@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-LAYOUTS="$HOME/.screenlayout/"
+LAYOUTS="$DOTFILES/share/screenlayout/"
 
 label=$(find $LAYOUTS*sh | xargs -n 1 basename | sed "s/.sh$//" | $VMENU)
 

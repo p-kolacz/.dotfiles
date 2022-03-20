@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export LC_COLLATE="C"
-
-nnn

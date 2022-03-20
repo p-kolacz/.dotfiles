@@ -11,7 +11,7 @@ super + shift + y
 	notify-send "BSPWM" "WM restarted"
 
 super + y
-	~/.dotfiles/polybar/restart.sh
+	~/.dotfiles/polybar/polybarctl restart
 
 								  # Monitors #
 #------------------------------------------------------------------------------#
@@ -79,7 +79,7 @@ super + {comma,period}
 
 # scratchpad
 super + grave
-	~/.dotfiles/bspwm/scratchpad.sh
+	~/.config/bspwm/scratchpad.sh
 
 #
 # preselect

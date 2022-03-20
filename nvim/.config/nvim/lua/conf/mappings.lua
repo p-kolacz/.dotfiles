@@ -44,7 +44,7 @@ vnoremap("<leader>er", ":'<,'>!tac<CR>", "reverse lines")
 
 ----------------------------------- File -----------------------------------
 mapgroup("<leader>f", "+File")
-nnoremap("<leader>fx", ":!chmod +x %<cr>", "chmod +x")
+nnoremap("<leader>fx", ":silent !chmod +x %<cr>", "chmod +x")
 
 ------------------------------------ Git -----------------------------------
 mapgroup("<leader>g", "+Git")

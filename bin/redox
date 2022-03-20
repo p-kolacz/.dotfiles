@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd ~/Tools/qmk_firmware
-$EDITOR keyboards/redox_w/keymaps/max/keymap.c
-

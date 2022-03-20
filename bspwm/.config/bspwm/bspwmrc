@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 xsetroot -cursor_name left_ptr
 
@@ -8,25 +8,23 @@ xsetroot -cursor_name left_ptr
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
 # bspc monitor -d        
-xrandr_output=$(xrandr --current)
-monitors_count=$(echo "$xrandr_output" | grep "\sconnected" | wc -l)
-if [ $monitors_count -eq 1 ]; then
-	main=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
-	bspc monitor $main --rename main
+
+# xrandr_output=$(xrandr --current)
+# monitors_count=$(echo "$xrandr_output" | grep "\sconnected" | wc -l)
+main_monitor=$(monitor primary)
+if [[ $(monitor count) -eq 1 ]]; then
+	# bspc monitor $main_monitor --rename main
 	bspc monitor -d F W E R T A S D G C V
 else
-	main=$(echo "$xrandr_output" | grep "^DP.*\sconnected" | cut -d" " -f1)
-	bspc monitor $main --rename main
-	bspc monitor main -d F W R A S D G C V
+	# bspc monitor $main_monitor --rename main
+	bspc monitor $main_monitor -d F W E R T A S D G
 
-	left=$(echo "$xrandr_output" | grep "^HDMI.*\sconnected" | cut -d" " -f1)
-	bspc monitor $left --rename left
-	bspc monitor left -d E
-
-	right=$(echo "$xrandr_output" | grep "^eDP.*\sconnected" | cut -d" " -f1)
-	bspc monitor $right --rename right
-	bspc monitor right -d T
-
+	i=0
+	workspaces=(C V)
+	for m in $(monitor secondary); do
+		bspc monitor $m -d ${workspaces[i]}
+		((i = i + 1))
+	done
 fi
 
 bspc config remove_disabled_monitors true
@@ -67,9 +65,7 @@ bspc config pointer_follows_focus true
 bspc rule -r "*"
 bspc rule -a Meld state=fullscreen
 bspc rule -a mpv state=floating
-# bspc rule -a KeePassXC state=floating
 bspc rule -a Screenkey manage=off
-# bspc rule -a frontal state=floating rectangle=1200x800+360+200
 bspc rule -a frontal state=floating rectangle=1200x800+260+220
 bspc rule -a scratchpad state=floating sticky=on rectangle=1200x800+220+260
 bspc rule -a Zathura state=tiled
@@ -88,6 +84,5 @@ bspc rule -a Emacs state=tiled
 								   # Panel #
 #------------------------------------------------------------------------------#
 
-# pgrep -x lemonbar.sh > /dev/null || lemonbar.sh &
-~/.dotfiles/polybar/start.sh &
+~/.dotfiles/polybar/polybarctl restart &
 

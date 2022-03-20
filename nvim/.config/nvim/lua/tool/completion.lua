@@ -29,6 +29,7 @@ local mapping = {
 local sources1 = {
 	{ name = 'nvim_lsp' },
 	{ name = 'ultisnips' },
+	{ name = 'path' },
 	{ name = 'emoji' },
 	{ name = 'calc' },
 }

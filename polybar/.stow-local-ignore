@@ -1,3 +1,2 @@
-^start\.sh$
-^stop\.sh$
-^restart\.sh$
+polybarctl
+

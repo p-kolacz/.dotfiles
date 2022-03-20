@@ -9,7 +9,7 @@ super + Return
 	$TERMINAL
 
 super + space
-	run-rofi -show run
+	rofi -show run
 
 super + Delete
 	power.sh
@@ -20,8 +20,8 @@ super + Escape
 Pause
 	slock
 
-super + {F1,F2,F3,F10}
-	{icons.sh,emoji.sh,entities.sh,mnter.sh}
+super + {F1,F2,F3,F4,F10}
+	{strselecta icons,strselecta emoji,strselecta entities,strselecta boxes,mnter.sh}
 
 XF86Audio{Play,Prev,Next}
 	playerctl {play-pause,previous,next}

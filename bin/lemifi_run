@@ -1,4 +1,0 @@
-#!/bin/bash
-
-$TERMINAL --class frontal "$HOME/Cloud/Lego/lemifi"
-

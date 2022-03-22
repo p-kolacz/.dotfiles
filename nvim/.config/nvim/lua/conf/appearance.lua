@@ -33,6 +33,6 @@ require "lib/sme-statusline".setup {
 		"short_path", "lsp_icon",
 		"separator", "diagnostics", "column", "line_count", "percent",
 	},
-	{ "separator", "readonly", "modified", "filename",  "separator" }
+	{ "modified", "separator", "readonly", "filename",  "separator" }
 }
 

@@ -44,7 +44,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " List of color schemes to try (picks the first one supported by the terminal)
-" colorscheme nord
+colorscheme blue
 
 " Icons
 source ~/.config/vifm/favicons.vifm
@@ -64,7 +64,7 @@ set scrolloff=4
 
 " Set custom status line look
 " set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
-set statusline="  Hint: %z%= %E / %a %17A %10u:%-7g %14d  "
+set statusline=" %T%= %E / %a %17A %10u:%-7g %14d  "
 
 " Tabs
 set tabscope=pane tabprefix=" " tabsuffix=" "
@@ -165,6 +165,7 @@ nnoremap <f12> :cmpdirs<cr>
 
 " Views
 nnoremap <a-s> :set viewcolumns=""<cr>
+nnoremap <a-d> :set viewcolumns=-{name}..,17{mtime}<cr>
 nnoremap <a-f> :set viewcolumns=-{name}..,6{size},17{mtime}<cr>
 
 nnoremap <c-]> :wincmd o<cr>:set millerview<cr>

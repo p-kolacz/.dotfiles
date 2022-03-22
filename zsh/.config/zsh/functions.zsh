@@ -11,7 +11,7 @@ chsh () {
 }
 
 edit_in_dir() {
-	$EDITOR -c "cd $1" "$2"
+	cd "$1" && $EDITOR "$2"
 }
 
 ealias() {

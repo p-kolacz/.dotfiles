@@ -45,7 +45,10 @@ plusminus
 	bluetoothctl power on
 
 Print
-	screenshot
+	flameshot full
+
+super + Print
+	flameshot gui
 
 #---------------------------------------------------------------------------------------#
 								   # Mouse #

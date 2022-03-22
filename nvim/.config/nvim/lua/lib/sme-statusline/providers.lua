@@ -121,7 +121,7 @@ function M.column(_, icon)
 end
 
 function M.percent()
-	return "%p "
+	return "%02p "
 end
 
 function M.line_count(_, icon)

@@ -3,11 +3,11 @@ bindkey -e
 bindkey '\e' vi-cmd-mode
 
 source $ZDOTDIR/plugins/abbr.zsh
+source $ZDOTDIR/plugins/less.zsh
 source $ZDOTDIR/plugins/ssh-agent.zsh
 source $ZDOTDIR/plugins/tldr.zsh
 source $ZDOTDIR/functions.zsh
 source $ZDOTDIR/aliases.zsh
-
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/completion.zsh
@@ -27,7 +27,6 @@ SAVEHIST=10000
 setopt autocd
 
 (( $+commands[moar] )) && export PAGER="moar --no-linenumbers"
-# || source $ZDOTDIR/plugins/less.zsh
 
 nerdfetch
 eval "$(starship init zsh)"

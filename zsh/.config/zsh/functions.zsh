@@ -36,8 +36,8 @@ mkd() {
 }
 
 notes() {
-	local dir="~/Cloud/Exocortex/Notes"
-	local file=$(find . -name "$dir/*.md" -type f | fzf --preview "preview.sh {}")
-	[[ -n $file ]] && edit_in_dir "$dir" "$file"
+	local dir="$HOME/Cloud/Exocortex/Notes"
+	local file=$(find $dir -name "*.md" -type f | fzf --preview "preview.sh {}")
+	[[ -f $file ]] && edit_in_dir "$dir" "$file"
 }
 

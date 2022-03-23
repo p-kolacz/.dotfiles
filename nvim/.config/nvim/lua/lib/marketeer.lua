@@ -1,4 +1,4 @@
--- package.loaded['sme-marksigns'] = nil
+-- package.loaded['marketeer'] = nil
 local M = {}
 
 local Defaults = {
@@ -6,7 +6,7 @@ local Defaults = {
 	local_name = 'local_mark',
 	global_mark = '',
 	local_mark = '',
-	group = 'sme-marksigns',
+	group = 'marketeer',
 	priority = 7,
 }
 

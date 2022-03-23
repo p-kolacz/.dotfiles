@@ -3,6 +3,7 @@ vim.cmd[[
 		autocmd!
 		autocmd FocusLost * :wa
 		autocmd BufRead */.config/nvim/init.lua setlocal includeexpr=stdpath('config').'/lua/'.v:fname
+		autocmd BufRead */.config/nvim/lua/conf/appearance.lua setlocal includeexpr=stdpath('config').'/lua/'.v:fname
 	augroup END
 ]]
 

@@ -14,6 +14,7 @@ alias recom="killall --wait picom && picom -b"
 alias todo="~/Tools/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
 alias paths='sed "s/:/\n/g" <<< $PATH'
 alias recomp="killall --wait picom && picom -b"
+alias roficalc="rofi -show calc -modi calc -no-show-match -no-sort"
 alias nsxiv="nsxiv -a"
 abbr dlaudio="youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail"
 

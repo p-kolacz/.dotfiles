@@ -9,6 +9,8 @@ help:
 	@grep -E '^[a-zA-Z0-9-]+:.*' $(MAKEFILE_LIST) | sed 's/:$$/ /'
 
 install:
+	$(log) "--- Making dirs ---"
+	mkdir -p "$HOME/.config/" "$HOME/.local/share/" "$HOME/.local/state/"
 	$(log) "--- Installing stow ---"
 	@pacman -Qs stow > /dev/null && echo "already installed" || pacman -S stow
 	$(log) "--- Stowing dotfiles ---"

@@ -27,7 +27,7 @@ end
 require "conf/themes"
 colorscheme "tokyonight"
 
-require "lib/sme-statusline".setup {
+require "lib/statepipe".setup {
 	{
 		"mode", "filetype",  "spell", "readonly", "modified",  "separator",
 		"short_path", "lsp_icon",

@@ -1,8 +1,8 @@
-package.loaded["lib/sme-statusline"] = nil
-package.loaded['lib/sme-statusline/providers'] = nil
+-- package.loaded["lib/statepipe"] = nil
+-- package.loaded['lib/statepipe/providers'] = nil
 
 local M = {}
-local providers = require'lib/sme-statusline/providers'
+local providers = require'lib/statepipe/providers'
 local templates
 
 local Colors = {
@@ -94,9 +94,9 @@ end
 function M.setup(tmpls)
 	templates = tmpls
 	create_highlights()
-	vim.o.statusline = [[%!luaeval('require"lib/sme-statusline".statusline()')]]
-	-- vim.o.statusline = [[%{%luaeval('require"lib/sme-statusline".statusline()')%}]]
-	-- vim.go.statusline = "%{%v:lua.require'lib/sme-statusline'.statusline()%}"
+	vim.o.statusline = [[%!luaeval('require"lib/statepipe".statusline()')]]
+	-- vim.o.statusline = [[%{%luaeval('require"lib/statepipe".statusline()')%}]]
+	-- vim.go.statusline = "%{%v:lua.require'lib/statepipe'.statusline()%}"
 end
 
 -- M.setup {

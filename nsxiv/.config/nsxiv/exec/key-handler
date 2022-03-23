@@ -37,7 +37,7 @@ case "$1" in
 	"C-period") rotate  90 ;;
 	"C-slash")  rotate 180 ;;
 	"w")        while read file; do wallpaper set "$file"; done ;;
-	"C-d")      while read file; do mv "$file" "$HOME/.local/share/Trash"; done ;;
+	"C-d")      while read file; do trash "$file" done ;;
 	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 esac
 

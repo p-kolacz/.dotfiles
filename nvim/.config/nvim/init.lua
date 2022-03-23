@@ -20,7 +20,7 @@ Require {
 	"tool/telescope",
 	"tool/nvim-tree",
 	"tool/gitsigns",
-	"tool/cheatsheet",
+	"tool/help",
 	"tool/colorizer",
 	"tool/figlet",
 	"tool/rest",

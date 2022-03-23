@@ -23,7 +23,7 @@ alias evim="edit_in_dir $DOTFILES/nvim/.config/nvim/ init.lua"
 alias books="edit_in_dir ~/Cloud/Exocortex/Books db/books.rec"
 alias gamez="edit_in_dir ~/Cloud/Exocortex/GameZ db/gamez.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Komix db/komix.rec"
-alias redox="edit_in_dir ~/Tools/qmk_firmware keyboards/redox_w/keymaps/max/keymap.c"
+alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keymap.c"
 
 # Git ---------------------------------
 alias lg=lazygit

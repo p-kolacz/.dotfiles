@@ -4,7 +4,6 @@ bindkey '\e' vi-cmd-mode
 
 source $ZDOTDIR/plugins/abbr.zsh
 source $ZDOTDIR/plugins/less.zsh
-source $ZDOTDIR/plugins/ssh-agent.zsh
 source $ZDOTDIR/plugins/tldr.zsh
 source $ZDOTDIR/functions.zsh
 source $ZDOTDIR/aliases.zsh
@@ -29,5 +28,7 @@ setopt autocd
 (( $+commands[moar] )) && export PAGER="moar --no-linenumbers"
 
 nerdfetch
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+autoload -U promptinit; promptinit
+prompt spaceship
 

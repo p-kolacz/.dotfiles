@@ -12,7 +12,7 @@ install:
 	$(log) "--- Installing stow ---"
 	@pacman -Qs stow > /dev/null && echo "already installed" || pacman -S stow
 	$(log) "--- Stowing dotfiles ---"
-	stow -v --no-folding aseprite lazygit vifm xnview 
+	stow -v --no-folding aseprite lazygit xnview 
 	stow -v */
 	$(log) "--- Installing yay ---"
 	@pacman -Qs yay > /dev/null && echo "already installed" || ( git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)

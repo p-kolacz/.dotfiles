@@ -1,4 +1,4 @@
-" vim: filetype=vifm commentstring="%s:
+" vim: filetype=vifm
 
 " ------------------------------------------------------------------------------
 "								  Environment
@@ -44,7 +44,7 @@ endif
 " ------------------------------------------------------------------------------
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme blue
+colorscheme auto
 
 " Icons
 source ~/.config/vifm/favicons.vifm

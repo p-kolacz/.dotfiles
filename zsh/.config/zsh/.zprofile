@@ -1,4 +1,5 @@
 source $ZDOTDIR/xdg-comply.zsh
+source $ZDOTDIR/plugins/ssh-agent.zsh
 
 path+="$HOME/.dotfiles/bin"
 path+="$HOME/.local/bin"

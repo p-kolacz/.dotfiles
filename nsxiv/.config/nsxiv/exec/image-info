@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# Called by nsxiv(1) whenever an image gets loaded.
-# The output is displayed in nsxiv's status bar.
+# Called by nsxiv(1) whenever an image gets loaded. The output is displayed in nsxiv's status bar.
 # Arguments:
 #   $1: path to image file
 #   $2: image width
@@ -14,6 +13,7 @@ exec 2>/dev/null
 filename=$(basename -- "$1")
 filesize=$(du -Hh -- "$1" | cut -f 1)
 geometry="${2}x${3}"
+versions=$(find ${1%.*}* | sed 's|.*\.||' | paste -sd ",")
 
-echo "${filesize}${s}${geometry}${s}${filename}"
+echo "${geometry}${s}${filesize}${s}${filename} [${versions^^}]"
 

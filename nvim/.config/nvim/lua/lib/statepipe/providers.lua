@@ -124,8 +124,12 @@ function M.percent()
 	return "%02p "
 end
 
-function M.line_count(_, icon)
-	return icon.."%L"
+function M.lines(_, icon)
+	return icon.."%l/%L"
+end
+
+function M.line_count()
+	return "%L"
 end
 
 -- extension for scoll bar

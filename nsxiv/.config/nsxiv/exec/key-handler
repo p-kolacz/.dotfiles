@@ -17,6 +17,14 @@
 # If KEY has an uppercase equivalent, S-KEY is resolved into it. For instance,
 # K replaces S-k and Scedilla replaces S-scedilla, but S-Delete is sent as-is.
 
+PHOTOS_DIR="$HOME/Photos/"
+
+ICON=/usr/local/share/icons/hicolor/64x64/apps/nsxiv.png
+
+notify() {
+	notify-send -i $ICON "NSXIV" "$1"
+}
+
 rotate() {
 	degree="$1"
 	tr '\n' '\0' | xargs -0 realpath | sort | uniq | while read file; do
@@ -27,17 +35,30 @@ rotate() {
 	done
 }
 
+operation() {
+	op=$1
+	dest=$(find "$PHOTOS_DIR" -type d | $VMENU)
+	[[ -d $dest ]] || return
+	while read file; do
+		$op $(find ${file%.*}* -printf "%p ") "$dest"
+	done
+	notify "Operation $op successful"
+}
+
 case "$1" in
+	"w")        while read file; do wallpaper set "$file"; notify "Wallpaper set:\n$file"; done ;;
 	"x")        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
-	"c")        while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
-	"i")        while read file; do $TERMINAL -e sh -c "exiv2 pr -q -pa '$file' | less" & done ;;
+	"c")        while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
+	"e")        while read file; do $TERMINAL -e sh -c "exiv2 '$file' | $PAGER" & done ;;
+	"i")        while read file; do notify "$(mediainfo "$file")"; done ;;
+	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 	"g")        tr '\n' '\0' | xargs -0 gimp & ;;
-	"r")        while read file; do rawtherapee "$file" & done ;;
+	"r")        tr '\n' '\0' | xargs -0 rawtherapee & ;;
 	"C-comma")  rotate 270 ;;
 	"C-period") rotate  90 ;;
 	"C-slash")  rotate 180 ;;
-	"w")        while read file; do wallpaper set "$file"; done ;;
-	"C-d")      while read file; do trash "$file" done ;;
-	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
+	"C-d")      while read file; do trash "$file"; notify "$file moved to trash"; done ;;
+	"C-c")      operation cp ;;
+	"C-m")      operation mv ;;
 esac
 

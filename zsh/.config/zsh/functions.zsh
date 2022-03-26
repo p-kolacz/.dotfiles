@@ -6,8 +6,8 @@ conf() {
 	cd "$old"
 }
 
-chsh () {
-	curl cheat.sh/$1/$2
+sheet () {
+	curl cheat.sh/"$1"
 }
 
 edit_in_dir() {
@@ -36,8 +36,11 @@ mkd() {
 }
 
 notes() {
-	local dir="$HOME/Cloud/Exocortex/Notes"
-	local file=$(find $dir -name "*.md" -type f | fzf --preview "preview.sh {}")
-	[[ -f $file ]] && edit_in_dir "$dir" "$file"
+	# local dir="$HOME/Cloud/Exocortex/Notes"
+	# local file=$(find $dir -name "*.md" -type f | fzf --preview "preview.sh {}")
+	# [[ -f $file ]] && edit_in_dir "$dir" "$file"
+	cd "$HOME/Cloud/Exocortex/Notes/"
+	local file=$(find . -name "*.md" -type f | fzf --preview "preview.sh {}")
+	[[ -f $file ]] && $EDITOR "$file"
 }
 

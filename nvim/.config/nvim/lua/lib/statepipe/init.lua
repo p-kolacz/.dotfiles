@@ -39,7 +39,7 @@ local Icons = {
 		[vim.diagnostic.severity.HINT]  = "",
 	},
 	line = "",
-	line_count = "",
+	lines = "",
 	column = "",
 	scrollbar = {'█   ', ' █  ', '  █ ', '   █' },
 }

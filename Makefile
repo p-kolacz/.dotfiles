@@ -1,50 +1,67 @@
 # https://makefiletutorial.com/
 
-.PHONY: help install wifi laptop xorg bspwm audio bluetooth printer printer-dcpt500w
+.PHONY: help setup terminal wifi laptop xorg bspwm audio bluetooth printer printer-dcpt500w
 .DEFAULT_GOAL=help
-log=@echo -e "\n"
+# log=@echo -e "\n"
 install=pacman -S --needed
+ynstall=yay -S --needed
 
 help:
-	@grep -E '^[a-zA-Z0-9-]+:.*' $(MAKEFILE_LIST) | sed 's/:$$/ /'
+	@egrep '^[a-zA-Z0-9-]+:.*' $(MAKEFILE_LIST) | sed 's/:$$/ /'
 
-install:
-	$(log) "--- Making dirs ---"
+setup:
 	mkdir -p "$HOME/.config/" "$HOME/.local/share/" "$HOME/.local/state/"
-	$(log) "--- Installing stow ---"
-	@pacman -Qs stow > /dev/null && echo "already installed" || pacman -S stow
-	$(log) "--- Stowing dotfiles ---"
-	stow -v --no-folding aseprite lazygit xnview 
-	stow -v */
-	$(log) "--- Installing yay ---"
-	@pacman -Qs yay > /dev/null && echo "already installed" || ( git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
+	$(install) stow
+	stow -vn --no-folding aseprite xnview 
+	stow -vn */
+	pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
+
+terminal:
+	$(install) catdoc cmus fzf highlight htop lazygit mediainfo mp3info neovim odt2txt python-pip simple-mtpfs smartmontools wordnet-cli
+	$(install) vifm archivemount fuse-zip curlftpfs sshfs dragon-drag-and-drop
+	lua-language-server
+	moar
+	recutils
+	trash-cli
+	$(install) c-lolcat cowsay figlet-fonts fortune-mod nerdfetch 
+	$(ynstall) gotop spaceship-prompt 
 
 system:
-	$(install) man-db rsync htop ripgrep unrar unzip zip terminus-font
+	$(install) man-db man-pages rsync htop ntfs-3g ripgrep unrar unzip zip terminus-font
+
+xorg:
+	$(install) xorg-server xorg-xinit xorg-xinput xorg-xsetroot xorg-xev xdotool xclip xwallpaper arandr
+
+bspwm: xorg
+	$(install) bspwm sxhkd picom polybar dunst
+	$(install) rofi rofi-calc
+
+audio:
+	$(install) pulseaudio pulseaudio-equalizer-ladspa pavucontrol playerctl
+
+fonts:
+	$(install) noto-fonts-emoji nerd-fonts-victor-mono ttf-iosevka-nerd ttf-ubuntu-font-family
+
+DE: system bspwm audio fonts
+	$(install) gimp gnome-font-viewer gnumeric keepassxc meld mpv qalculate-gtk syncthing thunderbird zathura-pdf-poppler
+	seafile-client
+	calibre
+	kitty 
+	flameshot
+	$(ynstall) brave-bin
 
 wifi:
 	$(install) networkmanager crda
 	systemctl enable NetworkManager.service
 	systemctl start NetworkManager.service
 
-laptop: wifi
-	$(install) tlp
-
-xorg:
-	$(install) xorg-server xorg-xinit xorg-xrandr xorg-xinput xorg-xsetroot xorg-xev xdotool xautomation xclip
-
-bspwm: xorg
-	$(install) bspwm sxhkd picom polybar rofi dunst
-
-audio:
-	$(install) pulseaudio pulseaudio-equalizer-ladspa pavucontrol playerctl alsa-utils
-
-desktop: xorg bspwm audio
-
 bluetooth:
 	$(install) bluez-utils pulseaudio-bluetooth
 	systemctl enable bluetooth.service
 	systemctl start bluetooth.service
+
+laptop: bluetooth wifi
+	$(install) nvidia-dkms tlp
 
 printer:
 	$(install) cups system-config-printer
@@ -52,34 +69,14 @@ printer:
 	systemctl start cups.service
 
 printer-dcpt500w: printer yay
-	yay -S brother-dcpt500w
+	$(ynstall) brother-dcpt500w
 
 wacom:
 	$(install) xf86-input-wacom
 
-terminal:
-	$(install) kitty
-	c-lolcat
-	cowsay
-	fzf
-	figlet-fonts
-	neovim
-	odt2txt
-	catdoc
-	mediainfo
-	mp3info
-	highlight
-	fortune-mod-vimtips
-	python-pip
-	smartmontools
-	wordnet-cli
-	maim
-
-vifm:
-	$(install) vifm archivemount fuse-zip curlftpfs sshfs dragon-drag-and-drop
-
 devops:
-	$(install) whois xsv-bin
-npm
-filezilla
+	$(install) aseprite filezilla npm slack-desktop whois xmind-2020 xsv-bin
+
+redox:
+	$(install) avr-libc avrdude
 

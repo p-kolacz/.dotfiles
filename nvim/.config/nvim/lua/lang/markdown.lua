@@ -9,3 +9,5 @@ let.markdown_fenced_languages = { 'gdscript', 'html', 'css', 'php', 'sh', 'vim' 
 -- Run code in fences
 -- https://github.com/dbridges/vim-markdown-runner
 
+vim.cmd[[hi markdownH1 gui=bold,underline]]
+vim.cmd[[hi markdownH2 gui=bold,undercurl]]

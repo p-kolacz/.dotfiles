@@ -38,8 +38,8 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown   
 	backlight -5
 
-# XF86TouchpadToggle
-# 	touchpad toggle
+XF86TouchpadToggle
+	touchpad toggle
 
 plusminus
 	bluetoothctl power on
@@ -55,12 +55,14 @@ super + Print
 #---------------------------------------------------------------------------------------#
 
 button6
-	xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'
+	xdotool key ctrl+shift+Tab
+	# xte 'keydown Control_L' 'keydown Shift_L' 'key Tab' 'keyup Shift_L' 'keyup Control_L'
 
 button7
-	xte 'keydown Control_L' 'key Tab' 'keyup Control_L'
+	xdotool key ctrl+Tab
+	# xte 'keydown Control_L' 'key Tab' 'keyup Control_L'
 
 button10
-	xte 'keydown Control_L' 'key W' 'keyup Control_L'
-
+	xdotool key ctrl+w
+	# xte 'keydown Control_L' 'key W' 'keyup Control_L'
 

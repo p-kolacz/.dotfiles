@@ -1,54 +1,49 @@
 # https://makefiletutorial.com/
 
-.PHONY: help setup terminal wifi laptop xorg bspwm audio bluetooth printer printer-dcpt500w
+.PHONY: help setup terminal xorg bspwm xorg bspwm audio fonts DE wifi bluetooth laptop printer printer-dcpt500w wacom devops redox
 .DEFAULT_GOAL=help
 # log=@echo -e "\n"
-install=pacman -S --needed
+install=sudo pacman -S --needed
 ynstall=yay -S --needed
 
 help:
 	@egrep '^[a-zA-Z0-9-]+:.*' $(MAKEFILE_LIST) | sed 's/:$$/ /'
 
 setup:
-	mkdir -p "$HOME/.config/" "$HOME/.local/share/" "$HOME/.local/state/"
+	mkdir -p $(HOME)/.config/ $(HOME)/.local/share/ $(HOME)/.local/state/
 	$(install) stow
 	stow -vn --no-folding aseprite xnview 
 	stow -vn */
 	pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
 
 terminal:
-	$(install) catdoc cmus fzf highlight htop lazygit mediainfo mp3info neovim odt2txt python-pip simple-mtpfs smartmontools wordnet-cli
-	$(install) vifm archivemount fuse-zip curlftpfs sshfs dragon-drag-and-drop
-	lua-language-server
-	moar
-	recutils
-	trash-cli
-	$(install) c-lolcat cowsay figlet-fonts fortune-mod nerdfetch 
-	$(ynstall) gotop spaceship-prompt 
-
-system:
 	$(install) man-db man-pages rsync htop ntfs-3g ripgrep unrar unzip zip terminus-font
+	$(install) cmus fzf highlight htop lazygit mediainfo python-pip smartmontools trash-cli
+	$(install) neovim lua-language-server npm
+	$(install) vifm fuse-zip curlftpfs sshfs meld catdoc odt2txt
+	$(install) cowsay fortune-mod
+	$(ynstall) archivemount dragon-drop figlet-fonts gotop moar nerdfetch recutils simple-mtpfs spaceship-prompt wordnet-cli
 
 xorg:
 	$(install) xorg-server xorg-xinit xorg-xinput xorg-xsetroot xorg-xev xdotool xclip xwallpaper arandr
 
 bspwm: xorg
-	$(install) bspwm sxhkd picom polybar dunst
+	$(install) bspwm sxhkd picom dunst
 	$(install) rofi rofi-calc
+	$(ynstall) polybar
 
 audio:
 	$(install) pulseaudio pulseaudio-equalizer-ladspa pavucontrol playerctl
 
 fonts:
-	$(install) noto-fonts-emoji nerd-fonts-victor-mono ttf-iosevka-nerd ttf-ubuntu-font-family
+	$(install) noto-fonts-emoji ttf-iosevka-nerd ttf-ubuntu-font-family
+	$(ynstall) nerd-fonts-victor-mono 
 
-DE: system bspwm audio fonts
-	$(install) gimp gnome-font-viewer gnumeric keepassxc meld mpv qalculate-gtk syncthing thunderbird zathura-pdf-poppler
-	seafile-client
-	calibre
-	kitty 
-	flameshot
-	$(ynstall) brave-bin
+DE: bspwm audio fonts
+	$(install) gnome-font-viewer mpv zathura-pdf-poppler
+	$(install) kitty flameshot syncthing
+	$(install) calibre gimp gnumeric keepassxc qalculate-gtk thunderbird
+	$(ynstall) brave-bin seafile-client 
 
 wifi:
 	$(install) networkmanager crda
@@ -75,7 +70,8 @@ wacom:
 	$(install) xf86-input-wacom
 
 devops:
-	$(install) aseprite filezilla npm slack-desktop whois xmind-2020 xsv-bin
+	$(install) filezilla whois
+	$(ynstall) aseprite slack-desktop xmind-2020 xsv-bin
 
 redox:
 	$(install) avr-libc avrdude

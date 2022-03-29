@@ -44,3 +44,7 @@ notes() {
 	[[ -f $file ]] && $EDITOR "$file"
 }
 
+rss2mp3() {
+	curl $1 | egrep -o "https?://.*mp3" | uniq | xargs -I _ curl -OL _
+}
+

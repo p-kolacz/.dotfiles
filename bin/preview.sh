@@ -42,7 +42,8 @@ case "$FILE_EXTENSION" in
 		exit 7 ;;
 
 	mp3)
-		mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;
+		# mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;
+		mediainfo "$FILE_PATH" && exit 0 ;;
 	flac)
 		soxi "$FILE_PATH" && exit 0;;
 	pdf)
@@ -89,7 +90,7 @@ case "$FILE_EXTENSION" in
 
 	3gp|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|qt|vob|webm|wmv)
 		mediainfo "$FILE_PATH" && exit 0
-		ffprobe -pretty "$FILE_PATH" && exit 0
+		# ffprobe -pretty "$FILE_PATH" && exit 0
 		;;
 
 	apk|bz|bz2|cab|deb|gz|jar|rpm|tar|tgz|xz|zip)

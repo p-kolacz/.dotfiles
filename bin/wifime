@@ -28,3 +28,4 @@ network=$( \
 
 echo "connecting to \"${network}\"..."
 nmcli -a device wifi connect "$network"
+

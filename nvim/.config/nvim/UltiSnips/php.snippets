@@ -9,7 +9,10 @@ endsnippet
 snippet ph "Description" b
 <?php
 	$0
-?>
+endsnippet
+
+snippet t "$this->"
+$this->
 endsnippet
 
 snippet v
@@ -244,14 +247,14 @@ endsnippet
 snippet wppassbox
 function my_password_form()
 {
-    global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-    ' . "<p>Photos are for personal use only. Thank you for understanding.</p><p>This content is password protected. To see it, enter the password below:</p>" . '
-    <label for="' . $label . '">' . "Password:" . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /> <input type="submit" name="Submit" value="' . "Sign in"  . '" />
-    </form>
-    ';
-    return $o;
+	global $post;
+	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+	$o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+		' . "<p>Photos are for personal use only. Thank you for understanding.</p><p>This content is password protected. To see it, enter the password below:</p>" . '
+		<label for="' . $label . '">' . "Password:" . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /> <input type="submit" name="Submit" value="' . "Sign in"  . '" />
+		</form>
+		';
+	return $o;
 }
 add_filter( 'the_password_form', 'my_password_form' );
 endsnippet
@@ -259,14 +262,14 @@ endsnippet
 snippet wpchildtheme
 function my_theme_enqueue_styles() {
 
-    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+	$parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );
+	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'child-style',
+		get_stylesheet_directory_uri() . '/style.css',
+		array( $parent_style ),
+		wp_get_theme()->get('Version')
+	);
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 endsnippet
@@ -275,7 +278,7 @@ snippet wpheader
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-        <title><?php wp_title(); ?></title>
+		<title><?php wp_title(); ?></title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="<?= get_template_directory_uri() ?>/style.css">

@@ -80,6 +80,7 @@ set shortmess+=L
 " ------------------------------------------------------------------------------
 
 set ignorecase smartcase nohlsearch incsearch
+" set grepprg='grep -n -H -I -r --color=always %i %a %s'
 " set grepprg='ag --line-numbers %i %a %s'
 
 " ------------------------------------------------------------------------------
@@ -147,16 +148,17 @@ nnoremap ,t :tar<cr>
 nnoremap ,w :set wrap!<cr>
 nnoremap ,z :zip<cr>
 " :set viewcolumns=-{name}..,6{},17{mtime}
+nnoremap ,sc :echo system(expand("crc32 %c"))<cr>
 
 " Fs
 nnoremap <f2> cW
-nnoremap <f3> :!less %f<cr>
+nnoremap <f3> :!$PAGER %f<cr>
 nnoremap <s-f4> :touch<space>
 nnoremap <f4> :edit<cr>
-nnoremap <f5> :copy&<cr>
+nnoremap <f5> :copy &<cr>
 nnoremap <s-f5> :rlink<cr>
 nnoremap <c-f5> :copy!<cr>
-nnoremap <f6> :move<cr>
+nnoremap <f6> :move &<cr>
 nnoremap <c-f6> :move!<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>

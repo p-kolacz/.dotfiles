@@ -5,4 +5,6 @@ setxkbmap -option caps:escape
 kbrate.sh
 seafile-applet &
 syncthing -no-restart -logfile="$XDG_STATE_HOME/syncthing.log" &
+dunstdaemonctl restart &
 bluetoothctl power on &
+

@@ -11,7 +11,7 @@ super + shift + y
 	notify-send "BSPWM" "WM restarted"
 
 super + y
-	~/.dotfiles/polybar/polybarctl restart
+	polybarctl restart
 
 								  # Monitors #
 #------------------------------------------------------------------------------#
@@ -117,3 +117,5 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+super + button2
+	bspc node -t \~floating

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+run() {
+	dunst -config <(envsubst < "$HOME/.config/dunst/dunstrc.template") &
+}
+
+stop() {
+	killall --wait --quiet dunst
+}
+
+case $1 in
+	restart) 
+		stop
+		run
+		;;
+	stop)   stop ;;
+	*)      echo "Usage: dunstdaemonctl [restart|stop]"
+esac
+
+

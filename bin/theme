@@ -13,20 +13,8 @@ apply() {
 
 	source "$1"
 
-	# Dunst
-	envsubst < "$CONFIG/dunst/dunstrc.template" > "$CONFIG/dunst/dunstrc"
-	killall dunst
-
 	# Kitty
 	envsubst < "$CONFIG/kitty/colors/auto.template.conf" > "$CONFIG/kitty/colors/auto.conf"
-
-	# Polybar
-	envsubst < "$CONFIG/polybar/autocolors.template.ini" > "$CONFIG/polybar/autocolors.ini"
-	~/.dotfiles/polybar/restart.sh
-
-	# Rofi
-	envsubst < "$CONFIG/rofi/themes/auto.template.rasi" > "$CONFIG/rofi/themes/auto.rasi"
-}
 
 [[ -z $1 ]] && browse || apply "$1"
 

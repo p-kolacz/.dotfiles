@@ -303,7 +303,7 @@
 [urgency_normal]
     background = "$THEME_BG"
     foreground = "$THEME_FG"
-    frame_color = "$THEME_BLUE"
+    frame_color = "$THEME_ACCENT"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon

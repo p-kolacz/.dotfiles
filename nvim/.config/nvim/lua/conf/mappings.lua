@@ -21,6 +21,8 @@ mapgroup("<leader>c", "+Code")
 
 ----------------------------------- Edit -----------------------------------
 mapgroup("<leader>e", "+Edit")
+nnoremap("x", '"_x')
+
 -- Clipboard
 vnoremap("<C-c>", '"*y :let @+=@*<CR>')
 map("<C-v>", '"+P')

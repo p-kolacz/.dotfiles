@@ -14,7 +14,8 @@ stop() {
 
 case $1 in
 	restart) restart ;;
+	reload)  pkill -USR1 -x polybar ;;
 	stop)    stop ;;
-	*)       echo "Usage: polybarctl [restart|stop]"
+	*)       echo "Usage: polybarctl [restart|reload|stop]"
 esac
 

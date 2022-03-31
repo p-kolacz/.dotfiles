@@ -12,10 +12,15 @@ alias paths='sed "s/:/\n/g" <<< $PATH'
 alias recomp="killall --wait picom && picom -b"
 # alias roficalc="rofi -show calc -modi calc -no-show-match -no-sort"
 alias nsxiv="nsxiv -a"
+abbr yt2mp3="youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail --add-metadata"
+alias batman="nmcli device wifi connect 'Batman'"
+alias myip="curl ipinfo.io/ip"
+alias nv="nvim"
+
+# Disk utils --------------------------
 alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
 alias parts="lsblk --output NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL"
-abbr dlaudio="youtube-dl --extract-audio --audio-format mp3 --embed-thumbnail"
-alias batman=nmcli device wifi connect "Batman"
+alias dispeed="sudo hdparm -t"
 
 # Edit config files -------------------
 alias edot="cd $DOTFILES && $EDITOR"
@@ -30,7 +35,7 @@ alias todo="~/Tools/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
 
 # Git ---------------------------------
 alias lg=lazygit
-alias g="git status"
+alias gits="git status"
 abbr gico="git add . && git commit -m"
 alias gipu="git push"
 alias gicora='git add . && git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)"'
@@ -41,6 +46,8 @@ alias gipuda='git add . && git commit -m "$(date +%F_%T)" && git push'
 # Pacman ------------------------------
 abbr inst="sudo pacman -S"
 abbr rem="sudo pacman -Rns"
+abbr pacown="pacman -Qo"
+abbr paclist="pacman -Ql"
 
 # Systemctl ---------------------------
 abbr sys="systemctl status"

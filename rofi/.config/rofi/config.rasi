@@ -1,5 +1,7 @@
+// https://github.com/davatorium/rofi/blob/next/CONFIG.md
+
 configuration {
-	modi: "run,drun";
+	modi: "run,drun,calc,filebrowser";
 	matching: "fuzzy";
 	sorting-method: "fzf";
 
@@ -14,4 +16,3 @@ configuration {
 }
 @theme "auto"
 
-/* vim:ft=css

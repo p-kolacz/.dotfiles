@@ -16,5 +16,5 @@ let.Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla,colour_nam
 --  }
 
 -- To keep default behaviour don't define this variable
-let.Hexokinase_ftEnabled = {'css', 'html', 'javascript'}
+let.Hexokinase_ftEnabled = {"bash", 'css', 'html', 'javascript', "sh", "zsh"}
 

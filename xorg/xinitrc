@@ -2,7 +2,7 @@
 
 WM=bspwm
 
-userresources=$DOTFILES/xorg/.Xresources
+userresources=$DOTFILES/xorg/Xresources
 sysresources=/etc/X11/xinit/.Xresources
 
 [[ -f $sysresources ]] && xrdb -merge "$sysresources"
@@ -19,7 +19,6 @@ fi
 
 source $DOTFILES/xorg/autostart.sh
 
-# export SXHKD_SHELL=/bin/bash
 { [ $WM == bspwm ] && 
 	sxhkd -c ~/.config/sxhkd/sxhkdrc ~/.config/bspwm/sxhkdrc ||
 	sxhkd; } &

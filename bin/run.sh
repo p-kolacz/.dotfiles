@@ -14,7 +14,7 @@ case $FILE_EXTENSION in
 		ebook-viewer -- "$FILE_PATH" ;;
 	cbr|cbz|djvu|pdf)
 		zathura -- "$FILE_PATH" ;;
-	bmp|gif|jpg|jpeg|png|tiff|webp)
+	bmp|dng|gif|jpg|jpeg|png|svg|tiff|webp)
 		nsxiv-rifle "$FILE_PATH" > /dev/null ;;
 	otf|ttf)
 		gnome-font-viewer -- "$FILE_PATH" ;;

@@ -46,9 +46,9 @@ bspc desktop G -l monocle
 # bspc config bottom_padding		0
 bspc config border_width			1
 bspc config borderless_monocle		true
-# bspc config focused_border_color	$(xrdb-color blue)
-# bspc config active_border_color		$(xrdb-color bg)
-# bspc config normal_border_color		$(xrdb-color bg)
+bspc config focused_border_color	$THEME_BLACK
+bspc config active_border_color		$THEME_BG
+bspc config normal_border_color		$THEME_BG
 bspc config window_gap				16
 bspc config gapless_monocle			true
 bspc config split_ratio				0.52
@@ -86,5 +86,5 @@ bspc rule -a Emacs state=tiled
 								   # Panel #
 #------------------------------------------------------------------------------#
 
-~/.dotfiles/polybar/polybarctl restart &
+polybarctl restart &
 

@@ -1,9 +1,10 @@
-// https://github.com/davatorium/rofi/blob/next/CONFIG.md
+// https://github.com/davatorium/rofi/blob/next/doc/rofi.1.markdown#rofi-1-rofi
 
 configuration {
-	modi: "run,drun,calc,filebrowser";
+	modi: "run,drun,filebrowser";
 	matching: "fuzzy";
 	sorting-method: "fzf";
+	/* case-sensitive: false; */
 
 	font: "monospace 16";
 	/* show-icons: true; */
@@ -13,6 +14,9 @@ configuration {
 	kb-remove-to-eol: "";
 	kb-row-down: "ctrl-j,ctrl-n,Down";
 	kb-row-up: "ctrl-k,ctrl-p,Up";
+	run {
+		display-name: " ";
+	}
 }
 @theme "auto"
 

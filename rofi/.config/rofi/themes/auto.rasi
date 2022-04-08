@@ -1,24 +1,47 @@
 /* https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown */
 
 * {
-	background-color: transparent;
+	/* background-color: transparent; */
+	background-color: inherit;
+	color: inherit;
 }
 
 window {
+	width: 30%;
+	border: 1px;
 	background-color: ${THEME_BG};
-	width: 20%;
-	border: 2px;
-	border-color: ${THEME_ACCENT};
-	border-radius: 10px;
+	color: ${THEME_FG};
+	border-color: ${THEME_BLACK};
+	/* border-radius: 30px; */
 }
 
 inputbar {
+	border: 0 0 1px 0;
+	border-color: ${THEME_BLACK};
+	children: [prompt, entry, num-filtered-rows, textbox-slash, num-rows, case-indicator];
+}
+prompt {
+	background-color: ${THEME_BLACK};
     padding: 8px;
-	children: [entry];
 }
 entry {
-    background-color: ${THEME_ACCENT};
-    padding: 6px;
+    padding: 8px;
+	color: ${THEME_FG};
+}
+num-filtered-rows {
+    padding: 8px 0 8px 8px;
+}
+textbox-slash {
+	padding: 8px 0;
+	expand: false;
+	content: "/";
+}
+num-rows {
+    padding: 8px 8px 8px 0;
+}
+case-indicator {
+    padding: 8px;
+	background-color: ${THEME_BLACK};
 }
 
 listview {

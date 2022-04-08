@@ -45,7 +45,7 @@ super + m
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-super + {equal,minus}
+super + {plus,minus}
 	bspc config window_gap $(($(bspc config window_gap) {+,-} 4))
 
 								   # Nodes #

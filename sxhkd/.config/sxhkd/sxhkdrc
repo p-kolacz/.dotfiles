@@ -9,7 +9,7 @@ super + Return
 	$TERMINAL
 
 super + space
-	rofi -show run
+	rofi -show run -theme-str 'window \{width:33%;\}'
 
 super + Delete
 	power.sh
@@ -44,11 +44,23 @@ XF86TouchpadToggle
 plusminus
 	bluetoothctl power on
 
+# Apps --------------------------------
+
 Print
-	flameshot full
+	flameshot full -p ~/Downloads/
 
 super + Print
 	flameshot gui
+
+super + equal
+	rofi -show calc -modi calc -no-show-match -no-sort
+
+super + parenleft
+	rofi-wifi-menu.sh
+
+super + parenright
+	rofi-bluetooth
+
 
 #---------------------------------------------------------------------------------------#
 								   # Mouse #

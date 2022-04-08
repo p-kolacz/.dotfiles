@@ -4,17 +4,23 @@ CONFIG="$HOME/.config"
 THEMES="$HOME/.dotfiles/share/themes"
 
 browse() {
-	local file=$(ls $THEMES/*sh | fzf)
+	local file=$(find $THEMES/*.sh -type f -printf "%f\n" | rofi -dmenu -i -p " ")
 	apply "$file"
 }
 
 apply() {
-	[[ -f $1 ]] || { echo "Invalid file: $1"; exit 1; }
+	file=$THEMES/$1
+	[[ -f $file ]] || { echo "Invalid file: $1"; exit 1; }
 
-	source "$1"
+	ln -s --force "$file" $THEMES/current
+	source $THEMES/current
 
 	# Kitty
 	envsubst < "$CONFIG/kitty/colors/auto.template.conf" > "$CONFIG/kitty/colors/auto.conf"
+
+	# zathura
+	envsubst < "$CONFIG/zathura/theme.template" > "$CONFIG/zathura/theme"
+}
 
 [[ -z $1 ]] && browse || apply "$1"
 

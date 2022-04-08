@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Called by nsxiv(1) after the external prefix key (C-x by default) is pressed.
 # The next key combo is passed as its first argument. Passed via stdin are the
@@ -17,9 +17,10 @@
 # If KEY has an uppercase equivalent, S-KEY is resolved into it. For instance,
 # K replaces S-k and Scedilla replaces S-scedilla, but S-Delete is sent as-is.
 
-PHOTOS_DIR="$HOME/Photos/"
+DEST_DIRS="$HOME/Cloud/Images $HOME/Data/Photos $HOME/tmp"
 
 ICON=/usr/local/share/icons/hicolor/64x64/apps/nsxiv.png
+TMP_FILE=/tmp/nsxiv-kh-operation
 
 notify() {
 	notify-send -i $ICON "NSXIV" "$1"
@@ -35,30 +36,48 @@ rotate() {
 	done
 }
 
+# Prompt for directory & perform operation (cp, mv)
+prompt_and_op() {
+	dir=$(find $DEST_DIRS -type d -not -path '*/.*' 2>/dev/null | rofi -dmenu -i -p " " -theme-str "window {width: 50%;}" -location 6)
+	operation $1 "$dir"
+}
+
+# Perform operation and write repeat instructions to tmp file
 operation() {
 	op=$1
-	dest=$(find "$PHOTOS_DIR" -type d | $VMENU)
-	[[ -d $dest ]] || return
+	dir="$2"
+	[[ -d $dir ]] || return
 	while read file; do
-		$op $(find ${file%.*}* -printf "%p ") "$dest"
+		versions=("${file%.*}".*)
+		$op "${versions[@]}" "$dir"
 	done
-	notify "Operation $op successful"
+	echo "$op $dir" > $TMP_FILE
+	notify "$op to $dir"
+}
+
+# Repeat last operation if instructions fount in tmp file
+repeat() {
+	[[ -f $TMP_FILE ]] || return
+	read op dir < $TMP_FILE
+	operation $op "$dir"
 }
 
 case "$1" in
+	"period")   repeat ;;
 	"w")        while read file; do wallpaper set "$file"; notify "Wallpaper set:\n$file"; done ;;
 	"x")        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
-	"c")        while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
+	"C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
 	"e")        while read file; do $TERMINAL -e sh -c "exiv2 '$file' | $PAGER" & done ;;
 	"i")        while read file; do notify "$(mediainfo "$file")"; done ;;
 	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 	"g")        tr '\n' '\0' | xargs -0 gimp & ;;
 	"r")        tr '\n' '\0' | xargs -0 rawtherapee & ;;
+	"d")        tr '\n' '\0' | xargs -0 darktable & ;;
+	"c")        prompt_and_op cp ;;
+	"m")        prompt_and_op mv ;;
+	"C-d")      while read file; do trash "$file"; notify "$file moved to trash"; done ;;
 	"C-comma")  rotate 270 ;;
 	"C-period") rotate  90 ;;
 	"C-slash")  rotate 180 ;;
-	"C-d")      while read file; do trash "$file"; notify "$file moved to trash"; done ;;
-	"C-c")      operation cp ;;
-	"C-m")      operation mv ;;
-esac
+esac &>> "$XDG_STATE_HOME/nsxiv.log"
 

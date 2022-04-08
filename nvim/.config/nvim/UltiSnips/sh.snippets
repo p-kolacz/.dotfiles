@@ -93,7 +93,7 @@ snippet remove_last_char
 ${${1:var}%?}
 endsnippet
 
-snippet remove_last_line "Remove last line from file"
+snippet remove_last_file_line "Remove last line from file"
 sed -i '$ d' ${1:filename}
 endsnippet
 
@@ -123,5 +123,13 @@ endsnippet
 
 snippet wait_for_last_bg_process
 wait $!
+endsnippet
+
+snippet remove_first_line
+| tail -n + 2
+endsnippet
+
+snippet remove_last_line
+| head -n -1
 endsnippet
 

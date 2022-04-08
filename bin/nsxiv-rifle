@@ -3,15 +3,15 @@
 tmp="/tmp/nsxiv_rifle_$$"
 
 listfiles() {
-  find -L "///${1%/*}" -maxdepth 1 -type f -print |
-    grep -iE '\.(jpe?g|png|gif|webp|tiff|bmp)$' |
+  find -L "${1%/*}" -maxdepth 1 -type f -print |
+    grep -iE '\.(jpe?g|png|gif|webp|tiff|bmp|svg)$' |
     sort | tee "$tmp"
 }
 
 is_img() {
   local ext="${1##*.}"
   case ${ext,,} in
-    "jpg"|"jpeg"|"png"|"gif"|"webp"|"tiff"|"bmp") return 0 ;;
+    "jpg"|"jpeg"|"png"|"gif"|"webp"|"tiff"|"bmp"|"svg") return 0 ;;
     *) return 1 ;;
   esac
 }

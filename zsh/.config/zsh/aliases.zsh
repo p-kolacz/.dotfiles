@@ -17,6 +17,8 @@ alias batman="nmcli device wifi connect 'Batman'"
 alias myip="curl ipinfo.io/ip"
 alias nv="nvim"
 
+(( $+commands[host] )) || alias host="drill ANY"
+
 # Disk utils --------------------------
 alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
 alias parts="lsblk --output NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL"
@@ -25,13 +27,14 @@ alias dispeed="sudo hdparm -t"
 # Edit config files -------------------
 alias edot="cd $DOTFILES && $EDITOR"
 alias evim="edit_in_dir $DOTFILES/nvim/.config/nvim/ init.lua"
+alias ekeys="$EDITOR -O $DOTFILES/sxhkd/.config/sxhkd/sxhkdrc $DOTFILES/bspwm/.config/bspwm/sxhkdrc"
 
 # Databases ---------------------------
 alias books="edit_in_dir ~/Cloud/Exocortex/Books db/books.rec"
 alias gamez="edit_in_dir ~/Cloud/Exocortex/GameZ db/gamez.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Komix db/komix.rec"
 alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keymap.c"
-alias todo="~/Tools/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
+alias todo="~/repos/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
 
 # Git ---------------------------------
 alias lg=lazygit
@@ -65,7 +68,7 @@ abbr psa="ps -e | grep -i"
 alias -g F="| fzf"
 alias -g G="| grep -i"
 alias -g H="| head"
-alias -g L="| $PAGER "
+alias -g L="| $PAGER"
 alias -g T="| tail"
 alias -g W="| wc -l"
 alias -g X="| xargs"

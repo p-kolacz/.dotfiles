@@ -3,6 +3,14 @@
  --  | | | ' \/ -_) '  \/ -_|_-<
  --  |_| |_||_\___|_|_|_\___/__/
 
+
+----------------------------------- Rose Pine ---------------------------------
+Plugin "https://github.com/rose-pine/neovim"
+require"rose-pine".setup {
+	dark_variant = "moon",
+	disable_italics = true,
+}
+
 ----------------------------------- Tokyonight --------------------------------
 Plugin "https://github.com/folke/tokyonight.nvim"
 let.tokyonight_style = 'storm'		-- available: night, storm, day

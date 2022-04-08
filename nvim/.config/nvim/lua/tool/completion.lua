@@ -1,10 +1,10 @@
 Plugin {
 	"https://github.com/hrsh7th/nvim-cmp",
-	'hrsh7th/cmp-nvim-lsp',
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'hrsh7th/cmp-cmdline',
-	'quangnguyen30192/cmp-nvim-ultisnips',
+	'https://github.com/hrsh7th/cmp-nvim-lsp',
+	'https://github.com/hrsh7th/cmp-buffer',
+	'https://github.com/hrsh7th/cmp-path',
+	'https://github.com/hrsh7th/cmp-cmdline',
+	'https://github.com/quangnguyen30192/cmp-nvim-ultisnips',
 	'https://github.com/hrsh7th/cmp-calc',
 	'https://github.com/hrsh7th/cmp-emoji',
 }
@@ -34,7 +34,20 @@ local sources1 = {
 	{ name = 'calc' },
 }
 local sources2 = {
-	{ name = "buffer", keyword_length = 5, max_item_count = 5 },
+	-- { name = "buffer", keyword_length = 5, max_item_count = 5 },
+	{
+		name = "buffer",
+		option = {
+			keyword_length = 3,
+			get_bufnrs = function()
+				local bufs = {}
+				for _, win in ipairs(vim.api.nvim_list_wins()) do
+					bufs[vim.api.nvim_win_get_buf(win)] = true
+				end
+				return vim.tbl_keys(bufs)
+			end
+		},
+	},
 }
 
 local kind_icons = { Text = "", Method = "", Function = "", Constructor = "", Field = "ﰠ", Variable = "", Class = "ﴯ", Interface = "", Module = "", Property = "ﰠ", Unit = "塞", Value = "", Enum = "", Keyword = "", Snippet = "", Color = "", File = "", Reference = "", Folder = "", EnumMember = "", Constant = "", Struct = "פּ", Event = "", Operator = "", TypeParameter = "" }

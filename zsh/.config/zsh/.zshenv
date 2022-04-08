@@ -8,6 +8,7 @@ export IMGVIEWER="nsxiv -a"
 export IMGRIFLE="nsxiv-rifle"
 export VMENU="rofi -dmenu"
 
-export THEME="tokyonight-storm"
-source "$DOTFILES/share/themes/$THEME.sh"
+# export THEME="tokyonight-storm"
+# source "$DOTFILES/share/themes/$THEME.sh"
+source $DOTFILES/share/themes/current
 

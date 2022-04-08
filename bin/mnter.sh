@@ -73,6 +73,6 @@ mmcdrives=$(dev_drives mmc | append_status mmc | prepend_icon $mmc_icon)
 drives=$(echo -e "$anddrives\n$mmcdrives\n$usbdrives" | sed "/^$/d")
 [ -z "$drives" ] && { notify "No drives found"; exit 1; }
 
-selected=$(echo "$drives" | dmenu -i -l 5 -h 32) || exit 1
+selected=$(echo "$drives" | $VMENU ) || exit 1
 process "$selected"
 

@@ -44,6 +44,9 @@ xnoremap("<leader>ed", "\"sy:let @/=@s<cr>cgn")
 nnoremap("<leader>er", ":g/^/m0<CR>", "reverse lines")
 vnoremap("<leader>er", ":'<,'>!tac<CR>", "reverse lines")
 
+nmap('<leader>"', 'ysiw"', '"quote" inner word')
+nmap("<leader>'", "ysiw'", "'quote' inner word")
+
 ----------------------------------- File -----------------------------------
 mapgroup("<leader>f", "+File")
 nnoremap("<leader>fx", ":silent !chmod +x %<cr>", "chmod +x")

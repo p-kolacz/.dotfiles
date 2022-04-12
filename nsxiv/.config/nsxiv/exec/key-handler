@@ -17,7 +17,10 @@
 # If KEY has an uppercase equivalent, S-KEY is resolved into it. For instance,
 # K replaces S-k and Scedilla replaces S-scedilla, but S-Delete is sent as-is.
 
-DEST_DIRS="$HOME/Cloud/Images $HOME/Data/Photos $HOME/tmp"
+exec &>> "$XDG_STATE_HOME/nsxiv.log"
+# exec 2>&1
+
+DEST_DIRS="$HOME/Cloud/Images $HOME/Data/Photos $HOME/tmp $HOME/Leathercraft"
 
 ICON=/usr/local/share/icons/hicolor/64x64/apps/nsxiv.png
 TMP_FILE=/tmp/nsxiv-kh-operation
@@ -62,6 +65,22 @@ repeat() {
 	operation $op "$dir"
 }
 
+# Open RAW version of file (or file itself) in $1 app
+develop() {
+	app=$1
+	while read file; do
+		rootname="${file%.*}"
+		filename="${rootname}.DNG"
+		if [[ -f ${rootname}.DNG ]]; then
+			$app "${rootname}.DNG" &
+		elif [[ -f ${rootname}.PEF ]]; then
+			$app "${rootname}.PEF" &
+		else
+			$app "$file" &
+		fi
+	done
+}
+
 case "$1" in
 	"period")   repeat ;;
 	"w")        while read file; do wallpaper set "$file"; notify "Wallpaper set:\n$file"; done ;;
@@ -71,13 +90,13 @@ case "$1" in
 	"i")        while read file; do notify "$(mediainfo "$file")"; done ;;
 	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 	"g")        tr '\n' '\0' | xargs -0 gimp & ;;
-	"r")        tr '\n' '\0' | xargs -0 rawtherapee & ;;
-	"d")        tr '\n' '\0' | xargs -0 darktable & ;;
+	"r")        develop rawtherapee ;;
+	"d")        develop darktable ;;
 	"c")        prompt_and_op cp ;;
 	"m")        prompt_and_op mv ;;
-	"C-d")      while read file; do trash "$file"; notify "$file moved to trash"; done ;;
+	"C-d")      while read file; do trash "${file%.*}".*; done ;;
 	"C-comma")  rotate 270 ;;
 	"C-period") rotate  90 ;;
 	"C-slash")  rotate 180 ;;
-esac &>> "$XDG_STATE_HOME/nsxiv.log"
+esac
 

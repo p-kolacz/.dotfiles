@@ -1,3 +1,20 @@
+snippet hsl
+function hsl(h, s, l) {
+	return "hsl(" + h + ", " + s + "%, " + l + "%)"
+}
+endsnippet
+
+snippet rgb2hex
+function rgb2hex(rgb)
+{
+	var ret = "#"
+	var rgb = rgb.substring(4, rgb.length-1).split(", ")
+	for(var i in rgb)
+		ret += Number(rgb[i]).toString(16)
+			return ret.toUpperCase()
+}
+endsnippet
+
 snippet domready
 window.addEventListener('DOMContentLoaded', () => {
 	$0

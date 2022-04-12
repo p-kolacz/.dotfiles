@@ -6,6 +6,15 @@ conf() {
 	cd "$old"
 }
 
+encfile() {
+	gpg --symmetric "$1"
+}
+decfile() {
+	orig=${1%.gpg}
+	[[ -f $orig ]] && { echo "$orig already exists"; return; }
+	gpg --decrypt --output "$orig" "$1"
+}
+
 sheet () {
 	curl cheat.sh/"$1"
 }

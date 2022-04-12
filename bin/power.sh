@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case "$(echo -e "鈴 Suspend\n Lock\n Reboot\n Poweroff" | $VMENU -i -p " ")" in
+case "$(echo -e "鈴 Suspend\n Lock\n Reboot\n Poweroff" | rofi -dmenu -i -p " " -theme-str 'window {width:15%;} listview {lines:4;}')" in
         "鈴 Suspend") exec systemctl suspend;;
 		" Lock") exec slock ;;
         " Reboot") exec systemctl reboot;;

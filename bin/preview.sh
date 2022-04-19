@@ -32,11 +32,16 @@ syn_highlight_a() {
 	highlight -O xterm256 -s $hl_theme --force "$1"
 }
 
+binary() {
+	FILE_PATH="$1"
+	file --dereference --brief "$FILE_PATH" | sed "s/, /\n/g"
+	hexyl "$FILE_PATH"
+}
 
-# glow for md
 case "$FILE_EXTENSION" in
 	bmp|gif|jpg|jpeg|png|tiff|webp)
-		identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
+		# identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
+		mediainfo "$FILE_PATH"
 
 		# exit 7 for ranger
 		exit 7 ;;
@@ -72,8 +77,9 @@ case "$FILE_EXTENSION" in
 		# elinks -dump "$FILE_PATH" && exit 0
 		# pandoc -s -t markdown -- "$FILE_PATH" && exit 0
 		# ;;
-	htaccess|c|cl|cljs|conf|cpp|cs|css|fish|gd|h|hs|html|ini|java|js|lua|php|py|rb|rc|ru|sh|sql|vim|xml|yaml|yml)
-		syn_highlight_a "$FILE_PATH" && exit 0;;
+
+	# htaccess|c|cl|cljs|conf|cpp|cs|css|fish|gd|h|hs|html|ini|java|js|lua|php|py|rb|rc|ru|sh|sql|vim|xml|yaml|yml)
+		# syn_highlight_a "$FILE_PATH" && exit 0;;
 
 	csv)
 		echo -n "Lines: "
@@ -82,11 +88,11 @@ case "$FILE_EXTENSION" in
 		limit_a "$FILE_PATH" | xsv table && exit 0;;
 		# limit_a "$FILE_PATH" && exit 0;;
 
-	json)
+	# json)
 		# jq --color-output . "$FILE_PATH" && exit 0
 		# python -m json.tool -- "$FILE_PATH" | syn_highlight && exit 0
-		syn_highlight_a "$FILE_PATH" && exit 0
-		;;
+		# syn_highlight_a "$FILE_PATH" && exit 0
+		# ;;
 
 	3gp|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|qt|vob|webm|wmv)
 		mediainfo "$FILE_PATH" && exit 0
@@ -111,7 +117,5 @@ case "$FILE_EXTENSION" in
 esac
 
 file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \
-	&& file --dereference --brief "$FILE_PATH" | sed "s/, /\n/g" \
-	|| syn_highlight_a "$FILE_PATH"
-	# || cat "$FILE_PATH"
+	&& binary "$FILE_PATH" || syn_highlight_a "$FILE_PATH"
 

@@ -18,6 +18,9 @@ apply() {
 	# Kitty
 	envsubst < "$CONFIG/kitty/colors/auto.template.conf" > "$CONFIG/kitty/colors/auto.conf"
 
+	# Dunst
+	envsubst < "$CONFIG/dunst/dunstrc.d/colors.template" > "$CONFIG/dunst/dunstrc.d/color.conf"
+
 	# zathura
 	envsubst < "$CONFIG/zathura/theme.template" > "$CONFIG/zathura/theme"
 }

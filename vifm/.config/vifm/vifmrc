@@ -156,7 +156,7 @@ nnoremap \s5 :!sha512sum %c | cut -d' ' -f1 %S<cr>
 
 " Fs
 nnoremap <f2> cW
-nnoremap <f3> :!$PAGER %f<cr>
+nnoremap <f3> :!hexyl %c | $PAGER<cr>
 nnoremap <s-f4> :touch<space>
 nnoremap <f4> :edit<cr>
 nnoremap <f5> :copy &<cr>
@@ -254,7 +254,7 @@ command! cmp : if expand('%%c') == expand('%%f')
 		" \ %pc
 		" \ kitty icat --silent --clear
 
-fileviewer * preview.sh %c %pw %ph %px
+fileviewer *[^/] preview.sh %c %pw %ph %px
 
 " MD5
 filetype *.md5

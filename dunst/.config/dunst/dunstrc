@@ -14,13 +14,18 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-center
+    origin = bottom-left
 
     # Offset from the origin
-    offset = 10x50
+    offset = 10x10
 
     # The transparency of the window.  Range: [0; 100].
     transparency = 0
+
+    # Draw a line of "separator_height" pixel height between two
+    # notifications.
+    # Set to 0 to disable.
+    separator_height = 1
 
     # Defines width in pixels of frame around the notification window. Set to 0 to disable.
     frame_width = 1

@@ -39,14 +39,26 @@ function M.filename()
 	return "%f"
 end
 
-function M.filetype(bufnr, icons)
+function M.filetype()
+	return "%y"
+end
+
+function M.filetype_icon(bufnr, icons)
 	local ft = vim.api.nvim_buf_get_option(bufnr, 'filetype')
 	local icon, color = icons.get_icon(ft)
 	if icon then
 		icon = colorize(icon, color)
 	end
-	-- return bubble(icon or ft, "SlickLineGreen")
 	return ""..(icon or ft)..""
+end
+
+function M.filetype_full(bufnr, icons)
+	local ft = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+	local icon, color = icons.get_icon(ft)
+	if icon then
+		icon = colorize(icon, color)
+	end
+	return (icon or "").." %y"
 end
 
 local function lsp_name(bufnr)

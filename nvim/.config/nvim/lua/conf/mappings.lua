@@ -34,8 +34,8 @@ vnoremap("<a-j>", ":m '>+1<cr>gv=gv")
 vnoremap("<a-k>", ":m '<-2<cr>gv=gv")
 
 nnoremap("<leader>et", ":%s/\\s\\+$//e<CR>", "remove trailing spaces")
-nnoremap("<leader>es" , ":%s//g<left><left>", "substitute")
-vnoremap("<leader>es" , ":s//g<left><left>", "substitute")
+nnoremap("<leader>es" , ":%s/", "substitute")
+vnoremap("<leader>es" , ":s/", "substitute")
 
 -- change cword and press . to repeat change on next, n to goto next
 nnoremap("<leader>ed", ":let @/='\\<'.expand('<cword>').'\\>'<cr>cgn", "change&repeat")

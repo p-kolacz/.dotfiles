@@ -24,21 +24,21 @@ Require {
 	"tool/colorizer",
 	"tool/figlet",
 	"tool/rest",
-	-- "tool/lightspeed",
 
 -- Languages ---------------------------
 	"lang/bash",
 	"lang/csv",
-	"lang/gdscript" ,
+	"lang/gdscript",
+	"lang/go",
 	"lang/lua",
 	"lang/markdown",
+	"lang/org-mode",
 	"lang/php",
 	"lang/python",
+	"lang/recutils",
 	"lang/sql",
 	"lang/sxhkd",
 	"lang/webdev",
-	"lang/org-mode",
-	"lang/recutils",
 
 }
 

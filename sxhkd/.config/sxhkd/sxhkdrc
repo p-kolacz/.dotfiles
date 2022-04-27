@@ -56,7 +56,7 @@ super + equal
 	rofi -show calc -modi calc -no-show-match -no-sort
 
 super + parenleft
-	rofi-wifi-menu.sh
+	networkmanager_dmenu
 
 super + parenright
 	rofi-bluetooth

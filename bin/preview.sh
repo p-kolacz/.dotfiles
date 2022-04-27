@@ -35,7 +35,7 @@ syn_highlight_a() {
 binary() {
 	FILE_PATH="$1"
 	file --dereference --brief "$FILE_PATH" | sed "s/, /\n/g"
-	hexyl "$FILE_PATH"
+	[[ -s $FILE_PATH ]] && hexyl "$FILE_PATH"
 }
 
 case "$FILE_EXTENSION" in

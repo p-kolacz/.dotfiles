@@ -228,7 +228,7 @@ command! dragon dragon-drop -a -x %f &
 command! zip zip -r %D/%f.zip %f
 command! backup zip -r %D/%f_$(date +%%F).zip %f
 command! tar tar cvf %D/%f_$(date +%%F).tar %f
-command! extract extract %D %c
+command! extract extract %D %f
 
 " Compare
 command! diff vim -d %f %F

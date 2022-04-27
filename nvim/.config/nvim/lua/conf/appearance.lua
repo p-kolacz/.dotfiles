@@ -11,7 +11,8 @@ set.splitright     = true
 set.termguicolors  = true
 -- set.shortmess:remove("F")
 
-vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]]) -- Highlight yank
+-- Highlight yank
+vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]])
 
 Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()
@@ -29,7 +30,7 @@ colorscheme "tokyonight"
 
 require "lib/statepipe".setup {
 	{
-		"mode", "filetype",  "spell", "readonly", "modified",  "separator",
+		"mode", "filetype_full",  "spell", "readonly", "modified",  "separator",
 		"short_path", "lsp_icon",
 		"separator", "diagnostics", "column", "lines", "percent",
 	},

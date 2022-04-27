@@ -1,12 +1,14 @@
 local M = {}
 
 M.Type = {
-	MANUAL     = { "hm", "manual" },
-	TUTORIAL   = { "ht", "tutorial" },
 	API        = { "ha", "API" },
-	FUNCTIONS  = { "hf", "functions" },
 	CHEATSHEET = { "hc", "cheat sheet" },
-	STYLEGUIDE = { "hs", "style guide" },
+	FUNCTIONS  = { "hf", "functions" },
+	MANUAL     = { "hm", "manual" },
+	STDLIB     = { "hs", "standard library" },
+	STYLEGUIDE = { "hg", "style guide" },
+	TOOLS      = { "ho", "tools" },
+	TUTORIAL   = { "ht", "tutorial" },
 	CUSTOM1    = { "h1", "1" },
 	CUSTOM2    = { "h2", "2" },
 	CUSTOM3    = { "h3", "3" },

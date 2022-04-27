@@ -35,6 +35,7 @@ alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keym
 alias books="edit_in_dir ~/Cloud/Exocortex/Databases/ db/books.rec"
 alias gamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
+alias minifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"
 
 # Git ---------------------------------
@@ -74,6 +75,7 @@ alias -g L="| $PAGER"
 alias -g T="| tail"
 alias -g W="| wc -l"
 alias -g X="| xargs"
+alias -g curlall="xargs -P 10 -I _ curl -OL _"
 
 # Suffix ------------------------------
 alias -s {md,txt}=$EDITOR

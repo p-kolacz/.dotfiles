@@ -133,9 +133,13 @@ nnoremap <c-t> :tabnew<cr>
 nnoremap <c-j> :tabnext<cr>
 nnoremap <c-k> :tabprev<cr>
 
+" Leader
 nnoremap \a ggvG<cr>
 nnoremap \b :backup<cr>
-nnoremap \c :cmp<cr>
+nnoremap \cf :cmp<cr>
+nnoremap \cc :compare<cr>
+nnoremap \cd :compare listdups<cr>
+nnoremap \cu :compare listunique<cr>
 nnoremap \C :write | edit $MYVIFMRC | restart full<cr>
 nnoremap \d :dragon<cr>
 nnoremap \e :extract<cr>
@@ -147,7 +151,6 @@ nnoremap \T :!$TERMINAL &<cr>
 nnoremap \t :tar<cr>
 nnoremap \w :set wrap!<cr>
 nnoremap \z :zip<cr>
-" nnoremap \sc :echo system(expand("crc32 %c"))<cr>
 nnoremap \sc :!crc32 %c %S<cr>
 nnoremap \sm :!md5sum %c | cut -d' ' -f1 %S<cr>
 nnoremap \s1 :!sha1sum %c | cut -d' ' -f1 %S<cr>

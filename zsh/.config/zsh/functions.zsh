@@ -15,6 +15,11 @@ decfile() {
 	gpg --decrypt --output "$orig" "$1"
 }
 
+resmod() {
+	find "$1" -type d -exec chmod 755 {} \;
+	find "$1" -type f -exec chmod 644 {} \;
+}
+
 sheet () {
 	curl cheat.sh/"$1"
 }

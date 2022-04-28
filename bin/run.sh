@@ -8,7 +8,7 @@ FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION="${FILE_EXTENSION,,}"
 
 case $FILE_EXTENSION in
-	html)
+	htm|html)
 		$BROWSER "$FILE_PATH" ;;
 	epub|mobi)
 		ebook-viewer -- "$FILE_PATH" ;;

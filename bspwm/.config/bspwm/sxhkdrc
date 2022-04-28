@@ -34,8 +34,8 @@ super + b
 	bspc desktop -f last
 
 super + Tab
-	bspc desktop -f last
-	# bspc node -f next.local.leaf
+	bspc node -f next.local.leaf
+	# bspc desktop -f last
 
 # alternate between the tiled and monocle layout
 super + m
@@ -66,9 +66,13 @@ super + {i,shift + i,o,u}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-# focus/swap the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+# focus the node/monitor in the given direction
+super + {h,j,k,l}
+	dir={west,south,north,east}; bspc node -f "$dir" || bspc monitor -f "$dir"
+
+# swap the node in the given direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
 
 # focus the next/previous node in the current desktop
 super + {n,p}

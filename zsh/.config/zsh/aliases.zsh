@@ -24,6 +24,7 @@ alias todo="~/repos/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
 alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
 alias parts="lsblk --output NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL"
 alias dispeed="sudo hdparm -t"
+alias spindown="sudo hdparm -y"
 
 # Edit config files -------------------
 alias edot="cd $DOTFILES && $EDITOR"
@@ -34,9 +35,10 @@ alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keym
 # Databases ---------------------------
 alias books="edit_in_dir ~/Cloud/Exocortex/Databases/ db/books.rec"
 alias gamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
+alias hardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
-alias minifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"
+alias minifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 
 # Git ---------------------------------
 alias lg=lazygit

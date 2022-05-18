@@ -39,6 +39,7 @@ Require {
 	"lang/sql",
 	"lang/sxhkd",
 	"lang/webdev",
+	"lang/yaml",
 
 }
 

@@ -39,7 +39,7 @@ binary() {
 }
 
 case "$FILE_EXTENSION" in
-	bmp|gif|jpg|jpeg|png|tiff|webp)
+	bmp|gif|ico|jpg|jpeg|png|tiff|webp)
 		# identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
 		mediainfo "$FILE_PATH"
 

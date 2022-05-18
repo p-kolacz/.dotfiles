@@ -4,6 +4,7 @@ M.Type = {
 	API        = { "ha", "API" },
 	CHEATSHEET = { "hc", "cheat sheet" },
 	FUNCTIONS  = { "hf", "functions" },
+	FAQ        = { "hq", "FAQ" },
 	MANUAL     = { "hm", "manual" },
 	STDLIB     = { "hs", "standard library" },
 	STYLEGUIDE = { "hg", "style guide" },

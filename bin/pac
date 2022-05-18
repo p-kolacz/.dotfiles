@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function usage() {
-	echo "Usage: [orph|up|sync|lastup]"
+	echo "Usage: [orph|up|sync|lastup|set-mirrors]"
 }
 
 case $1 in
@@ -9,7 +9,8 @@ case $1 in
 	remorph) pacman -Rs $(pacman -Qqdt) ;;
 	up) pacman -Syu ;;
 	sync) pacman -Sy ;;
-	lastup) grep "starting full system upgrade" /var/log/pacman.log | tail;;
+	lastup) grep "starting full system upgrade" /var/log/pacman.log | tail ;;
+	set-mirrors) reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist ;;
 	*) usage
 esac
 

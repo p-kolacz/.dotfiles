@@ -26,7 +26,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd
 
-(( $+commands[moar] )) && { export MOAR="--no-linenumbers"; export PAGER="moar"; }
+# (( $+commands[moar] )) && { export MOAR="--no-linenumbers"; export PAGER="moar"; }
 
 nerdfetch
 # eval "$(starship init zsh)"

@@ -111,6 +111,7 @@ nnoremap O :sync %c<cr>
 nnoremap o :sync<cr>
 nnoremap s :shell<cr>
 nnoremap S :sort<cr>
+nnoremap t :select<cr>j
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap * ggvG<cr>gg

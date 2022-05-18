@@ -76,6 +76,7 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a Hdajackretask state=floating
 bspc rule -a Emacs state=tiled
 bspc rule -a Arandr state=floating
+bspc rule -a "Seafile Client" state=floating
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Kupfer.py focus=on

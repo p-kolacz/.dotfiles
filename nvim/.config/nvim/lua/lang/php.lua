@@ -1,3 +1,5 @@
+vim.cmd("autocmd vimrc FileType php setlocal autoindent")
+
 -- PHPActor
 require'lspconfig'.phpactor.setup {
 	cmd = { LSP_DATA_HOME.."phpactor/bin/phpactor", "language-server" }

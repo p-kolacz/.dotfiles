@@ -53,7 +53,7 @@ super + Print
 	flameshot gui
 
 super + equal
-	rofi -show calc -modi calc -no-show-match -no-sort
+	rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip -selection clipboard"
 
 super + parenleft
 	networkmanager_dmenu

@@ -229,9 +229,9 @@ command! reload :write | restart full
 command! dragon dragon-drop -a -x %f &
 
 " Compress
-command! zip zip -r %D/%f.zip %f
-command! backup zip -r %D/%f_$(date +%%F).zip %f
-command! tar tar cvf %D/%f_$(date +%%F).tar %f
+command! zip zip -r %D/%c.zip %f
+command! backup zip -r %D/%c_$(date +%%F).zip %f
+command! tar tar cvf %D/%c_$(date +%%F).tar %f
 command! extract extract %D %f
 
 " Compare
@@ -286,8 +286,10 @@ filetype {*.asc},<application/pgp-signature>
        \ !!gpg --verify %c,
 
 " FuseZipMount
-filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
-        \<application/zip,application/java-archive>
+" filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
+	" \<application/zip,application/java-archive>
+filetype {*.zip,*.war,*.ear,*.oxt,*.apkg},
+       \<application/zip>
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
@@ -324,7 +326,8 @@ filetype *.ftp
 " Fuse7z and 7z archives
 filetype {*.7z},<application/x-7z-compressed>
        \ {Mount with fuse-7z}
-       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
+       \ FUSE_MOUNT|fuse3-p7zip %SOURCE_FILE %DESTINATION_DIR,
+       " \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 
 
 " Directories

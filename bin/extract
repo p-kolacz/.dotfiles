@@ -56,7 +56,7 @@ for file; do
 		*.apk|*.jar|*.war|*.zip) unzip "$FULL" ;;
 		*.z) uncompress "$FULL" ;;
 		*.zst) unzstd "$FULL" ;;
-		*.7z) 7z x "$FULL" ;;
+		*.7z|*.iso) 7z x "$FULL" ;;
 		*) echo "'$file' cannot be extracted via this script"; exitcode=1 ;;
 	esac
 

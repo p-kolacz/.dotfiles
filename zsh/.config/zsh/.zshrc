@@ -29,7 +29,8 @@ setopt autocd
 # (( $+commands[moar] )) && { export MOAR="--no-linenumbers"; export PAGER="moar"; }
 
 nerdfetch
-# eval "$(starship init zsh)"
+# neofetch
+
 autoload -U promptinit; promptinit
 prompt spaceship
 

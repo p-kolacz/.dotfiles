@@ -17,18 +17,19 @@ require'lspconfig'.gdscript.setup{
 	-- cmd = {"gdlog.sh", "localhost", "6008"},
 	cmd = {"nc", "localhost", "6008"},
 
-	-- on_attach = LSP_ON_ATTACH,
+	on_attach = LSP_ON_ATTACH,
+
 	-- bug workaround https://github.com/neovim/neovim/issues/12633
 	-- shoud work without this in godoot 3.3.4
-	on_attach = function (client, buffnr)
-		local _notify = client.notify
-		client.notify = function (method, params)
-			if method == 'textDocument/didClose' then
-				return
-			end
-			_notify(method, params)
-		end
-		LSP_ON_ATTACH(client, buffnr)
-	end
+	-- on_attach = function (client, buffnr)
+	-- 	local _notify = client.notify
+	-- 	client.notify = function (method, params)
+	-- 		if method == 'textDocument/didClose' then
+	-- 			return
+	-- 		end
+	-- 		_notify(method, params)
+	-- 	end
+	-- 	LSP_ON_ATTACH(client, buffnr)
+	-- end
 }
 

@@ -14,10 +14,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = bottom-left
+    origin = top-right
 
     # Offset from the origin
-    offset = 10x10
+    offset = 10x30
 
     # The transparency of the window.  Range: [0; 100].
     transparency = 0

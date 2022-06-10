@@ -20,16 +20,17 @@ case $FILE_EXTENSION in
 		gnome-font-viewer -- "$FILE_PATH" ;;
 	3gp|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|qt|vob|webm|wmv)
 		mpv -- "$FILE_PATH" & ;;
-	flac|m4a|mp3|ogg|wav|wma)
-		ffplay -nodisp -autoexit "$FILE_PATH" ;;
-		# mpv -- "$FILE_PATH" & ;;
+	flac|m4a|mod|mp3|ogg|wav|wma)
+		# ffplay -nodisp -autoexit "$FILE_PATH" ;;
+		deadbeef "$FILE_PATH" ;;
+	it|mod|s3m|xm)
+		deadbeef "$FILE_PATH" ;;
 	ods)
 		gnumeric "$FILE_PATH" ;;
 	doc|docx|odp|odt|ppt|pptx|xls|xlsx)
 		libreoffice "$FILE_PATH" ;;
-	jar|zip)
-		# fuse-zip
-		;;
+	jar)
+		java --jar "$FILE_PATH" ;;
 	bz2|gz|tar|tgz|xz)
 		# archivemount
 		;;

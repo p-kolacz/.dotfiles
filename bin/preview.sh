@@ -46,9 +46,15 @@ case "$FILE_EXTENSION" in
 		# exit 7 for ranger
 		exit 7 ;;
 
-	mp3)
+	mp3|ogg|wav)
 		# mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;
 		mediainfo "$FILE_PATH" && exit 0 ;;
+	it|mod|s3m|xm)
+		file "$FILE_PATH"
+		echo
+		mediainfo "$FILE_PATH"
+		exit 0
+		;;
 	flac)
 		soxi "$FILE_PATH" && exit 0;;
 	pdf)

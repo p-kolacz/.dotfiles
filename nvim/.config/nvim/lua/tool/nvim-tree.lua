@@ -1,8 +1,7 @@
 Plugin "https://github.com/kyazdani42/nvim-tree.lua"
 
-let.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
+-- let.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
 require'nvim-tree'.setup {
-	auto_close	= true,
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -17,6 +16,13 @@ require'nvim-tree'.setup {
 			list = {
 				{ key = "l", action = {"edit_in_place"} },
 				-- { key = "h", action = {"close_node"} },		# bugged?
+			},
+		},
+	},
+	renderer = {
+		icons = {
+			show = {
+				-- git = false
 			},
 		},
 	},

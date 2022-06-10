@@ -96,7 +96,9 @@ cmp.setup {
 		format = format,
 	},
 	completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║" },
-	documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║", },
+	window = {
+		documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, scrollbar = "║", },
+	},
 	mapping = mapping,
 
 	snippet = { -- REQUIRED - you must specify a snippet engine

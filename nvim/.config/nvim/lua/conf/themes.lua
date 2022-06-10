@@ -55,4 +55,7 @@ Plugin "https://github.com/joshdick/onedark.vim"
 
 ----------------------------------- Gruvbox -----------------------------------
 Plugin "https://github.com/ellisonleao/gruvbox.nvim"
+let.gruvbox_contrast_dark = "soft"
+
+Plugin "https://github.com/luisiacc/gruvbox-baby"
 

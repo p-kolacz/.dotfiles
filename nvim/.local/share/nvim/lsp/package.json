@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bash-language-server": "^1.17.0",
     "pyright": "^1.1.125",
     "sql-language-server": "^0.12.0",
     "typescript": "^4.5.5",

@@ -23,7 +23,7 @@ export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/startup.py"
 export SQLITE_HISTORY="$XDG_STATE_HOME/sqlite_history"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-export WINEPREFIX="$XDG_DATA_HOME/wine"
+# export WINEPREFIX="$XDG_DATA_HOME/wine"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 alias dosbox="dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox.conf"

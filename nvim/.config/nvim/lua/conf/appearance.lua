@@ -2,7 +2,6 @@ set.listchars      = "space:•,tab:|->,eol:↲,nbsp:+,trail:•,extends:⟩,pre
 set.cursorline     = true
 set.wrap           = false
 set.number         = true
--- set.relativenumber = true
 set.scrolloff      = 5		-- top and bottom margin in rows
 set.showmatch      = true
 set.signcolumn     = "yes"
@@ -26,7 +25,7 @@ for name, icon in pairs(DIAG_ICONS) do
 end
 
 require "conf/themes"
-colorscheme "tokyonight"
+colorscheme "gruvbox-baby"
 
 require "lib/statepipe".setup {
 	{

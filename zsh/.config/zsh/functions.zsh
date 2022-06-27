@@ -66,7 +66,6 @@ recode265() {
 	local base=$(basename "$1")
 	base=${base%.*}
 	ffmpeg -i "$1" -c:v libx265 -vtag hvc1 -c:a copy "${base}_x265.mp4"
-	# ffmpeg -i "$1" -c:v libx265 "${base}_x265.mp4"
 }
 
 rss2mp3() {

@@ -43,6 +43,10 @@ function M.filetype()
 	return "%y"
 end
 
+function M.encoding()
+	return "%{&fileencoding?&fileencoding:&encoding}"
+end
+
 function M.filetype_icon(bufnr, icons)
 	local ft = vim.api.nvim_buf_get_option(bufnr, 'filetype')
 	local icon, color = icons.get_icon(ft)

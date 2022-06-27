@@ -10,10 +10,9 @@ echo query > /tmp/pms_mode
 
 _header() {
 	echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-	echo "F6 files │ F8 remove"
 
 	[[ -z $1 ]] && format bold 
-	echo -n "F1 all"
+	echo -n "F1 inst."
 	format reset && echo -n " │ "
 
 	[[ $1 == e ]] && format bold 
@@ -21,17 +20,18 @@ _header() {
 	format reset && echo -n " │ "
 
 	[[ $1 == ett ]] && format bold 
-	echo -n "F3 explicit not required"
+	echo -n "F3 !req."
 	format reset && echo -n " │ "
 
 	[[ $1 == dt ]] && format bold 
-	echo -n "F4 orphans"
+	echo -n "F4 orph."
 	format reset && echo -n " │ "
 
 	[[ $1 == avail ]] && format bold 
-	echo -n "F5 available"
+	echo -n "F5 all"
 	format reset
-	echo
+
+	echo " | F6 files │ F8 rem"
 
 	echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 }
@@ -59,9 +59,10 @@ export -f _installed
 export -f _avail
 
 package=$(_installed | fzf \
-	--header-lines 4 \
+	--header-lines 3 \
 	--layout=reverse-list \
 	--preview "_info {}" \
+	--preview-window=top,75% \
 	--bind "F1:reload(_installed)" \
 	--bind "F2:reload(_installed e)" \
 	--bind "F3:reload(_installed ett)" \

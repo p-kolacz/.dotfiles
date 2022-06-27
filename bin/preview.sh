@@ -35,28 +35,25 @@ syn_highlight_a() {
 binary() {
 	FILE_PATH="$1"
 	file --dereference --brief "$FILE_PATH" | sed "s/, /\n/g"
-	[[ -s $FILE_PATH ]] && hexyl "$FILE_PATH"
+	[[ -s $FILE_PATH ]] && hexyl --length=512 --no-position --no-squeezing "$FILE_PATH"
 }
+
+file -b "$FILE_PATH" && echo "────────────────────────────────────────"
 
 case "$FILE_EXTENSION" in
 	bmp|gif|ico|jpg|jpeg|png|tiff|webp)
-		# identify -format "%m %wx%h %zbit %[interlace] %n frame(s)\n" "$FILE_PATH" | head -1
 		mediainfo "$FILE_PATH"
-
 		# exit 7 for ranger
 		exit 7 ;;
 
-	mp3|ogg|wav)
-		# mp3info -p "Track:\t%n\nTitle:\t%t\nArtist:\t%a\nAlbum:\t%l\nYear:\t%y\nFormat:\t%rkbps %qkHz %o\nTime:\t%02m:%02s\n" "$FILE_PATH" | sed "s/Variablekbps/VBR/" && exit 0;;
+	flac|mp3|ogg|wav)
 		mediainfo "$FILE_PATH" && exit 0 ;;
+
 	it|mod|s3m|xm)
-		file "$FILE_PATH"
-		echo
 		mediainfo "$FILE_PATH"
 		exit 0
 		;;
-	flac)
-		soxi "$FILE_PATH" && exit 0;;
+
 	pdf)
 		# pdftotext -l 10 -nopgbrk -q -- "$FILE_PATH" - | fmt -w "$PV_WIDTH" && exit 0;;
 		pdftotext -l 10 -nopgbrk -q -- "$FILE_PATH" - && exit 0;;
@@ -71,6 +68,7 @@ case "$FILE_EXTENSION" in
 
 	doc)
 		catdoc "$FILE_PATH" && exit 0;;
+
 	docx)
 		docx2txt.pl "$FILE_PATH" - && exit 0;;
 	# xlsx)

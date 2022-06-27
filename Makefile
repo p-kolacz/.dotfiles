@@ -1,6 +1,6 @@
 # https://makefiletutorial.com/
 
-.PHONY: help setup terminal xorg bspwm xorg bspwm audio fonts DE wifi bluetooth laptop printer printer-dcpt500w wacom devops redox
+.PHONY: help setup terminal xorg bspwm audio fonts DE wifi bluetooth laptop printer printer-dcpt500w wacom devops redox
 .DEFAULT_GOAL=help
 
 install=sudo pacman -S --needed
@@ -19,9 +19,9 @@ setup:
 	pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
 
 terminal:
-	$(install) man-db man-pages rsync htop ripgrep unrar unzip zip terminus-font
-	$(install) cmus fzf highlight htop lazygit mediainfo python-pip smartmontools trash-cli
-	$(install) neovim lua-language-server yaml-language-server npm
+	$(install) man-db man-pages htop ripgrep p7zip terminus-font
+	$(install) fzf highlight htop lazygit mediainfo python-pip smartmontools trash-cli
+	$(install) neovim bash-language-server lua-language-server yaml-language-server
 	$(install) vifm fuse-zip curlftpfs sshfs meld catdoc odt2txt
 	# $(install) cowsay fortune-mod
 	$(ynstall) archivemount dragon-drop figlet-fonts gotop hexyl nerdfetch recutils simple-mtpfs spaceship-prompt wordnet-cli
@@ -38,7 +38,7 @@ audio:
 	$(install) pipewire wireplumber pipewire-pulse playerctl
 
 fonts:
-	$(install) noto-fonts-emoji ttf-iosevka-nerd ttf-ubuntu-font-family
+	$(install) noto-fonts-emoji otf-hermit ttf-iosevka-nerd ttf-ubuntu-font-family
 	$(ynstall) nerd-fonts-victor-mono 
 
 DE: bspwm audio fonts
@@ -59,7 +59,7 @@ bluetooth:
 	$(start) bluetooth.service
 
 laptop: bluetooth wifi
-	$(install) vulcan-intel nvidia-dkms tlp
+	$(install) vulkan-intel nvidia-dkms tlp
 
 printer:
 	$(install) cups system-config-printer
@@ -73,8 +73,8 @@ wacom:
 	$(install) xf86-input-wacom
 
 devops:
-	$(install) filezilla whois
-	$(ynstall) aseprite slack-desktop xmind-2020 xsv-bin
+	$(install) rsync filezilla whois npm
+	$(ynstall) aseprite slack-desktop xsv-bin
 
 redox:
 	$(install) avr-libc avrdude

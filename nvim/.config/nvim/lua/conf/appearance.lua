@@ -31,7 +31,7 @@ require "lib/statepipe".setup {
 	{
 		"mode", "filetype_full",  "spell", "readonly", "modified",  "separator",
 		"short_path", "lsp_icon",
-		"separator", "diagnostics", "column", "lines", "percent",
+		"separator", "diagnostics","encoding", "column", "lines", "percent",
 	},
 	{ "modified", "separator", "readonly", "filename",  "separator" }
 }

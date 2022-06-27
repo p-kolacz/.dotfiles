@@ -47,16 +47,13 @@ for file; do
 	case "$file" in
 		*.tar|*.tar.bz2|*.tbz2|*.tar.gz|*.tgz|*.tar.lz|*.tlz|*.tar.lzma|*.tar.xz|*.txz|*.tar.Z|*.tar.zst) tar xvf "$FULL" ;;
 		*.bz2) bunzip2 "$FULL" ;;
-		*.cab) cabextract "$FULL" ;;
 		*.gz) gunzip -k "$FULL" ;;
 		*.lz4) unlz4 "$FULL" ;;
 		*.lzma) unlzma "$FULL" ;;
 		*.xz) unxz "$FULL" ;;
-		*.rar) unrar x "$FULL" ;;
-		*.apk|*.jar|*.war|*.zip) unzip "$FULL" ;;
 		*.z) uncompress "$FULL" ;;
 		*.zst) unzstd "$FULL" ;;
-		*.7z|*.iso) 7z x "$FULL" ;;
+		*.7z|*.apk|*.cab|*.jar|*.iso|*.rar|*.zip) 7z x "$FULL" ;;
 		*) echo "'$file' cannot be extracted via this script"; exitcode=1 ;;
 	esac
 

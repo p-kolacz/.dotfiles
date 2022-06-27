@@ -34,7 +34,8 @@ alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keym
 
 # Databases ---------------------------
 alias books="edit_in_dir ~/Cloud/Exocortex/Databases/ db/books.rec"
-alias gamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
+alias gamez="$HOME/Cloud/Exocortex/Databases/gamez"
+alias egamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
 alias hardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
 alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"

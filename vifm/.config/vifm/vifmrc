@@ -152,6 +152,7 @@ nnoremap \T :!$TERMINAL &<cr>
 nnoremap \t :tar<cr>
 nnoremap \w :set wrap!<cr>
 nnoremap \z :zip<cr>
+nnoremap \7 :sevenz<cr>
 nnoremap \sc :!crc32 %c %S<cr>
 nnoremap \sm :!md5sum %c | cut -d' ' -f1 %S<cr>
 nnoremap \s1 :!sha1sum %c | cut -d' ' -f1 %S<cr>
@@ -229,7 +230,9 @@ command! reload :write | restart full
 command! dragon dragon-drop -a -x %f &
 
 " Compress
-command! zip zip -r %D/%c.zip %f
+" command! zip zip -r %D/%c.zip %f
+command! zip 7z a -tzip %D/%c.zip %f
+command! sevenz 7z a %D/%c.7z %f
 command! backup zip -r %D/%c_$(date +%%F).zip %f
 command! tar tar cvf %D/%c_$(date +%%F).tar %f
 command! extract extract %D %f
@@ -259,6 +262,7 @@ command! cmp : if expand('%%c') == expand('%%f')
 		" \ kitty icat --silent --clear
 
 fileviewer *[^/] preview.sh %c %pw %ph %px
+fileviewer .*[^/] preview.sh %c %pw %ph %px
 
 " MD5
 filetype *.md5

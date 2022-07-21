@@ -11,28 +11,16 @@ set.termguicolors  = true
 -- set.shortmess:remove("F")
 
 -- Highlight yank
-vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]])
+-- vim.cmd([[autocmd vimrc TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=500}]])
+autocmd("TextYankPost", { group = "vimrc", pattern = "*", callback =
+	function()
+		vim.highlight.on_yank {higroup="IncSearch", timeout=500}
+	end
+})
 
 Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()
--- Plugin "https://github.com/lukas-reineke/indent-blankline.nvim"
-require "lib/marketeer".setup()
--- Sign column icons
-DIAG_ICONS = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for name, icon in pairs(DIAG_ICONS) do
-	local hl = "DiagnosticSign" .. name
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
+require "lib/iconz"
 require "conf/themes"
 colorscheme "gruvbox-baby"
-
-require "lib/statepipe".setup {
-	{
-		"mode", "filetype_full",  "spell", "readonly", "modified",  "separator",
-		"short_path", "lsp_icon",
-		"separator", "diagnostics","encoding", "column", "lines", "percent",
-	},
-	{ "modified", "separator", "readonly", "filename",  "separator" }
-}
 

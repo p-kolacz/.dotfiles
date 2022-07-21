@@ -20,7 +20,7 @@ setup:
 
 terminal:
 	$(install) man-db man-pages htop ripgrep p7zip terminus-font
-	$(install) fzf highlight htop lazygit mediainfo python-pip smartmontools trash-cli
+	$(install) fzf highlight htop lazygit mediainfo python-pip pyright smartmontools trash-cli
 	$(install) neovim bash-language-server lua-language-server yaml-language-server
 	$(install) vifm fuse-zip curlftpfs sshfs meld catdoc odt2txt
 	# $(install) cowsay fortune-mod
@@ -73,8 +73,8 @@ wacom:
 	$(install) xf86-input-wacom
 
 devops:
-	$(install) rsync filezilla whois npm
-	$(ynstall) aseprite slack-desktop xsv-bin
+	$(install) rsync filezilla whois npm vscode-html-languageserver vscode-css-languageserver typescript-language-server
+	$(ynstall) aseprite slack-desktop xsv-bin sql-language-server
 
 redox:
 	$(install) avr-libc avrdude

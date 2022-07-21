@@ -39,7 +39,8 @@ alias egamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
 alias hardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
 alias komix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
 alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"
-alias minifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
+alias minifigs="$HOME/Cloud/Exocortex/Databases/minifigs"
+alias eminifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 
 # Git ---------------------------------
 alias lg=lazygit

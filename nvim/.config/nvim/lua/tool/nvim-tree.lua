@@ -1,28 +1,21 @@
 Plugin "https://github.com/kyazdani42/nvim-tree.lua"
 
--- let.nvim_tree_show_icons = { git = 0, folders = 1, files = 1 }
+local icons = { unpack(Icons.diagnostics) }
+icons.warning = icons.warn
+icons.warn = nil
+
 require'nvim-tree'.setup {
 	diagnostics = {
 		enable = true,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
-		}
+		icons = icons,
 	},
 	view = {
 		mappings = {
+			custom_only = false,
 			list = {
-				{ key = "l", action = {"edit_in_place"} },
-				-- { key = "h", action = {"close_node"} },		# bugged?
-			},
-		},
-	},
-	renderer = {
-		icons = {
-			show = {
-				-- git = false
+				{ key = "l", action = "edit" },
+				{ key = "h", action = "close_node" },
+				{ key = "H", action = "collapse_all" }
 			},
 		},
 	},

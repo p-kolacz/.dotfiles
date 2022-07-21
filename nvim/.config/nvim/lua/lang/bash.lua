@@ -1,5 +1,11 @@
+ -- ____            _
+-- | __ )  __ _ ___| |__
+-- |  _ \ / _` / __| '_ \
+-- | |_) | (_| \__ \ | | |
+-- |____/ \__,_|___/_| |_|
+
 require"lspconfig".bashls.setup {
-	-- cmd = { LSP_NODE_BIN .. "bash-language-server", "start" },
+	capabilities = LSP_CAPABILITIES,
 	on_attach = LSP_ON_ATTACH,
 }
 

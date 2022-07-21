@@ -123,6 +123,7 @@ nnoremap cc cw<c-u>
 nnoremap ce cw<c-w>
 nnoremap cw cW<c-u>
 nnoremap cW cw<c-u>
+nnoremap cv :rename<cr>
 nnoremap I cw<c-a>
 
 " Windows
@@ -233,7 +234,7 @@ command! dragon dragon-drop -a -x %f &
 " command! zip zip -r %D/%c.zip %f
 command! zip 7z a -tzip %D/%c.zip %f
 command! sevenz 7z a %D/%c.7z %f
-command! backup zip -r %D/%c_$(date +%%F).zip %f
+command! backup 7z a %D/%c_$(date +%%F).zip %f
 command! tar tar cvf %D/%c_$(date +%%F).tar %f
 command! extract extract %D %f
 

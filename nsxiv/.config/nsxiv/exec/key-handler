@@ -67,7 +67,7 @@ operation() {
 # Prompt for directory & perform operation (cp, mv)
 prompt_and_op() {
 	dir=$(find $DEST_DIRS -type d -not -path '*/.*' 2>/dev/null | sed "s|^$HOME/||" | rofi -dmenu -i -p " " -theme-str "window {width: 50%;}" -location 6)
-	operation $1 "$HOME/$dir"
+	[[ -n $dir ]] && operation $1 "$HOME/$dir"
 }
 
 # Repeat last operation if instructions fount in tmp file

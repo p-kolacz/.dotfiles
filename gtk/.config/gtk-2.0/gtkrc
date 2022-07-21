@@ -1,4 +1,5 @@
 gtk-theme-name = "gruvbox-dark-gtk"
 # gtk-theme-name = "Pop-dark"
-gtk-icon-theme-name = "Pop"
+# gtk-icon-theme-name = "Pop"
+gtk-icon-theme-name = "Haiku"
 gtk-font-name = "Ubuntu 12"

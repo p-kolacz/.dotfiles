@@ -1,14 +1,12 @@
-vim.cmd("autocmd vimrc FileType php setlocal autoindent")
-
 -- PHPActor
-require'lspconfig'.phpactor.setup {
-	cmd = { LSP_DATA_HOME.."phpactor/bin/phpactor", "language-server" }
+require"lspconfig".phpactor.setup {
+	capabilities = LSP_CAPABILITIES,
+	on_attach = LSP_ON_ATTACH,
 }
 
 --[[
 -- Intelephense
 require'lspconfig'.intelephense.setup{
-	cmd = { LSP_NODE_BIN .. "intelephense", "--stdio" },
 	on_attach = LSP_ON_ATTACH,
 	-- initializationOptions = {
 	-- 	globalStoragePath = '/home/piotr/.cache/intelephense',

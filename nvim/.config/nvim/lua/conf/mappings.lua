@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+let.mapleader = " "
+let.maplocalleader = "\\"
 
 --------------------------------- Navigation -------------------------------
 inoremap("jj", "<ESC>")
@@ -21,7 +21,7 @@ mapgroup("<leader>c", "+Code")
 
 ----------------------------------- Edit -----------------------------------
 mapgroup("<leader>e", "+Edit")
-nnoremap("x", '"_x')
+-- nnoremap("x", '"_x')
 
 -- Clipboard
 vnoremap("<C-c>", '"*y :let @+=@*<CR>')

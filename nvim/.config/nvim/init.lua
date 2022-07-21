@@ -10,6 +10,7 @@ Require {
 	"conf/which-key",
 	"conf/mappings",
 	"conf/appearance",
+	"conf/statusline",
 
 -- Tools -------------------------------
 	"tool/tpope",
@@ -36,6 +37,7 @@ Require {
 	"lang/php",
 	"lang/python",
 	"lang/recutils",
+	"lang/ruby",
 	"lang/sql",
 	"lang/sxhkd",
 	"lang/webdev",

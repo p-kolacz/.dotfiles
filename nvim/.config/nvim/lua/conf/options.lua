@@ -1,11 +1,10 @@
-vim.cmd[[
-	augroup vimrc
-		autocmd!
-		autocmd FocusLost * :wa
-		autocmd BufRead */.config/nvim/init.lua setlocal includeexpr=stdpath('config').'/lua/'.v:fname
-		autocmd BufRead */.config/nvim/lua/conf/appearance.lua setlocal includeexpr=stdpath('config').'/lua/'.v:fname
-	augroup END
-]]
+augroup("vimrc", { clear = true })
+autocmd("FocusLost", { group = "vimrc", pattern = "*", command = "wall" })
+autocmd("BufRead", {
+	group = "vimrc",
+	pattern = {"*/.config/nvim/init.lua", "*/.config/nvim/lua/conf/appearance.lua"},
+	command = "setlocal includeexpr=stdpath('config').'/lua/'.v:fname"
+})
 
 vim.cmd("language messages en_US.utf8")
 

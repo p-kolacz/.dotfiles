@@ -5,20 +5,11 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require'lspconfig'.sumneko_lua.setup {
-	flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-    },
-	-- cmd = {
-		-- LSP_DATA_HOME .. "lua-language-server/bin/lua-language-server",
-		-- "-E",
-		-- LSP_DATA_HOME .. "lua-language-server/main.lua",
-	-- },
 	settings = {
 		Lua = {
 			runtime = {
 				version = 'LuaJIT',  -- LuaJIT for Neovim
-				path = runtime_path,
+				-- path = runtime_path,
 			},
 			diagnostics = {
 				globals = {'vim'},  -- Get the language server to recognize the `vim` global
@@ -32,7 +23,7 @@ require'lspconfig'.sumneko_lua.setup {
 			},
 		},
 	},
-	on_attach = LSP_ON_ATTACH,
 	capabilities = LSP_CAPABILITIES,
+	on_attach = LSP_ON_ATTACH,
 }
 

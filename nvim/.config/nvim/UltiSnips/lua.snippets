@@ -13,6 +13,20 @@ print($1)
 $0
 endsnippet
 
+snippet capitalize
+local function capitalize(s)
+	return s:sub(1,1):upper()..s:sub(2)
+end
+
+endsnippet
+
+snippet clone
+function table.clone(org)
+	return {table.unpack(org)}
+end
+
+endsnippet
+
 snippet file_relative_path
 @%
 endsnippet

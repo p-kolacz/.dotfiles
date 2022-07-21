@@ -1,22 +1,23 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 Plugin "https://github.com/neovim/nvim-lspconfig"
 
+vim.o.updatetime = 250
+
 LSP_DATA_HOME = vim.fn.stdpath('data') .. '/lsp/'
 LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
 
-mapgroup("<leader>cd", "+Diagnostic")
-nnoremap('<leader>cdf', '<cmd>lua vim.diagnostic.open_float()<CR>')
+mapgroup("<leader>d", "+Diagnostics")
+nnoremap('<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', "open float")
+nnoremap('<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "set loclist")
 nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-nnoremap('<leader>cdl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "diag set loclist")
 
-mapgroup("<leader>cl", "+LSP")
-nnoremap('<leader>cli', ':LspInfo<cr>', 'info')
-nnoremap('<leader>cls', ':LspStart<cr>', 'start')
-nnoremap('<leader>clS', ':LspStop<cr>', 'stop')
-nnoremap('<leader>clr', ':LspRestart<cr>', 'restart')
-nnoremap("<leader>clt", ":split | lcd "..LSP_DATA_HOME.." | terminal", "terminal to LSP data")
-nnoremap("<leader>cll", ":lua vim.cmd('e'..vim.lsp.get_log_path())<cr>", "logs")
+mapgroup("<leader>l", "+LSP")
+nnoremap('<leader>li', ':LspInfo<cr>', 'info')
+nnoremap('<leader>ls', ':LspStart<cr>', 'start')
+nnoremap('<leader>lS', ':LspStop<cr>', 'stop')
+nnoremap('<leader>lr', ':LspRestart<cr>', 'restart')
+nnoremap("<leader>ll", ":lua vim.cmd('e'..vim.lsp.get_log_path())<cr>", "logs")
 
 LSP_ON_ATTACH = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -33,5 +34,20 @@ LSP_ON_ATTACH = function(client, bufnr)
 	nnoremap_buffer('<leader>cd', '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'type definition')
 	nnoremap_buffer('<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', 'rename')
 	nnoremap_buffer('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+
+	vim.api.nvim_create_autocmd("CursorHold", {
+		buffer = bufnr,
+		callback = function()
+			local opts = {
+				focusable = false,
+				close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+				border = 'rounded',
+				source = 'always',
+				prefix = ' ',
+				scope = 'cursor',
+			}
+			vim.diagnostic.open_float(nil, opts)
+		end
+	})
 end
 

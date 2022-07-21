@@ -50,7 +50,7 @@ plusminus
 # Apps --------------------------------
 
 Print
-	flameshot full -p ~/Downloads/
+	flameshot full -p ~/Dispatcher/
 
 super + Print
 	flameshot gui

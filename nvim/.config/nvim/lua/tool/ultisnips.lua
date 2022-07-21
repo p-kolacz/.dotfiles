@@ -1,4 +1,7 @@
-Plugin 'https://github.com/SirVer/ultisnips'
+Plugin {
+	"https://github.com/adriaanzon/vim-emmet-ultisnips",
+	'https://github.com/SirVer/ultisnips',
+}
 
 mapgroup("<leader>cs", "+Snippets")
 nnoremap("<leader>csf", ":UltiSnipsEdit<CR>", "edit filetype snippets")

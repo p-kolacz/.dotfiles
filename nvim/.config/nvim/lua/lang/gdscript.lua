@@ -17,6 +17,7 @@ require'lspconfig'.gdscript.setup{
 	-- cmd = {"gdlog.sh", "localhost", "6008"},
 	cmd = {"nc", "localhost", "6008"},
 
+	capabilities = LSP_CAPABILITIES,
 	on_attach = LSP_ON_ATTACH,
 
 	-- bug workaround https://github.com/neovim/neovim/issues/12633

@@ -34,19 +34,20 @@ alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keym
 
 # Databases ---------------------------
 alias books="edit_in_dir ~/Cloud/Exocortex/Databases/ db/books.rec"
-alias gamez="$HOME/Cloud/Exocortex/Databases/gamez"
+alias gamez="$HOME/Cloud/Exocortex/Databases/browse gamez"
 alias egamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
-alias hardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
-alias komix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
+alias ehardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
+alias komix="$HOME/Cloud/Exocortex/Databases/browse komix"
+alias ekomix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
 alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"
-alias minifigs="$HOME/Cloud/Exocortex/Databases/minifigs"
+alias minifigs="$HOME/Cloud/Exocortex/Databases/browse minifigs"
 alias eminifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 
 # Git ---------------------------------
 alias lg=lazygit
 alias gits="git status"
 abbr gico="git add . && git commit -m"
-alias gifico='git add. && git commit -m "First commit."'
+alias gifico='git add . && git commit -m "First commit"'
 alias gipu="git push"
 alias gicora='git add . && git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)"'
 alias gipura='git add . && git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)" && git push'

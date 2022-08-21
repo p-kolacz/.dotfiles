@@ -1,4 +1,5 @@
-set.listchars      = "space:•,tab:|->,eol:↲,nbsp:+,trail:•,extends:⟩,precedes:⟨"
+set.listchars      = "space:•,tab:├─>,eol:↲,nbsp:+,trail:•,extends:⟩,precedes:⟨"
+set.fillchars      = "horiz:═,vert:║"
 set.cursorline     = true
 set.wrap           = false
 set.number         = true

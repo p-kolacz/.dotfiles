@@ -1,0 +1,218 @@
+#!/bin/bash
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║                                 Groups                                   ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+laptop() {
+	desktop
+	hw/bluetooth
+	hw/wifi
+	install xorg-xinput tlp # xinput 4 touchpad
+}
+
+desktop() {
+	bspwm
+	fonts
+	pipewire
+	terminal
+	apps
+}
+
+bspwm() {
+	xorg
+	install bspwm sxhkd picom dunst rofi rofi-calc
+	ynstall polybar
+}
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║                                 Targets                                  ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# stow -v --no-folding aseprite xnview 
+# devops() {
+	# install rsync filezilla whois npm vscode-html-languageserver vscode-css-languageserver typescript-language-server
+	# ynstall xsv-bin sql-language-server
+# }
+
+apps() {
+	install kitty syncthing
+	install gimp gnome-font-viewer qalculate-gtk gnumeric thunderbird # GTK apps
+	install flameshot keepassxc # Ot Apps
+	install mpv zathura-pdf-poppler
+	ynstall brave-bin
+}
+
+dev/go() {
+	install go gopls
+}
+dev/nodejs() {
+	install npm typescript-language-server
+}
+dev/php() {
+	install php phpactor
+}
+dev/python() {
+	install python-pip pyright
+}
+dev/ruby() {
+	install ruby yaml-language-server
+	gem install solargraph --conservative
+}
+
+dotfiles() {
+	mkdir -p "$HOME/.config/" "$HOME/.local/share/" "$HOME/.local/state/"
+	install stow
+	cd "$HOME/.dotfiles/" || { echo "$HOME/.dotfiles/ not found"; exit 1; }
+	if [[ $DRYRUN ]]; then
+		stow -vn */
+		echo "DRYRUN: installing yay"
+	else
+		stow -v */
+		pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
+	fi
+}
+
+fonts() {
+	install noto-fonts-emoji otf-hermit ttf-ubuntu-font-family
+	ynstall nerd-fonts-victor-mono 
+}
+
+hw/bluetooth() {
+	install bluez bluez-utils
+	startenable bluetooth.service
+}
+hw/nvidia() {
+	install nvidia-dkms nvidia-prime
+}
+hw/printer() {
+	install cups system-config-printer
+	startenable cups.service
+}
+hw/printer-dcpt500w() {
+	hw/printer
+	ynstall brother-dcpt500w
+}
+hw/redox() {
+	install avr-libc avrdude
+}
+hw/wacom() {
+	install xf86-input-wacom
+}
+hw/wifi() {
+	install networkmanager wireless-regdb
+	startenable NetworkManager.service
+}
+
+music() {
+	ynstall deadbeef deadbeef-mpris2-plugin deadbeef-plugin-musical-spectrum-gtk2-git
+}
+
+nvim() {
+	install neovim lua-language-server
+	ynstall figlet-fonts 
+}
+
+pipewire() {
+	install pipewire wireplumber pipewire-pulse pavucontrol playerctl
+}
+
+photo() {
+	install darktable
+}
+
+terminal() {
+	install git lsof man-db man-pages htop ripgrep p7zip
+	install catdoc hexyl highlight mediainfo odt2txt
+	install fzf lazygit smartmontools trash-cli
+	install bash-language-server shellcheck
+	ynstall gotop nerdfetch recutils simple-mtpfs spaceship-prompt wordnet-cli
+	nvim
+	vifm
+}
+
+vifm() {
+	install vifm fuse-zip curlftpfs sshfs meld
+	ynstall archivemount dragon-drop fuse3-p7zip
+}
+
+xorg() {
+	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr
+}
+
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║                                  Utilz                                   ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+install() {
+	[[ $DRYRUN ]] && { echo "DRYRUN installing:" "$@"; return; }
+	sudo pacman -S --needed "$@" 
+}
+ynstall() {
+	[[ $DRYRUN ]] && { echo "DRYRUN installing from AUR:" "$@"; return; }
+	yay -S --needed "$@" 
+}
+startenable() {
+	[[ $DRYRUN ]] && { echo "DRYRUN start & enable: $1"; return; }
+	sudo systemctl enable "$1"
+	sudo systemctl start "$1"
+}
+usage() {
+	local funcs
+	funcs=$(declare -F | cut -d" " -f3 | tr "\n" ",")
+	cat << EOF
+$SCRIPT: Install/configure packages
+
+SYNOPSIS:
+	$SCRIPT [OPTION ...] TARGET
+
+OPTIONS:
+	-n, --dry-run       Don't do just show
+	-h, --help          Display help
+
+TARGETS:
+	$funcs
+
+EOF
+}
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║                                   Run                                    ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+SCRIPT=${0##*/}
+OPTS=$(getopt --options n,h --longoptions dry-run,help --name "$SCRIPT" -- "$@") || exit 1
+eval set -- "$OPTS"
+
+while true; do
+	case "$1" in
+		-n|--dry-run)
+			DRYRUN=true
+			shift
+			;;
+		-h|--help)
+			usage
+			exit
+			;;
+		--)
+			shift
+			break
+			;;
+		*)
+			echo "Invalid argument: $1"
+			exit 1
+	esac
+done
+
+case $# in
+	0) usage; exit 2 ;;
+	1) ;;
+	*)
+		echo "Too many targets $#"; exit 3 ;;
+esac
+
+[[ ! $(typeset -f "$1") ]] && { echo "Invalid target: $1"; exit 4; }
+# echo "Running: $1"
+$1
+

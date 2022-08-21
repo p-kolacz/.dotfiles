@@ -7,8 +7,10 @@ inoremap("kk", "<ESC>")
 inoremap("jk", "<ESC>")
 nnoremap("H", "^")
 nnoremap("L", "$")
-nnoremap("[q", ":cprevious<cr>")
-nnoremap("]q", ":cnext<cr>")
+nnoremap("[q", ":cprevious<cr>", "next quickfix entry")
+nnoremap("]q", ":cnext<cr>", "previous quickfix entry")
+nnoremap("[l", ":lprevious<cr>", "next loclist entry")
+nnoremap("]l", ":lnext<cr>", "previous loclist entry")
 
 nnoremap("<F12>", ":execute 'e' stdpath('config').'/init.lua'<CR>")
 nnoremap("<F11>", ":execute 'e' stdpath('config').'/ftplugin/'.&filetype.'.lua'<cr>")
@@ -19,9 +21,19 @@ nnoremap("<leader>w", ":w<CR>", "")
 ----------------------------------- Code -----------------------------------
 mapgroup("<leader>c", "+Code")
 
+--------------------------------- Command Mode --------------------------------
+cnoremap("<c-a>", "<home>")
+cnoremap("<a-f>", "<s-right>")
+cnoremap("<c-b>", "<left>")
+cnoremap("<a-b>", "<s-left>")
+
 ----------------------------------- Edit -----------------------------------
 mapgroup("<leader>e", "+Edit")
--- nnoremap("x", '"_x')
+
+inoremap("<c-f>", "<right>")
+inoremap("<a-f>", "<s-right>")
+inoremap("<c-b>", "<left>")
+inoremap("<a-b>", "<s-left>")
 
 -- Clipboard
 vnoremap("<C-c>", '"*y :let @+=@*<CR>')
@@ -91,6 +103,17 @@ nnoremap("<leader>sn", ":setlocal complete-=kspell<CR>", 'spell no complete')
 nnoremap("<leader>se", ":setlocal spelllang=en_us<CR>", 'lang en_us')
 nnoremap("<leader>sp", ":setlocal spelllang=pl<CR>", 'lang pl')
 
+------------------------------------- Tags ---------------------------------
+nnoremap("<c-t>", ":tabnew<cr>")
+nnoremap("<c-tab>", ":tabnext<cr>")
+nnoremap("<c-s-tab>", ":tabprevious<cr>")
+nnoremap("<leader>1", "1gt", "tab 1")
+nnoremap("<leader>2", "2gt", "tab 2")
+nnoremap("<leader>3", "3gt", "tab 3")
+nnoremap("<leader>4", "4gt", "tab 4")
+nnoremap("<leader>5", "5gt", "tab 5")
+
+
 ----------------------------------- Tools ----------------------------------
 mapgroup("<leader>t", "+Tools")
 nnoremap("gi", ":OpenImg<CR>", "open image")
@@ -106,6 +129,6 @@ nnoremap("<C-h>", "<C-w>h", "left window")
 nnoremap("<C-j>", "<C-w>j", "bottom window")
 nnoremap("<C-k>", "<C-w>k", "up window")
 nnoremap("<C-l>", "<C-w>l", "right window")
-nnoremap("<a-h>", "<C-w><", "resize window")
-nnoremap("<a-l>", "<C-w>>", "resize window")
+-- nnoremap("<a-h>", "<C-w><", "resize window")
+-- nnoremap("<a-l>", "<C-w>>", "resize window")
 

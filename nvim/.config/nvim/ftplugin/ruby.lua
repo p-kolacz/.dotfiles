@@ -9,4 +9,4 @@ mapgroup("<localleader>R", "+Rails")
 nnoremap_buffer("<localleader>Rs", ":Server<cr>")
 nnoremap_buffer("<localleader>Rc", ":Console<cr>")
 
-
+Help.map(Help.Type.CHEATSHEET, "https://dev.to/ericchapman/my-beloved-ruby-cheat-sheet-208o")

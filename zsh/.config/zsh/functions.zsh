@@ -44,7 +44,7 @@ kk() {
 	# local pid=$(ps -f -u $(whoami) | sed 1d | fzf --no-hscroll | awk '{print $2}')
 	# [[ -n $pid ]] && kill -9 $pid
 	local pid=$(ps --user $(whoami) --format pid,%cpu,comm --sort %cpu --no-headers \
-		| fzf --preview 'ps -p {1} --format uid,pid,stime,tty,time,cmd' --preview-window=top,2 | awk '{print $1}')
+		| fzf --preview 'ps -p {1} --format uid,pid,stime,tty,time,cmd' --preview-window=up,3,wrap | awk '{print $1}')
 	[[ -n $pid ]] && kill -9 $pid
 	# echo $pid
 }

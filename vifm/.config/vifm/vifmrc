@@ -162,7 +162,7 @@ nnoremap \s5 :!sha512sum %c | cut -d' ' -f1 %S<cr>
 
 " Fs
 nnoremap <f2> cW
-nnoremap <f3> :!hexyl %c | $PAGER<cr>
+nnoremap <f3> :!$PAGER %c<cr>
 nnoremap <s-f4> :touch<space>
 nnoremap <f4> :edit<cr>
 nnoremap <f5> :copy &<cr>

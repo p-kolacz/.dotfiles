@@ -62,7 +62,7 @@ package=$(_installed | fzf \
 	--header-lines 3 \
 	--layout=reverse-list \
 	--preview "_info {}" \
-	--preview-window=top,75% \
+	--preview-window=top,70% \
 	--bind "F1:reload(_installed)" \
 	--bind "F2:reload(_installed e)" \
 	--bind "F3:reload(_installed ett)" \

@@ -26,6 +26,10 @@ snippet of "onready var find_node" b
 onready var $1		= find_node("$2")$0
 endsnippet
 
+snippet prop
+var $1:$2 setget 
+endsnippet
+
 snippet sf "static function" b
 static func $0
 endsnippet
@@ -108,5 +112,15 @@ endsnippet
 
 snippet zeropad "pad string with zeros" i
 "%0${1:zeros_num}d"
+endsnippet
+
+snippet rev
+func rev(deg:float) -> float:
+	return deg - floor(deg/360.0)*360.0
+
+endsnippet
+
+snippet waitframe
+yield(get_tree(), "idle_frame")
 endsnippet
 

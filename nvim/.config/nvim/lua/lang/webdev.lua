@@ -11,11 +11,13 @@ vim.cmd("command! -nargs=1 Rsync :!rsync -avz --filter=':- .gitignore' ./ <args>
 local lspconfig = require "lspconfig"
 
 lspconfig.html.setup {
+	cmd = { "vscode-html-languageserver", "--stdio" },
 	capabilities = LSP_CAPABILITIES,
 	on_attach = LSP_ON_ATTACH,
 }
 
 lspconfig.cssls.setup {
+	cmd = { "vscode-css-languageserver", "--stdio" },
 	capabilities = LSP_CAPABILITIES,
 	on_attach = LSP_ON_ATTACH,
 }

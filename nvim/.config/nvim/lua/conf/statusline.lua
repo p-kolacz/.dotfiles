@@ -1,6 +1,6 @@
 Plugin {
 	"https://github.com/nvim-lualine/lualine.nvim",
-	"https://github.com/kdheepak/tabline.nvim",
+	-- "https://github.com/kdheepak/tabline.nvim",
 }
 
 require "lualine".setup {
@@ -8,14 +8,17 @@ require "lualine".setup {
 		theme = "gruvbox",
 		globalstatus = true,
 	},
-}
-
-require "tabline".setup {
-	options = {
-		show_tabs_always = false,
-		show_tabs_only = true,
+	tabline = {
+		lualine_a = {"tabs"},
 	}
 }
+
+-- require "tabline".setup {
+-- 	options = {
+-- 		-- show_tabs_always = false,
+-- 		show_tabs_only = true,
+-- 	}
+-- }
 
 -- set.laststatus = 3
 -- require "lib/statepipe".setup {

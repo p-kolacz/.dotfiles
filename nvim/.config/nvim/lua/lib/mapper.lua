@@ -25,6 +25,7 @@ end
 
 function map(lhs, rhs, desc)              set("",  lhs, rhs, desc, { noremap = false })             end
 function nmap(lhs, rhs, desc)             set("n", lhs, rhs, desc, { noremap = false })             end
+function cnoremap(lhs, rhs, desc)         set("c", lhs, rhs, desc, { noremap = true  })             end
 function inoremap(lhs, rhs, desc)         set("i", lhs, rhs, desc, { noremap = true  })             end
 function inoremap_buffer(lhs, rhs, desc)  set("i", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
 function nnoremap(lhs, rhs, desc)         set("n", lhs, rhs, desc, { noremap = true  })             end

@@ -117,7 +117,8 @@ case "$1" in
 	"w")        set_wallpaper ;;
 	"x")        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
 	"C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
-	"e")        while read file; do $TERMINAL -e sh -c "exiv2 '$file' | $PAGER" & done ;;
+	# "e")        while read file; do $TERMINAL -e sh -c "exiv2 '$file' | $PAGER" & done ;;
+	"e")        while read file; do notify "$(exiv2 "$file" | column -t -s :)";  done ;;
 	"i")        while read file; do notify "$(mediainfo "$file")"; done ;;
 	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
 	"g")        tr '\n' '\0' | xargs -0 gimp & ;;

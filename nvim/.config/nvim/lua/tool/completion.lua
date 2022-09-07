@@ -23,7 +23,7 @@ local fields = {
 
 local visible_buffers = {
 	name = "buffer",
-	keyword_length = 3,
+	keyword_length = 2,
 	get_bufnrs = function()
 		local bufs = {}
 		for _, win in ipairs(vim.api.nvim_list_wins()) do

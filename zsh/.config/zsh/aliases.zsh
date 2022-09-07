@@ -19,6 +19,7 @@ alias nv="nvim"
 alias weather="curl 'wttr.in/?Fqn&lang=pl'"
 alias todo="~/repos/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
 (( $+commands[host] )) || alias host="drill ANY"
+alias webcam="qv4l2"
 
 # Disk utils --------------------------
 alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
@@ -31,17 +32,6 @@ alias edot="cd $DOTFILES && $EDITOR"
 alias evim="edit_in_dir $DOTFILES/nvim/.config/nvim/ init.lua"
 alias ekeys="$EDITOR -O $DOTFILES/sxhkd/.config/sxhkd/sxhkdrc $DOTFILES/bspwm/.config/bspwm/sxhkdrc"
 alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keymap.c"
-
-# Databases ---------------------------
-alias books="edit_in_dir ~/Cloud/Exocortex/Databases/ db/books.rec"
-alias gamez="$HOME/Cloud/Exocortex/Databases/browse gamez"
-alias egamez="edit_in_dir ~/Cloud/Exocortex/Databases/ db/gamez.rec"
-alias ehardware="edit_in_dir ~/Cloud/Exocortex/Databases/ db/hardware.rec"
-alias komix="$HOME/Cloud/Exocortex/Databases/browse komix"
-alias ekomix="edit_in_dir ~/Cloud/Exocortex/Databases/ db/komix.rec"
-alias ludzie="edit_in_dir ~/Cloud/Exocortex/Databases/ db/people.rec"
-alias minifigs="$HOME/Cloud/Exocortex/Databases/browse minifigs"
-alias eminifigs="edit_in_dir ~/Cloud/Exocortex/Databases/ db/minifigs.rec"
 
 # Git ---------------------------------
 alias lg=lazygit

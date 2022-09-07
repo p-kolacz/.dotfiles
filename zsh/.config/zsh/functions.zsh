@@ -62,12 +62,6 @@ notes() {
 	[[ -f $file ]] && $EDITOR "$file"
 }
 
-recode265() {
-	local base=$(basename "$1")
-	base=${base%.*}
-	ffmpeg -i "$1" -c:v libx265 -vtag hvc1 -c:a copy "${base}_x265.mp4"
-}
-
 rss2mp3() {
 	curl $1 | egrep -o "https?://.*mp3" | uniq | xargs -P 10 -I _ curl -OL _
 }

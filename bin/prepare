@@ -93,6 +93,9 @@ hw/printer-dcpt500w() {
 	hw/printer
 	ynstall brother-dcpt500w
 }
+hw/scanner() {
+	install simple-scan sane-airscan
+}
 hw/redox() {
 	install avr-libc avrdude
 }
@@ -160,7 +163,7 @@ startenable() {
 }
 usage() {
 	local funcs
-	funcs=$(declare -F | cut -d" " -f3 | tr "\n" ",")
+	funcs=$(declare -F | cut -d" " -f3 | grep -Ev "install|ynstall|startenable|usage" | column) # | tr "\n" ",")
 	cat << EOF
 $SCRIPT: Install/configure packages
 
@@ -172,7 +175,7 @@ OPTIONS:
 	-h, --help          Display help
 
 TARGETS:
-	$funcs
+$funcs
 
 EOF
 }

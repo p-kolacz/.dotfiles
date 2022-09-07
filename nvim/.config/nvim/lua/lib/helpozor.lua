@@ -24,5 +24,13 @@ function M.edit_ft_notes()
 	vim.cmd(string.format("edit %s/doc/%s.md", vim.fn.stdpath("config"), vim.bo.filetype))
 end
 
+-- function M.search_cword()
+	-- local action = [[:silent execute "!xdg-open https://www.startpage.com/sp/search?query=" . shellescape("<cword>") <cr>]]
+	-- nnoremap_buffer("<localleader>b", ":silent !xdg-open 'https://brickset.com/search?query=<c-r>=expand(\"<cword>\")<cr>&scope=All'<cr>", "brickset")
+
+
+
+-- end
+
 return M
 

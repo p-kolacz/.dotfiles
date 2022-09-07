@@ -74,6 +74,8 @@ nnoremap("<leader>gpp", ':!git push<cr>', "push")
 nnoremap("<leader>gpd", ':!git add . && git commit -m "$(date +\\%F)" && git push<cr>', "with current date")
 
 ----------------------------------- Help -----------------------------------
+nnoremap("gy", [[:silent execute "!xdg-open 'https://www.startpage.com/sp/search?query=" . expand("<cword>") . "'"<cr>]], "online search cword")
+vnoremap("gy", [[y:silent execute "!xdg-open 'https://www.startpage.com/sp/search?query=" . expand("<C-r>0") . "'"<cr>]], "online search selection")
 mapgroup("<leader>h", "+Help")
 nnoremap("<leader>hn", Help.edit_ft_notes, 'filetype notes')
 
@@ -116,7 +118,7 @@ nnoremap("<leader>5", "5gt", "tab 5")
 
 ----------------------------------- Tools ----------------------------------
 mapgroup("<leader>t", "+Tools")
-nnoremap("gi", ":OpenImg<CR>", "open image")
+-- nnoremap("gi", ":OpenImg<CR>", "open image")
 -- https://vi.stackexchange.com/questions/2299/how-to-translate-unicode-escape-sequences-to-the-unicode-character
 nnoremap("<leader>tu", [[:%s/\\u\(\x\{4\}\)/\=nr2char('0x'.submatch(1),1)/g<cr>]], 'unicode chars from \\uXXXX')
 

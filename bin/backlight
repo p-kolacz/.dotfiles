@@ -5,11 +5,11 @@ brightness=$(cat $dir/brightness)
 max_brightness=$(cat $dir/max_brightness)
 
 raw2pcent() {
-	echo $((100*$1/$max_brightness))
+	echo $((100*$1/max_brightness))
 }
 
 pcent2raw() {
-	echo $(($1*$max_brightness/100))
+	echo $(($1*max_brightness/100))
 }
 
 add_pcent() {

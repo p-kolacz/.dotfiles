@@ -1,8 +1,9 @@
 -- PHPActor
-require"lspconfig".phpactor.setup {
-	capabilities = LSP_CAPABILITIES,
-	on_attach = LSP_ON_ATTACH,
-}
+
+-- require"lspconfig".phpactor.setup {
+-- 	capabilities = LSP_CAPABILITIES,
+-- 	on_attach = LSP_ON_ATTACH,
+-- }
 
 --[[
 -- Intelephense

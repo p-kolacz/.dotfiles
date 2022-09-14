@@ -48,7 +48,7 @@ let.oceanic_next_terminal_bold = 1
 let.oceanic_next_terminal_italic = 1
 
 ---------------------------------- Cosmic Latte -------------------------------
-Plugin "haystackandroid/cosmic_latte"
+-- Plugin "haystackandroid/cosmic_latte"
 
 ----------------------------------- One Dark ----------------------------------
 Plugin "https://github.com/joshdick/onedark.vim"

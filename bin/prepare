@@ -53,7 +53,7 @@ dev/php() {
 	install php phpactor
 }
 dev/python() {
-	install python-pip pyright
+	install pyright
 }
 dev/ruby() {
 	install ruby yaml-language-server
@@ -113,8 +113,9 @@ music() {
 }
 
 nvim() {
-	install neovim lua-language-server
+	install neovim python python-pip lua-language-server
 	ynstall figlet-fonts 
+	python -m pip install --user --upgrade pynvim
 }
 
 pipewire() {

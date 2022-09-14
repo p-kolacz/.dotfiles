@@ -53,7 +53,7 @@ dev/php() {
 	install php phpactor
 }
 dev/python() {
-	install pyright
+	install python python-pip pyright
 }
 dev/ruby() {
 	install ruby yaml-language-server
@@ -127,7 +127,7 @@ photo() {
 }
 
 terminal() {
-	install git lsof man-db man-pages htop ripgrep p7zip
+	install git lsof man-db man-pages htop polkit ripgrep p7zip
 	install catdoc hexyl highlight mediainfo odt2txt
 	install fzf lazygit smartmontools trash-cli
 	install bash-language-server shellcheck

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 FILE="$HOME/.cache/wallpaper"
 # WALLSET="feh --no-fehbg --bg-fill"
@@ -16,6 +16,7 @@ setwp() {
 }
 
 restorewp() {
+	[[ -f "$FILE" ]] || setwp "$HOME/.dotfiles/share/wallpapers/arch_layers.png"
 	$WALLSET "$FILE"
 }
 

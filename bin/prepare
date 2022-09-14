@@ -103,8 +103,8 @@ hw/wacom() {
 	install xf86-input-wacom
 }
 hw/wifi() {
-	install networkmanager wireless-regdb
-	startenable NetworkManager.service
+	install wireless-regdb
+	# startenable NetworkManager.service
 }
 
 music() {

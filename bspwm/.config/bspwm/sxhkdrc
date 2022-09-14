@@ -125,3 +125,4 @@ super + {Left,Down,Up,Right}
 
 super + button2
 	bspc node -t \~floating
+

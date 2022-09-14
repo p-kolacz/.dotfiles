@@ -61,7 +61,7 @@ dev/ruby() {
 }
 
 dotfiles() {
-	mkdir -p "$HOME/.config/" "$HOME/.local/share/" "$HOME/.local/state/"
+	mkdir -p "$HOME"/.config "$HOME"/.local/{share,state}
 	install stow
 	cd "$HOME/.dotfiles/" || { echo "$HOME/.dotfiles/ not found"; exit 1; }
 	if [[ $DRYRUN ]]; then

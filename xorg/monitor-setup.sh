@@ -21,6 +21,6 @@ echo $gpu
 if echo $xrandr_output | grep -q "$central disconnected"; then    # mobile mode
 	$DOTFILES/share/screenlayout/$gpu-Internal-Only.sh
 else    # docked mode
-	$DOTFILES/share/screenlayout/$gpu-K25-Desktop.sh
+	$DOTFILES/share/screenlayout/$gpu-K25-Desktop-Full.sh
 fi
 

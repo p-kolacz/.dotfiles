@@ -61,9 +61,10 @@ dev/ruby() {
 }
 
 dotfiles() {
-	mkdir -p "$HOME"/.config "$HOME"/.local/{share,state}
+	mkdir -p "$HOME"/.config "$HOME"/.local/{bin,share,state}
 	install stow
 	cd "$HOME/.dotfiles/" || { echo "$HOME/.dotfiles/ not found"; exit 1; }
+	# shellcheck disable=SC2035
 	if [[ $DRYRUN ]]; then
 		stow -vn */
 		echo "DRYRUN: installing yay"
@@ -129,6 +130,7 @@ terminal() {
 	install catdoc hexyl highlight mediainfo odt2txt
 	install fzf lazygit smartmontools trash-cli
 	install bash-language-server shellcheck
+	# TODO: remove simple-mtpfs?
 	ynstall gotop nerdfetch recutils simple-mtpfs spaceship-prompt wordnet-cli
 	nvim
 	vifm

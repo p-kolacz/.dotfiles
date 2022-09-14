@@ -16,3 +16,5 @@ export THEME_BLUE2=#82aaff
 export THEME_MAGENTA2=#ae81ff
 export THEME_CYAN2=#7fdbca
 export THEME_WHITE2=#d6deeb
+
+export THEME_ACCENT="$THEME_BLUE"

@@ -61,7 +61,7 @@ dev/ruby() {
 }
 
 dotfiles() {
-	mkdir -p "$HOME"/.config "$HOME"/.local/{bin,share,state}
+	mkdir -p "$HOME"/.config "$HOME"/.local/{bin,share,state} "$HOME"/.local/share/fonts
 	install stow
 	cd "$HOME/.dotfiles/" || { echo "$HOME/.dotfiles/ not found"; exit 1; }
 	# shellcheck disable=SC2035

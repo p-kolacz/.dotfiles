@@ -75,7 +75,7 @@ dotfiles() {
 }
 
 fonts() {
-	install noto-fonts-emoji otf-hermit ttf-ubuntu-font-family
+	install noto-fonts-emoji otf-hermit ttf-roboto ttf-ubuntu-font-family
 	ynstall nerd-fonts-victor-mono 
 }
 

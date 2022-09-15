@@ -32,6 +32,6 @@ setopt autocd
 nerdfetch
 # neofetch
 
-autoload -U promptinit; promptinit
-prompt spaceship
-
+# autoload -U promptinit; promptinit
+# prompt spaceship
+eval "$(starship init zsh)"

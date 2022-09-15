@@ -21,7 +21,7 @@ desktop() {
 
 bspwm() {
 	xorg
-	install bspwm sxhkd picom dunst rofi rofi-calc
+	install bspwm sxhkd picom libnotify dunst rofi rofi-calc
 	ynstall polybar
 }
 
@@ -127,12 +127,12 @@ photo() {
 }
 
 terminal() {
-	install git lsof man-db man-pages htop polkit ripgrep p7zip
+	install git lsof man-db man-pages htop p7zip polkit ripgrep starship
 	install catdoc hexyl highlight mediainfo odt2txt
 	install fzf lazygit smartmontools trash-cli
 	install bash-language-server shellcheck
 	# TODO: remove simple-mtpfs?
-	ynstall gotop nerdfetch recutils simple-mtpfs spaceship-prompt wordnet-cli
+	ynstall gotop nerdfetch recutils simple-mtpfs wordnet-cli
 	nvim
 	vifm
 }

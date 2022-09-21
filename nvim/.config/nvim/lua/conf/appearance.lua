@@ -23,5 +23,5 @@ Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()
 require "lib/iconz"
 require "conf/themes"
-colorscheme "gruvbox-baby"
+colorscheme "rose-pine"
 

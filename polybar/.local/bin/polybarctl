@@ -2,8 +2,8 @@
 
 restart() {
 	stop
-	for m in $(monitor list); do
-		export MONITOR=$m
+	for m in $(monitors list); do
+		export MONITOR="$m"
 		polybar --reload --log=warning main &
 	done
 }

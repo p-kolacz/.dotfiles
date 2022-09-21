@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 WM=bspwm
 
@@ -17,11 +17,11 @@ fi
 
 # [ -n $THEME ] && xrdb -merge $HOME/.dotfiles/themes/$THEME.xresources
 
-source $DOTFILES/xorg/autostart.sh
+source "$DOTFILES/xorg/autostart.sh"
 
 { [ $WM == bspwm ] && 
 	sxhkd -c ~/.config/sxhkd/sxhkdrc ~/.config/bspwm/sxhkdrc ||
 	sxhkd; } &
 
-exec $WM > $XDG_STATE_HOME/$WM.log 2>&1
+exec $WM > "$XDG_STATE_HOME/$WM.log" 2>&1
 

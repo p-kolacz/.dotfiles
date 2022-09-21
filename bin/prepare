@@ -1,4 +1,5 @@
 #!/bin/bash
+DOTFILES="$HOME/.dotfiles"
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║                                 Groups                                   ║
@@ -9,6 +10,8 @@ laptop() {
 	hw/bluetooth
 	hw/wifi
 	install xorg-xinput tlp # xinput 4 touchpad
+	copy "$DOTFILES/share/etc/udev/rules.d/backlight.rules" /etc/udev/rules.d/
+	copy "$DOTFILES/share/etc/X11/xorg.conf.d/40-touchpad.conf" /etc/X11/xorg.conf.d/
 }
 
 desktop() {
@@ -37,10 +40,11 @@ bspwm() {
 
 apps() {
 	install kitty syncthing
-	install gimp gnome-font-viewer qalculate-gtk gnumeric thunderbird # GTK apps
+	install arc-gtk-theme
+	install gimp gnome-font-viewer qalculate-gtk gnumeric # GTK apps
 	install flameshot keepassxc # Ot Apps
-	install mpv zathura-pdf-poppler
-	ynstall brave-bin
+	install imagemagick mpv zathura-pdf-poppler
+	ynstall brave-bin haiku-icon-theme
 }
 
 dev/go() {
@@ -61,22 +65,24 @@ dev/ruby() {
 }
 
 dotfiles() {
-	mkdir -p "$HOME"/.config "$HOME"/.local/{bin,share,state} "$HOME"/.local/share/fonts
+	mkdir -p "$HOME"/.config/git "$HOME"/.local/{bin,share,state} "$HOME"/.local/share/fonts
 	install stow
-	cd "$HOME/.dotfiles/" || { echo "$HOME/.dotfiles/ not found"; exit 1; }
+	cd "$DOTFILES" || { echo "$DOTFILES"; exit 1; }
 	# shellcheck disable=SC2035
 	if [[ $DRYRUN ]]; then
 		stow -vn */
 		echo "DRYRUN: installing yay"
+		echo "copy $DOTFILES/share/git/config $HOME/.config/git"
 	else
 		stow -v */
 		pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
+		copy "$DOTFILES/share/git/config" "$HOME/.config/git"
 	fi
 }
 
 fonts() {
-	install noto-fonts-emoji otf-hermit ttf-roboto ttf-ubuntu-font-family
-	ynstall nerd-fonts-victor-mono 
+	install noto-fonts-emoji ttf-roboto ttf-ubuntu-font-family ttf-nerd-fonts-symbols-2048-em
+	# ynstall nerd-fonts-victor-mono 
 }
 
 hw/bluetooth() {
@@ -92,6 +98,7 @@ hw/printer() {
 }
 hw/printer-dcpt500w() {
 	hw/printer
+	install lib32-glibc		# this is needed for drivers to work, see https://aur.archlinux.org/packages/brother-dcpt500w
 	ynstall brother-dcpt500w
 }
 hw/scanner() {
@@ -139,11 +146,15 @@ terminal() {
 
 vifm() {
 	install vifm fuse-zip curlftpfs sshfs meld
-	ynstall archivemount dragon-drop fuse3-p7zip
+	ynstall archivemount dragon-drop fuse3-p7zip-git
 }
 
 xorg() {
-	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr
+	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr slock
+	sudo ln -s "$DOTFILES/share/etc/systemd/system/sleep@.service" /etc/systemd/system/
+	copy "$DOTFILES/share/etc/X11/xorg.conf.d/00-keyboard.conf" /etc/X11/xorg.conf.d/
+	copy "$DOTFILES/share/etc/X11/xorg.conf.d/10-monitor.conf" /etc/X11/xorg.conf.d/
+	copy "$DOTFILES/share/etc/X11/xorg.conf.d/50-pointer-accel.conf" /etc/X11/xorg.conf.d/
 }
 
 
@@ -158,6 +169,9 @@ install() {
 ynstall() {
 	[[ $DRYRUN ]] && { echo "DRYRUN installing from AUR:" "$@"; return; }
 	yay -S --needed "$@" 
+}
+copy() {
+	sudo cp -v --no-clobber "$1" "$2"
 }
 startenable() {
 	[[ $DRYRUN ]] && { echo "DRYRUN start & enable: $1"; return; }
@@ -219,6 +233,5 @@ case $# in
 esac
 
 [[ ! $(typeset -f "$1") ]] && { echo "Invalid target: $1"; exit 4; }
-# echo "Running: $1"
 $1
 

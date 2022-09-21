@@ -1,8 +1,12 @@
 #!/bin/bash
 
+# TODO: change hardcoding
+$DOTFILES/share/screenlayout/Workbook-Desktop.sh
+exit 0
+
 xrandr_output=$(xrandr)
 
-if echo $xrandr_output | grep -q "eDP-1 connected"; then   # Intel GPU
+if echo "$xrandr_output" | grep -q "eDP-1 connected"; then   # Intel GPU
 	# internal=eDP-1
 	central=DP-3
 	# right=HDMI-2

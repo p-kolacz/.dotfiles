@@ -21,6 +21,7 @@ limit_a() {
 }
 
 syn_highlight_a() {
+	# bat --style=plain  --color=always "$1"
 	case $THEME in
 		grubox-dark)
 			hl_theme=base16/gruvbox-dark-medium ;;
@@ -116,8 +117,8 @@ case "$FILE_EXTENSION" in
 		## Avoid password prompt by providing empty password
 		# 7z l -p -- "${FILE_PATH}" | limit && exit 0;;
 		7z l -p -- "${FILE_PATH}" && exit 0;;
-	torrent)
-		dumptorrent -v %c && exit 0 ;;
+	# torrent)
+		# dumptorrent -v %c && exit 0 ;;
 esac
 
 file --dereference --mime-encoding "$FILE_PATH" | grep -q binary \

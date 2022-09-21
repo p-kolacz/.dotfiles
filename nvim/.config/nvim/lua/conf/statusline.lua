@@ -1,11 +1,10 @@
 Plugin {
 	"https://github.com/nvim-lualine/lualine.nvim",
-	-- "https://github.com/kdheepak/tabline.nvim",
 }
 
 require "lualine".setup {
 	options = {
-		theme = "gruvbox",
+		theme = "auto",
 		globalstatus = true,
 	},
 	tabline = {

@@ -20,6 +20,7 @@ nnoremap("<leader>w", ":w<CR>", "")
 
 ----------------------------------- Code -----------------------------------
 mapgroup("<leader>c", "+Code")
+nnoremap("<tab>", "za")
 
 --------------------------------- Command Mode --------------------------------
 cnoremap("<c-a>", "<home>")
@@ -105,7 +106,7 @@ nnoremap("<leader>sn", ":setlocal complete-=kspell<CR>", 'spell no complete')
 nnoremap("<leader>se", ":setlocal spelllang=en_us<CR>", 'lang en_us')
 nnoremap("<leader>sp", ":setlocal spelllang=pl<CR>", 'lang pl')
 
-------------------------------------- Tags ---------------------------------
+------------------------------------- Tabs ---------------------------------
 nnoremap("<c-t>", ":tabnew<cr>")
 nnoremap("<c-tab>", ":tabnext<cr>")
 nnoremap("<c-s-tab>", ":tabprevious<cr>")

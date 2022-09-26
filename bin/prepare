@@ -47,6 +47,13 @@ apps() {
 	ynstall brave-bin haiku-icon-theme
 }
 
+dev/docker() {
+	install docker docker-compose
+	startenable docker.service
+	sudo groupadd docker
+	sudo usermod --append --groups docker "$USER"
+	echo "Relogin for adding to gorup to take effect" 
+}
 dev/go() {
 	install go gopls
 }

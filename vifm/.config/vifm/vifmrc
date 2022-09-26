@@ -115,6 +115,7 @@ nnoremap t :select<cr>j
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap * ggvG<cr>gg
+nnoremap <c-f> :FZFfind<cr>
 
 " Mappings for faster renaming
 nnoremap a cW
@@ -250,6 +251,17 @@ command! cmp : if expand('%%c') == expand('%%f')
 	\ |     echo expand('Comparing files: %%"f ...')
 	\ |     cmpinternal %f
 	\ | endif
+
+command! FZFfindDir : set noquickview
+ 	\| let $FZF_PICK = term('find $HOME -type d | fzf --height 10 2>/dev/tty')
+	\| if $FZF_PICK != ''
+	\|     execute 'cd' fnameescape($FZF_PICK)
+	\| endif
+command! FZFfindFile : set noquickview
+ 	\| let $FZF_PICK = term('find $HOME | fzf --height 10 2>/dev/tty')
+	\| if $FZF_PICK != ''
+	\|     execute 'goto' fnameescape($FZF_PICK)
+	\| endif
 
 " ------------------------------------------------------------------------------
 "							   File run & preview

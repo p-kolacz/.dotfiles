@@ -56,7 +56,7 @@ super + Print
 	flameshot gui
 
 super + equal
-	rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip -selection clipboard"
+	rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '\{result\}' | xclip -selection clipboard" -theme-str 'window \{width:50%;height:20%;\}' -location 6
 
 super + parenleft
 	networkmanager_dmenu

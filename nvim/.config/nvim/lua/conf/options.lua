@@ -40,10 +40,8 @@ set.foldtext       = "v:lua.Foldtext()"
 -- https://vi.stackexchange.com/questions/25820/maintain-alignment-of-text-after-folding
 function Foldtext()
 	local fs = vim.api.nvim_get_vvar("foldstart")
-	-- local lvl = vim.api.nvim_get_vvar("foldlevel")
 	local line = vim.fn.trim(vim.fn.getline(fs))
 	local indent = vim.fn.indent(fs)
-	-- return string.rep(" ", indent-lvl) .. line .. "..."
 	return string.rep(" ", indent) .. line .. "..."
 end
 

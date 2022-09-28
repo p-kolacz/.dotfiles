@@ -41,7 +41,7 @@ bspwm() {
 apps() {
 	install kitty syncthing
 	install arc-gtk-theme
-	install gimp gnome-font-viewer qalculate-gtk gnumeric # GTK apps
+	install gimp gnome-font-viewer qalculate-gtk gnumeric pcmanfm	# GTK apps
 	install flameshot keepassxc # Ot Apps
 	install imagemagick mpv zathura-pdf-poppler
 	ynstall brave-bin haiku-icon-theme
@@ -157,7 +157,7 @@ vifm() {
 }
 
 xorg() {
-	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr slock
+	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr numlockx slock
 	sudo ln -s "$DOTFILES/share/etc/systemd/system/sleep@.service" /etc/systemd/system/
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/00-keyboard.conf" /etc/X11/xorg.conf.d/
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/10-monitor.conf" /etc/X11/xorg.conf.d/

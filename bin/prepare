@@ -41,12 +41,19 @@ bspwm() {
 apps() {
 	install kitty syncthing
 	install arc-gtk-theme
-	install gimp gnome-font-viewer qalculate-gtk gnumeric # GTK apps
+	install gimp gnome-font-viewer qalculate-gtk gnumeric pcmanfm	# GTK apps
 	install flameshot keepassxc # Ot Apps
 	install imagemagick mpv zathura-pdf-poppler
 	ynstall brave-bin haiku-icon-theme
 }
 
+dev/docker() {
+	install docker docker-compose
+	startenable docker.service
+	sudo groupadd docker
+	sudo usermod --append --groups docker "$USER"
+	echo "Relogin for adding to gorup to take effect" 
+}
 dev/go() {
 	install go gopls
 }
@@ -120,7 +127,7 @@ music() {
 }
 
 nvim() {
-	install neovim python python-pip lua-language-server
+	install neovim python python-pip lua-language-server ctags
 	ynstall figlet-fonts 
 	python -m pip install --user --upgrade pynvim
 }
@@ -150,7 +157,7 @@ vifm() {
 }
 
 xorg() {
-	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr slock
+	install xorg-server xorg-xinit xorg-xev xdotool xclip xcolor xwallpaper arandr numlockx slock
 	sudo ln -s "$DOTFILES/share/etc/systemd/system/sleep@.service" /etc/systemd/system/
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/00-keyboard.conf" /etc/X11/xorg.conf.d/
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/10-monitor.conf" /etc/X11/xorg.conf.d/
@@ -164,11 +171,11 @@ xorg() {
 
 install() {
 	[[ $DRYRUN ]] && { echo "DRYRUN installing:" "$@"; return; }
-	sudo pacman -S --needed "$@" 
+	sudo pacman -S --needed --noconfirm "$@" 
 }
 ynstall() {
 	[[ $DRYRUN ]] && { echo "DRYRUN installing from AUR:" "$@"; return; }
-	yay -S --needed "$@" 
+	yay -S --needed --nodiffmenu --nocleanmenu "$@" 
 }
 copy() {
 	sudo cp -v --no-clobber "$1" "$2"

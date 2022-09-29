@@ -1,5 +1,5 @@
 set.listchars      = "space:•,tab:├─>,eol:↲,nbsp:+,trail:•,extends:⟩,precedes:⟨"
-set.fillchars      = "horiz:═,vert:║"
+set.fillchars      = "horiz:═,vert:║,fold: ,foldopen:,foldclose:"
 set.cursorline     = true
 set.wrap           = false
 set.number         = true
@@ -9,6 +9,7 @@ set.signcolumn     = "yes"
 set.splitbelow     = true
 set.splitright     = true
 set.termguicolors  = true
+set.foldcolumn     = "auto"
 -- set.shortmess:remove("F")
 
 -- Highlight yank
@@ -25,3 +26,6 @@ require "lib/iconz"
 require "conf/themes"
 colorscheme "rose-pine"
 
+-- Highlights must be after colorscheme
+vim.cmd("highlight Folded gui='italic'")
+-- vim.cmd("highlight CursorLineFold gui='italic'")

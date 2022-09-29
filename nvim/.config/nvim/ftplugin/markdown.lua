@@ -1,6 +1,5 @@
 set.isfname:append("32")
--- set.foldmethod = "indent"
-set.foldexpr = "nvim_treesitter#foldexpr()"
+setlocal.conceallevel=2
 
 nnoremap_buffer("gf", ":e <cfile>.md<cr>")
 

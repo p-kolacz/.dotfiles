@@ -63,25 +63,20 @@ bspc config pointer_follows_monitor true
 								   # Rules #
 #------------------------------------------------------------------------------#
 
+set_rule() {
+	state=$1 && shift
+	for class in "$@"; do
+		bspc rule -a "$class" state="$state"
+	done
+}
+
 bspc rule -r "*"
-bspc rule -a Meld state=fullscreen
-bspc rule -a mpv state=floating
 bspc rule -a Screenkey manage=off
-bspc rule -a frontal state=floating rectangle=1200x800+260+220
 bspc rule -a scratchpad state=floating sticky=on rectangle=1200x800+220+260
-bspc rule -a Zathura state=tiled
-bspc rule -a Qalculate-gtk state=floating
-bspc rule -a scummvm state=floating
-bspc rule -a Pavucontrol state=floating
-bspc rule -a Hdajackretask state=floating
-bspc rule -a Emacs state=tiled
-bspc rule -a Arandr state=floating
-bspc rule -a "Seafile Client" state=floating
-
-# bspc rule -a Gimp desktop='^8' state=floating follow=on
-# bspc rule -a Kupfer.py focus=on
-# bspc rule -a Chromium desktop='^2'
-
+bspc rule -a Gimp desktop=G follow=on
+set_rule floating mpv Qalculate-gtk scummvm Pavucontrol Hdajackretask Arandr "Seafile Client"
+# set_rule tiled Zathura Emacs
+# set_rule fullscreen Meld
 
 #------------------------------------------------------------------------------#
 								   # Panel #

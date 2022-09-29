@@ -58,7 +58,7 @@ cmp.setup {
     sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'ultisnips' },
-	}, {
+	-- }, {
 		visible_buffers,
 		{ name = 'path' },
 		{ name = 'emoji' },

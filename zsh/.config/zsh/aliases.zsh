@@ -17,7 +17,7 @@ alias batman="nmcli device wifi connect 'Batman'"
 alias myip="curl ipinfo.io/ip"
 alias nv="nvim"
 alias weather="curl 'wttr.in/?Fqn&lang=pl'"
-alias todo="~/repos/todofzf/todofzf ~/Cloud/Exocortex/TODO/todo.txt"
+alias todo="~/repos/todofzf/todofzf ~/Exocortex/TODO/todo.txt"
 (( $+commands[host] )) || alias host="drill ANY"
 alias webcam="qv4l2"
 

@@ -1,5 +1,9 @@
 # Runs when starting interactive shell as third config file
 
+# combine emacs & vim modes, must be before other bindkey calls
+bindkey -e
+bindkey '\e' vi-cmd-mode
+
 source $ZDOTDIR/plugins/abbr.zsh
 source $ZDOTDIR/plugins/less.zsh
 source $ZDOTDIR/plugins/tldr.zsh
@@ -10,10 +14,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 [[ -f $HOME/.local/config/zsh/custom.zshrc ]] && source $HOME/.local/config/zsh/custom.zshrc
-
-# combine emacs & vim modes
-bindkey -e
-bindkey '\e' vi-cmd-mode
 
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME/zcompdump"

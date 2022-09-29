@@ -127,7 +127,7 @@ music() {
 }
 
 nvim() {
-	install neovim python python-pip lua-language-server
+	install neovim python python-pip lua-language-server ctags
 	ynstall figlet-fonts 
 	python -m pip install --user --upgrade pynvim
 }
@@ -171,11 +171,11 @@ xorg() {
 
 install() {
 	[[ $DRYRUN ]] && { echo "DRYRUN installing:" "$@"; return; }
-	sudo pacman -S --needed "$@" 
+	sudo pacman -S --needed --noconfirm "$@" 
 }
 ynstall() {
 	[[ $DRYRUN ]] && { echo "DRYRUN installing from AUR:" "$@"; return; }
-	yay -S --needed "$@" 
+	yay -S --needed --nodiffmenu --nocleanmenu "$@" 
 }
 copy() {
 	sudo cp -v --no-clobber "$1" "$2"

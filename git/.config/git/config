@@ -7,6 +7,6 @@
 [mergetool "nvim"]
 	cmd = nvim -d "$LOCAL" "$MERGED" "$REMOTE"
 [mergetool "meld"]
-    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [include]
-	path = ~/.local/config/git/config
+	path = ~/.local/config/gitconfig

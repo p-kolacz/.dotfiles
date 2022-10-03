@@ -1,5 +1,9 @@
 set.listchars      = "space:•,tab:├─>,eol:↲,nbsp:+,trail:•,extends:⟩,precedes:⟨"
-set.fillchars      = "horiz:═,vert:║,fold: ,foldopen:,foldclose:"
+vim.opt.fillchars      = {
+	fold = " ", foldopen = "", foldclose = "",
+	horiz = "═", horizdown = "╦", horizup = "╩",
+	vert = "║", vertright = "╠", verthoriz = "╬", vertleft = "╣",
+}
 set.cursorline     = true
 set.wrap           = false
 set.number         = true

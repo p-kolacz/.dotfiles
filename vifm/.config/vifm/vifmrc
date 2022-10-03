@@ -115,7 +115,7 @@ nnoremap t :select<cr>j
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap * ggvG<cr>gg
-nnoremap <c-f> :FZFfind<cr>
+nnoremap <c-f> :FZFfindFile<cr>
 
 " Mappings for faster renaming
 nnoremap a cW

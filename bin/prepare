@@ -40,6 +40,7 @@ bspwm() {
 
 apps() {
 	install kitty syncthing
+	startenableuser syncthing.service
 	install arc-gtk-theme
 	install gimp gnome-font-viewer qalculate-gtk gnumeric pcmanfm	# GTK apps
 	install flameshot keepassxc # Ot Apps
@@ -184,6 +185,11 @@ startenable() {
 	[[ $DRYRUN ]] && { echo "DRYRUN start & enable: $1"; return; }
 	sudo systemctl enable "$1"
 	sudo systemctl start "$1"
+}
+startenableuser() {
+	[[ $DRYRUN ]] && { echo "DRYRUN start & enable --user: $1"; return; }
+	systemctl --user enable "$1"
+	systemctl --user start "$1"
 }
 usage() {
 	local funcs

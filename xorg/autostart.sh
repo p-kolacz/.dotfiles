@@ -6,7 +6,7 @@ picom -b
 setxkbmap -option caps:escape
 kbrate.sh
 # seafile-applet &
-syncthing -no-restart -logfile="$XDG_STATE_HOME/syncthing.log" > $XDG_STATE_HOME/syncthing_.log &
+# syncthing -no-restart -logfile="$XDG_STATE_HOME/syncthing.log" > $XDG_STATE_HOME/syncthing_.log &
 bluetoothctl power on &
 numlockx &
 

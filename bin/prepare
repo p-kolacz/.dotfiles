@@ -48,6 +48,16 @@ apps() {
 	ynstall brave-bin haiku-icon-theme
 }
 
+cron() {
+	install cronie
+	startenable cronie.service
+}
+
+core/yay() {
+	pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
+	yay --nodiffmenu --nocleanmenu --save
+}
+
 dev/docker() {
 	install docker docker-compose
 	startenable docker.service
@@ -73,17 +83,17 @@ dev/ruby() {
 }
 
 dotfiles() {
+	cd "$DOTFILES" || { echo "$DOTFILES"; exit 1; }
 	mkdir -p "$HOME"/.config/git "$HOME"/.local/{bin,share,state} "$HOME"/.local/share/fonts
 	install stow
-	cd "$DOTFILES" || { echo "$DOTFILES"; exit 1; }
 	# shellcheck disable=SC2035
 	if [[ $DRYRUN ]]; then
 		stow -vn */
 		echo "DRYRUN: installing yay"
 		echo "copy $DOTFILES/share/git/config $HOME/.config/git"
 	else
+		core/yay
 		stow -v */
-		pacman -Qs yay > /dev/null || (git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si)
 		copy "$DOTFILES/share/git/config" "$HOME/.config/git"
 	fi
 }
@@ -164,7 +174,6 @@ xorg() {
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/10-monitor.conf" /etc/X11/xorg.conf.d/
 	copy "$DOTFILES/share/etc/X11/xorg.conf.d/50-pointer-accel.conf" /etc/X11/xorg.conf.d/
 }
-
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║                                  Utilz                                   ║

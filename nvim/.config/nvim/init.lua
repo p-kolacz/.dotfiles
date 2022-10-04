@@ -13,6 +13,7 @@ Require {
 	"conf/statusline",
 
 -- Tools -------------------------------
+	"tool/neovide",
 	"tool/tpope",
 	"tool/lsp",
 	"tool/completion",

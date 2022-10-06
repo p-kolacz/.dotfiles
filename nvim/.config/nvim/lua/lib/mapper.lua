@@ -17,21 +17,21 @@ local function set(mode, lhs, rhs, desc, opts)
 	end
 end
 
-function mapgroup(key, desc)
+function _G.mapgroup(key, desc)
 	if WK then
 		WK.register({ [key] = { name = desc }})
 	end
 end
 
-function map(lhs, rhs, desc)              set("",  lhs, rhs, desc, { noremap = false })             end
-function nmap(lhs, rhs, desc)             set("n", lhs, rhs, desc, { noremap = false })             end
-function cnoremap(lhs, rhs, desc)         set("c", lhs, rhs, desc, { noremap = true  })             end
-function inoremap(lhs, rhs, desc)         set("i", lhs, rhs, desc, { noremap = true  })             end
-function inoremap_buffer(lhs, rhs, desc)  set("i", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
-function nnoremap(lhs, rhs, desc)         set("n", lhs, rhs, desc, { noremap = true  })             end
-function nnoremap_buffer(lhs, rhs, desc)  set("n", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
-function vnoremap(lhs, rhs, desc)         set("v", lhs, rhs, desc, { noremap = true  })             end
-function vnoremap_buffer(lhs, rhs, desc)  set("v", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
-function xnoremap(lhs, rhs, desc)         set("x", lhs, rhs, desc, { noremap = true  })             end
-function xnoremap_buffer(lhs, rhs, desc)  set("x", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
+function _G.map(lhs, rhs, desc)              set("",  lhs, rhs, desc, { noremap = false })             end
+function _G.nmap(lhs, rhs, desc)             set("n", lhs, rhs, desc, { noremap = false })             end
+function _G.cnoremap(lhs, rhs, desc)         set("c", lhs, rhs, desc, { noremap = true  })             end
+function _G.inoremap(lhs, rhs, desc)         set("i", lhs, rhs, desc, { noremap = true  })             end
+function _G.inoremap_buffer(lhs, rhs, desc)  set("i", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
+function _G.nnoremap(lhs, rhs, desc)         set("n", lhs, rhs, desc, { noremap = true  })             end
+function _G.nnoremap_buffer(lhs, rhs, desc)  set("n", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
+function _G.vnoremap(lhs, rhs, desc)         set("v", lhs, rhs, desc, { noremap = true  })             end
+function _G.vnoremap_buffer(lhs, rhs, desc)  set("v", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
+function _G.xnoremap(lhs, rhs, desc)         set("x", lhs, rhs, desc, { noremap = true  })             end
+function _G.xnoremap_buffer(lhs, rhs, desc)  set("x", lhs, rhs, desc, { noremap = true, buffer = 0  }) end
 

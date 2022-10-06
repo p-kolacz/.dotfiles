@@ -1,10 +1,10 @@
-let = vim.g
-set = vim.opt
-setlocal = vim.opt_local
-augroup = vim.api.nvim_create_augroup
-autocmd = vim.api.nvim_create_autocmd
+_G.let = vim.g
+_G.set = vim.opt
+_G.setlocal = vim.opt_local
+_G.augroup = vim.api.nvim_create_augroup
+_G.autocmd = vim.api.nvim_create_autocmd
 
-function colorscheme(name)
+function _G.colorscheme(name)
 	vim.cmd("colorscheme "..name)
 end
 
@@ -12,7 +12,7 @@ end
 -- 	vim.cmd("highlight "..values)
 -- end
 
-function v(x)
+function _G.v(x)
 	print(vim.inspect(x))
 end
 

@@ -9,6 +9,8 @@ LSP_NODE_BIN = LSP_DATA_HOME .. 'node_modules/.bin/'
 mapgroup("<leader>d", "+Diagnostics")
 nnoremap('<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', "open float")
 nnoremap('<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', "set loclist")
+nnoremap('<leader>dh', '<cmd>lua vim.diagnostic.hide()<CR>', "hide")
+nnoremap('<leader>ds', '<cmd>lua vim.diagnostic.show()<CR>', "show")
 nnoremap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 nnoremap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 

@@ -1,13 +1,14 @@
 Plugin "https://github.com/kyazdani42/nvim-tree.lua"
 
-local icons = { unpack(Icons.diagnostics) }
-icons.warning = icons.warn
-icons.warn = nil
-
 require'nvim-tree'.setup {
 	diagnostics = {
 		enable = true,
-		icons = icons,
+		icons = {
+          hint = Icons.diagnostics.hint,
+          info = Icons.diagnostics.info,
+          warning = Icons.diagnostics.warn,		-- sic!
+          error = Icons.diagnostics.error,
+		},
 	},
 	view = {
 		mappings = {
@@ -23,4 +24,24 @@ require'nvim-tree'.setup {
 
 nnoremap('<F8>', ':NvimTreeToggle<cr>')
 nnoremap('<leader>fl', ':NvimTreeFindFile<cr>', 'locate in tree')
+
+-- hide cursor
+require("nvim-tree.view").View.winopts.cursorline = true
+autocmd({"WinEnter", "BufWinEnter"}, {
+	group = "vimrc",
+	pattern = "NvimTree_1",
+	callback = function ()
+		 vim.cmd "highlight! Cursor blend=100"
+		 vim.opt.guicursor = { "n:Cursor/lCursor", "v-c-sm:block", "i-ci-ve:ver25", "r-cr-o:hor2" }
+	end,
+})
+
+autocmd({"BufLeave", "WinClosed"}, {
+	group = "vimrc",
+	pattern = "NvimTree_1",
+	callback = function ()
+		vim.cmd "highlight! Cursor blend=NONE"
+		vim.opt.guicursor = { "n-v-c-sm:block", "i-ci-ve:ver25", "r-cr-o:hor20" }
+	end,
+})
 

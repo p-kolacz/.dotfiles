@@ -81,7 +81,7 @@ require('telescope').setup{
 --  Ultisnips
 Plugin "https://github.com/fhill2/telescope-ultisnips.nvim"
 require("telescope").load_extension("ultisnips")
-nnoremap('<leader>css', ":Telescope ultisnips ultisnips theme=get_dropdown<cr>", "snippets")
+nnoremap('<leader>us', ":Telescope ultisnips ultisnips theme=get_ivy<cr>", "snippets")
 
 -- Project management
 Plugin "https://github.com/nvim-telescope/telescope-project.nvim"

@@ -81,6 +81,10 @@ dev/ruby() {
 	install ruby yaml-language-server
 	gem install solargraph --conservative
 }
+dev/rails() {
+	dev/ruby
+	gem install rails --conservative
+}
 
 dotfiles() {
 	cd "$DOTFILES" || { echo "$DOTFILES"; exit 1; }

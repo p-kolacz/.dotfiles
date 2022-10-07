@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function usage() {
-	echo "Usage: [orph|up|sync|lastup|set-mirrors|clear]"
+	echo "Usage: [orph|remorph|up|sync|lastup|set-mirrors|clear]"
 }
 
 case $1 in

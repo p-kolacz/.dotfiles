@@ -59,8 +59,8 @@ xnoremap("<leader>ed", "\"sy:let @/=@s<cr>cgn")
 nnoremap("<leader>er", ":g/^/m0<CR>", "reverse lines")
 vnoremap("<leader>er", ":'<,'>!tac<CR>", "reverse lines")
 
-nmap('<leader>"', 'ysiw"', '"quote" inner word')
-nmap("<leader>'", "ysiw'", "'quote' inner word")
+nmap('<leader>"', 'ysiw"', '"cword"')
+nmap("<leader>'", "ysiw'", "'cword'")
 
 ----------------------------------- File -----------------------------------
 mapgroup("<leader>f", "+File")
@@ -128,7 +128,6 @@ nnoremap("<leader>tu", [[:%s/\\u\(\x\{4\}\)/\=nr2char('0x'.submatch(1),1)/g<cr>]
 ------------------------------------ Vim -----------------------------------
 mapgroup("<leader>v", "+Vim")
 nnoremap("<leader>vg", function ()
-	-- print(
 	vim.o.background = vim.o.background == "light" and "dark" or "light"
 end, "toggle background")
 

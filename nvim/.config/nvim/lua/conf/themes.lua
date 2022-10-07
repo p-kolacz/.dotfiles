@@ -11,6 +11,17 @@ require"rose-pine".setup {
 	disable_italics = true,
 }
 
+---------------------------------- Solarized -----------------------------------
+-- Plugin "https://github.com/shaunsingh/solarized.nvim"
+-- let.solarized_italic_comments = true
+-- let.solarized_italic_keywords = true
+-- let.solarized_italic_functions = false
+-- let.solarized_italic_variables = false
+-- let.solarized_contrast = false
+-- let.solarized_borders = true
+-- let.solarized_disable_background = false
+
+Plugin "https://github.com/ishan9299/nvim-solarized-lua"
 ----------------------------------- Tokyonight --------------------------------
 Plugin "https://github.com/folke/tokyonight.nvim"
 let.tokyonight_style = 'storm'		-- available: night, storm, day
@@ -57,5 +68,5 @@ Plugin "https://github.com/joshdick/onedark.vim"
 Plugin "https://github.com/luisiacc/gruvbox-baby"
 
 --------------------------------- Papercolor ----------------------------------
--- Plugin "https://github.com/pappasam/papercolor-theme-slim"
+Plugin "https://github.com/pappasam/papercolor-theme-slim"
 

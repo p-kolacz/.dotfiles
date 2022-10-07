@@ -4,7 +4,10 @@ Plugin {
 
 require "lualine".setup {
 	options = {
-		theme = "auto",
+		-- theme = "auto",
+		-- theme = "papercolor_light",
+		theme = "solarized",
+		-- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md#available-themes
 		globalstatus = true,
 	},
 	tabline = {

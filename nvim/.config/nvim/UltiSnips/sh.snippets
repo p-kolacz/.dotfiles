@@ -58,6 +58,12 @@ snippet last_exit
 $?
 endsnippet
 
+snippet log2file
+exec >> ${1:filename}
+exec 2>&1
+
+endsnippet
+
 snippet lowercase
 ${${1:var},,}
 endsnippet

@@ -113,25 +113,26 @@ set_wallpaper() {
 }
 
 case "$1" in
-	"period")   repeat ;;
-	"w")        set_wallpaper ;;
-	"x")        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
-	"C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
+	period)   repeat ;;
+	w)        set_wallpaper ;;
+	x)        xclip -in -filter | tr '\n' ' ' | xclip -in -selection clipboard ;;
+	C-c)      while read file; do xclip -selection clipboard -target image/png "$file"; notify "$file content copied to clipboard"; done ;;
 	# "e")        while read file; do $TERMINAL -e sh -c "exiv2 '$file' | $PAGER" & done ;;
-	"e")        while read file; do notify "$(exiv2 "$file" | column -t -s :)";  done ;;
-	"i")        while read file; do notify "$(mediainfo "$file")"; done ;;
-	"l")        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
-	"g")        tr '\n' '\0' | xargs -0 gimp & ;;
-	"t")        develop rawtherapee ;;
-	"d")        develop darktable ;;
-	"c")        prompt_and_op cp ;;
-	"m")        prompt_and_op mv ;;
-	"C-d")      while read file; do trash "${file%.*}".*; done ;;
-	"C-comma")  rotate 270 ;;
-	"C-period") rotate  90 ;;
-	"C-slash")  rotate 180 ;;
-	"r")        prompt_resize ;;
-	"1")        resize 1920x1080 ;;
-	"4")        resize 3840×2160 ;;
+	e)        while read file; do notify "$(exiv2 "$file" | column -t -s :)";  done ;;
+	i)        while read file; do notify "$(mediainfo "$file")"; done ;;
+	l)        while read file; do echo "$file"; done; kill $PPID ;; # dmenu imitation
+	g)        tr '\n' '\0' | xargs -0 gimp & ;;
+	G)        tr '\n' '\0' | xargs -0 gthumb & ;;
+	t)        develop rawtherapee ;;
+	d)        develop darktable ;;
+	c)        prompt_and_op cp ;;
+	m)        prompt_and_op mv ;;
+	C-d)      while read file; do trash "${file%.*}".*; done ;;
+	C-comma)  rotate 270 ;;
+	C-period) rotate  90 ;;
+	C-slash)  rotate 180 ;;
+	r)        prompt_resize ;;
+	1)        resize 1920x1080 ;;
+	4)        resize 3840×2160 ;;
 esac
 

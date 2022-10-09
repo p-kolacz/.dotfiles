@@ -4,7 +4,7 @@ Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
-Xft.autohint: false
+Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
@@ -26,4 +26,6 @@ dmenu.font: monospace-13
 ! dmenu.foreground: #ebdbb2
 dmenu.selbackground: #458588
 dmenu.selforeground: #ebdbb2
+
+Xcursor.size: 32
 

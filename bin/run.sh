@@ -10,7 +10,7 @@ FILE_EXTENSION="${FILE_EXTENSION,,}"
 case $FILE_EXTENSION in
 	htm|html)
 		$BROWSER "$FILE_PATH" ;;
-	epub|mobi)
+	chm|epub|mobi)
 		ebook-viewer -- "$FILE_PATH" ;;
 	cbr|cbz|djvu|pdf)
 		zathura -- "$FILE_PATH" ;;

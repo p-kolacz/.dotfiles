@@ -8,7 +8,7 @@ configuration {
 	/* case-sensitive: false; */
 
 	font: "monospace 16";
-	/* show-icons: true; */
+	show-icons: true;
 	/* icon-theme: "Adwaita"; */
 
 	kb-accept-entry: "Return";

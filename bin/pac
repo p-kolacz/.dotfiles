@@ -6,11 +6,14 @@ function usage() {
 
 case $1 in
 	orph)        pacman -Qdt ;;
-	remorph)     pacman -Rs $(pacman -Qqdt) ;;
-	up)          pacman -Syu ;;
-	sync)        pacman -Sy ;;
+	remorph)     sudo pacman -Rs "$(pacman -Qqdt)" ;;
+	up)          sudo pacman -Syu ;;
+	sync)        sudo pacman -Sy ;;
 	lastup)      grep "starting full system upgrade" /var/log/pacman.log | tail ;;
-	set-mirrors) reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist ;;
+	set-mirrors)
+		sudo reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+		cat /etc/pacman.d/mirrorlist
+		;;
 	clear)       pacman -Sc ;;	# clear cache
 	*) usage
 esac

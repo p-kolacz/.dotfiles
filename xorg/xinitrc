@@ -17,7 +17,7 @@ fi
 
 # [ -n $THEME ] && xrdb -merge $HOME/.dotfiles/themes/$THEME.xresources
 
-source "$DOTFILES/xorg/autostart.sh"
+source "$DOTFILES/xorg/autostart.sh" > "$XDG_STATE_HOME/autostart.log" 2>&1
 
 { [ $WM == bspwm ] && 
 	sxhkd -c ~/.config/sxhkd/sxhkdrc ~/.config/bspwm/sxhkdrc ||

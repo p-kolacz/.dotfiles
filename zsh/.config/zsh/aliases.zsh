@@ -20,6 +20,7 @@ alias weather="curl 'wttr.in/?Fqn&lang=pl'"
 alias todo="~/repos/todofzf/todofzf ~/Exocortex/TODO/todo.txt"
 (( $+commands[host] )) || alias host="drill ANY"
 alias webcam="qv4l2"
+alias cursors="find /usr/share/icons ~/.local/share/icons -type d -name \"cursors\""
 
 # Disk utils --------------------------
 alias disks="lsblk --nodeps --output NAME,MODEL,SIZE"
@@ -51,12 +52,14 @@ abbr pacown="pacman -Qo"
 abbr paclist="pacman -Ql"
 
 # Systemctl ---------------------------
-abbr sys="systemctl status"
-abbr syse="sudo systemctl enable"
-abbr sysd="sudo systemctl disable"
-abbr syst="sudo systemctl start"
-abbr sysp="sudo systemctl stop"
-abbr sysr="sudo systemctl restart"
+abbr sys="sudo systemctl"
+# abbr sys="systemctl status"
+# abbr syse="sudo systemctl enable"
+# abbr sysd="sudo systemctl disable"
+# abbr syst="sudo systemctl start"
+# abbr sysp="sudo systemctl stop"
+# abbr sysr="sudo systemctl restart"
+abbr sysu="systemctl --user"
 
 # Processes ---------------------------
 abbr ka="killall --wait"

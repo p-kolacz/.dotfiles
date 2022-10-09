@@ -1,6 +1,15 @@
 #!/bin/bash
 
-cd ~/.dotfiles
-file=$(find . -not -wholename "./.git*" -type f | fzf --preview "preview.sh {}")
-[[ -f $file ]] && $EDITOR "$file"
+cd "$DOTFILES" || exit 1
+
+case $1 in
+	fonts)
+		$EDITOR -O ~/.local/config/fonts.conf fontconfig/.config/fontconfig/fonts.conf ;;
+	zsh)
+		$EDITOR -O zsh/.config/zsh/.zshenv zsh/.config/zsh/.zprofile  zsh/.config/zsh/.zshrc ;;
+
+	*)
+		file=$(find . -not -wholename "./.git*" -type f | fzf --preview "preview.sh {}")
+		[[ -f $file ]] && $EDITOR "$file"
+esac
 

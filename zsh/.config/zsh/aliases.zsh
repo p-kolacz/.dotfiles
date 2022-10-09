@@ -40,10 +40,10 @@ alias gits="git status"
 abbr gico="git add . && git commit -m"
 alias gifico='git add . && git commit -m "First commit"'
 alias gipu="git push"
-alias gicora='git add . && git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)"'
-alias gipura='git add . && git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)" && git push'
-alias gicoda='git add . && git commit -m "$(date +%F_%T)"'
-alias gipuda='git add . && git commit -m "$(date +%F_%T)" && git push'
+alias gicora='git add .; git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)"'
+alias gipura='git add .; git commit -m "$(shuf -n 1 < $HOME/.dotfiles/share/txt/git-messages.txt)"; git push'
+alias gicoda='git add .; git commit -m "$(date +%F_%T)"'
+alias gipuda='git add .; git commit -m "$(date +%F_%T)" && git push'
 
 # Pacman ------------------------------
 abbr inst="sudo pacman -S"

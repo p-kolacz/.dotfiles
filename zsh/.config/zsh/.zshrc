@@ -30,11 +30,9 @@ SAVEHIST=10000
 setopt HIST_IGNORE_DUPS
 setopt autocd
 
-# (( $+commands[moar] )) && { export MOAR="--no-linenumbers"; export PAGER="moar"; }
+[[ -d $DOTFILES/bin/diyfetch ]] && $(find .dotfiles/bin/diyfetch/* | shuf -n1)
+# fetch=timefetch
+# (( $+commands[$fetch] )) && $fetch
 
-nerdfetch
-# neofetch
-
-# autoload -U promptinit; promptinit
-# prompt spaceship
 eval "$(starship init zsh)"
+

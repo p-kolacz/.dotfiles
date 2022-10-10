@@ -29,8 +29,8 @@ require "nvim-web-devicons".setup()
 require "lib/iconz"
 require "conf/themes"
 set.background = vim.env.THEME_VARIANT and vim.env.THEME_VARIANT or "light"
--- colorscheme "rose-pine"
-colorscheme "solarized-flat"
+colorscheme "rose-pine"
+-- colorscheme "solarized-flat"
 -- colorscheme "PaperColorSlim"
 
 -- Highlight words under cursor

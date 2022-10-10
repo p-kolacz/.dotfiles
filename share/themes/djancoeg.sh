@@ -18,4 +18,4 @@ export THEME_CYAN2=#63e0be
 export THEME_WHITE2=#b1a6ee
 
 export THEME_ACCENT="$THEME_GREEN"
-export THEME_VARIANT=dark
+# export THEME_VARIANT=dark

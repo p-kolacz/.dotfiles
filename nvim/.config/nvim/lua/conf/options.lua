@@ -11,6 +11,7 @@ autocmd("BufRead", {
 	command = "setlocal includeexpr=stdpath('config').'/lua/'.v:fname"
 })
 -- Remeber foldings and stuff...
+set.viewoptions = "cursor,folds"
 autocmd("BufWinLeave", {
 	group = "vimrc",
 	pattern = "?*",			-- ?* ensures filename is not empty, for non-file buffers

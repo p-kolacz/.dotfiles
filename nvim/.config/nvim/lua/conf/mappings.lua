@@ -109,7 +109,7 @@ nnoremap("<leader>se", ":setlocal spelllang=en_us<CR>", 'lang en_us')
 nnoremap("<leader>sp", ":setlocal spelllang=pl<CR>", 'lang pl')
 
 ------------------------------------- Tabs ---------------------------------
-nnoremap("<c-t>", ":tabnew<cr>")
+-- nnoremap("<c-t>", ":tabnew<cr>")
 nnoremap("<c-tab>", ":tabnext<cr>")
 nnoremap("<c-s-tab>", ":tabprevious<cr>")
 nnoremap("<leader>1", "1gt", "tab 1")

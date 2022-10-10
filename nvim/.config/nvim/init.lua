@@ -22,6 +22,7 @@ Require {
 	"tool/telescope",
 	"tool/nvim-tree",
 	"tool/gitsigns",
+	"tool/trouble",
 	"tool/help",
 	"tool/colorizer",
 	"tool/figlet",

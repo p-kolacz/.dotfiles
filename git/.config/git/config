@@ -2,6 +2,8 @@
 	rebase = false
 [init]
 	defaultBranch = master
+[diff]
+	tool = meld
 [merge]
 	tool = meld
 [mergetool "nvim"]

@@ -32,7 +32,7 @@ nnoremap('<leader>vq', ':Telescope quickfix<cr>', 'quickfix list')
 nnoremap('<leader>vl', ':Telescope loclist<cr>', 'loc list')
 nnoremap('<leader>vo', ':Telescope vim_options theme=get_dropdown<cr>', 'options')
 nnoremap('<leader>vr', ':Telescope registers<cr>', 'registers')
-nnoremap('<leader>su', ':Telescope spell_suggest theme=get_dropdown<cr>', 'suggest')
+nnoremap('<leader>su', ':Telescope spell_suggest theme=cursor<cr>', 'suggest')
 nnoremap('<leader>vk', ':Telescope keymaps<cr>', 'keymaps')
 nnoremap('<leader>vf', ':Telescope filetypes theme=get_dropdown<cr>', 'filetypes')
 nnoremap('<leader>vh', ':Telescope highlights<cr>', 'highlights')
@@ -57,7 +57,6 @@ nnoremap('<leader>ik', ":lua require'telescope.builtin'.symbols{ sources = {'kao
 nnoremap('<leader>im', ":lua require'telescope.builtin'.symbols{ sources = {'math'}    }<cr>", 'math')
 nnoremap('<leader>il', ":lua require'telescope.builtin'.symbols{ sources = {'latex'}   }<cr>", 'latex')
 
-
 local actions = require('telescope.actions')
 require('telescope').setup{
 	defaults = {
@@ -65,8 +64,8 @@ require('telescope').setup{
 		mappings = {
 			i = {
 				["<esc>"] = actions.close,
-				["<c-j>"] = actions.move_selection_next,
-				["<c-k>"] = actions.move_selection_previous
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
 			},
 		},
 		winblend = 5,

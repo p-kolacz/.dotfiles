@@ -14,7 +14,12 @@ case $1 in
 		xrandr --current | grep -E "primary" | cut -d" " -f1 ;;
 	secondary)
 		xrandr --current | grep -E " connected [0-9]+" | cut -d" " -f1 ;;
+	left)
+		xrandr --current | grep -E " connected [0-9]+x[0-9]+\+0" | cut -d" " -f1 ;;
+	right)
+		# TODO: check cases when not 3 monitors
+		xrandr --current | grep -E " connected [0-9]+x[0-9]+\+[1-9]" | cut -d" " -f1 ;;
 	*)
-		echo "Usage: monitor [count|list|all|primary|secondary]"
+		echo "Usage: monitor [count|list|all|primary|secondary|left|right]"
 esac
 

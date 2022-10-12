@@ -4,31 +4,23 @@
 								  # Monitors #
 #------------------------------------------------------------------------------#
 
-# bspc monitor -d I II III IV V VI VII VIII IX X
-# bspc monitor -d        
+case $(monitors count) in
+	1)
+		bspc monitor "$(monitors primary)" --reset-desktops F Q W E R T A S D G C V
+		;;
+	2)
+		bspc monitor "$(monitors primary)" --reset-desktops F A S D G
+		bspc monitor "$(monitors secondary)" --reset-desktops Q W E R T C V
+		;;
+	3)
+		bspc monitor "$(monitors primary)" --reset-desktops F A S D G
+		bspc monitor "$(monitors left)"    --reset-desktops C V
+		bspc monitor "$(monitors right)"   --reset-desktops Q W E R T
+		;;
+esac
 
-# xrandr_output=$(xrandr --current)
-# monitors_count=$(echo "$xrandr_output" | grep "\sconnected" | wc -l)
-main_monitor=$(monitors primary)
-if [[ $(monitors count) -eq 1 ]]; then
-	bspc monitor "$main_monitor" --rename main
-	bspc monitor -d F W E R T A S D G C V
-else
-	bspc monitor "$main_monitor" --rename main
-	bspc monitor main -d F W E R T A S D G
-
-	i=0
-	workspaces=(C V)
-	# names=(left right)
-	for m in $(monitors secondary); do
-		# bspc monitor $m --rename ${names[i]}
-		bspc monitor $m --reset-desktops ${workspaces[i]}
-		((i = i + 1))
-	done
-fi
-
-bspc config remove_disabled_monitors true
-bspc config remove_unplugged_monitors true
+# bspc config remove_disabled_monitors true
+# bspc config remove_unplugged_monitors true
 
 #------------------------------------------------------------------------------#
 								  # Desktops #

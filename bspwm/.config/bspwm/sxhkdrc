@@ -16,15 +16,15 @@ super + y
 								  # Monitors #
 #------------------------------------------------------------------------------#
 
-super + {1,2,3}
-	bspc monitor {main,left,right} -f
+# super + {1,2,3}
+	# bspc monitor {main,left,right} -f
 
 
 								  # Desktops #
 #------------------------------------------------------------------------------#
 
-super + {w,e,r,t,a,s,d,f,g,c,v}
-	desktop={W,E,R,T,A,S,D,F,G,C,V}; \
+super + {q,w,e,r,t,a,s,d,f,g,c,v}
+	desktop={Q,W,E,R,T,A,S,D,F,G,C,V}; \
 	bspc desktop $desktop --to-monitor focused; \
 	bspc desktop $desktop.!focused --focus || \
 	bspc desktop last --focus
@@ -57,8 +57,8 @@ super + {plus,minus}
 super + {_,shift + }x
 	bspc node -{c,k}
 
-super + shift + {w,e,r,t,a,s,d,f,g,c,v}
-	bspc node -d {W,E,R,T,A,S,D,F,G,C,V}
+super + shift + {q,w,e,r,t,a,s,d,f,g,c,v}
+	bspc node -d {Q,W,E,R,T,A,S,D,F,G,C,V}
 
 # set the window state
 super + {i,shift + i,o,u}

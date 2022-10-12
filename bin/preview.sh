@@ -16,7 +16,8 @@ limit() {
 }
 
 syn_highlight() {
-	highlight -O xterm256 -s "base16/nord" --force "$1"
+	# highlight -O xterm256 -s "base16/nord" --force "$1"
+	highlight -O xterm256  --force "$1"
 }
 
 binary() {

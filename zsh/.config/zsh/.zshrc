@@ -30,9 +30,9 @@ SAVEHIST=10000
 setopt HIST_IGNORE_DUPS
 setopt autocd
 
-[[ -d $DOTFILES/bin/diyfetch ]] && $(find .dotfiles/bin/diyfetch/* | shuf -n1)
-# fetch=timefetch
-# (( $+commands[$fetch] )) && $fetch
+# [[ -d $DOTFILES/bin/diyfetch ]] && $(find .dotfiles/bin/diyfetch/* | shuf -n1)
+[[ -d $DOTFILES/bin/diyfetch ]] && ("$DOTFILES/bin/diyfetch/timefetch")
+
 
 eval "$(starship init zsh)"
 

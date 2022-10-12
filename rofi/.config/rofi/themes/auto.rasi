@@ -17,11 +17,11 @@ window {
 
 inputbar {
 	border: 0 0 1px 0;
-	border-color: ${THEME_BLACK};
+	border-color: ${THEME_BG};
 	children: [prompt, entry, num-filtered-rows, textbox-slash, num-rows, case-indicator];
 }
 prompt {
-	background-color: ${THEME_BLACK};
+	background-color: ${THEME_BG};
     padding: 8px;
 }
 entry {
@@ -41,7 +41,7 @@ num-rows {
 }
 case-indicator {
     padding: 8px;
-	background-color: ${THEME_BLACK};
+	background-color: ${THEME_BG};
 }
 
 listview {

@@ -3,6 +3,8 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_STATE_HOME="$HOME"/.local/state
 
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME"/asdf/asdfrc
+export ASDF_DATA_DIR="$XDG_DATA_HOME"/asdf
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle
 export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
@@ -16,7 +18,6 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export HISTFILE="$XDG_STATE_HOME"/history
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
-# export LESSHISTFILE="$XDG_STATE_HOME"/lesshst
 export MPLAYER_HOME="$XDG_CONFIG_HOME"/mplayer
 export MYSQL_HISTFILE="$XDG_STATE_HOME"/mysql_history
 export NPM_CONFIG_PREFIX="$HOME"/.local/lib/node_modules

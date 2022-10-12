@@ -6,7 +6,7 @@ case $1 in
 	fonts)
 		$EDITOR -O ~/.local/config/fonts.conf fontconfig/.config/fontconfig/fonts.conf ;;
 	zsh)
-		$EDITOR -O zsh/.config/zsh/.zshenv zsh/.config/zsh/.zprofile  zsh/.config/zsh/.zshrc ;;
+		$EDITOR -o zsh/.config/zsh/.zshenv zsh/.config/zsh/.zprofile  zsh/.config/zsh/.zshrc ;;
 
 	*)
 		file=$(find . -not -wholename "./.git*" -type f | fzf --preview "preview.sh {}")

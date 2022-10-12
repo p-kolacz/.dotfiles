@@ -28,7 +28,7 @@ Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()
 require "lib/iconz"
 require "conf/themes"
-set.background = vim.env.THEME_VARIANT and vim.env.THEME_VARIANT or "light"
+set.background = vim.env.THEME_VARIANT and vim.env.THEME_VARIANT or "dark"
 colorscheme "rose-pine"
 -- colorscheme "solarized-flat"
 -- colorscheme "PaperColorSlim"

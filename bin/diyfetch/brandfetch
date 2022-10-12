@@ -2,8 +2,8 @@
 
 # Prepare ------------------------------------------------------------------------------------------
 
-title=$(gum style --bold --foreground 12 "$(figlet DIYfetch)")
-subtitle=$(gum style --italic --foreground 12 'The ultimate fetch tool template')
+title=$(gum style --bold --foreground 1 "$(figlet DIYfetch)")
+subtitle=$(gum style --italic --foreground 1 'The ultimate fetch tool template')
 info=$(gum join --vertical --align center "${title}" "${subtitle}")
 
 art=$(gum style --foreground "${main_color}" '          ,~-.

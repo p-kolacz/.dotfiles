@@ -3,7 +3,7 @@
 # Prepare ------------------------------------------------------------------------------------------
 
 info=$(gum style --border rounded --border-foreground 6 --padding '1 2' \
-"[1;38;5;2mOS        [0m<your_os>
+"[1;38;5;2mOS        [0m$(uname -o)
 [1;38;5;4mKERNEL    [0m$(uname -sr)
 [1;38;5;1mDE        [0m<your_de>
 [1;38;5;3mSHELL     [0m$(basename "${SHELL}")

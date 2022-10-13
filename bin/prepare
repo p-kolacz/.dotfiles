@@ -88,7 +88,7 @@ dev/rails() {
 
 dotfiles() {
 	cd "$DOTFILES" || { echo "$DOTFILES"; exit 1; }
-	mkdir -p "$HOME"/.config/git "$HOME"/.local/{bin,share,state} "$HOME"/.local/share/fonts
+	mkdir -p "$HOME"/.config/git "$HOME"/.local/{bin,config,share,state} "$HOME"/.local/share/fonts
 	install stow
 	# shellcheck disable=SC2035
 	if [[ $DRYRUN ]]; then

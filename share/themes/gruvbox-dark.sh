@@ -1,3 +1,4 @@
+export THEME_NAME=gruvbox-dark
 export THEME_BG=#282828
 export THEME_FG=#ebdbb2
 export THEME_BLACK=#282828
@@ -18,3 +19,5 @@ export THEME_WHITE=#a89984
 export THEME_WHITE2=#ebdbb2
 
 export THEME_ACCENT="$THEME_BLUE"
+
+export THEME_VARIANT=dark

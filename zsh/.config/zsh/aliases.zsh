@@ -37,6 +37,7 @@ alias redox="edit_in_dir ~/repos/qmk_firmware keyboards/redox_w/keymaps/max/keym
 # Git ---------------------------------
 alias lg=lazygit
 alias gits="git status"
+alias gita="git add .; git status"
 abbr gico="git add . && git commit -m"
 alias gifico='git add . && git commit -m "First commit"'
 alias gipu="git push"

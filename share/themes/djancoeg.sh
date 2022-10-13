@@ -1,3 +1,4 @@
+export THEME_NAME=djancoeg
 export THEME_BG=#2a2c3a
 export THEME_FG=#eeeeee
 export THEME_BLACK=#2f343f

@@ -1,3 +1,4 @@
+export THEME_NAME=rose-pine
 export THEME_BG=#faf4ed
 export THEME_FG=#575279
 export THEME_BLACK=#575279

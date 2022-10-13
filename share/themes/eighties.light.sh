@@ -1,3 +1,4 @@
+export THEME_NAME=eighties-light
 export THEME_FG=#515151
 export THEME_BG=#f2f0ec
 export THEME_BLACK=#2d2d2d

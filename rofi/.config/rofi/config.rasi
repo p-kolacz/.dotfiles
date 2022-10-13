@@ -2,7 +2,7 @@
 // https://github.com/davatorium/rofi/blob/next/doc/rofi-keys.5.markdown#rofi-keys-5-rofi-keys
 
 configuration {
-	modi: "run,drun,filebrowser";
+	modi: "drun,run,filebrowser";
 	matching: "fuzzy";
 	sorting-method: "fzf";
 	/* case-sensitive: false; */

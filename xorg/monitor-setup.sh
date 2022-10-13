@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # TODO: change hardcoding
-$DOTFILES/share/screenlayout/Workbook-Desktop.sh
-exit 0
+# $DOTFILES/share/screenlayout/Workbook-Desktop.sh
+exit 1
 
 xrandr_output=$(xrandr)
 

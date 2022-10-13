@@ -53,3 +53,5 @@ LSP_ON_ATTACH = function(client, bufnr)
 	})
 end
 
+Plugin "https://github.com/j-hui/fidget.nvim"
+require"fidget".setup{}

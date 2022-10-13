@@ -17,6 +17,9 @@ fi
 
 # [ -n $THEME ] && xrdb -merge $HOME/.dotfiles/themes/$THEME.xresources
 
+screenlayout="$HOME/.local/config/screenlayout"
+[[ -f $screenlayout ]] && $screenlayout
+
 source "$DOTFILES/xorg/autostart.sh" > "$XDG_STATE_HOME/autostart.log" 2>&1
 
 { [ $WM == bspwm ] && 

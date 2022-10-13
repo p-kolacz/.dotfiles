@@ -12,10 +12,10 @@ Plugin {
 	"https://github.com/nvim-telescope/telescope-symbols.nvim",
 }
 
---https://github.com/nvim-telescope/telescope.nvim#pickers
+-- https://github.com/nvim-telescope/telescope.nvim#pickers
 
 --File pickers
-nnoremap('<C-space>',  ':Telescope find_files<cr>')
+nnoremap('<C-space>',  ':Telescope find_files find_command=rg,--hidden,--files<cr>')
 nnoremap('<leader>gf', ':Telescope git_files<cr>', 'find files')
 nnoremap('<leader>fc', ':Telescope grep_string<cr>', 'find cword')
 nnoremap('<leader>ff', ':Telescope live_grep<cr>', 'find in files')
@@ -58,7 +58,7 @@ nnoremap('<leader>im', ":lua require'telescope.builtin'.symbols{ sources = {'mat
 nnoremap('<leader>il', ":lua require'telescope.builtin'.symbols{ sources = {'latex'}   }<cr>", 'latex')
 
 local actions = require('telescope.actions')
-require('telescope').setup{
+require('telescope').setup {
 	defaults = {
 		prompt_prefix = "🔭",
 		mappings = {

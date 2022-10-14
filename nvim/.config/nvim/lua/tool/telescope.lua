@@ -15,7 +15,8 @@ Plugin {
 -- https://github.com/nvim-telescope/telescope.nvim#pickers
 
 --File pickers
-nnoremap('<C-space>',  ':Telescope find_files find_command=rg,--hidden,--files<cr>')
+-- nnoremap('<C-space>',  ':Telescope find_files find_command=rg,--hidden,--files<cr>')
+nnoremap('<C-space>',  ':Telescope find_files theme=ivy<cr>')
 nnoremap('<leader>gf', ':Telescope git_files<cr>', 'find files')
 nnoremap('<leader>fc', ':Telescope grep_string<cr>', 'find cword')
 nnoremap('<leader>ff', ':Telescope live_grep<cr>', 'find in files')

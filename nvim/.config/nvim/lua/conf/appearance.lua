@@ -23,6 +23,8 @@ autocmd("TextYankPost", { group = "vimrc", pattern = "*", callback =
 		vim.highlight.on_yank {higroup="IncSearch", timeout=500}
 	end
 })
+-- vim.cmd[[highlight ExtraWhitespace ctermbg=red guibg=red]]
+-- vim.cmd[[match ExtraWhitespace /\s\+$/]]
 
 Plugin "kyazdani42/nvim-web-devicons"
 require "nvim-web-devicons".setup()

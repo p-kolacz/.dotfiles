@@ -1,3 +1,5 @@
+[core]
+	pager = "less -R"
 [pull]
 	rebase = false
 [init]

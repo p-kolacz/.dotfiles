@@ -22,7 +22,8 @@ nnoremap("<leader>w", ":w<CR>", "")
 
 ----------------------------------- Code -----------------------------------
 mapgroup("<leader>c", "+Code")
-nnoremap("<tab>", "za")
+-- TODO: tab == c-i so change tab to somehing else
+-- nnoremap("<tab>", "za")
 
 --------------------------------- Command Mode --------------------------------
 cnoremap("<c-a>", "<home>")
@@ -72,9 +73,9 @@ nnoremap("<leader>gg", ":silent !$TERMINAL lazygit &<cr>", "LazyGit")
 mapgroup("<leader>gc", "+Commit")
 nnoremap("<leader>gcc", ':!git add . && git commit -m ', "commit")
 nnoremap("<leader>gcd", ':!git add . && git commit -m "$(date +\\%F)"<cr>', "with current date")
-mapgroup("<leader>gp", '+Push')
-nnoremap("<leader>gpp", ':!git push<cr>', "push")
-nnoremap("<leader>gpd", ':!git add . && git commit -m "$(date +\\%F)" && git push<cr>', "with current date")
+-- mapgroup("<leader>gp", '+Push')
+-- nnoremap("<leader>gpp", ':!git push<cr>', "push")
+-- nnoremap("<leader>gpd", ':!git add . && git commit -m "$(date +\\%F)" && git push<cr>', "with current date")
 
 ----------------------------------- Help -----------------------------------
 nnoremap("gy", [[:silent execute "!xdg-open 'https://www.startpage.com/sp/search?query=" . expand("<cword>") . "'"<cr>]], "online search cword")

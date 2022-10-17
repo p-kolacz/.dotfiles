@@ -14,7 +14,8 @@ case $1 in
 		sudo reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 		cat /etc/pacman.d/mirrorlist
 		;;
-	clear)       pacman -Sc ;;	# clear cache
+	clear)	# clear cache
+		yay -Sc ;;
 	*) usage
 esac
 

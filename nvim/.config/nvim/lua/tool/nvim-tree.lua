@@ -10,6 +10,15 @@ require'nvim-tree'.setup {
           error = Icons.diagnostics.error,
 		},
 	},
+	renderer = { icons = { glyphs = { git = {
+		unstaged = "-",
+		-- staged = "✓",
+		-- unmerged = "",
+		-- renamed = "➜",
+		untracked = "",
+		-- deleted = "",
+		-- ignored = "◌",
+	}}}},
 	view = {
 		mappings = {
 			custom_only = false,
@@ -23,6 +32,7 @@ require'nvim-tree'.setup {
 }
 
 nnoremap('<F8>', ':NvimTreeToggle<cr>')
+nnoremap('<leader>fb', ':NvimTreeToggle<cr>', 'file browser')
 nnoremap('<leader>fl', ':NvimTreeFindFile<cr>', 'locate in tree')
 
 -- hide cursor

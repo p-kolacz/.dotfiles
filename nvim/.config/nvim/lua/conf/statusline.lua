@@ -37,16 +37,14 @@ require "lualine".setup {
 		lualine_x = {'encoding', 'fileformat', 'filetype'},
 	},
 	winbar = {
-		lualine_b = {
-			{
+		lualine_b = { {
 				'filename',
 				path = 1,
 			},
 		},
 	},
 	inactive_winbar= {
-		lualine_b = {
-			{
+		lualine_b = { {
 				'filename',
 				path = 1,
 			},

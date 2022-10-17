@@ -1,7 +1,20 @@
 #!/bin/bash
 
+remove-pacman-lock() {
+	rm /var/lib/pacman/db.lck
+}
+
 check-packages() {
-	pacman -Qkk
+	pacman -Qkk | grep --invert-match "0 altered files"
+}
+
+check-packages-db() {
+	pacman -Qkk | grep "mtree"
+}
+
+# usefull for mtree errors
+fix-package-db() {
+	pacman --dbonly -S
 }
 
 usage() {

@@ -12,6 +12,27 @@ Plugin {
 	"https://github.com/nvim-telescope/telescope-symbols.nvim",
 }
 
+local actions = require('telescope.actions')
+require('telescope').setup {
+	defaults = {
+		prompt_prefix = "🔭",
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+			},
+		},
+		winblend = 5,
+	},
+	pickers = {
+		symbols = {
+			theme = "cursor",
+		},
+	},
+}
+
+
 -- https://github.com/nvim-telescope/telescope.nvim#pickers
 
 --File pickers
@@ -23,7 +44,7 @@ nnoremap('<leader>ff', ':Telescope live_grep<cr>', 'find in files')
 -- nnoremap('<leader>fb', ':Telescope file_browser theme=get_dropdown<cr>', 'browse files')
 
 --Vim pickers
-nnoremap('<leader>vb', ':Telescope buffers<cr>', 'buffers')
+nnoremap('<leader>vb', ':Telescope buffers theme=ivy<cr>', 'buffers')
 nnoremap('<leader>fh', ':Telescope oldfiles<cr>', 'history')
 nnoremap('<leader>vc', ':Telescope commands<cr>', 'commands')
 nnoremap('<C-p>',      ':Telescope commands theme=get_dropdown<cr>')
@@ -58,25 +79,6 @@ nnoremap('<leader>ik', ":lua require'telescope.builtin'.symbols{ sources = {'kao
 nnoremap('<leader>im', ":lua require'telescope.builtin'.symbols{ sources = {'math'}    }<cr>", 'math')
 nnoremap('<leader>il', ":lua require'telescope.builtin'.symbols{ sources = {'latex'}   }<cr>", 'latex')
 
-local actions = require('telescope.actions')
-require('telescope').setup {
-	defaults = {
-		prompt_prefix = "🔭",
-		mappings = {
-			i = {
-				["<esc>"] = actions.close,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-			},
-		},
-		winblend = 5,
-	},
-	pickers = {
-		symbols = {
-			theme = "cursor",
-		},
-	},
-}
 
 --  Ultisnips
 Plugin "https://github.com/fhill2/telescope-ultisnips.nvim"

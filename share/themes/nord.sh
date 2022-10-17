@@ -1,3 +1,6 @@
+export THEME_NAME=nord
+export THEME_VARIANT=dark
+
 export THEME_BG=#2e3440
 export THEME_FG=#e5e9f0
 export THEME_BLACK=#2e3440

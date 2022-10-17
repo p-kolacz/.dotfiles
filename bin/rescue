@@ -1,0 +1,13 @@
+#!/bin/bash
+
+check-packages() {
+	pacman -Qkk
+}
+
+usage() {
+	declare -F | cut -d" " -f3
+}
+
+[[ ! $(typeset -f "$1") ]] && { usage; exit 1; }
+export LC_ALL=C
+$1

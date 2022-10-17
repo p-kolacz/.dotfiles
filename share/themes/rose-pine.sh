@@ -1,4 +1,6 @@
 export THEME_NAME=rose-pine
+export THEME_VARIANT=light
+
 export THEME_BG=#faf4ed
 export THEME_FG=#575279
 export THEME_BLACK=#575279
@@ -19,5 +21,4 @@ export THEME_CYAN2=#9ccfd8
 export THEME_WHITE2=#fffaf3
 
 export THEME_ACCENT="$THEME_RED"
-export THEME_VARIANT=light
 

@@ -1,4 +1,6 @@
 export THEME_NAME=djancoeg
+export THEME_VARIANT=dark
+
 export THEME_BG=#2a2c3a
 export THEME_FG=#eeeeee
 export THEME_BLACK=#2f343f
@@ -19,4 +21,3 @@ export THEME_CYAN2=#63e0be
 export THEME_WHITE2=#b1a6ee
 
 export THEME_ACCENT="$THEME_GREEN"
-# export THEME_VARIANT=dark

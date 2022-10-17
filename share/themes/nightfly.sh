@@ -1,3 +1,6 @@
+export THEME_NAME=nightfly
+export THEME_VARIANT=dark
+
 export THEME_BG=#011627
 export THEME_FG=#acb4c2
 export THEME_BLACK=#1d3b53

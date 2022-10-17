@@ -1,3 +1,6 @@
+export THEME_NAME=tokyonight-storm
+export THEME_VARIANT=dark
+
 export THEME_FG=#c0caf5
 export THEME_BG=#24283c
 export THEME_BLACK=#414868

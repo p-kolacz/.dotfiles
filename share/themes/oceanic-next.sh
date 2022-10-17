@@ -1,3 +1,6 @@
+export THEME_NAME=oceanic-next
+export THEME_VARIANT=dark
+
 export THEME_BG=#1b2b34
 export THEME_FG=#ffffff
 export THEME_BLACK=#343d46

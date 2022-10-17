@@ -6,7 +6,7 @@ local section_separators= { '',
 	{ left = '', right = '' },
 	{ left = '', right = '' },
 	{ left = '', right = '' },
-	{ left = '', right = ' ' },
+	{ left = ' ', right = '  ' },
 	{ left = '', right = '' },
 	{ left = '', right = '' },
 }

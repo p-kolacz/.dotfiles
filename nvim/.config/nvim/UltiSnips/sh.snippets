@@ -58,6 +58,11 @@ snippet last_exit
 $?
 endsnippet
 
+snippet list_functions "list functions declared in script"
+declare -F | cut -d" " -f3
+endsnippet
+
+
 snippet log2file
 exec >> ${1:filename}
 exec 2>&1
@@ -110,6 +115,11 @@ endsnippet
 
 snippet remove_last_file_line "Remove last line from file"
 sed -i '$ d' ${1:filename}
+endsnippet
+
+snippet run_function "Run script function or 'usage'"
+[[ ! $(typeset -f "$1") ]] && { usage; exit 1; }
+$1
 endsnippet
 
 snippet script_name

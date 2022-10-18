@@ -4,6 +4,12 @@ _git() {
 	git --git-dir="$HOME/.config/dotfiles" --work-tree="$HOME" "$@"
 }
 
+edit() {
+	$EDITOR "$HOME/.gitignore"
+}
+
+[[ $# == 0 ]] && { _git status; exit 0; }
+
 if [[ $(typeset -f "$1") ]]; then
 	$1
 else

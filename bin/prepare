@@ -78,8 +78,9 @@ dev/python() {
 	install python python-pip pyright
 }
 dev/ruby() {
-	install ruby yaml-language-server
-	gem install solargraph --conservative
+	echo "Install ruby using asdf or check if latest version is avaulable in repos"
+	# install ruby yaml-language-server
+	# gem install solargraph --conservative
 }
 dev/rails() {
 	dev/ruby

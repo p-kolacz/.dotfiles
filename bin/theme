@@ -18,7 +18,7 @@ apply() {
 	source "$CURRENT_THEME"
 
 	# Kitty
-	envsubst < "$CONFIG/kitty/colors/auto.template.conf" > "$CONFIG/kitty/colors/auto.conf"
+	envsubst < "$CONFIG/kitty/colors/template.conf" > "$CONFIG/kitty/colors/local.conf"
 
 	# Dunst
 	envsubst < "$CONFIG/dunst/dunstrc.d/colors.template" > "$CONFIG/dunst/dunstrc.d/color.conf"

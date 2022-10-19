@@ -1,3 +1,7 @@
+Plugin "https://github.com/goolord/alpha-nvim"
+require'alpha'.setup(require'alpha.themes.startify'.config)
+
+--[[
 Plugin "https://github.com/glepnir/dashboard-nvim"
 local db = require"dashboard"
 
@@ -44,4 +48,4 @@ db.custom_center = { {
       -- action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
       -- shortcut = 'SPC f d'},
 }
-
+]]

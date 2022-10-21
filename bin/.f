@@ -3,6 +3,11 @@
 _git() {
 	git --git-dir="$HOME/.config/dotfiles" --work-tree="$HOME" "$@"
 }
+conf() {
+	cd "$HOME" || exit 1
+	file=$(_git ls-files | fzf --preview "preview.sh {}")
+	[[ -f $file ]] && $EDITOR "$file"
+}
 edit() {
 	$EDITOR "$HOME/.gitignore"
 }
@@ -14,10 +19,7 @@ zsh() {
 }
 
 if [[ $# == 0 ]]; then
-	cd "$HOME" || exit 1
-	file=$(_git ls-files | fzf --preview "preview.sh {}")
-	[[ -f $file ]] && $EDITOR "$file"
-	# _git status
+	_git status
 elif [[ $(typeset -f "$1") ]]; then
 	$1
 else

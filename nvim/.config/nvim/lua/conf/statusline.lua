@@ -6,17 +6,17 @@ local section_separators= { '',
 	{ left = '', right = '' },
 	{ left = '', right = '' },
 	{ left = '', right = '' },
-	{ left = ' ', right = '  ' },
+	{ left = ' ', right = '  ' },
 	{ left = '', right = '' },
-	{ left = '', right = '' },
+	{ left = ' ', right = ' ' },
 }
 local component_separators= { '',
 	{ left = '', right = '' },
 	{ left = '', right = '' },
 	{ left = '', right = '' },
-	{ left = '', right = '' },
+	{ left = ' ', right = ' ' },
 	{ left = '', right = '' },
-	{ left = '', right = '' },
+	{ left = ' ', right = ' ' },
 }
 
 math.randomseed(os.time())

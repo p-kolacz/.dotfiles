@@ -3,14 +3,22 @@
 _git() {
 	git --git-dir="$HOME/.config/dotfiles" --work-tree="$HOME" "$@"
 }
-
 edit() {
 	$EDITOR "$HOME/.gitignore"
 }
+fonts() {
+	$EDITOR -O ~/.local/config/fonts.conf ~/.config/fontconfig/fonts.conf
+}
+zsh() {
+	$EDITOR -o ~/.config/zsh/.zshenv ~/.config/zsh/.zprofile ~/.config/zsh/.zshrc
+}
 
-[[ $# == 0 ]] && { _git status; exit 0; }
-
-if [[ $(typeset -f "$1") ]]; then
+if [[ $# == 0 ]]; then
+	cd "$HOME" || exit 1
+	file=$(_git ls-files | fzf --preview "preview.sh {}")
+	[[ -f $file ]] && $EDITOR "$file"
+	# _git status
+elif [[ $(typeset -f "$1") ]]; then
 	$1
 else
 	_git "$@"

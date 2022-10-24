@@ -1,6 +1,7 @@
 let.mapleader = " "
 let.maplocalleader = "\\"
 
+vnoremap("/", "<ESC>/\\%V")
 --------------------------------- Navigation -------------------------------
 inoremap("jj", "<ESC>")
 inoremap("kk", "<ESC>")
